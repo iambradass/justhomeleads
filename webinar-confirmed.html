@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're Registered! | Just Home Leads Webinar</title>
+    <meta name="description" content="You're registered for the Just Home Leads First-Time Homebuyer Webinar. Here's what to expect.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- JHL Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0D2240;
+            --blue: #1565A0;
+            --blue-light: #E8F4FC;
+            --green: #00C853;
+            --cream: #FBF9F6;
+            --charcoal: #2D3436;
+            --coral: #FF6B5B;
+            --purple: #6B46C1;
+            --white: #FFFFFF;
+            --font-display: 'Fraunces', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 24px;
+            --space-lg: 32px;
+            --space-xl: 48px;
+            --space-2xl: 64px;
+            --space-3xl: 96px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--charcoal);
+            background: var(--cream);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--blue); text-decoration: none; }
+
+        /* CONFIRMATION HERO */
+        .confirm-hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, var(--purple) 100%);
+            color: var(--white);
+            padding: var(--space-3xl) var(--space-md) var(--space-2xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .zoom-join-btn {
+            display: inline-block;
+            margin-top: var(--space-md);
+            padding: 16px 36px;
+            background: var(--green);
+            color: #ffffff;
+            font-family: var(--font-body);
+            font-size: 1.125rem;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.2s ease;
+            position: relative;
+            z-index: 1;
+        }
+        .zoom-join-btn:hover {
+            background: #00a846;
+            transform: translateY(-2px);
+        }
+
+        .confirm-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 70%, rgba(0, 200, 83, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(107, 70, 193, 0.1) 0%, transparent 50%);
+            animation: heroShimmer 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroShimmer {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-5%, 5%) rotate(3deg); }
+        }
+
+        .confirm-hero .container {
+            max-width: 720px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .check-circle { width: 80px; height: 80px; margin: 0 auto var(--space-md); }
+        .check-circle svg { width: 80px; height: 80px; }
+        .check-circle .circle-bg { fill: none; stroke: rgba(255,255,255,0.15); stroke-width: 3; }
+        .check-circle .circle-progress { fill: none; stroke: var(--green); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 232; stroke-dashoffset: 232; animation: circleIn 0.6s ease-out 0.2s forwards; transform-origin: center; transform: rotate(-90deg); }
+        .check-circle .checkmark { stroke: var(--green); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; fill: none; stroke-dasharray: 40; stroke-dashoffset: 40; animation: checkIn 0.4s ease-out 0.7s forwards; }
+
+        @keyframes circleIn { to { stroke-dashoffset: 0; } }
+        @keyframes checkIn { to { stroke-dashoffset: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: scale(1); } }
+
+        .confirm-hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; line-height: 1.15; margin-bottom: var(--space-xs); animation: fadeInUp 0.6s ease-out 0.4s both; }
+        .confirm-hero h1 em { font-style: normal; color: var(--green); }
+        .confirm-hero .subtitle { font-size: 1.1rem; opacity: 0.88; max-width: 540px; margin: 0 auto; line-height: 1.6; animation: fadeInUp 0.6s ease-out 0.55s both; }
+
+        /* COUNTDOWN */
+        .countdown-section { background: var(--white); padding: var(--space-xl) var(--space-md); }
+        .countdown-section .container { max-width: 720px; margin: 0 auto; text-align: center; }
+        .countdown-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: var(--space-sm); }
+        .countdown-wrapper { display: flex; justify-content: center; gap: var(--space-md); margin-bottom: var(--space-md); animation: scaleIn 0.5s ease-out 0.8s both; }
+        .countdown-block { display: flex; flex-direction: column; align-items: center; min-width: 80px; }
+        .countdown-number { font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3rem); font-weight: 800; color: var(--navy); line-height: 1; background: var(--cream); border-radius: 14px; padding: 16px 20px; min-width: 80px; border: 1px solid rgba(21,101,160,0.08); }
+        .countdown-unit { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--charcoal); opacity: 0.55; margin-top: 6px; }
+        .countdown-separator { font-family: var(--font-display); font-size: 2.4rem; font-weight: 700; color: var(--navy); opacity: 0.2; align-self: flex-start; padding-top: 14px; }
+        .webinar-date-display { font-family: var(--font-body); font-size: 1rem; font-weight: 500; color: var(--charcoal); opacity: 0.7; }
+
+        /* WHAT TO EXPECT */
+        .expect-section { background: var(--cream); padding: var(--space-2xl) var(--space-md); }
+        .expect-section .container { max-width: 720px; margin: 0 auto; }
+        .section-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: var(--space-xs); }
+        .expect-section h2 { font-family: var(--font-display); font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 700; color: var(--navy); margin-bottom: var(--space-lg); line-height: 1.25; }
+
+        .expect-timeline { display: flex; flex-direction: column; gap: 0; position: relative; }
+        .expect-timeline::before { content: ''; position: absolute; left: 23px; top: 24px; bottom: 24px; width: 2px; background: linear-gradient(to bottom, var(--green), var(--blue), var(--purple)); border-radius: 2px; }
+        .timeline-item { display: flex; gap: var(--space-md); padding: var(--space-sm) 0; opacity: 0; transform: translateX(-16px); }
+        .timeline-item.visible { opacity: 1; transform: translateX(0); transition: opacity 0.45s ease, transform 0.45s ease; }
+        .timeline-dot { width: 48px; height: 48px; min-width: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+        .timeline-dot svg { width: 22px; height: 22px; }
+        .timeline-dot--green { background: rgba(0,200,83,0.1); color: var(--green); }
+        .timeline-dot--blue { background: rgba(21,101,160,0.1); color: var(--blue); }
+        .timeline-dot--purple { background: rgba(107,70,193,0.1); color: var(--purple); }
+        .timeline-dot--navy { background: rgba(13,34,64,0.08); color: var(--navy); }
+        .timeline-content h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
+        .timeline-content p { font-size: 0.92rem; color: var(--charcoal); opacity: 0.78; line-height: 1.55; }
+        .timeline-content .time-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--white); background: var(--blue); border-radius: 6px; padding: 2px 10px; margin-bottom: 4px; }
+
+        /* WHILE YOU WAIT */
+        .wait-section { background: var(--white); padding: var(--space-2xl) var(--space-md); }
+        .wait-section .container { max-width: 720px; margin: 0 auto; }
+        .wait-section h2 { font-family: var(--font-display); font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 700; color: var(--navy); margin-bottom: var(--space-md); line-height: 1.25; }
+        .cta-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-md); }
+        .cta-card { background: var(--cream); border-radius: 16px; padding: var(--space-md); border: 1px solid rgba(21,101,160,0.06); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; opacity: 0; transform: translateY(16px); }
+        .cta-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease; }
+        .cta-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(13,34,64,0.07); }
+        .cta-card-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-sm); }
+        .cta-card-icon svg { width: 24px; height: 24px; }
+        .cta-card-icon--green { background: rgba(0,200,83,0.1); color: var(--green); }
+        .cta-card-icon--blue { background: rgba(21,101,160,0.1); color: var(--blue); }
+        .cta-card h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+        .cta-card p { font-size: 0.9rem; color: var(--charcoal); opacity: 0.78; line-height: 1.55; margin-bottom: var(--space-sm); flex-grow: 1; }
+        .cta-card-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.9rem; font-weight: 700; color: var(--blue); transition: gap 0.2s ease; }
+        .cta-card-link:hover { gap: 10px; }
+        .cta-card-link svg { width: 16px; height: 16px; }
+
+        /* SHARE */
+        .share-section { background: var(--cream); padding: var(--space-xl) var(--space-md); }
+        .share-box { max-width: 600px; margin: 0 auto; background: var(--white); border-radius: 20px; padding: var(--space-lg); text-align: center; border: 1px solid rgba(21,101,160,0.06); box-shadow: 0 2px 12px rgba(13,34,64,0.04); }
+        .share-box h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+        .share-box p { font-size: 0.95rem; color: var(--charcoal); opacity: 0.75; margin-bottom: var(--space-md); }
+        .share-buttons { display: flex; justify-content: center; gap: var(--space-sm); flex-wrap: wrap; }
+        .share-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 10px; font-family: var(--font-body); font-size: 0.9rem; font-weight: 600; border: none; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none; color: var(--white); }
+        .share-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+        .share-btn svg { width: 18px; height: 18px; }
+        .share-btn--copy { background: var(--navy); }
+        .share-btn--text { background: var(--green); }
+        .share-btn--email { background: var(--blue); }
+        .copy-feedback { display: none; font-size: 0.82rem; color: var(--green); font-weight: 600; margin-top: var(--space-xs); }
+
+        /* BOTTOM BAR */
+        .bottom-bar { background: var(--navy); color: var(--white); padding: var(--space-xl) var(--space-md); text-align: center; }
+        .bottom-bar .container { max-width: 600px; margin: 0 auto; }
+        .bottom-bar p { font-size: 0.95rem; opacity: 0.7; line-height: 1.6; }
+        .bottom-bar a { color: var(--green); font-weight: 600; }
+
+        /* RESPONSIVE */
+        @media (max-width: 640px) {
+            .confirm-hero { padding: var(--space-2xl) var(--space-sm) var(--space-xl); }
+            .countdown-wrapper { gap: var(--space-sm); }
+            .countdown-number { min-width: 64px; padding: 12px 14px; font-size: 2rem; }
+            .countdown-separator { font-size: 1.8rem; padding-top: 10px; }
+            .cta-cards { grid-template-columns: 1fr; }
+            .share-buttons { flex-direction: column; align-items: center; }
+            .share-btn { width: 100%; max-width: 260px; justify-content: center; }
+        }
+    </style>
+</head>
+<body data-page="webinar-confirmed" data-phase="core" data-stage="core">
+
+    <!-- TRACKING EVENTS -->
+<!-- ========================================
+     LEAD CAPTURE MODAL
+     ======================================== -->
+<div class="jhl-modal-overlay" id="jhl-modal-overlay" role="presentation">
+    <div class="jhl-lead-modal" role="dialog" aria-modal="true" aria-labelledby="jhl-modal-title">
+
+        <!-- Close Button -->
+        <button class="jhl-lead-modal__close" id="jhl-modal-close" aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+
+        <!-- FORM STATE -->
+        <div class="jhl-lead-modal__form" id="jhl-form-state">
+            <div class="jhl-lead-modal__header">
+                <div class="jhl-lead-modal__badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+                    Verified Professionals
+                </div>
+                <h2 class="jhl-lead-modal__title" id="jhl-modal-title">Get Matched with a Local Expert</h2>
+                <p class="jhl-lead-modal__subtitle" id="jhl-modal-subtitle">We'll connect you with a vetted DFW professional who fits your needs. No pressure, no obligations.</p>
+            </div>
+
+            <div class="jhl-lead-modal__body">
+                <form class="jhl-lead-form" id="jhl-lead-form" novalidate>
+                    <div class="jhl-lead-form__field">
+                        <label class="jhl-lead-form__label" for="jhl-lead-name">First Name</label>
+                        <input class="jhl-lead-form__input" type="text" id="jhl-lead-name" name="first_name" placeholder="What should we call you?" autocomplete="given-name" required>
+                        <span class="jhl-lead-form__error" id="jhl-name-error"></span>
+                    </div>
+
+                    <div class="jhl-lead-form__field">
+                        <label class="jhl-lead-form__label" for="jhl-lead-email">Email</label>
+                        <input class="jhl-lead-form__input" type="email" id="jhl-lead-email" name="email" placeholder="your@email.com" autocomplete="email" required>
+                        <span class="jhl-lead-form__error" id="jhl-email-error"></span>
+                    </div>
+
+                    <div class="jhl-lead-form__field">
+                        <label class="jhl-lead-form__label" for="jhl-lead-phone">Phone <span class="optional">(for faster response)</span></label>
+                        <input class="jhl-lead-form__input" type="tel" id="jhl-lead-phone" name="phone" placeholder="(214) 555-0123" autocomplete="tel" inputmode="tel">
+                        <div class="jhl-lead-form__helper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+                            We text, we don't cold call.
+                        </div>
+                    </div>
+
+                    <button type="submit" class="jhl-lead-form__submit" id="jhl-submit-btn">
+                        <span class="jhl-btn-text">Connect Me with an Expert</span>
+                        <div class="jhl-spinner"></div>
+                    </button>
+
+                    <div class="jhl-lead-form__trust">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        Your info stays private. No spam. No selling your data.
+                    </div>
+
+                    <div class="jhl-lead-form__social">
+                        Joined by <strong>12,000+</strong> DFW families. Average response time: <strong>under 2 hours</strong>.
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- SUCCESS STATE -->
+        <div class="jhl-lead-modal__success" id="jhl-success-state">
+            <div class="jhl-success-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <h2 class="jhl-success-title">You're Connected!</h2>
+            <p class="jhl-success-subtitle">A verified DFW expert will reach out within 2 hours &mdash; usually much faster.</p>
+
+            <div class="jhl-enrichment">
+                <div class="jhl-enrichment__label">Where are you in your journey?</div>
+                <div class="jhl-enrichment__options">
+                    <label class="jhl-enrichment__option"><input type="radio" name="journey_stage" value="exploring"><span>Just Exploring</span></label>
+                    <label class="jhl-enrichment__option"><input type="radio" name="journey_stage" value="finances"><span>Building Finances</span></label>
+                    <label class="jhl-enrichment__option"><input type="radio" name="journey_stage" value="shopping"><span>Ready to Shop</span></label>
+                    <label class="jhl-enrichment__option"><input type="radio" name="journey_stage" value="offers"><span>Making Offers</span></label>
+                    <label class="jhl-enrichment__option"><input type="radio" name="journey_stage" value="contract"><span>Under Contract</span></label>
+                    <label class="jhl-enrichment__option"><input type="radio" name="journey_stage" value="closing"><span>Closing</span></label>
+                    <label class="jhl-enrichment__option"><input type="radio" name="journey_stage" value="owner"><span>Already Own</span></label>
+                </div>
+            </div>
+
+            <div class="jhl-enrichment">
+                <div class="jhl-enrichment__label">What kind of help do you need?</div>
+                <div class="jhl-enrichment__options">
+                    <label class="jhl-enrichment__option"><input type="checkbox" name="help_type" value="agent"><span>Real Estate Agent</span></label>
+                    <label class="jhl-enrichment__option"><input type="checkbox" name="help_type" value="lender"><span>Mortgage Lender</span></label>
+                    <label class="jhl-enrichment__option"><input type="checkbox" name="help_type" value="inspector"><span>Home Inspector</span></label>
+                    <label class="jhl-enrichment__option"><input type="checkbox" name="help_type" value="general"><span>General Guidance</span></label>
+                </div>
+            </div>
+
+            <button class="jhl-success-done" id="jhl-success-close">Done</button>
+        </div>
+
+        <!-- ALREADY CONNECTED STATE -->
+        <div class="jhl-lead-modal__already" id="jhl-already-state">
+            <svg class="jhl-already-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h2 class="jhl-already-title">You're Already Connected!</h2>
+            <p class="jhl-already-text">We've got your info and a verified expert is on it. Check your email or text us if you need anything.</p>
+            <button class="jhl-already-close" id="jhl-already-close">Got It</button>
+        </div>
+
+    </div>
+</div>
+
+    <script>
+        // META PIXEL — Uncomment and add YOUR_PIXEL_ID when ready
+        /*
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID');
+        fbq('track', 'PageView');
+        fbq('track', 'CompleteRegistration', {
+            content_name: 'JHL First-Time Buyer Webinar',
+            content_category: 'Webinar',
+            value: 0,
+            currency: 'USD'
+        });
+        */
+
+        // GOOGLE TAG MANAGER DATA LAYER
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'webinar_registered',
+            'webinar_name': 'JHL First-Time Buyer Webinar',
+            'registration_date': new Date().toISOString()
+        });
+    </script>
+
+    <!-- HERO -->
+    <section class="confirm-hero">
+        <div class="container">
+            <div class="check-circle">
+                <svg viewBox="0 0 80 80">
+                    <circle class="circle-bg" cx="40" cy="40" r="37" />
+                    <circle class="circle-progress" cx="40" cy="40" r="37" />
+                    <polyline class="checkmark" points="25,42 35,52 55,30" />
+                </svg>
+            </div>
+            <h1>You're <em>In!</em></h1>
+            <p class="subtitle">Your spot is reserved. Here's your Zoom link — save it now and we'll also email it to you.</p>
+            <a href="https://us06web.zoom.us/j/84409164681?pwd=4RTz8ljeV58sepaFwAfP2f6j9Un85h.1" class="zoom-join-btn" target="_blank" rel="noopener">
+                Join the Webinar on Zoom →
+            </a>
+        </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="countdown-section">
+        <div class="container">
+            <div class="countdown-label">Your Webinar Starts In</div>
+            <div class="countdown-wrapper">
+                <div class="countdown-block">
+                    <div class="countdown-number" id="cd-days">--</div>
+                    <div class="countdown-unit">Days</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-block">
+                    <div class="countdown-number" id="cd-hours">--</div>
+                    <div class="countdown-unit">Hours</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-block">
+                    <div class="countdown-number" id="cd-mins">--</div>
+                    <div class="countdown-unit">Minutes</div>
+                </div>
+            </div>
+            <p class="webinar-date-display" id="webinar-date-text">Loading webinar date...</p>
+        </div>
+    </section>
+
+    <!-- WHAT HAPPENS NEXT -->
+    <section class="expect-section">
+        <div class="container">
+            <div class="section-label">What Happens Next</div>
+            <h2>Here's How the Webinar Works</h2>
+            <div class="expect-timeline">
+                <div class="timeline-item" data-delay="0">
+                    <div class="timeline-dot timeline-dot--green">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="time-tag">Right Now</span>
+                        <h3>Check Your Inbox</h3>
+                        <p>A confirmation email is on its way with your Zoom link. Check spam/promotions if you don't see it in a few minutes.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-delay="100">
+                    <div class="timeline-dot timeline-dot--blue">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="time-tag">Before the Webinar</span>
+                        <h3>We'll Remind You</h3>
+                        <p>You'll get a friendly reminder via email and text so you don't forget. No need to set an alarm.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-delay="200">
+                    <div class="timeline-dot timeline-dot--purple">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="time-tag">Webinar Day</span>
+                        <h3>Join Live on Zoom</h3>
+                        <p>Click your link 5 minutes early. Grab some coffee, bring your questions — this is your time to learn.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-delay="300">
+                    <div class="timeline-dot timeline-dot--navy">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="time-tag">After the Webinar</span>
+                        <h3>Get Your Free Resources</h3>
+                        <p>We'll send you a resource guide, the recording, and next steps personalized to where you are in your homebuying journey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHILE YOU WAIT -->
+    <section class="wait-section">
+        <div class="container">
+            <div class="section-label">While You Wait</div>
+            <h2>Start Getting Ahead Now</h2>
+            <div class="cta-cards">
+                <div class="cta-card" data-delay="0">
+                    <div class="cta-card-icon cta-card-icon--green">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+                    </div>
+                    <h3>Explore the Homebuyer Journey</h3>
+                    <p>See the full roadmap from "thinking about it" to holding your keys. Know exactly where you are and what comes next.</p>
+                    <a href="/journey" class="cta-card-link">Start the Journey <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></a>
+                </div>
+                <div class="cta-card" data-delay="150">
+                    <div class="cta-card-icon cta-card-icon--blue">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3>Check Your Credit Readiness</h3>
+                    <p>Your credit score is the foundation of your home purchase. Find out where you stand and what to do about it.</p>
+                    <a href="/credit-essentials" class="cta-card-link">Read the Guide <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHARE -->
+    <section class="share-section">
+        <div class="container">
+            <div class="share-box">
+                <h3>Know Someone Who Needs This?</h3>
+                <p>Send this webinar to a friend who's thinking about buying their first home.</p>
+                <div class="share-buttons">
+                    <button class="share-btn share-btn--copy" onclick="copyLink()">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                        Copy Link
+                    </button>
+                    <a class="share-btn share-btn--text" href="sms:?body=Hey!%20I%20just%20signed%20up%20for%20a%20free%20homebuyer%20webinar%20from%20Just%20Home%20Leads.%20You%20should%20check%20it%20out%3A%20https%3A%2F%2Fjusthomeleads.com%2Fwebinar">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                        Text a Friend
+                    </a>
+                    <a class="share-btn share-btn--email" href="mailto:?subject=Free%20Homebuyer%20Webinar&body=Hey!%20I%20just%20registered%20for%20a%20free%20webinar%20about%20buying%20your%20first%20home%20in%20DFW.%20It%20covers%20credit%2C%20down%20payments%2C%20and%20industry%20tricks%20to%20avoid.%20Sign%20up%20here%3A%20https%3A%2F%2Fjusthomeleads.com%2Fwebinar">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        Email It
+                    </a>
+                </div>
+                <p class="copy-feedback" id="copyFeedback">&#10003; Link copied to clipboard!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTTOM BAR -->
+    <section class="bottom-bar">
+        <div class="container">
+            <p>Questions about the webinar? Email us at <a href="mailto:hello@justhomeleads.com">hello@justhomeleads.com</a> or visit <a href="https://justhomeleads.com">justhomeleads.com</a></p>
+        </div>
+    </section>
+
+    <script>
+        // COUNTDOWN — Recurring: Last Friday of each month, 12:00 PM CT
+        const WEBINAR_DATE = '2026-02-27T12:00:00';
+
+        function updateCountdown() {
+            const now = new Date();
+            const webinarDate = new Date(WEBINAR_DATE + '-06:00');
+            const diff = webinarDate - now;
+
+            const daysEl = document.getElementById('cd-days');
+            const hoursEl = document.getElementById('cd-hours');
+            const minsEl = document.getElementById('cd-mins');
+            const dateText = document.getElementById('webinar-date-text');
+
+            if (diff <= 0) {
+                daysEl.textContent = '0';
+                hoursEl.textContent = '0';
+                minsEl.textContent = '0';
+                dateText.textContent = 'The webinar is happening now or has already passed!';
+                return;
+            }
+
+            daysEl.textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
+            hoursEl.textContent = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            minsEl.textContent = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' };
+            dateText.textContent = webinarDate.toLocaleDateString('en-US', options);
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
+
+        function copyLink() {
+            navigator.clipboard.writeText('https://justhomeleads.com/webinar').then(() => {
+                const feedback = document.getElementById('copyFeedback');
+                feedback.style.display = 'block';
+                setTimeout(() => { feedback.style.display = 'none'; }, 2500);
+            });
+        }
+
+        // SCROLL REVEAL
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = entry.target.getAttribute('data-delay') || 0;
+                    setTimeout(() => { entry.target.classList.add('visible'); }, parseInt(delay));
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.timeline-item, .cta-card').forEach(el => { observer.observe(el); });
+    </script>
+
+    <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+
+<script>
+
+// 8. Lead capture modal
+(function() {
+    'use strict';
+
+    var headlines = {
+        core:  { title: 'Get Matched with a Local Expert', sub: "We'll connect you with a vetted DFW professional who fits your needs. No pressure, no obligations." },
+        '1':   { title: 'Get Matched with a Mortgage-Ready Advisor', sub: 'Our lender partners specialize in helping buyers build credit-ready profiles and get pre-approved.' },
+        '2':   { title: 'Connect with a Pre-Approval Specialist', sub: "Not sure which loan fits? Our mortgage partners will walk you through it \u2014 no pressure." },
+        '3':   { title: 'Find a Local Buyer\'s Agent', sub: "We'll match you with a DFW agent who knows your target neighborhoods inside and out." },
+        '4':   { title: 'Talk to a Negotiation-Savvy Agent', sub: 'Get matched with an agent who has a proven track record in competitive DFW markets.' },
+        '5':   { title: 'Get Your Closing Team in Place', sub: "We'll connect you with inspectors, title professionals, and closing experts you can trust." },
+        '6':   { title: 'Connect with a Closing Expert', sub: 'Our title and escrow partners will make sure your closing day goes smoothly.' },
+        '7':   { title: 'Talk to a Wealth-Building Advisor', sub: 'Connect with professionals who can help you protect and grow your investment.' }
+    };
+
+    var overlay = document.getElementById('jhl-modal-overlay');
+    if (!overlay) return;
+
+    var closeBtn = document.getElementById('jhl-modal-close');
+    var form = document.getElementById('jhl-lead-form');
+    var submitBtn = document.getElementById('jhl-submit-btn');
+    var formState = document.getElementById('jhl-form-state');
+    var successState = document.getElementById('jhl-success-state');
+    var alreadyState = document.getElementById('jhl-already-state');
+    var successClose = document.getElementById('jhl-success-close');
+    var alreadyClose = document.getElementById('jhl-already-close');
+    var titleEl = document.getElementById('jhl-modal-title');
+    var subtitleEl = document.getElementById('jhl-modal-subtitle');
+    var nameInput = document.getElementById('jhl-lead-name');
+    var emailInput = document.getElementById('jhl-lead-email');
+    var phoneInput = document.getElementById('jhl-lead-phone');
+    var nameError = document.getElementById('jhl-name-error');
+    var emailError = document.getElementById('jhl-email-error');
+
+    function openModal() {
+        var phase = document.body.getAttribute('data-phase') || 'core';
+        var h = headlines[phase] || headlines.core;
+        titleEl.textContent = h.title;
+        subtitleEl.textContent = h.sub;
+
+        if (localStorage.getItem('jhl-lead-captured') === 'true') {
+            formState.classList.add('hidden');
+            successState.classList.remove('active');
+            alreadyState.classList.add('active');
+        } else {
+            formState.classList.remove('hidden');
+            successState.classList.remove('active');
+            alreadyState.classList.remove('active');
+        }
+
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        if (!localStorage.getItem('jhl-lead-captured')) {
+            setTimeout(function() { nameInput.focus(); }, 350);
+        }
+
+        if (window.jhlTrack) {
+            jhlTrack('modal_opened', { phase: phase });
+        }
+    }
+
+    function closeModal() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+
+        setTimeout(function() {
+            form.reset();
+            clearErrors();
+            formState.classList.remove('hidden');
+            successState.classList.remove('active');
+            alreadyState.classList.remove('active');
+            submitBtn.classList.remove('loading');
+            submitBtn.disabled = false;
+        }, 350);
+    }
+
+    // Intercept all #verified-network clicks
+    document.addEventListener('click', function(e) {
+        var link = e.target.closest('a[href="#verified-network"], a[href$="#verified-network"]');
+        if (link) {
+            e.preventDefault();
+            openModal();
+        }
+    });
+
+    // Close handlers
+    closeBtn.addEventListener('click', closeModal);
+    successClose.addEventListener('click', closeModal);
+    alreadyClose.addEventListener('click', closeModal);
+
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && overlay.classList.contains('active')) closeModal();
+    });
+
+    // Phone formatting
+    phoneInput.addEventListener('input', function(e) {
+        var v = e.target.value.replace(/\D/g, '');
+        if (v.length > 10) v = v.slice(0, 10);
+        if (v.length >= 6) {
+            v = '(' + v.slice(0,3) + ') ' + v.slice(3,6) + '-' + v.slice(6);
+        } else if (v.length >= 3) {
+            v = '(' + v.slice(0,3) + ') ' + v.slice(3);
+        }
+        e.target.value = v;
+    });
+
+    // Validation
+    function clearErrors() {
+        nameError.textContent = '';
+        emailError.textContent = '';
+        nameInput.classList.remove('error');
+        emailInput.classList.remove('error');
+    }
+
+    function validate() {
+        clearErrors();
+        var valid = true;
+
+        if (!nameInput.value.trim()) {
+            nameError.textContent = 'We need your first name to connect you.';
+            nameInput.classList.add('error');
+            valid = false;
+        }
+
+        var email = emailInput.value.trim();
+        if (!email) {
+            emailError.textContent = 'We need your email to reach out.';
+            emailInput.classList.add('error');
+            valid = false;
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            emailError.textContent = "That doesn't look like a valid email.";
+            emailInput.classList.add('error');
+            valid = false;
+        }
+
+        if (!valid) {
+            form.classList.add('jhl-shake');
+            setTimeout(function() { form.classList.remove('jhl-shake'); }, 400);
+        }
+
+        return valid;
+    }
+
+    // Form submission
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (!validate()) return;
+
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
+
+        var leadData = {
+            first_name: nameInput.value.trim(),
+            email: emailInput.value.trim(),
+            phone: phoneInput.value.trim(),
+            source_page: document.body.getAttribute('data-page'),
+            source_phase: document.body.getAttribute('data-phase'),
+            source_stage: document.body.getAttribute('data-stage'),
+            timestamp: new Date().toISOString()
+        };
+
+        // TODO: Replace with your GoHighLevel webhook URL
+        var GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/CHqaNRCWjmT6XyOUQtWd/webhook-trigger/8830eb17-1d96-4575-9f1d-82e4cba000f8';
+
+        if (GHL_WEBHOOK_URL) {
+            fetch(GHL_WEBHOOK_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(leadData)
+            })
+            .then(function() { showSuccess(); })
+            .catch(function() { showSuccess(); }); // Still show success to user
+        } else {
+            // No webhook configured — simulate success
+            setTimeout(function() { showSuccess(); }, 1000);
+        }
+
+        function showSuccess() {
+            localStorage.setItem('jhl-lead-captured', 'true');
+            formState.classList.add('hidden');
+            successState.classList.add('active');
+            submitBtn.classList.remove('loading');
+            submitBtn.disabled = false;
+
+            if (window.jhlTrack) {
+                jhlTrack('lead_captured', leadData);
+            }
+        }
+    });
+
+    // Enrichment tracking
+    overlay.addEventListener('change', function(e) {
+        if (e.target.name === 'journey_stage' || e.target.name === 'help_type') {
+            if (window.jhlTrack) {
+                jhlTrack('enrichment_selected', {
+                    field: e.target.name,
+                    value: e.target.value
+                });
+            }
+        }
+    });
+})();
+</script>
+</body>
+</html>
