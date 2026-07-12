@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /webinar-confirmed
+
+Sitemap: https://justhomeleads.com/sitemap.xml

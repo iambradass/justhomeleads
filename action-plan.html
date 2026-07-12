@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
+    <!-- PostHog Analytics -->
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_J5leAeIhlii1DrCYpJ6deiNfyFrs6fDaYTJDCdcEWN1',{api_host:'https://us.i.posthog.com',person_profiles:'identified_only'});
+    </script>
+    <!-- End PostHog Analytics -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
@@ -10,8 +16,20 @@
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-  <link href="jhl-redesign.css" rel="stylesheet"/>
- </head>
+  <link href="jhl-redesign.css?v=20260711a" rel="stylesheet"/>
+     <link rel="canonical" href="https://justhomeleads.com/action-plan">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Just Home Leads">
+    <meta property="og:title" content="Your 12-Month Homebuying Action Plan | Just Home Leads">
+    <meta property="og:description" content="DFW's trusted first-time homebuyer education platform.">
+    <meta property="og:url" content="https://justhomeleads.com/action-plan">
+    <meta property="og:image" content="https://justhomeleads.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
  <body data-page="action-plan" data-phase="core" data-stage="core">
   <!-- Skip Link -->
   <a class="skip-link" href="#main">
@@ -33,7 +51,7 @@
        Leads
       </div>
       <div class="jhl-logo__tagline">
-       Dallas–Fort Worth
+       Dallas-Fort Worth
       </div>
      </div>
     </a>
@@ -45,7 +63,7 @@
                     </a>
                     <div class="jhl-nav__dropdown jhl-nav__dropdown--mega">
                         <a class="jhl-nav__dropdown-featured" href="/journey">
-                            Journey Overview — See All Phases
+                            Journey Overview: See All Phases
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         </a>
                         <div class="jhl-nav__dropdown-grid">
@@ -87,7 +105,7 @@
                     </div>
                 </div>
                 <a class="jhl-nav__link" href="/webinar">Webinar</a>
-                <button class="jhl-explore-btn" id="explore-toggle" aria-label="Explore all topics">
+                <button class="jhl-explore-btn" id="explore-toggle" aria-label="Explore all topics" aria-expanded="false" aria-controls="explore-menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></svg>
                     Explore
                 </button>
@@ -98,7 +116,7 @@
                     </svg>
                 </a>
             </nav>
-    <button aria-label="Open menu" class="jhl-menu-toggle">
+    <button aria-label="Open menu" class="jhl-menu-toggle" aria-expanded="false" aria-controls="mobile-nav">
      <span>
      </span>
      <span>
@@ -129,6 +147,7 @@
                         <a href="/lender-shopping">Lender Shopping</a>
                         <a href="/active-search-strategies">Search Strategies</a>
                         <a href="/home-touring-guide">Home Touring</a>
+                        <a href="/neighborhood-research-guide">Neighborhoods</a>
                         <a href="/writing-winning-offers">Writing Offers</a>
                         <a href="/closing-costs-breakdown">Closing Costs</a>
                         <a href="/closing-day-guide">Closing Day</a>
@@ -243,6 +262,7 @@
                     <a href="/action-plan">12-Month Action Plan</a>
                     <a href="/honest-truth">The Honest Truth</a>
                     <a href="/reality-check">Reality Check Quiz</a>
+                    <a href="/red-flags-checklist">Red Flags Checklist</a>
                     <a href="/money-truth">Money Truth</a>
                     <a href="/market-timing">Market Timing</a>
                     <a href="/property-tax-guide">Property Tax Guide</a>
@@ -270,7 +290,7 @@
       Your 12-Month Homebuying Action Plan
      </h1>
      <p class="jhl-hero__subtitle">
-      Transform "Someday" Into "Keys in Hand" — One Month at a Time
+      Transform "Someday" Into "Keys in Hand", One Month at a Time
      </p>
 
                 <div class="jhl-updated-badge">
@@ -301,7 +321,7 @@
     </h2>
     <p>
      Buying your first home feels overwhelming because you're trying to see the whole mountain at once.
-            This action plan breaks that mountain into 12 manageable hills—one month at a time, one step at a time.
+            This action plan breaks that mountain into 12 manageable hills, one month at a time, one step at a time.
     </p>
     <p>
      <strong>
@@ -476,7 +496,7 @@
          This Month's Focus
         </h3>
         <p>
-         Get brutally honest about where you are right now. No judgment, no comparison to others—just clear-eyed assessment of your starting point. Knowledge is power, and this month is about gathering that power.
+         Get brutally honest about where you are right now. No judgment, no comparison to others, just clear-eyed assessment of your starting point. Knowledge is power, and this month is about gathering that power.
         </p>
        </div>
        <div class="tasks-section">
@@ -485,7 +505,7 @@
         </h3>
         <div class="task-category">
          <h4>
-          📊 Financial Discovery
+           Financial Discovery
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="1-1">
@@ -496,7 +516,7 @@
              Pull your free credit reports from all 3 bureaus
             </div>
             <div class="task-description">
-             Visit AnnualCreditReport.com (the only official free site). Check for errors. Don't panic at your score—just observe.
+             Visit AnnualCreditReport.com (the only official free site). Check for errors. Don't panic at your score, just observe.
             </div>
            </div>
           </div>
@@ -508,7 +528,7 @@
              Calculate your actual monthly income and expenses
             </div>
             <div class="task-description">
-             Use our Financial Snapshot worksheet. Include everything—yes, even the coffee runs and streaming services.
+             Use our Financial Snapshot worksheet. Include everything, yes, even the coffee runs and streaming services.
             </div>
            </div>
           </div>
@@ -520,7 +540,7 @@
              List all your current debts with balances and minimum payments
             </div>
             <div class="task-description">
-             Student loans, car payments, credit cards, personal loans—write them all down. We'll tackle them strategically.
+             Student loans, car payments, credit cards, personal loans, write them all down. We'll tackle them strategically.
             </div>
            </div>
           </div>
@@ -540,7 +560,7 @@
         </div>
         <div class="task-category">
          <h4>
-          🎓 Education
+           Education
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="1-5">
@@ -551,7 +571,7 @@
              Complete our "Are You Ready?" quiz
             </div>
             <div class="task-description">
-             Be honest—this is for you, not for us. The results will guide your timeline.
+             Be honest, this is for you, not for us. The results will guide your timeline.
             </div>
            </div>
           </div>
@@ -563,7 +583,7 @@
              Read: "The Honest Truth About Homebuying"
             </div>
             <div class="task-description">
-             Our no-BS guide to what homeownership really costs and feels like. Bookmark it—you'll reference it often.
+             Our no-BS guide to what homeownership really costs and feels like. Bookmark it, you'll reference it often.
             </div>
            </div>
           </div>
@@ -583,7 +603,7 @@
         </div>
         <div class="task-category">
          <h4>
-          🎯 Goal Setting
+           Goal Setting
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="1-8">
@@ -591,7 +611,7 @@
            </div>
            <div class="task-content">
             <div class="task-title">
-             Define your "why"—write it down
+             Define your "why", write it down
             </div>
             <div class="task-description">
              Why do you want to buy? When you're frustrated later, this reminder will keep you going.
@@ -634,7 +654,7 @@
           Don't compare your financial snapshot to others. Everyone starts somewhere different.
          </li>
          <li>
-          If your credit report has errors, dispute them immediately—it can take 30-60 days to resolve.
+          If your credit report has errors, dispute them immediately, it can take 30-60 days to resolve.
          </li>
          <li>
           Save all your worksheets and notes in one folder (physical or digital). You'll reference them throughout the journey.
@@ -643,7 +663,7 @@
           Talk to your partner/family about expectations early. Misaligned expectations cause most homebuying stress.
          </li>
          <li>
-          Join our free Facebook group for first-time DFW buyers—you'll find community and accountability.
+          Join our free Facebook group for first-time DFW buyers, you'll find community and accountability.
          </li>
         </ul>
        </div>
@@ -652,18 +672,18 @@
          Month 1 Milestone
         </h3>
         <p>
-         Complete Financial Self-Assessment — You'll know exactly where you stand and what you need to work on.
+         Complete Financial Self-Assessment, You'll know exactly where you stand and what you need to work on.
         </p>
        </div>
        <div class="celebration-section">
         <div class="emoji">
-         🎉
+         
         </div>
         <h3>
          Celebrate Your Progress!
         </h3>
         <p>
-         You've taken the hardest step—starting! Most people never get this far. You've gathered crucial information about your starting point. That's huge!
+         You've taken the hardest step, starting! Most people never get this far. You've gathered crucial information about your starting point. That's huge!
         </p>
         <div class="celebration-actions">
          <button class="celebration-btn" onclick="shareProgress(1)">
@@ -710,7 +730,7 @@
         </h3>
         <div class="task-category">
          <h4>
-          💳 Credit Strategy
+           Credit Strategy
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="2-1">
@@ -753,7 +773,7 @@
         </div>
         <div class="task-category">
          <h4>
-          💰 Budget &amp; Savings
+           Budget &amp; Savings
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="2-4">
@@ -776,7 +796,7 @@
              Set up automatic transfer on payday
             </div>
             <div class="task-description">
-             Even $50-100 per paycheck adds up. Start with what you can afford—you can increase it later.
+             Even $50-100 per paycheck adds up. Start with what you can afford, you can increase it later.
             </div>
            </div>
           </div>
@@ -788,7 +808,7 @@
              Cut one recurring expense
             </div>
             <div class="task-description">
-             Subscriptions you don't use, downsizing your cable/streaming, cooking at home more—redirect that money to savings.
+             Subscriptions you don't use, downsizing your cable/streaming, cooking at home more, redirect that money to savings.
             </div>
            </div>
           </div>
@@ -796,7 +816,7 @@
         </div>
         <div class="task-category">
          <h4>
-          📚 Education
+           Education
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="2-7">
@@ -819,7 +839,7 @@
              Learn about down payment assistance programs
             </div>
             <div class="task-description">
-             Texas has several first-time buyer programs. Research what's available in DFW—you might qualify for help.
+             Texas has several first-time buyer programs. Research what's available in DFW, you might qualify for help.
             </div>
            </div>
           </div>
@@ -832,13 +852,13 @@
         </h4>
         <ul>
          <li>
-          Don't close old credit cards—it can hurt your credit age and utilization ratio.
+          Don't close old credit cards, it can hurt your credit age and utilization ratio.
          </li>
          <li>
           If you get a windfall (tax refund, bonus), put at least half toward your home fund.
          </li>
          <li>
-          Track your credit score monthly using Credit Karma or your bank's free tool—watch it improve!
+          Track your credit score monthly using Credit Karma or your bank's free tool, watch it improve!
          </li>
          <li>
           Avoid taking on new debt this month. Every new inquiry can temporarily lower your score.
@@ -853,18 +873,18 @@
          Month 2 Milestone
         </h3>
         <p>
-         Begin Credit Improvement &amp; Establish Savings Habits — You're building the foundation for mortgage approval.
+         Begin Credit Improvement &amp; Establish Savings Habits, You're building the foundation for mortgage approval.
         </p>
        </div>
        <div class="celebration-section">
         <div class="emoji">
-         💪
+         
         </div>
         <h3>
          Keep Building Momentum!
         </h3>
         <p>
-         Two months in! You're not just learning—you're taking action. That's what separates dreamers from homeowners.
+         Two months in! You're not just learning, you're taking action. That's what separates dreamers from homeowners.
         </p>
         <div class="celebration-actions">
          <button class="celebration-btn" onclick="shareProgress(2)">
@@ -901,7 +921,7 @@
          This Month's Focus
         </h3>
         <p>
-         Dig deeper into credit optimization and create a strategic debt paydown plan. You're not just maintaining now—you're actively improving your financial position.
+         Dig deeper into credit optimization and create a strategic debt paydown plan. You're not just maintaining now, you're actively improving your financial position.
         </p>
        </div>
        <div class="tasks-section">
@@ -910,7 +930,7 @@
         </h3>
         <div class="task-category">
          <h4>
-          📈 Credit Optimization
+           Credit Optimization
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="3-1">
@@ -933,7 +953,7 @@
              Dispute any remaining errors on credit reports
             </div>
             <div class="task-description">
-             Follow up on Month 1 disputes. Check all three bureaus—errors on one may not appear on others.
+             Follow up on Month 1 disputes. Check all three bureaus, errors on one may not appear on others.
             </div>
            </div>
           </div>
@@ -953,7 +973,7 @@
         </div>
         <div class="task-category">
          <h4>
-          💳 Debt Paydown
+           Debt Paydown
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="3-4">
@@ -988,7 +1008,7 @@
              Calculate your debt-to-income ratio (DTI)
             </div>
             <div class="task-description">
-             Total monthly debt payments ÷ gross monthly income. Lenders want to see below 43%—ideally below 36%.
+             Total monthly debt payments ÷ gross monthly income. Lenders want to see below 43%, ideally below 36%.
             </div>
            </div>
           </div>
@@ -996,7 +1016,7 @@
         </div>
         <div class="task-category">
          <h4>
-          🎯 Planning
+           Planning
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="3-7">
@@ -1035,13 +1055,13 @@
           Your credit score can take 2-3 months to reflect improvements. Be patient but keep going.
          </li>
          <li>
-          Don't apply for new credit cards this month—wait until after you get your mortgage.
+          Don't apply for new credit cards this month, wait until after you get your mortgage.
          </li>
          <li>
           If your DTI is above 43%, focus on aggressive debt paydown before house hunting.
          </li>
          <li>
-          Track all three credit scores (Experian, Equifax, TransUnion)—lenders use the middle score.
+          Track all three credit scores (Experian, Equifax, TransUnion), lenders use the middle score.
          </li>
          <li>
           Start a "wish list" document for your future home. What's negotiable vs. non-negotiable?
@@ -1053,12 +1073,12 @@
          Month 3 Milestone
         </h3>
         <p>
-         Credit Score Improvement Visible — Your intentional actions from Months 1-2 are starting to show measurable results.
+         Credit Score Improvement Visible, Your intentional actions from Months 1-2 are starting to show measurable results.
         </p>
        </div>
        <div class="celebration-section">
         <div class="emoji">
-         📊
+         
         </div>
         <h3>
          You're Making Real Progress!
@@ -1101,7 +1121,7 @@
          This Month's Focus
         </h3>
         <p>
-         You've built good habits—now accelerate them. Find creative ways to boost your savings and lock in your budget discipline.
+         You've built good habits, now accelerate them. Find creative ways to boost your savings and lock in your budget discipline.
         </p>
        </div>
        <div class="tasks-section">
@@ -1110,7 +1130,7 @@
         </h3>
         <div class="task-category">
          <h4>
-          💸 Savings Boost
+           Savings Boost
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="4-1">
@@ -1165,7 +1185,7 @@
         </div>
         <div class="task-category">
          <h4>
-          📊 Budget Optimization
+           Budget Optimization
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="4-5">
@@ -1196,7 +1216,7 @@
         </div>
         <div class="task-category">
          <h4>
-          🏡 Market Research
+           Market Research
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="4-7">
@@ -1207,7 +1227,7 @@
              Browse Zillow/Realtor.com in your target neighborhoods
             </div>
             <div class="task-description">
-             Don't get emotionally attached yet—just get a feel for what your budget buys in DFW.
+             Don't get emotionally attached yet, just get a feel for what your budget buys in DFW.
             </div>
            </div>
           </div>
@@ -1235,7 +1255,7 @@
           When browsing homes online, filter by "recently sold" to see realistic prices, not just listing prices.
          </li>
          <li>
-          Don't forget closing costs—typically 2-5% of the purchase price on top of your down payment.
+          Don't forget closing costs, typically 2-5% of the purchase price on top of your down payment.
          </li>
          <li>
           Track your savings growth visually (chart, graph, thermometer). Seeing progress motivates more progress.
@@ -1244,7 +1264,7 @@
           If you're married/partnered, make sure you're both aligned on budget and savings goals. Communication prevents conflict.
          </li>
          <li>
-          Texas property taxes are high—budget for them realistically. DFW averages 2-2.5% of home value annually.
+          Texas property taxes are high, budget for them realistically. DFW averages 2-2.5% of home value annually.
          </li>
         </ul>
        </div>
@@ -1253,12 +1273,12 @@
          Month 4 Milestone
         </h3>
         <p>
-         Savings Accelerated &amp; Budget Locked In — You've proven you can save consistently and you know what you can afford.
+         Savings Accelerated &amp; Budget Locked In, You've proven you can save consistently and you know what you can afford.
         </p>
        </div>
        <div class="celebration-section">
         <div class="emoji">
-         🚀
+         
         </div>
         <h3>
          You're Building Serious Momentum!
@@ -1310,7 +1330,7 @@
         </h3>
         <div class="task-category">
          <h4>
-          🏦 Lender Research
+           Lender Research
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="5-1">
@@ -1345,7 +1365,7 @@
              Get rate quotes from at least 3 lenders
             </div>
             <div class="task-description">
-             Do this within a 14-day window—multiple mortgage inquiries count as one for credit scoring purposes.
+             Do this within a 14-day window, multiple mortgage inquiries count as one for credit scoring purposes.
             </div>
            </div>
           </div>
@@ -1353,7 +1373,7 @@
         </div>
         <div class="task-category">
          <h4>
-          📄 Document Gathering
+           Document Gathering
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="5-4">
@@ -1408,7 +1428,7 @@
         </div>
         <div class="task-category">
          <h4>
-          ✅ Final Checks
+          ✓ Final Checks
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="5-8">
@@ -1432,13 +1452,13 @@
         </h4>
         <ul>
          <li>
-          Don't make any large purchases or move money between accounts right before applying—it raises red flags.
+          Don't make any large purchases or move money between accounts right before applying, it raises red flags.
          </li>
          <li>
-          Ask lenders about "lender credits" vs. "discount points"—different ways to manage upfront costs and rates.
+          Ask lenders about "lender credits" vs. "discount points", different ways to manage upfront costs and rates.
          </li>
          <li>
-          Local credit unions often have better rates than big banks—don't overlook them.
+          Local credit unions often have better rates than big banks, don't overlook them.
          </li>
          <li>
           Pre-qualification is NOT the same as pre-approval. You want pre-approval (the real, verified one).
@@ -1453,18 +1473,18 @@
          Month 5 Milestone
         </h3>
         <p>
-         Pre-Approval Ready — Documents gathered, lenders researched, credit optimized. You're positioned for approval.
+         Pre-Approval Ready, Documents gathered, lenders researched, credit optimized. You're positioned for approval.
         </p>
        </div>
        <div class="celebration-section">
         <div class="emoji">
-         📋
+         
         </div>
         <h3>
          You're Almost Pre-Approved!
         </h3>
         <p>
-         Five months of preparation. You're not winging this—you're doing it right. Next month you'll get that pre-approval letter!
+         Five months of preparation. You're not winging this, you're doing it right. Next month you'll get that pre-approval letter!
         </p>
         <div class="celebration-actions">
          <button class="celebration-btn" onclick="shareProgress(5)">
@@ -1510,7 +1530,7 @@
         </h3>
         <div class="task-category">
          <h4>
-          ✅ Pre-Approval
+          ✓ Pre-Approval
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="6-1">
@@ -1521,7 +1541,7 @@
              Submit your pre-approval application
             </div>
             <div class="task-description">
-             Choose your lender and apply. You've done the prep—now make it official.
+             Choose your lender and apply. You've done the prep, now make it official.
             </div>
            </div>
           </div>
@@ -1553,7 +1573,7 @@
         </div>
         <div class="task-category">
          <h4>
-          🏘️ Agent Selection
+           Agent Selection
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="6-4">
@@ -1596,7 +1616,7 @@
         </div>
         <div class="task-category">
          <h4>
-          🎯 Search Preparation
+           Search Preparation
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="6-7">
@@ -1635,16 +1655,16 @@
           Pre-approval letters expire (usually 60-90 days). You may need to refresh it if your search takes longer.
          </li>
          <li>
-          Don't feel pressured to work with the first agent who's nice to you. This is a business relationship—choose strategically.
+          Don't feel pressured to work with the first agent who's nice to you. This is a business relationship, choose strategically.
          </li>
          <li>
-          A great agent saves you money through negotiation—way more than their commission costs you.
+          A great agent saves you money through negotiation, way more than their commission costs you.
          </li>
          <li>
-          Some agents specialize in first-time buyers. That expertise is valuable—seek it out.
+          Some agents specialize in first-time buyers. That expertise is valuable, seek it out.
          </li>
          <li>
-          Connect with our verified agent network—they know DFW and work well with first-time buyers.
+          Connect with our verified agent network, they know DFW and work well with first-time buyers.
          </li>
         </ul>
        </div>
@@ -1653,18 +1673,18 @@
          Month 6 Milestone
         </h3>
         <p>
-         Pre-Approved &amp; Agent Partnership Established — You're officially a qualified buyer with professional representation.
+         Pre-Approved &amp; Agent Partnership Established, You're officially a qualified buyer with professional representation.
         </p>
        </div>
        <div class="celebration-section">
         <div class="emoji">
-         🎯
+         
         </div>
         <h3>
          You're Officially a Qualified Buyer!
         </h3>
         <p>
-         Halfway through your journey. Pre-approval in hand. Agent on your team. You're not dreaming anymore—you're shopping!
+         Halfway through your journey. Pre-approval in hand. Agent on your team. You're not dreaming anymore, you're shopping!
         </p>
         <div class="celebration-actions">
          <button class="celebration-btn" onclick="shareProgress(6)">
@@ -1710,7 +1730,7 @@
         </h3>
         <div class="task-category">
          <h4>
-          🏡 Touring &amp; Searching
+           Touring &amp; Searching
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="7-1">
@@ -1757,7 +1777,7 @@
              Attend weekend open houses
             </div>
             <div class="task-description">
-             Even for homes not quite right—you're learning and building relationships with listing agents.
+             Even for homes not quite right, you're learning and building relationships with listing agents.
             </div>
            </div>
           </div>
@@ -1765,7 +1785,7 @@
         </div>
         <div class="task-category">
          <h4>
-          📊 Market Education
+           Market Education
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="7-5">
@@ -1796,7 +1816,7 @@
         </div>
         <div class="task-category">
          <h4>
-          🔍 Inspection Mindset
+           Inspection Mindset
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="7-7">
@@ -1844,7 +1864,7 @@
           If you're buying with a partner, tour together. You need to agree before you make an offer.
          </li>
          <li>
-          DFW market moves fast—good homes sell quickly. Be ready to move when you find the right one.
+          DFW market moves fast, good homes sell quickly. Be ready to move when you find the right one.
          </li>
         </ul>
        </div>
@@ -1853,18 +1873,18 @@
          Month 7 Milestone
         </h3>
         <p>
-         Active Buyer &amp; Market Expert — You're seeing homes in person and developing a trained eye for what you want.
+         Active Buyer &amp; Market Expert, You're seeing homes in person and developing a trained eye for what you want.
         </p>
        </div>
        <div class="celebration-section">
         <div class="emoji">
-         🏘️
+         
         </div>
         <h3>
          You're Really Doing This!
         </h3>
         <p>
-         Walking through homes that could be YOURS. Imagining your life there. This is the exciting part—enjoy it!
+         Walking through homes that could be YOURS. Imagining your life there. This is the exciting part, enjoy it!
         </p>
         <div class="celebration-actions">
          <button class="celebration-btn" onclick="shareProgress(7)">
@@ -1901,7 +1921,7 @@
          This Month's Focus
         </h3>
         <p>
-         You've toured enough to know what you want. Now get strategic—narrow your criteria and evaluate properties like an investor, not just a dreamer.
+         You've toured enough to know what you want. Now get strategic, narrow your criteria and evaluate properties like an investor, not just a dreamer.
         </p>
        </div>
        <div class="tasks-section">
@@ -1910,7 +1930,7 @@
         </h3>
         <div class="task-category">
          <h4>
-          🎯 Search Refinement
+           Search Refinement
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="8-1">
@@ -1933,7 +1953,7 @@
              Narrow to 2-3 target neighborhoods max
             </div>
             <div class="task-description">
-             Focus your search. You can't watch the whole market—get specific about where you want to be.
+             Focus your search. You can't watch the whole market, get specific about where you want to be.
             </div>
            </div>
           </div>
@@ -1953,7 +1973,7 @@
         </div>
         <div class="task-category">
          <h4>
-          🔎 Smart Evaluation
+           Smart Evaluation
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="8-4">
@@ -1996,7 +2016,7 @@
         </div>
         <div class="task-category">
          <h4>
-          🏗️ Future Planning
+           Future Planning
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="8-7">
@@ -2019,7 +2039,7 @@
              Research home inspector recommendations
             </div>
             <div class="task-description">
-             When you make an offer, you'll need one fast. Get referrals now—don't scramble later.
+             When you make an offer, you'll need one fast. Get referrals now, don't scramble later.
             </div>
            </div>
           </div>
@@ -2044,7 +2064,7 @@
           Ask your agent about planned developments or zoning changes near properties you like.
          </li>
          <li>
-          If you're seeing the same house listed multiple times, ask why—there's usually a reason it's not selling.
+          If you're seeing the same house listed multiple times, ask why, there's usually a reason it's not selling.
          </li>
         </ul>
        </div>
@@ -2053,18 +2073,18 @@
          Month 8 Milestone
         </h3>
         <p>
-         Refined Search &amp; Strategic Buyer — You know exactly what you want and you're evaluating homes like a pro.
+         Refined Search &amp; Strategic Buyer, You know exactly what you want and you're evaluating homes like a pro.
         </p>
        </div>
        <div class="celebration-section">
         <div class="emoji">
-         🔍
+         
         </div>
         <h3>
          You're Thinking Like a Homeowner!
         </h3>
         <p>
-         Eight months of preparation and learning. You're not just looking—you're evaluating strategically. That's powerful.
+         Eight months of preparation and learning. You're not just looking, you're evaluating strategically. That's powerful.
         </p>
         <div class="celebration-actions">
          <button class="celebration-btn" onclick="shareProgress(8)">
@@ -2110,7 +2130,7 @@
         </h3>
         <div class="task-category">
          <h4>
-          📝 Offer Preparation
+           Offer Preparation
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="9-1">
@@ -2153,7 +2173,7 @@
         </div>
         <div class="task-category">
          <h4>
-          🏡 Making the Offer
+           Making the Offer
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="9-4">
@@ -2164,7 +2184,7 @@
              Write a competitive offer on your top choice
             </div>
             <div class="task-description">
-             Price, contingencies, timeline—your agent will guide you. In DFW's market, being aggressive can be necessary.
+             Price, contingencies, timeline, your agent will guide you. In DFW's market, being aggressive can be necessary.
             </div>
            </div>
           </div>
@@ -2196,7 +2216,7 @@
         </div>
         <div class="task-category">
          <h4>
-          💪 Staying Ready
+           Staying Ready
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="9-7">
@@ -2232,7 +2252,7 @@
         </h4>
         <ul>
          <li>
-          In a seller's market, waiving contingencies can make your offer stronger—but know the risks.
+          In a seller's market, waiving contingencies can make your offer stronger, but know the risks.
          </li>
          <li>
           Escalation clauses can help in multiple-offer situations, but set a firm ceiling.
@@ -2244,7 +2264,7 @@
           If your first offer gets rejected, don't panic. The right home is still out there.
          </li>
          <li>
-          Your agent's negotiation skills matter here. Trust their advice—they've done this before.
+          Your agent's negotiation skills matter here. Trust their advice, they've done this before.
          </li>
         </ul>
        </div>
@@ -2253,18 +2273,18 @@
          Month 9 Milestone
         </h3>
         <p>
-         Offer Submitted &amp; Negotiation Underway — You're a serious buyer making real moves in the market.
+         Offer Submitted &amp; Negotiation Underway, You're a serious buyer making real moves in the market.
         </p>
        </div>
        <div class="celebration-section">
         <div class="emoji">
-         🎯
+         
         </div>
         <h3>
          You Made an Offer!
         </h3>
         <p>
-         This is huge! Whether it's accepted or you make three more—you're in the game. The finish line is in sight!
+         This is huge! Whether it's accepted or you make three more, you're in the game. The finish line is in sight!
         </p>
         <div class="celebration-actions">
          <button class="celebration-btn" onclick="shareProgress(9)">
@@ -2292,7 +2312,7 @@
         Month 10
        </h2>
        <p class="theme">
-        Under Contract — Inspections &amp; Appraisal
+        Under Contract, Inspections &amp; Appraisal
        </p>
       </div>
       <div class="month-content">
@@ -2301,7 +2321,7 @@
          This Month's Focus
         </h3>
         <p>
-         Your offer was accepted! Now the real work begins. Inspections, appraisals, and due diligence—this is where you confirm you're making a smart purchase.
+         Your offer was accepted! Now the real work begins. Inspections, appraisals, and due diligence, this is where you confirm you're making a smart purchase.
         </p>
        </div>
        <div class="tasks-section">
@@ -2310,7 +2330,7 @@
         </h3>
         <div class="task-category">
          <h4>
-          🔍 Inspections
+           Inspections
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="10-1">
@@ -2321,7 +2341,7 @@
              Schedule home inspection within 7-10 days
             </div>
             <div class="task-description">
-             Your contract has an inspection period deadline. Book immediately—good inspectors fill up fast.
+             Your contract has an inspection period deadline. Book immediately, good inspectors fill up fast.
             </div>
            </div>
           </div>
@@ -2357,7 +2377,7 @@
              Request repairs or credits if needed
             </div>
             <div class="task-description">
-             Foundation issues, roof problems, major systems—these are negotiable. Don't sweat minor cosmetic stuff.
+             Foundation issues, roof problems, major systems, these are negotiable. Don't sweat minor cosmetic stuff.
             </div>
            </div>
           </div>
@@ -2365,7 +2385,7 @@
         </div>
         <div class="task-category">
          <h4>
-          📊 Appraisal
+           Appraisal
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="10-5">
@@ -2376,7 +2396,7 @@
              Lender orders appraisal
             </div>
             <div class="task-description">
-             You don't control this—the lender does. They need to confirm the home is worth what you're paying.
+             You don't control this, the lender does. They need to confirm the home is worth what you're paying.
             </div>
            </div>
           </div>
@@ -2396,7 +2416,7 @@
         </div>
         <div class="task-category">
          <h4>
-          📋 Continuing Due Diligence
+           Continuing Due Diligence
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="10-7">
@@ -2432,7 +2452,7 @@
         </h4>
         <ul>
          <li>
-          Every home has issues. Don't expect perfection—focus on major structural/safety concerns.
+          Every home has issues. Don't expect perfection, focus on major structural/safety concerns.
          </li>
          <li>
           If the seller refuses reasonable repair requests, you can walk away. That's what the inspection contingency is for.
@@ -2453,12 +2473,12 @@
          Month 10 Milestone
         </h3>
         <p>
-         Under Contract &amp; Due Diligence Complete — Inspections done, appraisal complete, repairs negotiated. You're protected.
+         Under Contract &amp; Due Diligence Complete, Inspections done, appraisal complete, repairs negotiated. You're protected.
         </p>
        </div>
        <div class="celebration-section">
         <div class="emoji">
-         🏠
+         
         </div>
         <h3>
          You're Under Contract!
@@ -2510,7 +2530,7 @@
         </h3>
         <div class="task-category">
          <h4>
-          🏦 Loan Finalization
+           Loan Finalization
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="11-1">
@@ -2533,7 +2553,7 @@
              Lock your interest rate if you haven't
             </div>
             <div class="task-description">
-             Rates fluctuate. Once you're confident, lock it in. Timing matters—talk to your lender.
+             Rates fluctuate. Once you're confident, lock it in. Timing matters, talk to your lender.
             </div>
            </div>
           </div>
@@ -2553,7 +2573,7 @@
         </div>
         <div class="task-category">
          <h4>
-          📋 Closing Preparation
+           Closing Preparation
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="11-4">
@@ -2608,7 +2628,7 @@
         </div>
         <div class="task-category">
          <h4>
-          📦 Move Planning
+           Move Planning
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="11-8">
@@ -2638,10 +2658,10 @@
           If you spot errors on your Closing Disclosure, speak up immediately. Don't sign if numbers are wrong.
          </li>
          <li>
-          Wire fraud is real—always verify wiring instructions by calling title company directly (not email!).
+          Wire fraud is real, always verify wiring instructions by calling title company directly (not email!).
          </li>
          <li>
-          Bring your ID and proof of insurance to closing. Some states require additional docs—your agent will confirm.
+          Bring your ID and proof of insurance to closing. Some states require additional docs, your agent will confirm.
          </li>
          <li>
           Set up utilities (electric, gas, water, internet) to transfer on closing day so you're not in the dark.
@@ -2653,7 +2673,7 @@
          Month 11 Milestone
         </h3>
         <p>
-         Clear to Close &amp; Closing Day Scheduled — All approvals done. Closing date set. The house is almost yours!
+         Clear to Close &amp; Closing Day Scheduled, All approvals done. Closing date set. The house is almost yours!
         </p>
        </div>
        <div class="celebration-section">
@@ -2710,7 +2730,7 @@
         </h3>
         <div class="task-category">
          <h4>
-          🎉 Closing Day
+           Closing Day
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="12-1">
@@ -2753,7 +2773,7 @@
         </div>
         <div class="task-category">
          <h4>
-          🏡 First Week Homeowner
+           First Week Homeowner
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="12-4">
@@ -2808,7 +2828,7 @@
         </div>
         <div class="task-category">
          <h4>
-          📚 Set Up for Success
+           Set Up for Success
          </h4>
          <div class="task-list">
           <div class="task-item" data-task-id="12-8">
@@ -2868,7 +2888,7 @@
           Don't blow your savings on furniture and upgrades immediately. Give yourself time to live in the space first.
          </li>
          <li>
-          Consider homestead exemption for property tax savings—file with your county appraisal district.
+          Consider homestead exemption for property tax savings, file with your county appraisal district.
          </li>
         </ul>
        </div>
@@ -2877,12 +2897,12 @@
          Month 12 Milestone
         </h3>
         <p>
-         HOMEOWNER! — You did it. Keys in hand. You followed the plan, stayed disciplined, and made it happen. Welcome home!
+         HOMEOWNER!, You did it. Keys in hand. You followed the plan, stayed disciplined, and made it happen. Welcome home!
         </p>
        </div>
        <div class="celebration-section">
         <div class="emoji">
-         🔑
+         
         </div>
         <h3>
          You're a Homeowner!
@@ -2952,7 +2972,7 @@
        Consistent progress over 12 months beats overwhelming yourself with everything at once
       </li>
       <li>
-       Every completed task brings you closer to keys in hand—celebrate the small wins
+       Every completed task brings you closer to keys in hand, celebrate the small wins
       </li>
       <li>
        Your timeline can flex, but the process stays the same: assess, improve, prepare, execute
@@ -3180,7 +3200,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
             </div>
             <h2 class="jhl-success-title">You're Connected!</h2>
-            <p class="jhl-success-subtitle">A verified DFW expert will reach out within 2 hours &mdash; usually much faster.</p>
+            <p class="jhl-success-subtitle">A verified DFW expert will reach out within 2 hours, usually much faster.</p>
 
             <div class="jhl-enrichment">
                 <div class="jhl-enrichment__label">Where are you in your journey?</div>
@@ -3321,7 +3341,7 @@
             updateMonthButtons();
 
             // Show celebration
-            alert(`🎉 Congratulations! Month ${monthNumber} complete!
+            alert(` Congratulations! Month ${monthNumber} complete!
 
 You're ${Math.round((monthNumber / 12) * 100)}% through your journey to homeownership!
 
@@ -3354,7 +3374,7 @@ Keep up the amazing work!`);
 
     // Share progress function
     function shareProgress(monthNumber) {
-        const text = `I just completed Month ${monthNumber} of my homebuying journey with Just Home Leads! ${Math.round((monthNumber / 12) * 100)}% of the way to homeownership! 🏠🎉`;
+        const text = `I just completed Month ${monthNumber} of my homebuying journey with Just Home Leads! ${Math.round((monthNumber / 12) * 100)}% of the way to homeownership! `;
 
         if (navigator.share) {
             navigator.share({
@@ -3371,17 +3391,17 @@ Keep up the amazing work!`);
 
     // Download PDF function
     function downloadPDF() {
-        alert('📥 PDF download would be generated here with your personalized checklist and current progress marked!');
+        alert(' PDF download would be generated here with your personalized checklist and current progress marked!');
     }
 
     // Download Excel function
     function downloadExcel() {
-        alert('📊 Excel tracker would be generated here with all tasks, dates, and progress tracking formulas!');
+        alert(' Excel tracker would be generated here with all tasks, dates, and progress tracking formulas!');
     }
 
     // Email plan function
     function emailPlan() {
-        alert('📧 Email signup would go here - we\'d send you the full plan plus weekly reminders and tips!');
+        alert(' Email signup would go here - we\'d send you the full plan plus weekly reminders and tips!');
     }
  </script>
  <script>
@@ -3410,11 +3430,13 @@ Keep up the amazing work!`);
         const openNav = () => {
             mobileNav.classList.add('active');
             mobileNav.setAttribute('aria-hidden', 'false');
+            toggle.setAttribute('aria-expanded', 'true');
             document.body.style.overflow = 'hidden';
         };
         const closeNav = () => {
             mobileNav.classList.remove('active');
             mobileNav.setAttribute('aria-hidden', 'true');
+            toggle.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
         };
 
@@ -3451,11 +3473,13 @@ Keep up the amazing work!`);
             var openExplore = function() {
                 exploreMenu.classList.add('active');
                 exploreMenu.setAttribute('aria-hidden', 'false');
+                exploreBtn.setAttribute('aria-expanded', 'true');
                 document.body.style.overflow = 'hidden';
             };
             var closeExplore = function() {
                 exploreMenu.classList.remove('active');
                 exploreMenu.setAttribute('aria-hidden', 'true');
+                exploreBtn.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';
             };
 
@@ -3481,8 +3505,10 @@ Keep up the amazing work!`);
         trigger.addEventListener('click', () => {
             const item = trigger.parentElement;
             const isActive = item.classList.contains('active');
-            item.closest('.jhl-accordion').querySelectorAll('.jhl-accordion__item').forEach(i => i.classList.remove('active'));
-            if (!isActive) item.classList.add('active');
+            const acc = item.closest('.jhl-accordion');
+            acc.querySelectorAll('.jhl-accordion__item').forEach(i => i.classList.remove('active'));
+            acc.querySelectorAll('.jhl-accordion__trigger').forEach(t => t.setAttribute('aria-expanded', 'false'));
+            if (!isActive) { item.classList.add('active'); trigger.setAttribute('aria-expanded', 'true'); }
         });
     });
 })();
@@ -3559,7 +3585,7 @@ window.jhlTrack = function(event, data) {
     var headlines = {
         core:  { title: 'Get Matched with a Local Expert', sub: "We'll connect you with a vetted DFW professional who fits your needs. No pressure, no obligations." },
         '1':   { title: 'Get Matched with a Mortgage-Ready Advisor', sub: 'Our lender partners specialize in helping buyers build credit-ready profiles and get pre-approved.' },
-        '2':   { title: 'Connect with a Pre-Approval Specialist', sub: "Not sure which loan fits? Our mortgage partners will walk you through it \u2014 no pressure." },
+        '2':   { title: 'Connect with a Pre-Approval Specialist', sub: "Not sure which loan fits? Our mortgage partners will walk you through it, no pressure." },
         '3':   { title: 'Find a Local Buyer\'s Agent', sub: "We'll match you with a DFW agent who knows your target neighborhoods inside and out." },
         '4':   { title: 'Talk to a Negotiation-Savvy Agent', sub: 'Get matched with an agent who has a proven track record in competitive DFW markets.' },
         '5':   { title: 'Get Your Closing Team in Place', sub: "We'll connect you with inspectors, title professionals, and closing experts you can trust." },
@@ -3718,7 +3744,7 @@ window.jhlTrack = function(event, data) {
             timestamp: new Date().toISOString()
         };
 
-        // TODO: Replace with your GoHighLevel webhook URL
+        // GHL lead webhook (live, do not change without updating GHL)
         var GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/CHqaNRCWjmT6XyOUQtWd/webhook-trigger/8830eb17-1d96-4575-9f1d-82e4cba000f8';
 
         if (GHL_WEBHOOK_URL) {
@@ -3730,7 +3756,7 @@ window.jhlTrack = function(event, data) {
             .then(function() { showSuccess(); })
             .catch(function() { showSuccess(); }); // Still show success to user
         } else {
-            // No webhook configured — simulate success
+            // No webhook configured, simulate success
             setTimeout(function() { showSuccess(); }, 1000);
         }
 

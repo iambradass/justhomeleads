@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
+    <!-- PostHog Analytics -->
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_J5leAeIhlii1DrCYpJ6deiNfyFrs6fDaYTJDCdcEWN1',{api_host:'https://us.i.posthog.com',person_profiles:'identified_only'});
+    </script>
+    <!-- End PostHog Analytics -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
@@ -10,8 +16,20 @@
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-  <link href="jhl-redesign.css" rel="stylesheet"/>
- </head>
+  <link href="jhl-redesign.css?v=20260711a" rel="stylesheet"/>
+     <link rel="canonical" href="https://justhomeleads.com/new-vs-existing-homes">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Just Home Leads">
+    <meta property="og:title" content="New Construction vs. Existing Homes | Just Home Leads">
+    <meta property="og:description" content="DFW's trusted first-time homebuyer education platform.">
+    <meta property="og:url" content="https://justhomeleads.com/new-vs-existing-homes">
+    <meta property="og:image" content="https://justhomeleads.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
  <body data-page="new-vs-existing-homes" data-phase="3" data-stage="3.7">
   <!-- Skip Link -->
   <a class="skip-link" href="#main">
@@ -33,7 +51,7 @@
        Leads
       </div>
       <div class="jhl-logo__tagline">
-       Dallas–Fort Worth
+       Dallas-Fort Worth
       </div>
      </div>
     </a>
@@ -45,7 +63,7 @@
                     </a>
                     <div class="jhl-nav__dropdown jhl-nav__dropdown--mega">
                         <a class="jhl-nav__dropdown-featured" href="/journey">
-                            Journey Overview — See All Phases
+                            Journey Overview: See All Phases
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         </a>
                         <div class="jhl-nav__dropdown-grid">
@@ -87,7 +105,7 @@
                     </div>
                 </div>
                 <a class="jhl-nav__link" href="/webinar">Webinar</a>
-                <button class="jhl-explore-btn" id="explore-toggle" aria-label="Explore all topics">
+                <button class="jhl-explore-btn" id="explore-toggle" aria-label="Explore all topics" aria-expanded="false" aria-controls="explore-menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></svg>
                     Explore
                 </button>
@@ -98,7 +116,7 @@
                     </svg>
                 </a>
             </nav>
-    <button aria-label="Open menu" class="jhl-menu-toggle">
+    <button aria-label="Open menu" class="jhl-menu-toggle" aria-expanded="false" aria-controls="mobile-nav">
      <span>
      </span>
      <span>
@@ -129,6 +147,7 @@
                         <a href="/lender-shopping">Lender Shopping</a>
                         <a href="/active-search-strategies">Search Strategies</a>
                         <a href="/home-touring-guide">Home Touring</a>
+                        <a href="/neighborhood-research-guide">Neighborhoods</a>
                         <a href="/writing-winning-offers">Writing Offers</a>
                         <a href="/closing-costs-breakdown">Closing Costs</a>
                         <a href="/closing-day-guide">Closing Day</a>
@@ -243,6 +262,7 @@
                     <a href="/action-plan">12-Month Action Plan</a>
                     <a href="/honest-truth">The Honest Truth</a>
                     <a href="/reality-check">Reality Check Quiz</a>
+                    <a href="/red-flags-checklist">Red Flags Checklist</a>
                     <a href="/money-truth">Money Truth</a>
                     <a href="/market-timing">Market Timing</a>
                     <a href="/property-tax-guide">Property Tax Guide</a>
@@ -325,15 +345,13 @@
    <section class="jhl-section jhl-section--white">
     <div class="jhl-section__inner">
      <div class="jhl-info-box jhl-info-box--important">
-      <div class="jhl-info-box__icon">
-       💡
-      </div>
+      <div class="jhl-info-box__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
       <div class="jhl-info-box__content">
        <strong>
         Industry Truth
        </strong>
        <p>
-        That model home with $100,000 in upgrades? Your base price home won't look like that. And those "incredible" builder incentives often come with strings attached—like requiring their lender and title company, which may cost you more in the long run. New doesn't mean problem-free, and existing doesn't mean money pit. The right choice depends on your priorities, not marketing.
+        That model home with $100,000 in upgrades? Your base price home won't look like that. And those "incredible" builder incentives often come with strings attached, like requiring their lender and title company, which may cost you more in the long run. New doesn't mean problem-free, and existing doesn't mean money pit. The right choice depends on your priorities, not marketing.
        </p>
       </div>
      </div>
@@ -355,7 +373,7 @@
        </div>
        <ul class="jhl-comparison__list">
         <li>
-         Everything is brand new—no previous wear
+         Everything is brand new, no previous wear
         </li>
         <li>
          Modern layouts and energy efficiency
@@ -439,7 +457,7 @@
        </p>
        <div class="jhl-quiz__options">
         <button class="jhl-quiz__option" data-value="new" data-weight="2">
-         Very important—I want to be the first
+         Very important, I want to be the first
         </button>
         <button class="jhl-quiz__option" data-value="new" data-weight="1">
          Somewhat important, but not a dealbreaker
@@ -458,7 +476,7 @@
        </p>
        <div class="jhl-quiz__options">
         <button class="jhl-quiz__option" data-value="new" data-weight="2">
-         Fine with it—I like newer, developing areas
+         Fine with it, I like newer, developing areas
         </button>
         <button class="jhl-quiz__option" data-value="new" data-weight="1">
          Okay if the home is right
@@ -480,7 +498,7 @@
          I can wait 6-12 months if needed
         </button>
         <button class="jhl-quiz__option" data-value="new" data-weight="1">
-         I have some flexibility—a few months
+         I have some flexibility, a few months
         </button>
         <button class="jhl-quiz__option" data-value="existing" data-weight="1">
          I'd prefer to move within 2-3 months
@@ -496,7 +514,7 @@
        </p>
        <div class="jhl-quiz__options">
         <button class="jhl-quiz__option" data-value="new" data-weight="2">
-         I want warranty coverage—not my problem
+         I want warranty coverage, not my problem
         </button>
         <button class="jhl-quiz__option" data-value="new" data-weight="1">
          Less maintenance would be nice
@@ -515,7 +533,7 @@
        </p>
        <div class="jhl-quiz__options">
         <button class="jhl-quiz__option" data-value="new" data-weight="2">
-         Very—I want the latest building standards
+         Very, I want the latest building standards
         </button>
         <button class="jhl-quiz__option" data-value="new" data-weight="1">
          Nice to have, but not essential
@@ -553,7 +571,7 @@
        </p>
        <div class="jhl-quiz__options">
         <button class="jhl-quiz__option" data-value="existing" data-weight="2">
-         I want a larger lot—older neighborhoods have more space
+         I want a larger lot, older neighborhoods have more space
         </button>
         <button class="jhl-quiz__option" data-value="existing" data-weight="1">
          Bigger yard would be nice
@@ -572,7 +590,7 @@
        </p>
        <div class="jhl-quiz__options">
         <button class="jhl-quiz__option" data-value="existing" data-weight="2">
-         Very—I love mature neighborhoods
+         Very, I love mature neighborhoods
         </button>
         <button class="jhl-quiz__option" data-value="existing" data-weight="1">
          It's nice but not essential
@@ -635,25 +653,25 @@
        <strong>
         North:
        </strong>
-       Celina, Prosper, Princeton, Anna, Melissa—rapid growth with multiple master-planned communities
+       Celina, Prosper, Princeton, Anna, Melissa, rapid growth with multiple master-planned communities
       </li>
       <li>
        <strong>
         West:
        </strong>
-       Haslet, Fort Worth far north, Weatherford suburbs—more affordable options
+       Haslet, Fort Worth far north, Weatherford suburbs, more affordable options
       </li>
       <li>
        <strong>
         South:
        </strong>
-       Midlothian, Waxahachie, Red Oak—growing quickly with family-friendly communities
+       Midlothian, Waxahachie, Red Oak, growing quickly with family-friendly communities
       </li>
       <li>
        <strong>
         East:
        </strong>
-       Forney, Royse City, Rockwall outskirts—growing inventory at various price points
+       Forney, Royse City, Rockwall outskirts, growing inventory at various price points
       </li>
      </ul>
      <h3>
@@ -768,7 +786,7 @@
        <strong>
         Appliances:
        </strong>
-       May only include range/microwave—fridge, washer, dryer extra
+       May only include range/microwave, fridge, washer, dryer extra
       </li>
      </ul>
      <h3>
@@ -906,7 +924,7 @@
       What Is a MUD?
      </h3>
      <p>
-      A Municipal Utility District is a special taxing district created to finance infrastructure (water, sewer, drainage, roads) in new developments. The developer creates the MUD to build infrastructure, then homeowners pay it off through additional property taxes—sometimes for 20-30 years.
+      A Municipal Utility District is a special taxing district created to finance infrastructure (water, sewer, drainage, roads) in new developments. The developer creates the MUD to build infrastructure, then homeowners pay it off through additional property taxes, sometimes for 20-30 years.
      </p>
      <h3>
       How MUD Taxes Impact Your Payment
@@ -1106,7 +1124,7 @@
       Step 1: Find Communities and Builders
      </h3>
      <p>
-      Research communities that match your location preferences. Visit model homes, but remember—have your own agent represent you. The sales agent in the model home works for the builder, not you.
+      Research communities that match your location preferences. Visit model homes, but remember, have your own agent represent you. The sales agent in the model home works for the builder, not you.
      </p>
      <h3>
       Step 2: Understand What's Available
@@ -1139,7 +1157,7 @@
      </p>
      <ul>
       <li>
-       They're typically written by the builder's attorneys—in the builder's favor
+       They're typically written by the builder's attorneys, in the builder's favor
       </li>
       <li>
        Less negotiable than resale contracts
@@ -1163,7 +1181,7 @@
         Get Your Own Representation
        </strong>
        <p>
-        Always use your own buyer's agent, even for new construction. The builder's sales team represents the builder's interests. Your agent can review the contract, negotiate on your behalf, and advocate for you during construction. Most builders pay the buyer's agent commission—it costs you nothing to have representation.
+        Always use your own buyer's agent, even for new construction. The builder's sales team represents the builder's interests. Your agent can review the contract, negotiate on your behalf, and advocate for you during construction. Most builders pay the buyer's agent commission, it costs you nothing to have representation.
        </p>
       </div>
      </div>
@@ -1213,14 +1231,14 @@
        Note questions or concerns for your agent to address
       </li>
       <li>
-       Don't communicate directly with construction crews—go through proper channels
+       Don't communicate directly with construction crews, go through proper channels
       </li>
      </ul>
      <h3>
       Step 6: Inspections (Yes, You Still Need Them!)
      </h3>
      <p>
-      "It's new—why would I need an inspection?" This is a common and costly mistake.
+      "It's new, why would I need an inspection?" This is a common and costly mistake.
      </p>
      <ul>
       <li>
@@ -1243,7 +1261,7 @@
       </li>
      </ul>
      <p>
-      New homes have defects too—sometimes more than existing homes because everything is untested.
+      New homes have defects too, sometimes more than existing homes because everything is untested.
      </p>
     </div>
    </section>
@@ -1307,7 +1325,7 @@
         Design center credits
        </strong>
        <p>
-        "$30,000 in free upgrades!"—but only if you use their preferred options. May not cover what you actually want.
+        "$30,000 in free upgrades!", but only if you use their preferred options. May not cover what you actually want.
        </p>
       </div>
      </div>
@@ -1451,7 +1469,7 @@
         Location Priority
        </h4>
        <p class="jhl-card__desc">
-        If you need to be close to specific areas—downtown jobs, established schools, entertainment districts—existing homes are often your only option. New construction typically happens on the outskirts.
+        If you need to be close to specific areas, downtown jobs, established schools, entertainment districts, existing homes are often your only option. New construction typically happens on the outskirts.
        </p>
       </div>
       <div class="jhl-card jhl-card--purple">
@@ -1743,7 +1761,7 @@
       Making Your Decision
      </h2>
      <p>
-      There's no universally "right" answer—the best choice depends entirely on your priorities, timeline, and situation.
+      There's no universally "right" answer, the best choice depends entirely on your priorities, timeline, and situation.
      </p>
      <div class="jhl-comparison">
       <div class="jhl-comparison__column jhl-comparison__column--new">
@@ -1824,19 +1842,19 @@
      </h2>
      <ul>
       <li>
-       New construction base prices don't include upgrades, lot premiums, or extras—budget for 15-30% more than the "starting at" price
+       New construction base prices don't include upgrades, lot premiums, or extras, budget for 15-30% more than the "starting at" price
       </li>
       <li>
-       MUD taxes in DFW can add $2,000-$6,000+ per year to your property tax bill—always ask before falling in love with a home
+       MUD taxes in DFW can add $2,000-$6,000+ per year to your property tax bill, always ask before falling in love with a home
       </li>
       <li>
-       Builder incentives often require using their preferred lender—compare the total cost, not just the incentive value
+       Builder incentives often require using their preferred lender, compare the total cost, not just the incentive value
       </li>
       <li>
-       Existing homes offer faster timelines, more negotiation room, and established neighborhoods—they're not the "fallback" option
+       Existing homes offer faster timelines, more negotiation room, and established neighborhoods, they're not the "fallback" option
       </li>
       <li>
-       Always use your own buyer's agent for new construction—it costs you nothing and protects your interests
+       Always use your own buyer's agent for new construction, it costs you nothing and protects your interests
       </li>
      </ul>
     </div>
@@ -2061,7 +2079,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
             </div>
             <h2 class="jhl-success-title">You're Connected!</h2>
-            <p class="jhl-success-subtitle">A verified DFW expert will reach out within 2 hours &mdash; usually much faster.</p>
+            <p class="jhl-success-subtitle">A verified DFW expert will reach out within 2 hours, usually much faster.</p>
 
             <div class="jhl-enrichment">
                 <div class="jhl-enrichment__label">Where are you in your journey?</div>
@@ -2151,10 +2169,10 @@
         let title, text;
         if (newPercent >= 65) {
             title = "You're Leaning New Construction";
-            text = "Your priorities—new everything, warranty coverage, customization—align well with new construction. Just remember to budget for the true total cost (base + upgrades + extras) and understand MUD taxes in your target areas.";
+            text = "Your priorities, new everything, warranty coverage, customization, align well with new construction. Just remember to budget for the true total cost (base + upgrades + extras) and understand MUD taxes in your target areas.";
         } else if (existingPercent >= 65) {
             title = "You're Leaning Existing Homes";
-            text = "Your priorities—location, established neighborhoods, faster timeline—point toward existing homes. Focus on finding the right area first, then look for homes that meet your criteria. A good inspection is your best friend.";
+            text = "Your priorities, location, established neighborhoods, faster timeline, point toward existing homes. Focus on finding the right area first, then look for homes that meet your criteria. A good inspection is your best friend.";
         } else {
             title = "You Could Go Either Way";
             text = "Your preferences are balanced between new and existing options. The good news? You have flexibility. Consider looking at both to see what feels right. Sometimes walking through actual homes clarifies things faster than any quiz.";
@@ -2277,11 +2295,13 @@
         const openNav = () => {
             mobileNav.classList.add('active');
             mobileNav.setAttribute('aria-hidden', 'false');
+            toggle.setAttribute('aria-expanded', 'true');
             document.body.style.overflow = 'hidden';
         };
         const closeNav = () => {
             mobileNav.classList.remove('active');
             mobileNav.setAttribute('aria-hidden', 'true');
+            toggle.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
         };
 
@@ -2318,11 +2338,13 @@
             var openExplore = function() {
                 exploreMenu.classList.add('active');
                 exploreMenu.setAttribute('aria-hidden', 'false');
+                exploreBtn.setAttribute('aria-expanded', 'true');
                 document.body.style.overflow = 'hidden';
             };
             var closeExplore = function() {
                 exploreMenu.classList.remove('active');
                 exploreMenu.setAttribute('aria-hidden', 'true');
+                exploreBtn.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';
             };
 
@@ -2348,8 +2370,10 @@
         trigger.addEventListener('click', () => {
             const item = trigger.parentElement;
             const isActive = item.classList.contains('active');
-            item.closest('.jhl-accordion').querySelectorAll('.jhl-accordion__item').forEach(i => i.classList.remove('active'));
-            if (!isActive) item.classList.add('active');
+            const acc = item.closest('.jhl-accordion');
+            acc.querySelectorAll('.jhl-accordion__item').forEach(i => i.classList.remove('active'));
+            acc.querySelectorAll('.jhl-accordion__trigger').forEach(t => t.setAttribute('aria-expanded', 'false'));
+            if (!isActive) { item.classList.add('active'); trigger.setAttribute('aria-expanded', 'true'); }
         });
     });
 })();
@@ -2426,7 +2450,7 @@ window.jhlTrack = function(event, data) {
     var headlines = {
         core:  { title: 'Get Matched with a Local Expert', sub: "We'll connect you with a vetted DFW professional who fits your needs. No pressure, no obligations." },
         '1':   { title: 'Get Matched with a Mortgage-Ready Advisor', sub: 'Our lender partners specialize in helping buyers build credit-ready profiles and get pre-approved.' },
-        '2':   { title: 'Connect with a Pre-Approval Specialist', sub: "Not sure which loan fits? Our mortgage partners will walk you through it \u2014 no pressure." },
+        '2':   { title: 'Connect with a Pre-Approval Specialist', sub: "Not sure which loan fits? Our mortgage partners will walk you through it, no pressure." },
         '3':   { title: 'Find a Local Buyer\'s Agent', sub: "We'll match you with a DFW agent who knows your target neighborhoods inside and out." },
         '4':   { title: 'Talk to a Negotiation-Savvy Agent', sub: 'Get matched with an agent who has a proven track record in competitive DFW markets.' },
         '5':   { title: 'Get Your Closing Team in Place', sub: "We'll connect you with inspectors, title professionals, and closing experts you can trust." },
@@ -2585,7 +2609,7 @@ window.jhlTrack = function(event, data) {
             timestamp: new Date().toISOString()
         };
 
-        // TODO: Replace with your GoHighLevel webhook URL
+        // GHL lead webhook (live, do not change without updating GHL)
         var GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/CHqaNRCWjmT6XyOUQtWd/webhook-trigger/8830eb17-1d96-4575-9f1d-82e4cba000f8';
 
         if (GHL_WEBHOOK_URL) {
@@ -2597,7 +2621,7 @@ window.jhlTrack = function(event, data) {
             .then(function() { showSuccess(); })
             .catch(function() { showSuccess(); }); // Still show success to user
         } else {
-            // No webhook configured — simulate success
+            // No webhook configured, simulate success
             setTimeout(function() { showSuccess(); }, 1000);
         }
 

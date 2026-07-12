@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
+    <!-- PostHog Analytics -->
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_J5leAeIhlii1DrCYpJ6deiNfyFrs6fDaYTJDCdcEWN1',{api_host:'https://us.i.posthog.com',person_profiles:'identified_only'});
+    </script>
+    <!-- End PostHog Analytics -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
    Your Homebuying Journey Map | Just Home Leads
   </title>
-  <meta content="See exactly where you are in your homebuying journey and what comes next. From exploration to closing—your personalized 12-24 month roadmap to homeownership in DFW." name="description"/>
+  <meta content="See exactly where you are in your homebuying journey and what comes next. From exploration to closing, your personalized 12-24 month roadmap to homeownership in DFW." name="description"/>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-  <link href="jhl-redesign.css" rel="stylesheet"/>
- </head>
+  <link href="jhl-redesign.css?v=20260711a" rel="stylesheet"/>
+     <link rel="canonical" href="https://justhomeleads.com/journey">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Just Home Leads">
+    <meta property="og:title" content="Your Homebuying Journey Map | Just Home Leads">
+    <meta property="og:description" content="DFW's trusted first-time homebuyer education platform.">
+    <meta property="og:url" content="https://justhomeleads.com/journey">
+    <meta property="og:image" content="https://justhomeleads.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
  <body data-page="journey" data-phase="core" data-stage="core">
   <!-- Skip Link -->
   <a class="skip-link" href="#main">
@@ -33,7 +51,7 @@
        Leads
       </div>
       <div class="jhl-logo__tagline">
-       Dallas–Fort Worth
+       Dallas-Fort Worth
       </div>
      </div>
     </a>
@@ -45,7 +63,7 @@
                     </a>
                     <div class="jhl-nav__dropdown jhl-nav__dropdown--mega">
                         <a class="jhl-nav__dropdown-featured" href="/journey">
-                            Journey Overview — See All Phases
+                            Journey Overview: See All Phases
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         </a>
                         <div class="jhl-nav__dropdown-grid">
@@ -87,7 +105,7 @@
                     </div>
                 </div>
                 <a class="jhl-nav__link" href="/webinar">Webinar</a>
-                <button class="jhl-explore-btn" id="explore-toggle" aria-label="Explore all topics">
+                <button class="jhl-explore-btn" id="explore-toggle" aria-label="Explore all topics" aria-expanded="false" aria-controls="explore-menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></svg>
                     Explore
                 </button>
@@ -98,7 +116,7 @@
                     </svg>
                 </a>
             </nav>
-    <button aria-label="Open menu" class="jhl-menu-toggle">
+    <button aria-label="Open menu" class="jhl-menu-toggle" aria-expanded="false" aria-controls="mobile-nav">
      <span>
      </span>
      <span>
@@ -129,6 +147,7 @@
                         <a href="/lender-shopping">Lender Shopping</a>
                         <a href="/active-search-strategies">Search Strategies</a>
                         <a href="/home-touring-guide">Home Touring</a>
+                        <a href="/neighborhood-research-guide">Neighborhoods</a>
                         <a href="/writing-winning-offers">Writing Offers</a>
                         <a href="/closing-costs-breakdown">Closing Costs</a>
                         <a href="/closing-day-guide">Closing Day</a>
@@ -243,6 +262,7 @@
                     <a href="/action-plan">12-Month Action Plan</a>
                     <a href="/honest-truth">The Honest Truth</a>
                     <a href="/reality-check">Reality Check Quiz</a>
+                    <a href="/red-flags-checklist">Red Flags Checklist</a>
                     <a href="/money-truth">Money Truth</a>
                     <a href="/market-timing">Market Timing</a>
                     <a href="/property-tax-guide">Property Tax Guide</a>
@@ -263,9 +283,9 @@
    </div>
    <div class="jhl-hero__inner">
     <div class="jhl-hero__content">
-     <span class="jhl-badge">🗺️ Your Complete Roadmap</span>
+     <span class="jhl-badge"> Your Complete Roadmap</span>
      <h1>Your Homebuying Journey Map</h1>
-     <p class="jhl-hero__subtitle">See the complete path from "Should I buy?" to "Keys in hand!" — simplified, realistic, and personalized to where YOU are right now.</p>
+     <p class="jhl-hero__subtitle">See the complete path from "Should I buy?" to "Keys in hand!", simplified, realistic, and personalized to where YOU are right now.</p>
 
                 <div class="jhl-updated-badge">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -311,7 +331,7 @@
      <strong>
       12-24 months
      </strong>
-     (on average). Some people move faster, some slower. There is no "right" timeline—only YOUR timeline.
+     (on average). Some people move faster, some slower. There is no "right" timeline, only YOUR timeline.
     </p>
     <p>
      <strong>
@@ -349,12 +369,12 @@
       <h3>Where Are You in Your Journey?</h3>
       <p class="jhl-journey__selector-desc">Select your current stage to personalize the timeline:</p>
       <div class="selector-buttons">
-       <button class="stage-btn active" data-stage="exploration" data-track-event="stage_selected" data-track-category="journey" data-track-label="exploration">🤔 Just Exploring</button>
-       <button class="stage-btn" data-stage="foundation" data-track-event="stage_selected" data-track-category="journey" data-track-label="foundation">🏗️ Building Foundation</button>
-       <button class="stage-btn" data-stage="preparation" data-track-event="stage_selected" data-track-category="journey" data-track-label="preparation">📋 Preparing to Buy</button>
-       <button class="stage-btn" data-stage="shopping" data-track-event="stage_selected" data-track-category="journey" data-track-label="shopping">🏠 Shopping for Homes</button>
-       <button class="stage-btn" data-stage="contract" data-track-event="stage_selected" data-track-category="journey" data-track-label="contract">📝 Under Contract</button>
-       <button class="stage-btn" data-stage="homeowner" data-track-event="stage_selected" data-track-category="journey" data-track-label="homeowner">🔑 Already a Homeowner</button>
+       <button class="stage-btn active" data-stage="exploration" data-track-event="stage_selected" data-track-category="journey" data-track-label="exploration"> Just Exploring</button>
+       <button class="stage-btn" data-stage="foundation" data-track-event="stage_selected" data-track-category="journey" data-track-label="foundation"> Building Foundation</button>
+       <button class="stage-btn" data-stage="preparation" data-track-event="stage_selected" data-track-category="journey" data-track-label="preparation"> Preparing to Buy</button>
+       <button class="stage-btn" data-stage="shopping" data-track-event="stage_selected" data-track-category="journey" data-track-label="shopping"> Shopping for Homes</button>
+       <button class="stage-btn" data-stage="contract" data-track-event="stage_selected" data-track-category="journey" data-track-label="contract"> Under Contract</button>
+       <button class="stage-btn" data-stage="homeowner" data-track-event="stage_selected" data-track-category="journey" data-track-label="homeowner"> Already a Homeowner</button>
       </div>
       <p class="jhl-journey__selector-hint">Don't know? Pick "Just Exploring" and we'll help you figure it out.</p>
      </div>
@@ -367,13 +387,13 @@
         </h2>
         <div class="phase-meta">
          <span>
-          ⏱️ Timeline: 1-3 months
+          ⏱ Timeline: 1-3 months
          </span>
          <span>
-          🎯 Goal: Decide if homeownership is right for you
+           Goal: Decide if homeownership is right for you
          </span>
          <span>
-          😊 Feeling: Curious, overwhelmed, hopeful
+           Feeling: Curious, overwhelmed, hopeful
          </span>
         </div>
        </div>
@@ -387,7 +407,7 @@
           You're thinking about buying a home but not sure if you're ready or how to start.
          </p>
          <span class="you-are-here">
-          👉 YOU ARE HERE
+           YOU ARE HERE
          </span>
          <div class="expandable-content">
           <div class="detail-section">
@@ -599,13 +619,13 @@
         </h2>
         <div class="phase-meta">
          <span>
-          ⏱️ Timeline: 3-9 months
+          ⏱ Timeline: 3-9 months
          </span>
          <span>
-          🎯 Goal: Get pre-approved for a mortgage
+           Goal: Get pre-approved for a mortgage
          </span>
          <span>
-          😊 Feeling: Determined, motivated, sometimes discouraged
+           Feeling: Determined, motivated, sometimes discouraged
          </span>
         </div>
        </div>
@@ -756,7 +776,7 @@
           Pre-Approval Achievement
          </h3>
          <p>
-          Getting pre-approved! This is HUGE—it means a lender officially says they'll loan you money.
+          Getting pre-approved! This is HUGE, it means a lender officially says they'll loan you money.
          </p>
          <div class="expandable-content">
           <div class="detail-section">
@@ -828,13 +848,13 @@
         </h2>
         <div class="phase-meta">
          <span>
-          ⏱️ Timeline: 1-2 months
+          ⏱ Timeline: 1-2 months
          </span>
          <span>
-          🎯 Goal: Understand market &amp; define search criteria
+           Goal: Understand market &amp; define search criteria
          </span>
          <span>
-          😊 Feeling: Excited, nervous, eager
+           Feeling: Excited, nervous, eager
          </span>
         </div>
        </div>
@@ -849,7 +869,7 @@
          <div class="expandable-content">
           <div class="detail-section">
            <h4>What's Happening:</h4>
-           <p>You're pre-approved and it's time to get smart about the DFW market. Property taxes here average 2.1-2.5% of home value — that's higher than most states and it seriously impacts your monthly payment. You're learning which neighborhoods fit your budget and lifestyle.</p>
+           <p>You're pre-approved and it's time to get smart about the DFW market. Property taxes here average 2.1-2.5% of home value, that's higher than most states and it seriously impacts your monthly payment. You're learning which neighborhoods fit your budget and lifestyle.</p>
            <div class="key-questions">
             <strong>Questions You're Asking:</strong>
             <ul>
@@ -895,7 +915,7 @@
          <div class="expandable-content">
           <div class="detail-section">
            <h4>What's Happening:</h4>
-           <p>Before you start touring homes, you need to know what you're looking at. Foundation issues, roof age, HVAC systems, lot placement — these things matter more than granite countertops. You're also defining your must-haves vs. nice-to-haves.</p>
+           <p>Before you start touring homes, you need to know what you're looking at. Foundation issues, roof age, HVAC systems, lot placement, these things matter more than granite countertops. You're also defining your must-haves vs. nice-to-haves.</p>
            <div class="key-questions">
             <strong>Questions You're Asking:</strong>
             <ul>
@@ -985,13 +1005,13 @@
         </h2>
         <div class="phase-meta">
          <span>
-          ⏱️ Timeline: 1-6 months (varies widely!)
+          ⏱ Timeline: 1-6 months (varies widely!)
          </span>
          <span>
-          🎯 Goal: Get an offer accepted
+           Goal: Get an offer accepted
          </span>
          <span>
-          😊 Feeling: Excited, frustrated, hopeful, anxious
+           Feeling: Excited, frustrated, hopeful, anxious
          </span>
         </div>
        </div>
@@ -1006,7 +1026,7 @@
          <div class="expandable-content">
           <div class="detail-section">
            <h4>What's Happening:</h4>
-           <p>This is the part everyone imagines when they think "homebuying." You're touring homes, scrolling listings at 2 AM, and learning that photos lie. The average DFW buyer tours 8-12 homes before finding the right one. Don't rush — and don't fall in love with the staging.</p>
+           <p>This is the part everyone imagines when they think "homebuying." You're touring homes, scrolling listings at 2 AM, and learning that photos lie. The average DFW buyer tours 8-12 homes before finding the right one. Don't rush, and don't fall in love with the staging.</p>
            <div class="key-questions">
             <strong>Questions You're Asking:</strong>
             <ul>
@@ -1093,12 +1113,12 @@
           Offer Accepted!
          </h3>
          <p>
-          🎉 YOUR OFFER WAS ACCEPTED! Now the real work begins with inspections and paperwork.
+           YOUR OFFER WAS ACCEPTED! Now the real work begins with inspections and paperwork.
          </p>
          <div class="expandable-content">
           <div class="detail-section">
            <h4>What's Happening:</h4>
-           <p>CELEBRATE! But briefly — because now the clock starts. In Texas, you typically have a 7-10 day option period to inspect the home and decide if you want to proceed. Your earnest money is deposited, your lender starts the appraisal process, and everything shifts into high gear.</p>
+           <p>CELEBRATE! But briefly, because now the clock starts. In Texas, you typically have a 7-10 day option period to inspect the home and decide if you want to proceed. Your earnest money is deposited, your lender starts the appraisal process, and everything shifts into high gear.</p>
            <div class="key-questions">
             <strong>Questions You're Asking:</strong>
             <ul>
@@ -1142,13 +1162,13 @@
         </h2>
         <div class="phase-meta">
          <span>
-          ⏱️ Timeline: 30-45 days
+          ⏱ Timeline: 30-45 days
          </span>
          <span>
-          🎯 Goal: Close successfully and get keys!
+           Goal: Close successfully and get keys!
          </span>
          <span>
-          😊 Feeling: Excited, anxious, impatient, overwhelmed
+           Feeling: Excited, anxious, impatient, overwhelmed
          </span>
         </div>
        </div>
@@ -1163,7 +1183,7 @@
          <div class="expandable-content">
           <div class="detail-section">
            <h4>What's Happening:</h4>
-           <p>The option period is your safety net. A professional inspector examines the home top to bottom — roof, foundation, plumbing, electrical, HVAC, everything. In Texas, the option period fee ($200-500) gives you the right to walk away for any reason during this window. The inspection report will likely find things. Don't panic — negotiate.</p>
+           <p>The option period is your safety net. A professional inspector examines the home top to bottom, roof, foundation, plumbing, electrical, HVAC, everything. In Texas, the option period fee ($200-500) gives you the right to walk away for any reason during this window. The inspection report will likely find things. Don't panic, negotiate.</p>
            <div class="key-questions">
             <strong>Questions You're Asking:</strong>
             <ul>
@@ -1209,7 +1229,7 @@
          <div class="expandable-content">
           <div class="detail-section">
            <h4>What's Happening:</h4>
-           <p>Your lender orders an appraisal to confirm the home is worth what you're paying. Meanwhile, underwriting is combing through your finances with a fine-toothed comb. DO NOT make any big purchases, change jobs, or move money around right now. You're also shopping for homeowner's insurance — get quotes from 3-4 companies.</p>
+           <p>Your lender orders an appraisal to confirm the home is worth what you're paying. Meanwhile, underwriting is combing through your finances with a fine-toothed comb. DO NOT make any big purchases, change jobs, or move money around right now. You're also shopping for homeowner's insurance, get quotes from 3-4 companies.</p>
            <div class="key-questions">
             <strong>Questions You're Asking:</strong>
             <ul>
@@ -1255,7 +1275,7 @@
          <div class="expandable-content">
           <div class="detail-section">
            <h4>What's Happening:</h4>
-           <p>You're in the home stretch. The lender issues your Closing Disclosure (CD) at least 3 days before closing — review every number carefully. You'll do a final walkthrough to make sure the home is in the condition you agreed to and repairs were completed. Wire your cash-to-close funds. This is really happening.</p>
+           <p>You're in the home stretch. The lender issues your Closing Disclosure (CD) at least 3 days before closing, review every number carefully. You'll do a final walkthrough to make sure the home is in the condition you agreed to and repairs were completed. Wire your cash-to-close funds. This is really happening.</p>
            <div class="key-questions">
             <strong>Questions You're Asking:</strong>
             <ul>
@@ -1296,12 +1316,12 @@
           CLOSING DAY!
          </h3>
          <p>
-          🎉🏠🔑 Signing papers, getting keys, officially becoming a HOMEOWNER!
+           Signing papers, getting keys, officially becoming a HOMEOWNER!
          </p>
          <div class="expandable-content">
           <div class="detail-section">
            <h4>What's Happening:</h4>
-           <p>THE BIG DAY. You'll sit at a table (usually at the title company), sign approximately one million documents (it feels like it), hand over your certified funds, and then... you get the keys. In Texas, the home is officially yours once the deed is recorded at the county — usually same day or next business day. You did it!</p>
+           <p>THE BIG DAY. You'll sit at a table (usually at the title company), sign approximately one million documents (it feels like it), hand over your certified funds, and then... you get the keys. In Texas, the home is officially yours once the deed is recorded at the county, usually same day or next business day. You did it!</p>
            <div class="key-questions">
             <strong>Questions You're Asking:</strong>
             <ul>
@@ -1345,13 +1365,13 @@
         </h2>
         <div class="phase-meta">
          <span>
-          ⏱️ Timeline: Ongoing (years!)
+          ⏱ Timeline: Ongoing (years!)
          </span>
          <span>
-          🎯 Goal: Build wealth through homeownership
+           Goal: Build wealth through homeownership
          </span>
          <span>
-          😊 Feeling: Proud, learning, sometimes overwhelmed
+           Feeling: Proud, learning, sometimes overwhelmed
          </span>
         </div>
        </div>
@@ -1366,7 +1386,7 @@
          <div class="expandable-content">
           <div class="detail-section">
            <h4>What's Happening:</h4>
-           <p>Welcome home! The first month is a whirlwind: setting up utilities, changing locks, finding where the water shutoff is, and making your first mortgage payment (usually about 30-45 days after closing). You'll also want to file your homestead exemption — in Texas, this can save you hundreds on property taxes annually. Don't forget to update your address everywhere.</p>
+           <p>Welcome home! The first month is a whirlwind: setting up utilities, changing locks, finding where the water shutoff is, and making your first mortgage payment (usually about 30-45 days after closing). You'll also want to file your homestead exemption, in Texas, this can save you hundreds on property taxes annually. Don't forget to update your address everywhere.</p>
            <div class="key-questions">
             <strong>Questions You're Asking:</strong>
             <ul>
@@ -1412,7 +1432,7 @@
          <div class="expandable-content">
           <div class="detail-section">
            <h4>What's Happening:</h4>
-           <p>This is the long game — and it's where homeownership truly pays off. Your home builds equity over time through appreciation and mortgage paydown. Regular maintenance protects your investment. Smart renovations can boost value. Eventually, you might refinance for a better rate, tap equity for upgrades, or use your experience to buy investment properties.</p>
+           <p>This is the long game, and it's where homeownership truly pays off. Your home builds equity over time through appreciation and mortgage paydown. Regular maintenance protects your investment. Smart renovations can boost value. Eventually, you might refinance for a better rate, tap equity for upgrades, or use your experience to buy investment properties.</p>
            <div class="key-questions">
             <strong>Questions You're Asking:</strong>
             <ul>
@@ -1480,7 +1500,7 @@
        The homebuying journey has 6 distinct phases with 18 stages, typically taking 12-24 months
       </li>
       <li>
-       Your timeline is unique—there's no "right" speed, only what works for you
+       Your timeline is unique, there's no "right" speed, only what works for you
       </li>
       <li>
        Each stage has specific questions, challenges, and resources you'll need
@@ -1489,7 +1509,7 @@
        Understanding where you are helps you focus on what matters NOW instead of getting overwhelmed
       </li>
       <li>
-       This journey is marathon, not a sprint—pace yourself and celebrate each milestone
+       This journey is marathon, not a sprint, pace yourself and celebrate each milestone
       </li>
      </ul>
     </div>
@@ -1700,7 +1720,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
             </div>
             <h2 class="jhl-success-title">You're Connected!</h2>
-            <p class="jhl-success-subtitle">A verified DFW expert will reach out within 2 hours &mdash; usually much faster.</p>
+            <p class="jhl-success-subtitle">A verified DFW expert will reach out within 2 hours, usually much faster.</p>
 
             <div class="jhl-enrichment">
                 <div class="jhl-enrichment__label">Where are you in your journey?</div>
@@ -1753,22 +1773,24 @@
             this.classList.add('active');
 
             const selectedStage = this.dataset.stage;
-            updateTimeline(selectedStage);
+            updateTimeline(selectedStage, true);
         });
     });
 
-    function updateTimeline(selectedStage) {
+    function updateTimeline(selectedStage, shouldScroll) {
+        let phaseMarked = false;
         stageItems.forEach(item => {
             item.classList.remove('current', 'completed');
 
             const itemPhase = item.dataset.phase;
 
-            if (itemPhase === selectedStage) {
+            if (itemPhase === selectedStage && !phaseMarked) {
+                phaseMarked = true;
                 item.classList.add('current');
                 if (!item.querySelector('.you-are-here')) {
                     const badge = document.createElement('span');
                     badge.className = 'you-are-here';
-                    badge.textContent = '👉 YOU ARE HERE';
+                    badge.textContent = ' YOU ARE HERE';
                     item.querySelector('.stage-content').appendChild(badge);
                 }
             } else {
@@ -1786,7 +1808,7 @@
         });
 
         const firstCurrent = document.querySelector('.stage-item.current');
-        if (firstCurrent) {
+        if (firstCurrent && shouldScroll) {
             firstCurrent.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     }
@@ -1826,11 +1848,13 @@
         const openNav = () => {
             mobileNav.classList.add('active');
             mobileNav.setAttribute('aria-hidden', 'false');
+            toggle.setAttribute('aria-expanded', 'true');
             document.body.style.overflow = 'hidden';
         };
         const closeNav = () => {
             mobileNav.classList.remove('active');
             mobileNav.setAttribute('aria-hidden', 'true');
+            toggle.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
         };
 
@@ -1867,11 +1891,13 @@
             var openExplore = function() {
                 exploreMenu.classList.add('active');
                 exploreMenu.setAttribute('aria-hidden', 'false');
+                exploreBtn.setAttribute('aria-expanded', 'true');
                 document.body.style.overflow = 'hidden';
             };
             var closeExplore = function() {
                 exploreMenu.classList.remove('active');
                 exploreMenu.setAttribute('aria-hidden', 'true');
+                exploreBtn.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';
             };
 
@@ -1897,8 +1923,10 @@
         trigger.addEventListener('click', () => {
             const item = trigger.parentElement;
             const isActive = item.classList.contains('active');
-            item.closest('.jhl-accordion').querySelectorAll('.jhl-accordion__item').forEach(i => i.classList.remove('active'));
-            if (!isActive) item.classList.add('active');
+            const acc = item.closest('.jhl-accordion');
+            acc.querySelectorAll('.jhl-accordion__item').forEach(i => i.classList.remove('active'));
+            acc.querySelectorAll('.jhl-accordion__trigger').forEach(t => t.setAttribute('aria-expanded', 'false'));
+            if (!isActive) { item.classList.add('active'); trigger.setAttribute('aria-expanded', 'true'); }
         });
     });
 })();
@@ -1975,7 +2003,7 @@ window.jhlTrack = function(event, data) {
     var headlines = {
         core:  { title: 'Get Matched with a Local Expert', sub: "We'll connect you with a vetted DFW professional who fits your needs. No pressure, no obligations." },
         '1':   { title: 'Get Matched with a Mortgage-Ready Advisor', sub: 'Our lender partners specialize in helping buyers build credit-ready profiles and get pre-approved.' },
-        '2':   { title: 'Connect with a Pre-Approval Specialist', sub: "Not sure which loan fits? Our mortgage partners will walk you through it \u2014 no pressure." },
+        '2':   { title: 'Connect with a Pre-Approval Specialist', sub: "Not sure which loan fits? Our mortgage partners will walk you through it, no pressure." },
         '3':   { title: 'Find a Local Buyer\'s Agent', sub: "We'll match you with a DFW agent who knows your target neighborhoods inside and out." },
         '4':   { title: 'Talk to a Negotiation-Savvy Agent', sub: 'Get matched with an agent who has a proven track record in competitive DFW markets.' },
         '5':   { title: 'Get Your Closing Team in Place', sub: "We'll connect you with inspectors, title professionals, and closing experts you can trust." },
@@ -2134,7 +2162,7 @@ window.jhlTrack = function(event, data) {
             timestamp: new Date().toISOString()
         };
 
-        // TODO: Replace with your GoHighLevel webhook URL
+        // GHL lead webhook (live, do not change without updating GHL)
         var GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/CHqaNRCWjmT6XyOUQtWd/webhook-trigger/8830eb17-1d96-4575-9f1d-82e4cba000f8';
 
         if (GHL_WEBHOOK_URL) {
@@ -2146,7 +2174,7 @@ window.jhlTrack = function(event, data) {
             .then(function() { showSuccess(); })
             .catch(function() { showSuccess(); }); // Still show success to user
         } else {
-            // No webhook configured — simulate success
+            // No webhook configured, simulate success
             setTimeout(function() { showSuccess(); }, 1000);
         }
 

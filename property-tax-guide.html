@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
+    <!-- PostHog Analytics -->
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_J5leAeIhlii1DrCYpJ6deiNfyFrs6fDaYTJDCdcEWN1',{api_host:'https://us.i.posthog.com',person_profiles:'identified_only'});
+    </script>
+    <!-- End PostHog Analytics -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
@@ -10,8 +16,20 @@
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-  <link href="jhl-redesign.css" rel="stylesheet"/>
- </head>
+  <link href="jhl-redesign.css?v=20260711a" rel="stylesheet"/>
+     <link rel="canonical" href="https://justhomeleads.com/property-tax-guide">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Just Home Leads">
+    <meta property="og:title" content="DFW Property Tax Survival Guide | Just Home Leads">
+    <meta property="og:description" content="DFW's trusted first-time homebuyer education platform.">
+    <meta property="og:url" content="https://justhomeleads.com/property-tax-guide">
+    <meta property="og:image" content="https://justhomeleads.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
  <body data-page="property-tax-guide" data-phase="3" data-stage="3.9">
   <!-- Skip Link -->
   <a class="skip-link" href="#main">
@@ -33,7 +51,7 @@
        Leads
       </div>
       <div class="jhl-logo__tagline">
-       Dallas–Fort Worth
+       Dallas-Fort Worth
       </div>
      </div>
     </a>
@@ -45,7 +63,7 @@
                     </a>
                     <div class="jhl-nav__dropdown jhl-nav__dropdown--mega">
                         <a class="jhl-nav__dropdown-featured" href="/journey">
-                            Journey Overview — See All Phases
+                            Journey Overview: See All Phases
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         </a>
                         <div class="jhl-nav__dropdown-grid">
@@ -87,7 +105,7 @@
                     </div>
                 </div>
                 <a class="jhl-nav__link" href="/webinar">Webinar</a>
-                <button class="jhl-explore-btn" id="explore-toggle" aria-label="Explore all topics">
+                <button class="jhl-explore-btn" id="explore-toggle" aria-label="Explore all topics" aria-expanded="false" aria-controls="explore-menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></svg>
                     Explore
                 </button>
@@ -98,7 +116,7 @@
                     </svg>
                 </a>
             </nav>
-    <button aria-label="Open menu" class="jhl-menu-toggle">
+    <button aria-label="Open menu" class="jhl-menu-toggle" aria-expanded="false" aria-controls="mobile-nav">
      <span>
      </span>
      <span>
@@ -129,6 +147,7 @@
                         <a href="/lender-shopping">Lender Shopping</a>
                         <a href="/active-search-strategies">Search Strategies</a>
                         <a href="/home-touring-guide">Home Touring</a>
+                        <a href="/neighborhood-research-guide">Neighborhoods</a>
                         <a href="/writing-winning-offers">Writing Offers</a>
                         <a href="/closing-costs-breakdown">Closing Costs</a>
                         <a href="/closing-day-guide">Closing Day</a>
@@ -243,6 +262,7 @@
                     <a href="/action-plan">12-Month Action Plan</a>
                     <a href="/honest-truth">The Honest Truth</a>
                     <a href="/reality-check">Reality Check Quiz</a>
+                    <a href="/red-flags-checklist">Red Flags Checklist</a>
                     <a href="/money-truth">Money Truth</a>
                     <a href="/market-timing">Market Timing</a>
                     <a href="/property-tax-guide">Property Tax Guide</a>
@@ -269,7 +289,7 @@
       DFW Property Tax Survival Guide
      </h1>
      <p class="jhl-hero__subtitle">
-      Texas has no state income tax—sounds great until you see the property tax bill. Understanding how property taxes work in DFW is essential before you buy.
+      Texas has no state income tax, sounds great until you see the property tax bill. Understanding how property taxes work in DFW is essential before you buy.
      </p>
 
                 <div class="jhl-updated-badge">
@@ -339,7 +359,7 @@
       The No Income Tax Trade-Off
      </h3>
      <p>
-      Texas is one of only seven states with no state income tax. Great for your paycheck, but the state has to fund services somehow. Property taxes are the primary mechanism, which is why Texas has some of the highest property tax rates in the country—typically ranging from 2.0% to 2.8% of your home's assessed value.
+      Texas is one of only seven states with no state income tax. Great for your paycheck, but the state has to fund services somehow. Property taxes are the primary mechanism, which is why Texas has some of the highest property tax rates in the country, typically ranging from 2.0% to 2.8% of your home's assessed value.
      </p>
      <div class="jhl-stats">
       <div class="jhl-stat">
@@ -379,9 +399,7 @@
       </strong>
      </p>
      <div class="jhl-info-box jhl-info-box--important">
-      <div class="jhl-info-box__icon">
-       📌
-      </div>
+      <div class="jhl-info-box__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17v5"/><path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z"/></svg></div>
       <div class="jhl-info-box__content">
        <strong>
         Important Details
@@ -411,7 +429,7 @@
      </h2>
      <div class="tax-calculator">
       <h3>
-       📊 Calculate Your Property Tax Payment
+        Calculate Your Property Tax Payment
       </h3>
       <p>
        See exactly how property taxes will affect your monthly payment.
@@ -669,7 +687,7 @@
        <strong>
         What it does:
        </strong>
-       Similar to over 65 exemption—additional reduction plus school tax freeze.
+       Similar to over 65 exemption, additional reduction plus school tax freeze.
       </p>
       <p>
        <strong>
@@ -691,7 +709,7 @@
        <strong>
         What it does:
        </strong>
-       Exemption amount varies based on disability rating—from $5,000 to complete exemption for 100% disabled veterans.
+       Exemption amount varies based on disability rating, from $5,000 to complete exemption for 100% disabled veterans.
       </p>
       <p>
        <strong>
@@ -701,9 +719,7 @@
       </p>
      </div>
      <div class="jhl-info-box jhl-info-box--warning">
-      <div class="jhl-info-box__icon">
-       ⏰
-      </div>
+      <div class="jhl-info-box__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
       <div class="jhl-info-box__content">
        <strong>
         Don't Miss the Deadline
@@ -721,7 +737,7 @@
       The 10% Cap: Protection Against Rapid Increases
      </h3>
      <p>
-      Once you have a homestead exemption, your property's assessed value for taxes can only increase by a maximum of 10% per year—even if the market value increases more. This protection kicks in starting the second year you own the home.
+      Once you have a homestead exemption, your property's assessed value for taxes can only increase by a maximum of 10% per year, even if the market value increases more. This protection kicks in starting the second year you own the home.
      </p>
      <p>
       <strong>
@@ -730,7 +746,7 @@
       If your home's market value jumps 20% in one year (not uncommon in DFW), your taxable value can only increase 10%. The "excess" is capped and carries forward.
      </p>
      <p>
-      This is why longtime homeowners often pay much less in taxes than new buyers of similar homes—their assessed values have been capped for years.
+      This is why longtime homeowners often pay much less in taxes than new buyers of similar homes, their assessed values have been capped for years.
      </p>
     </div>
    </section>
@@ -835,7 +851,7 @@
       Protesting Your Property Taxes
      </h2>
      <p>
-      Yes, you can fight your property tax assessment—and in Texas, many homeowners do. Here's how the process works:
+      Yes, you can fight your property tax assessment, and in Texas, many homeowners do. Here's how the process works:
      </p>
      <h3>
       When to Protest
@@ -948,7 +964,7 @@
       </li>
      </ul>
      <p>
-      Many first-time buyers successfully protest on their own—it's not as intimidating as it sounds.
+      Many first-time buyers successfully protest on their own, it's not as intimidating as it sounds.
      </p>
     </div>
    </section>
@@ -958,7 +974,7 @@
       Budget Planning: What to Expect Over Time
      </h2>
      <p>
-      Property taxes aren't static—plan for them to increase every year.
+      Property taxes aren't static, plan for them to increase every year.
      </p>
      <h3>
       Year 1: The Adjustment
@@ -1013,7 +1029,7 @@
           $733
          </td>
          <td>
-          —
+          , 
          </td>
         </tr>
         <tr>
@@ -1104,16 +1120,14 @@
        Set a calendar reminder for protest deadline (May 15)
       </li>
       <li>
-       Save your closing documents—you'll need comps for protests
+       Save your closing documents, you'll need comps for protests
       </li>
       <li>
        Track your assessed value notices when they arrive
       </li>
      </ol>
      <div class="jhl-info-box jhl-info-box--tip">
-      <div class="jhl-info-box__icon">
-       💡
-      </div>
+      <div class="jhl-info-box__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
       <div class="jhl-info-box__content">
        <strong>
         Resources for Tax Research
@@ -1152,7 +1166,7 @@
      </h2>
      <ul>
       <li>
-       Texas property taxes average 2.0-2.5% in DFW—nearly double the national average
+       Texas property taxes average 2.0-2.5% in DFW, nearly double the national average
       </li>
       <li>
        Property taxes can add $700-900+ to your monthly payment on a $400K home
@@ -1161,13 +1175,13 @@
        The homestead exemption saves $1,500+ per year and caps annual increases at 10%
       </li>
       <li>
-       File for homestead exemption immediately after closing—deadline is April 30
+       File for homestead exemption immediately after closing, deadline is April 30
       </li>
       <li>
        Budget for 3-5% annual property tax increases over time
       </li>
       <li>
-       You can protest your property taxes—many first-time buyers win reductions
+       You can protest your property taxes, many first-time buyers win reductions
       </li>
      </ul>
     </div>
@@ -1393,7 +1407,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
             </div>
             <h2 class="jhl-success-title">You're Connected!</h2>
-            <p class="jhl-success-subtitle">A verified DFW expert will reach out within 2 hours &mdash; usually much faster.</p>
+            <p class="jhl-success-subtitle">A verified DFW expert will reach out within 2 hours, usually much faster.</p>
 
             <div class="jhl-enrichment">
                 <div class="jhl-enrichment__label">Where are you in your journey?</div>
@@ -1507,11 +1521,13 @@
         const openNav = () => {
             mobileNav.classList.add('active');
             mobileNav.setAttribute('aria-hidden', 'false');
+            toggle.setAttribute('aria-expanded', 'true');
             document.body.style.overflow = 'hidden';
         };
         const closeNav = () => {
             mobileNav.classList.remove('active');
             mobileNav.setAttribute('aria-hidden', 'true');
+            toggle.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
         };
 
@@ -1548,11 +1564,13 @@
             var openExplore = function() {
                 exploreMenu.classList.add('active');
                 exploreMenu.setAttribute('aria-hidden', 'false');
+                exploreBtn.setAttribute('aria-expanded', 'true');
                 document.body.style.overflow = 'hidden';
             };
             var closeExplore = function() {
                 exploreMenu.classList.remove('active');
                 exploreMenu.setAttribute('aria-hidden', 'true');
+                exploreBtn.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';
             };
 
@@ -1578,8 +1596,10 @@
         trigger.addEventListener('click', () => {
             const item = trigger.parentElement;
             const isActive = item.classList.contains('active');
-            item.closest('.jhl-accordion').querySelectorAll('.jhl-accordion__item').forEach(i => i.classList.remove('active'));
-            if (!isActive) item.classList.add('active');
+            const acc = item.closest('.jhl-accordion');
+            acc.querySelectorAll('.jhl-accordion__item').forEach(i => i.classList.remove('active'));
+            acc.querySelectorAll('.jhl-accordion__trigger').forEach(t => t.setAttribute('aria-expanded', 'false'));
+            if (!isActive) { item.classList.add('active'); trigger.setAttribute('aria-expanded', 'true'); }
         });
     });
 })();
@@ -1656,7 +1676,7 @@ window.jhlTrack = function(event, data) {
     var headlines = {
         core:  { title: 'Get Matched with a Local Expert', sub: "We'll connect you with a vetted DFW professional who fits your needs. No pressure, no obligations." },
         '1':   { title: 'Get Matched with a Mortgage-Ready Advisor', sub: 'Our lender partners specialize in helping buyers build credit-ready profiles and get pre-approved.' },
-        '2':   { title: 'Connect with a Pre-Approval Specialist', sub: "Not sure which loan fits? Our mortgage partners will walk you through it \u2014 no pressure." },
+        '2':   { title: 'Connect with a Pre-Approval Specialist', sub: "Not sure which loan fits? Our mortgage partners will walk you through it, no pressure." },
         '3':   { title: 'Find a Local Buyer\'s Agent', sub: "We'll match you with a DFW agent who knows your target neighborhoods inside and out." },
         '4':   { title: 'Talk to a Negotiation-Savvy Agent', sub: 'Get matched with an agent who has a proven track record in competitive DFW markets.' },
         '5':   { title: 'Get Your Closing Team in Place', sub: "We'll connect you with inspectors, title professionals, and closing experts you can trust." },
@@ -1815,7 +1835,7 @@ window.jhlTrack = function(event, data) {
             timestamp: new Date().toISOString()
         };
 
-        // TODO: Replace with your GoHighLevel webhook URL
+        // GHL lead webhook (live, do not change without updating GHL)
         var GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/CHqaNRCWjmT6XyOUQtWd/webhook-trigger/8830eb17-1d96-4575-9f1d-82e4cba000f8';
 
         if (GHL_WEBHOOK_URL) {
@@ -1827,7 +1847,7 @@ window.jhlTrack = function(event, data) {
             .then(function() { showSuccess(); })
             .catch(function() { showSuccess(); }); // Still show success to user
         } else {
-            // No webhook configured — simulate success
+            // No webhook configured, simulate success
             setTimeout(function() { showSuccess(); }, 1000);
         }
 

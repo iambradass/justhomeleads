@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
+    <!-- PostHog Analytics -->
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_J5leAeIhlii1DrCYpJ6deiNfyFrs6fDaYTJDCdcEWN1',{api_host:'https://us.i.posthog.com',person_profiles:'identified_only'});
+    </script>
+    <!-- End PostHog Analytics -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
@@ -10,8 +16,20 @@
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-  <link href="jhl-redesign.css" rel="stylesheet"/>
- </head>
+  <link href="jhl-redesign.css?v=20260711a" rel="stylesheet"/>
+     <link rel="canonical" href="https://justhomeleads.com/market-timing">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Just Home Leads">
+    <meta property="og:title" content="DFW Market Timing Guide: Should You Wait? | Just Home Leads">
+    <meta property="og:description" content="DFW's trusted first-time homebuyer education platform.">
+    <meta property="og:url" content="https://justhomeleads.com/market-timing">
+    <meta property="og:image" content="https://justhomeleads.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
  <body data-page="market-timing" data-phase="3" data-stage="3.10">
   <!-- Skip Link -->
   <a class="skip-link" href="#main">
@@ -33,7 +51,7 @@
        Leads
       </div>
       <div class="jhl-logo__tagline">
-       Dallas–Fort Worth
+       Dallas-Fort Worth
       </div>
      </div>
     </a>
@@ -45,7 +63,7 @@
                     </a>
                     <div class="jhl-nav__dropdown jhl-nav__dropdown--mega">
                         <a class="jhl-nav__dropdown-featured" href="/journey">
-                            Journey Overview — See All Phases
+                            Journey Overview: See All Phases
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         </a>
                         <div class="jhl-nav__dropdown-grid">
@@ -87,7 +105,7 @@
                     </div>
                 </div>
                 <a class="jhl-nav__link" href="/webinar">Webinar</a>
-                <button class="jhl-explore-btn" id="explore-toggle" aria-label="Explore all topics">
+                <button class="jhl-explore-btn" id="explore-toggle" aria-label="Explore all topics" aria-expanded="false" aria-controls="explore-menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></svg>
                     Explore
                 </button>
@@ -98,7 +116,7 @@
                     </svg>
                 </a>
             </nav>
-    <button aria-label="Open menu" class="jhl-menu-toggle">
+    <button aria-label="Open menu" class="jhl-menu-toggle" aria-expanded="false" aria-controls="mobile-nav">
      <span>
      </span>
      <span>
@@ -129,6 +147,7 @@
                         <a href="/lender-shopping">Lender Shopping</a>
                         <a href="/active-search-strategies">Search Strategies</a>
                         <a href="/home-touring-guide">Home Touring</a>
+                        <a href="/neighborhood-research-guide">Neighborhoods</a>
                         <a href="/writing-winning-offers">Writing Offers</a>
                         <a href="/closing-costs-breakdown">Closing Costs</a>
                         <a href="/closing-day-guide">Closing Day</a>
@@ -243,6 +262,7 @@
                     <a href="/action-plan">12-Month Action Plan</a>
                     <a href="/honest-truth">The Honest Truth</a>
                     <a href="/reality-check">Reality Check Quiz</a>
+                    <a href="/red-flags-checklist">Red Flags Checklist</a>
                     <a href="/money-truth">Money Truth</a>
                     <a href="/market-timing">Market Timing</a>
                     <a href="/property-tax-guide">Property Tax Guide</a>
@@ -294,7 +314,7 @@
      What You'll Learn
     </h2>
     <p>
-     Every first-time buyer asks this question. With rates fluctuating, prices rising, and scary headlines everywhere, it feels impossible to know if now is the "right time." This page cuts through the noise with real DFW market data and helps you make the decision that's right for YOU—not based on fear or FOMO, but on facts.
+     Every first-time buyer asks this question. With rates fluctuating, prices rising, and scary headlines everywhere, it feels impossible to know if now is the "right time." This page cuts through the noise with real DFW market data and helps you make the decision that's right for YOU, not based on fear or FOMO, but on facts.
     </p>
     <div class="jhl-intro__objectives">
      <div class="jhl-intro__objective">
@@ -323,7 +343,7 @@
        The Honest Truth About Market Timing
       </h3>
       <p>
-       Nobody—not economists, not real estate experts, not your uncle who "predicted the 2008 crash"—can accurately predict what the market will do next month, let alone next year. What we CAN do is look at data, understand fundamentals, and make informed decisions based on YOUR financial readiness.
+       Nobody, not economists, not real estate experts, not your uncle who "predicted the 2008 crash", can accurately predict what the market will do next month, let alone next year. What we CAN do is look at data, understand fundamentals, and make informed decisions based on YOUR financial readiness.
       </p>
       <div class="emphasis">
        Time IN the market beats timing the market. Every time.
@@ -531,7 +551,7 @@
    <section class="jhl-section jhl-section--white">
     <div class="jhl-section__inner">
      <h2>
-      Market Timing Myths — BUSTED
+      Market Timing Myths, BUSTED
      </h2>
      <p>
       Let's address the most common things people tell themselves while they wait.
@@ -569,7 +589,7 @@
          TRUTH
         </h4>
         <p>
-         Maybe. Maybe not. Even if rates drop 1%, home prices typically rise 5-10% as more buyers enter the market. You can refinance a rate—you can't refinance the purchase price. It's often smarter to buy at higher rates when prices are lower, then refinance when rates drop.
+         Maybe. Maybe not. Even if rates drop 1%, home prices typically rise 5-10% as more buyers enter the market. You can refinance a rate, you can't refinance the purchase price. It's often smarter to buy at higher rates when prices are lower, then refinance when rates drop.
         </p>
        </div>
       </div>
@@ -579,7 +599,7 @@
          MYTH
         </h4>
         <p>
-         "The market is overheated—a crash is coming"
+         "The market is overheated, a crash is coming"
         </p>
        </div>
        <div class="truth">
@@ -587,7 +607,7 @@
          TRUTH
         </h4>
         <p>
-         DFW fundamentals are strong: Job growth, population growth, limited land, and strict lending (unlike 2008). The 2008 crash happened because of loose lending—today's buyers are qualified. DFW has been "overheated" for a decade according to headlines, yet prices keep rising steadily.
+         DFW fundamentals are strong: Job growth, population growth, limited land, and strict lending (unlike 2008). The 2008 crash happened because of loose lending, today's buyers are qualified. DFW has been "overheated" for a decade according to headlines, yet prices keep rising steadily.
         </p>
        </div>
       </div>
@@ -624,7 +644,7 @@
       <div class="decision-grid">
        <div class="decision-column">
         <h4>
-         ✅ Buy Now If...
+         ✓ Buy Now If...
         </h4>
         <ul>
          <li>
@@ -655,7 +675,7 @@
        </div>
        <div class="decision-column">
         <h4>
-         ⏸️ Consider Waiting If...
+         ⏸ Consider Waiting If...
         </h4>
         <ul>
          <li>
@@ -728,7 +748,7 @@
        </div>
       </div>
       <div class="story-content">
-       "Everyone told me I was crazy to buy in 2021 when prices were 'at the peak' and rates were rising. I bought a Frisco home for $385K at 5.8% interest. Felt like I overpaid. Today my home is worth $465K. My mortgage is $2,350—neighbors pay $2,800 rent for worse places."
+       "Everyone told me I was crazy to buy in 2021 when prices were 'at the peak' and rates were rising. I bought a Frisco home for $385K at 5.8% interest. Felt like I overpaid. Today my home is worth $465K. My mortgage is $2,350, neighbors pay $2,800 rent for worse places."
       </div>
       <div class="outcome">
        Built $80K equity in 3 years + locked in housing costs. Net worth up $100K+.
@@ -918,7 +938,7 @@
      </h2>
      <ul>
       <li>
-       Nobody can predict market timing perfectly—but you can control YOUR financial readiness
+       Nobody can predict market timing perfectly, but you can control YOUR financial readiness
       </li>
       <li>
        Waiting costs real money: rent payments, missed equity, and appreciation you don't capture
@@ -930,7 +950,7 @@
        DFW fundamentals are strong: job growth, population growth, and limited inventory support steady appreciation
       </li>
       <li>
-       The best time to buy is when YOU are financially and emotionally ready—not when the market is "perfect"
+       The best time to buy is when YOU are financially and emotionally ready, not when the market is "perfect"
       </li>
      </ul>
     </div>
@@ -1155,7 +1175,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
             </div>
             <h2 class="jhl-success-title">You're Connected!</h2>
-            <p class="jhl-success-subtitle">A verified DFW expert will reach out within 2 hours &mdash; usually much faster.</p>
+            <p class="jhl-success-subtitle">A verified DFW expert will reach out within 2 hours, usually much faster.</p>
 
             <div class="jhl-enrichment">
                 <div class="jhl-enrichment__label">Where are you in your journey?</div>
@@ -1222,11 +1242,13 @@
         const openNav = () => {
             mobileNav.classList.add('active');
             mobileNav.setAttribute('aria-hidden', 'false');
+            toggle.setAttribute('aria-expanded', 'true');
             document.body.style.overflow = 'hidden';
         };
         const closeNav = () => {
             mobileNav.classList.remove('active');
             mobileNav.setAttribute('aria-hidden', 'true');
+            toggle.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
         };
 
@@ -1263,11 +1285,13 @@
             var openExplore = function() {
                 exploreMenu.classList.add('active');
                 exploreMenu.setAttribute('aria-hidden', 'false');
+                exploreBtn.setAttribute('aria-expanded', 'true');
                 document.body.style.overflow = 'hidden';
             };
             var closeExplore = function() {
                 exploreMenu.classList.remove('active');
                 exploreMenu.setAttribute('aria-hidden', 'true');
+                exploreBtn.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';
             };
 
@@ -1293,8 +1317,10 @@
         trigger.addEventListener('click', () => {
             const item = trigger.parentElement;
             const isActive = item.classList.contains('active');
-            item.closest('.jhl-accordion').querySelectorAll('.jhl-accordion__item').forEach(i => i.classList.remove('active'));
-            if (!isActive) item.classList.add('active');
+            const acc = item.closest('.jhl-accordion');
+            acc.querySelectorAll('.jhl-accordion__item').forEach(i => i.classList.remove('active'));
+            acc.querySelectorAll('.jhl-accordion__trigger').forEach(t => t.setAttribute('aria-expanded', 'false'));
+            if (!isActive) { item.classList.add('active'); trigger.setAttribute('aria-expanded', 'true'); }
         });
     });
 })();
@@ -1371,7 +1397,7 @@ window.jhlTrack = function(event, data) {
     var headlines = {
         core:  { title: 'Get Matched with a Local Expert', sub: "We'll connect you with a vetted DFW professional who fits your needs. No pressure, no obligations." },
         '1':   { title: 'Get Matched with a Mortgage-Ready Advisor', sub: 'Our lender partners specialize in helping buyers build credit-ready profiles and get pre-approved.' },
-        '2':   { title: 'Connect with a Pre-Approval Specialist', sub: "Not sure which loan fits? Our mortgage partners will walk you through it \u2014 no pressure." },
+        '2':   { title: 'Connect with a Pre-Approval Specialist', sub: "Not sure which loan fits? Our mortgage partners will walk you through it, no pressure." },
         '3':   { title: 'Find a Local Buyer\'s Agent', sub: "We'll match you with a DFW agent who knows your target neighborhoods inside and out." },
         '4':   { title: 'Talk to a Negotiation-Savvy Agent', sub: 'Get matched with an agent who has a proven track record in competitive DFW markets.' },
         '5':   { title: 'Get Your Closing Team in Place', sub: "We'll connect you with inspectors, title professionals, and closing experts you can trust." },
@@ -1530,7 +1556,7 @@ window.jhlTrack = function(event, data) {
             timestamp: new Date().toISOString()
         };
 
-        // TODO: Replace with your GoHighLevel webhook URL
+        // GHL lead webhook (live, do not change without updating GHL)
         var GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/CHqaNRCWjmT6XyOUQtWd/webhook-trigger/8830eb17-1d96-4575-9f1d-82e4cba000f8';
 
         if (GHL_WEBHOOK_URL) {
@@ -1542,7 +1568,7 @@ window.jhlTrack = function(event, data) {
             .then(function() { showSuccess(); })
             .catch(function() { showSuccess(); }); // Still show success to user
         } else {
-            // No webhook configured — simulate success
+            // No webhook configured, simulate success
             setTimeout(function() { showSuccess(); }, 1000);
         }
 

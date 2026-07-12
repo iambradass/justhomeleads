@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
+    <!-- PostHog Analytics -->
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_J5leAeIhlii1DrCYpJ6deiNfyFrs6fDaYTJDCdcEWN1',{api_host:'https://us.i.posthog.com',person_profiles:'identified_only'});
+    </script>
+    <!-- End PostHog Analytics -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
    Homeowner Resources: Your Support Network | Just Home Leads
   </title>
   <meta content="Essential resources for Texas homeowners: emergency contacts, maintenance providers, tax guidance, HOA help, and ongoing support from Just Home Leads verified network." name="description"/>
-  <meta content="Homeowner Resources: Your Support Network | Just Home Leads" property="og:title"/>
-  <meta content="You did it! Access your complete resource guide for successful homeownership in DFW." property="og:description"/>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-  <link href="jhl-redesign.css" rel="stylesheet"/>
- </head>
+  <link href="jhl-redesign.css?v=20260711a" rel="stylesheet"/>
+     <link rel="canonical" href="https://justhomeleads.com/homeowner-resources">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Just Home Leads">
+    <meta property="og:title" content="Homeowner Resources: Your Support Network | Just Home Leads">
+    <meta property="og:description" content="DFW's trusted first-time homebuyer education platform.">
+    <meta property="og:url" content="https://justhomeleads.com/homeowner-resources">
+    <meta property="og:image" content="https://justhomeleads.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
  <body data-page="homeowner-resources" data-phase="7" data-stage="7.4">
   <div id="confetti" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;overflow:hidden;"></div>
   <!-- Skip Link -->
@@ -36,7 +52,7 @@
        Leads
       </div>
       <div class="jhl-logo__tagline">
-       Dallas–Fort Worth
+       Dallas-Fort Worth
       </div>
      </div>
     </a>
@@ -48,7 +64,7 @@
                     </a>
                     <div class="jhl-nav__dropdown jhl-nav__dropdown--mega">
                         <a class="jhl-nav__dropdown-featured" href="/journey">
-                            Journey Overview — See All Phases
+                            Journey Overview: See All Phases
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         </a>
                         <div class="jhl-nav__dropdown-grid">
@@ -90,7 +106,7 @@
                     </div>
                 </div>
                 <a class="jhl-nav__link" href="/webinar">Webinar</a>
-                <button class="jhl-explore-btn" id="explore-toggle" aria-label="Explore all topics">
+                <button class="jhl-explore-btn" id="explore-toggle" aria-label="Explore all topics" aria-expanded="false" aria-controls="explore-menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></svg>
                     Explore
                 </button>
@@ -101,7 +117,7 @@
                     </svg>
                 </a>
             </nav>
-    <button aria-label="Open menu" class="jhl-menu-toggle">
+    <button aria-label="Open menu" class="jhl-menu-toggle" aria-expanded="false" aria-controls="mobile-nav">
      <span>
      </span>
      <span>
@@ -132,6 +148,7 @@
                         <a href="/lender-shopping">Lender Shopping</a>
                         <a href="/active-search-strategies">Search Strategies</a>
                         <a href="/home-touring-guide">Home Touring</a>
+                        <a href="/neighborhood-research-guide">Neighborhoods</a>
                         <a href="/writing-winning-offers">Writing Offers</a>
                         <a href="/closing-costs-breakdown">Closing Costs</a>
                         <a href="/closing-day-guide">Closing Day</a>
@@ -246,6 +263,7 @@
                     <a href="/action-plan">12-Month Action Plan</a>
                     <a href="/honest-truth">The Honest Truth</a>
                     <a href="/reality-check">Reality Check Quiz</a>
+                    <a href="/red-flags-checklist">Red Flags Checklist</a>
                     <a href="/money-truth">Money Truth</a>
                     <a href="/market-timing">Market Timing</a>
                     <a href="/property-tax-guide">Property Tax Guide</a>
@@ -311,7 +329,7 @@
      Your Homeowner Support Network
     </h2>
     <p>
-     Remember when buying a home felt impossible? Look at you now—keys in hand, building wealth, and creating memories in a place that's truly yours. This resource guide is our way of saying: we're still here for you. Homeownership is a journey, not a destination.
+     Remember when buying a home felt impossible? Look at you now, keys in hand, building wealth, and creating memories in a place that's truly yours. This resource guide is our way of saying: we're still here for you. Homeownership is a journey, not a destination.
     </p>
     <div class="jhl-intro__objectives">
      <div class="jhl-intro__objective">
@@ -346,7 +364,7 @@
       Your Comprehensive Resource Directory
      </h2>
      <p style="text-align: center; font-size: 18px; max-width: 700px; margin: 0 auto var(--space-lg);">
-      Bookmark this page—you'll want quick access to these resources throughout your homeownership journey
+      Bookmark this page, you'll want quick access to these resources throughout your homeownership journey
      </p>
      <div class="resource-tabs">
       <button class="resource-tab active" data-tracking-event="tab_click" data-tracking-location="resource_tabs" data-tracking-tab="emergency" onclick="showTab('emergency')">
@@ -386,8 +404,8 @@
         <p class="jhl-card__desc">
          Report outages and check restoration estimates through your provider.
         </p>
-        <a class="resource-link" href="#">
-         Check Your Provider's Website →
+        <a class="resource-link" href="https://www.oncor.com" rel="noopener" target="_blank">
+         Oncor Outage Center →
         </a>
        </div>
        <div class="jhl-card jhl-card--orange">
@@ -397,9 +415,6 @@
         <p class="jhl-card__desc">
          Contact your city's water department for main line issues.
         </p>
-        <a class="resource-link" href="#">
-         Find Your City's Number →
-        </a>
        </div>
        <div class="jhl-card jhl-card--green">
         <h4 class="jhl-card__title">
@@ -408,7 +423,7 @@
         <p class="jhl-card__desc">
          Need a trusted plumber, electrician, or HVAC tech fast? Our verified network includes emergency responders.
         </p>
-        <a class="resource-link" href="#">
+        <a class="resource-link" href="#verified-network">
          Connect with Our Verified Network →
         </a>
        </div>
@@ -424,7 +439,7 @@
         <p class="jhl-card__desc">
          Schedule bi-annual tune-ups (spring for AC, fall for heat) to extend system life and maintain warranty.
         </p>
-        <a class="resource-link" href="#">
+        <a class="resource-link" href="#verified-network">
          Find Verified HVAC Pros →
         </a>
        </div>
@@ -435,7 +450,7 @@
         <p class="jhl-card__desc">
          Annual drain cleaning, water heater flush, and leak checks prevent costly emergencies.
         </p>
-        <a class="resource-link" href="#">
+        <a class="resource-link" href="#verified-network">
          Find Verified Plumbers →
         </a>
        </div>
@@ -446,7 +461,7 @@
         <p class="jhl-card__desc">
          DFW summers are brutal on lawns. Professional care keeps your curb appeal (and home value) strong.
         </p>
-        <a class="resource-link" href="#">
+        <a class="resource-link" href="#verified-network">
          Find Verified Landscapers →
         </a>
        </div>
@@ -457,7 +472,7 @@
         <p class="jhl-card__desc">
          Quarterly treatments keep Texas-sized bugs at bay. Most companies offer annual contracts.
         </p>
-        <a class="resource-link" href="#">
+        <a class="resource-link" href="#verified-network">
          Find Verified Pest Control →
         </a>
        </div>
@@ -484,7 +499,7 @@
         <p class="jhl-card__desc">
          Document damage with photos/video, contact your agent, and know your deductibles.
         </p>
-        <a class="resource-link" href="#">
+        <a class="resource-link" href="#verified-network">
          Find Insurance Help →
         </a>
        </div>
@@ -506,7 +521,7 @@
         <p class="jhl-card__desc">
          Ready to optimize your homeowner finances? Our network includes mortgage specialists and financial advisors.
         </p>
-        <a class="resource-link" href="#">
+        <a class="resource-link" href="#verified-network">
          Connect with Financial Pros →
         </a>
        </div>
@@ -522,8 +537,8 @@
         <p class="jhl-card__desc">
          Covenants, Conditions &amp; Restrictions (CC&amp;Rs) govern what you can do with your property. Read them carefully before making changes.
         </p>
-        <a class="resource-link" href="#">
-         HOA Document Guide →
+        <a class="resource-link" href="https://guides.sll.texas.gov/property-owners-associations" rel="noopener" target="_blank">
+         Texas HOA Law Guide →
         </a>
        </div>
        <div class="jhl-card">
@@ -533,9 +548,6 @@
         <p class="jhl-card__desc">
          Planning exterior changes? Most HOAs require pre-approval. Submit requests in writing with detailed plans.
         </p>
-        <a class="resource-link" href="#">
-         Approval Tips →
-        </a>
        </div>
        <div class="jhl-card">
         <h4 class="jhl-card__title">
@@ -544,8 +556,8 @@
         <p class="jhl-card__desc">
          Problems with your HOA? Start with direct communication, then escalate to the board, then mediation if needed.
         </p>
-        <a class="resource-link" href="#">
-         Resolution Steps →
+        <a class="resource-link" href="https://guides.sll.texas.gov/property-owners-associations" rel="noopener" target="_blank">
+         Texas HOA Law Guide →
         </a>
        </div>
        <div class="jhl-card">
@@ -555,16 +567,13 @@
         <p class="jhl-card__desc">
          Don't like how things are run? Join the board or attend meetings. Change happens from the inside.
         </p>
-        <a class="resource-link" href="#">
-         Board Participation Guide →
-        </a>
        </div>
       </div>
      </div>
      <!-- Network Tab -->
      <div class="tab-content" id="tab-network">
       <p style="font-size: 18px; color: var(--gray-medium); margin-bottom: var(--space-lg); text-align: center;">
-       Every professional in our network has been vetted for quality, reliability, and fair pricing. We don't just hand you a list—we connect you with people we trust.
+       Every professional in our network has been vetted for quality, reliability, and fair pricing. We don't just hand you a list, we connect you with people we trust.
       </p>
       <div class="resource-grid">
        <div class="jhl-card jhl-card--green">
@@ -574,7 +583,7 @@
         <p class="jhl-card__desc">
          Title issues, boundary disputes, or contract questions? Legal expertise when you need it.
         </p>
-        <a class="resource-link" href="#">
+        <a class="resource-link" href="#verified-network">
          Connect Now →
         </a>
        </div>
@@ -585,7 +594,7 @@
         <p class="jhl-card__desc">
          Buying another property or need a maintenance inspection? Our inspectors know DFW homes inside and out.
         </p>
-        <a class="resource-link" href="#">
+        <a class="resource-link" href="#verified-network">
          Connect Now →
         </a>
        </div>
@@ -596,7 +605,7 @@
         <p class="jhl-card__desc">
          Ready for that kitchen remodel? Our contractors deliver quality work at fair prices.
         </p>
-        <a class="resource-link" href="#">
+        <a class="resource-link" href="#verified-network">
          Connect Now →
         </a>
        </div>
@@ -607,7 +616,7 @@
         <p class="jhl-card__desc">
          Building wealth through homeownership? Get advice on equity, investments, and long-term planning.
         </p>
-        <a class="resource-link" href="#">
+        <a class="resource-link" href="#verified-network">
          Connect Now →
         </a>
        </div>
@@ -640,7 +649,7 @@
          Homestead Exemption
         </h4>
         <p>
-         Reduces your property tax bill by exempting part of your home's value. File once—it stays until you move.
+         Reduces your property tax bill by exempting part of your home's value. File once, it stays until you move.
         </p>
         <p>
          <strong>
@@ -780,9 +789,7 @@
    <section class="jhl-section jhl-section--cream">
     <div class="jhl-section__inner">
      <div class="jhl-info-box jhl-info-box--warning">
-      <div class="jhl-info-box__icon">
-       ⚠️
-      </div>
+      <div class="jhl-info-box__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div>
       <div class="jhl-info-box__content">
        <strong>
         Contractor Red Flags: Protect Yourself
@@ -874,7 +881,7 @@
        If you have an HOA, read your CC&amp;Rs before making any exterior changes to avoid violations
       </li>
       <li>
-       Use JHL's verified network for all home services—we've already done the vetting for you
+       Use JHL's verified network for all home services, we've already done the vetting for you
       </li>
      </ul>
     </div>
@@ -1099,7 +1106,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
             </div>
             <h2 class="jhl-success-title">You're Connected!</h2>
-            <p class="jhl-success-subtitle">A verified DFW expert will reach out within 2 hours &mdash; usually much faster.</p>
+            <p class="jhl-success-subtitle">A verified DFW expert will reach out within 2 hours, usually much faster.</p>
 
             <div class="jhl-enrichment">
                 <div class="jhl-enrichment__label">Where are you in your journey?</div>
@@ -1249,11 +1256,13 @@ if (typeof JHL !== 'undefined') {
         const openNav = () => {
             mobileNav.classList.add('active');
             mobileNav.setAttribute('aria-hidden', 'false');
+            toggle.setAttribute('aria-expanded', 'true');
             document.body.style.overflow = 'hidden';
         };
         const closeNav = () => {
             mobileNav.classList.remove('active');
             mobileNav.setAttribute('aria-hidden', 'true');
+            toggle.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
         };
 
@@ -1290,11 +1299,13 @@ if (typeof JHL !== 'undefined') {
             var openExplore = function() {
                 exploreMenu.classList.add('active');
                 exploreMenu.setAttribute('aria-hidden', 'false');
+                exploreBtn.setAttribute('aria-expanded', 'true');
                 document.body.style.overflow = 'hidden';
             };
             var closeExplore = function() {
                 exploreMenu.classList.remove('active');
                 exploreMenu.setAttribute('aria-hidden', 'true');
+                exploreBtn.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';
             };
 
@@ -1320,8 +1331,10 @@ if (typeof JHL !== 'undefined') {
         trigger.addEventListener('click', () => {
             const item = trigger.parentElement;
             const isActive = item.classList.contains('active');
-            item.closest('.jhl-accordion').querySelectorAll('.jhl-accordion__item').forEach(i => i.classList.remove('active'));
-            if (!isActive) item.classList.add('active');
+            const acc = item.closest('.jhl-accordion');
+            acc.querySelectorAll('.jhl-accordion__item').forEach(i => i.classList.remove('active'));
+            acc.querySelectorAll('.jhl-accordion__trigger').forEach(t => t.setAttribute('aria-expanded', 'false'));
+            if (!isActive) { item.classList.add('active'); trigger.setAttribute('aria-expanded', 'true'); }
         });
     });
 })();
@@ -1398,7 +1411,7 @@ window.jhlTrack = function(event, data) {
     var headlines = {
         core:  { title: 'Get Matched with a Local Expert', sub: "We'll connect you with a vetted DFW professional who fits your needs. No pressure, no obligations." },
         '1':   { title: 'Get Matched with a Mortgage-Ready Advisor', sub: 'Our lender partners specialize in helping buyers build credit-ready profiles and get pre-approved.' },
-        '2':   { title: 'Connect with a Pre-Approval Specialist', sub: "Not sure which loan fits? Our mortgage partners will walk you through it \u2014 no pressure." },
+        '2':   { title: 'Connect with a Pre-Approval Specialist', sub: "Not sure which loan fits? Our mortgage partners will walk you through it, no pressure." },
         '3':   { title: 'Find a Local Buyer\'s Agent', sub: "We'll match you with a DFW agent who knows your target neighborhoods inside and out." },
         '4':   { title: 'Talk to a Negotiation-Savvy Agent', sub: 'Get matched with an agent who has a proven track record in competitive DFW markets.' },
         '5':   { title: 'Get Your Closing Team in Place', sub: "We'll connect you with inspectors, title professionals, and closing experts you can trust." },
@@ -1557,7 +1570,7 @@ window.jhlTrack = function(event, data) {
             timestamp: new Date().toISOString()
         };
 
-        // TODO: Replace with your GoHighLevel webhook URL
+        // GHL lead webhook (live, do not change without updating GHL)
         var GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/CHqaNRCWjmT6XyOUQtWd/webhook-trigger/8830eb17-1d96-4575-9f1d-82e4cba000f8';
 
         if (GHL_WEBHOOK_URL) {
@@ -1569,7 +1582,7 @@ window.jhlTrack = function(event, data) {
             .then(function() { showSuccess(); })
             .catch(function() { showSuccess(); }); // Still show success to user
         } else {
-            // No webhook configured — simulate success
+            // No webhook configured, simulate success
             setTimeout(function() { showSuccess(); }, 1000);
         }
 

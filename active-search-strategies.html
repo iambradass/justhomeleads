@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
+    <!-- PostHog Analytics -->
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_J5leAeIhlii1DrCYpJ6deiNfyFrs6fDaYTJDCdcEWN1',{api_host:'https://us.i.posthog.com',person_profiles:'identified_only'});
+    </script>
+    <!-- End PostHog Analytics -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
@@ -10,8 +16,20 @@
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-  <link href="jhl-redesign.css" rel="stylesheet"/>
- </head>
+  <link href="jhl-redesign.css?v=20260711a" rel="stylesheet"/>
+     <link rel="canonical" href="https://justhomeleads.com/active-search-strategies">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Just Home Leads">
+    <meta property="og:title" content="Active Search Strategies | Just Home Leads">
+    <meta property="og:description" content="DFW's trusted first-time homebuyer education platform.">
+    <meta property="og:url" content="https://justhomeleads.com/active-search-strategies">
+    <meta property="og:image" content="https://justhomeleads.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
  <body data-page="active-search-strategies" data-phase="3" data-stage="3.2">
   <!-- Skip Link -->
   <a class="skip-link" href="#main">
@@ -33,7 +51,7 @@
        Leads
       </div>
       <div class="jhl-logo__tagline">
-       Dallas–Fort Worth
+       Dallas-Fort Worth
       </div>
      </div>
     </a>
@@ -45,7 +63,7 @@
                     </a>
                     <div class="jhl-nav__dropdown jhl-nav__dropdown--mega">
                         <a class="jhl-nav__dropdown-featured" href="/journey">
-                            Journey Overview — See All Phases
+                            Journey Overview: See All Phases
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         </a>
                         <div class="jhl-nav__dropdown-grid">
@@ -87,7 +105,7 @@
                     </div>
                 </div>
                 <a class="jhl-nav__link" href="/webinar">Webinar</a>
-                <button class="jhl-explore-btn" id="explore-toggle" aria-label="Explore all topics">
+                <button class="jhl-explore-btn" id="explore-toggle" aria-label="Explore all topics" aria-expanded="false" aria-controls="explore-menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></svg>
                     Explore
                 </button>
@@ -98,7 +116,7 @@
                     </svg>
                 </a>
             </nav>
-    <button aria-label="Open menu" class="jhl-menu-toggle">
+    <button aria-label="Open menu" class="jhl-menu-toggle" aria-expanded="false" aria-controls="mobile-nav">
      <span>
      </span>
      <span>
@@ -129,6 +147,7 @@
                         <a href="/lender-shopping">Lender Shopping</a>
                         <a href="/active-search-strategies">Search Strategies</a>
                         <a href="/home-touring-guide">Home Touring</a>
+                        <a href="/neighborhood-research-guide">Neighborhoods</a>
                         <a href="/writing-winning-offers">Writing Offers</a>
                         <a href="/closing-costs-breakdown">Closing Costs</a>
                         <a href="/closing-day-guide">Closing Day</a>
@@ -243,6 +262,7 @@
                     <a href="/action-plan">12-Month Action Plan</a>
                     <a href="/honest-truth">The Honest Truth</a>
                     <a href="/reality-check">Reality Check Quiz</a>
+                    <a href="/red-flags-checklist">Red Flags Checklist</a>
                     <a href="/money-truth">Money Truth</a>
                     <a href="/market-timing">Market Timing</a>
                     <a href="/property-tax-guide">Property Tax Guide</a>
@@ -269,7 +289,7 @@
       Active Search Strategies
      </h1>
      <p class="jhl-hero__subtitle">
-      How to organize your search, work effectively with your agent, manage decision fatigue, and know when you've found the one—without losing your mind in the process.
+      How to organize your search, work effectively with your agent, manage decision fatigue, and know when you've found the one, without losing your mind in the process.
      </p>
 
                 <div class="jhl-updated-badge">
@@ -299,7 +319,7 @@
      What You'll Learn
     </h2>
     <p>
-     The average DFW first-time buyer tours 8-12 homes and takes 3-6 months to find "the one." This guide will help you search systematically, stay organized, communicate effectively with your agent, and recognize when you've found your home—while avoiding burnout and decision fatigue.
+     The average DFW first-time buyer tours 8-12 homes and takes 3-6 months to find "the one." This guide will help you search systematically, stay organized, communicate effectively with your agent, and recognize when you've found your home, while avoiding burnout and decision fatigue.
     </p>
     <div class="jhl-intro__objectives">
      <div class="jhl-intro__objective">
@@ -338,15 +358,15 @@
      <div class="jhl-card-grid">
       <div class="jhl-card">
        <h4 class="jhl-card__title">
-        🎯 Clarity Over Perfection
+         Clarity Over Perfection
        </h4>
        <p class="jhl-card__desc">
-        Know your must-haves cold. Everything else is negotiable. The "perfect" home doesn't exist—but the right home for YOU does.
+        Know your must-haves cold. Everything else is negotiable. The "perfect" home doesn't exist, but the right home for YOU does.
        </p>
       </div>
       <div class="jhl-card jhl-card--purple">
        <h4 class="jhl-card__title">
-        ⏱️ Patience Is Strategy
+        ⏱ Patience Is Strategy
        </h4>
        <p class="jhl-card__desc">
         Rushing leads to regret. Taking time leads to confidence. The best home purchase decision you make might be the one you don't make.
@@ -354,15 +374,15 @@
       </div>
       <div class="jhl-card jhl-card--orange">
        <h4 class="jhl-card__title">
-        🔄 Flexibility Wins
+         Flexibility Wins
        </h4>
        <p class="jhl-card__desc">
-        Your criteria will evolve as you see real homes. That's not failure—it's learning. Be willing to adjust based on what the market teaches you.
+        Your criteria will evolve as you see real homes. That's not failure, it's learning. Be willing to adjust based on what the market teaches you.
        </p>
       </div>
       <div class="jhl-card jhl-card--blue">
        <h4 class="jhl-card__title">
-        🧠 Trust Your Gut
+         Trust Your Gut
        </h4>
        <p class="jhl-card__desc">
         After all your research, your instincts matter. If something feels wrong, it probably is. If a home feels right, pay attention.
@@ -393,7 +413,7 @@
       Setting Up Your Search Machine
      </h2>
      <p>
-      The most successful home searches aren't passive—they're systematic. Here's how to set yourself up to find homes fast and never miss an opportunity.
+      The most successful home searches aren't passive, they're systematic. Here's how to set yourself up to find homes fast and never miss an opportunity.
      </p>
      <h3>
       Search Alert Setup Guide
@@ -433,9 +453,7 @@
          </li>
         </ul>
         <div class="jhl-info-box jhl-info-box--tip">
-         <div class="jhl-info-box__icon">
-          💡
-         </div>
+         <div class="jhl-info-box__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
          <div class="jhl-info-box__content">
           <strong>
            Pro Tip
@@ -478,15 +496,13 @@
          </li>
         </ul>
         <div class="jhl-info-box jhl-info-box--tip">
-         <div class="jhl-info-box__icon">
-          💡
-         </div>
+         <div class="jhl-info-box__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
          <div class="jhl-info-box__content">
           <strong>
            Pro Tip
           </strong>
           <p>
-           Redfin's "Compete Score" shows how competitive a neighborhood is—helpful for setting offer expectations.
+           Redfin's "Compete Score" shows how competitive a neighborhood is, helpful for setting offer expectations.
           </p>
          </div>
         </div>
@@ -520,15 +536,13 @@
          </li>
         </ul>
         <div class="jhl-info-box jhl-info-box--tip">
-         <div class="jhl-info-box__icon">
-          💡
-         </div>
+         <div class="jhl-info-box__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
          <div class="jhl-info-box__content">
           <strong>
            Pro Tip
           </strong>
           <p>
-           Realtor.com shows "Days on Market" more accurately than some other sites—useful for negotiation research.
+           Realtor.com shows "Days on Market" more accurately than some other sites, useful for negotiation research.
           </p>
          </div>
         </div>
@@ -545,7 +559,7 @@
        </button>
        <div class="jhl-accordion__content">
         <p>
-         This is often the fastest source—your agent can set up custom searches that hit your inbox before public sites.
+         This is often the fastest source, your agent can set up custom searches that hit your inbox before public sites.
         </p>
         <ul>
          <li>
@@ -565,15 +579,13 @@
          </li>
         </ul>
         <div class="jhl-info-box jhl-info-box--important">
-         <div class="jhl-info-box__icon">
-          📌
-         </div>
+         <div class="jhl-info-box__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17v5"/><path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z"/></svg></div>
          <div class="jhl-info-box__content">
           <strong>
            Important
           </strong>
           <p>
-           The MLS is the primary source—public sites pull from it. Being first to see a listing gives you competitive advantage.
+           The MLS is the primary source, public sites pull from it. Being first to see a listing gives you competitive advantage.
           </p>
          </div>
         </div>
@@ -615,7 +627,7 @@
     <div class="jhl-section__inner">
      <div class="tracker-container" id="propertyTracker">
       <h3>
-       📋 Your Property Tracker
+        Your Property Tracker
       </h3>
       <p>
        Keep all your toured homes organized in one place. Rate them, add notes, and compare easily.
@@ -688,7 +700,7 @@
      <div class="jhl-card-grid">
       <div class="jhl-card">
        <h4 class="jhl-card__title">
-        📱 Quick Updates
+         Quick Updates
        </h4>
        <p class="jhl-card__desc">
         <strong>
@@ -718,7 +730,7 @@
       </div>
       <div class="jhl-card jhl-card--purple">
        <h4 class="jhl-card__title">
-        📊 Search Strategy Check-ins
+         Search Strategy Check-ins
        </h4>
        <p class="jhl-card__desc">
         <strong>
@@ -751,7 +763,7 @@
       </div>
       <div class="jhl-card jhl-card--orange">
        <h4 class="jhl-card__title">
-        📝 Detailed Feedback
+         Detailed Feedback
        </h4>
        <p class="jhl-card__desc">
         <strong>
@@ -784,15 +796,13 @@
       </div>
      </div>
      <div class="jhl-info-box jhl-info-box--warning">
-      <div class="jhl-info-box__icon">
-       💬
-      </div>
+      <div class="jhl-info-box__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></div>
       <div class="jhl-info-box__content">
        <strong>
         What Your Agent Needs to Hear
        </strong>
        <p>
-        Don't be afraid to give honest feedback—even negative feedback. Telling your agent "I liked everything!" when you didn't wastes everyone's time. Specific feedback like "The kitchen was too small" or "I don't want to be this close to a highway" helps them find better matches faster.
+        Don't be afraid to give honest feedback, even negative feedback. Telling your agent "I liked everything!" when you didn't wastes everyone's time. Specific feedback like "The kitchen was too small" or "I don't want to be this close to a highway" helps them find better matches faster.
        </p>
       </div>
      </div>
@@ -808,10 +818,10 @@
      </p>
      <div class="fatigue-section">
       <h3>
-       🔋 Check Your Fatigue Level
+        Check Your Fatigue Level
       </h3>
       <p>
-       Answer honestly—this helps you know when to push forward and when to take a break.
+       Answer honestly, this helps you know when to push forward and when to take a break.
       </p>
       <div class="fatigue-question" data-question="1">
        <p>
@@ -939,7 +949,7 @@
        <strong>
         Review your wins:
        </strong>
-       You've come so far—remember that.
+       You've come so far, remember that.
       </li>
      </ul>
     </div>
@@ -966,7 +976,7 @@
           Does it meet your must-haves?
          </h4>
          <p>
-          Not nice-to-haves—your non-negotiables. Location, bedroom count, whatever you said you wouldn't compromise on. If it fails here, stop.
+          Not nice-to-haves, your non-negotiables. Location, bedroom count, whatever you said you wouldn't compromise on. If it fails here, stop.
          </p>
         </div>
        </div>
@@ -981,7 +991,7 @@
           Can you afford it comfortably?
          </h4>
          <p>
-          Not "can you technically qualify"—can you afford the monthly payment while still living your life? Include taxes, insurance, HOA, maintenance.
+          Not "can you technically qualify", can you afford the monthly payment while still living your life? Include taxes, insurance, HOA, maintenance.
          </p>
         </div>
        </div>
@@ -996,7 +1006,7 @@
           Are the negatives fixable?
          </h4>
          <p>
-          Every home has downsides. Are yours cosmetic (paint, flooring, landscaping) or structural (layout, location, lot size)? You can change a kitchen—you can't change the neighborhood.
+          Every home has downsides. Are yours cosmetic (paint, flooring, landscaping) or structural (layout, location, lot size)? You can change a kitchen, you can't change the neighborhood.
          </p>
         </div>
        </div>
@@ -1055,7 +1065,7 @@
       When to Adjust Your Criteria
      </h2>
      <p>
-      Sometimes the market teaches you that your expectations need to shift. Here's how to know when to adjust—and when to stay the course.
+      Sometimes the market teaches you that your expectations need to shift. Here's how to know when to adjust, and when to stay the course.
      </p>
      <h3>
       Signs It's Time to Adjust
@@ -1140,7 +1150,7 @@
       When to Take a Break
      </h2>
      <p>
-      Sometimes the best search strategy is stepping back. Here's when a break helps—and how to do it right.
+      Sometimes the best search strategy is stepping back. Here's when a break helps, and how to do it right.
      </p>
      <h3>
       Signs You Need a Break
@@ -1198,15 +1208,13 @@
       </li>
      </ul>
      <div class="jhl-info-box jhl-info-box--important">
-      <div class="jhl-info-box__icon">
-       🎯
-      </div>
+      <div class="jhl-info-box__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
       <div class="jhl-info-box__content">
        <strong>
         Remember Your Why
        </strong>
        <p>
-        When the search feels endless, remember why you started. You're not just buying walls and a roof—you're building a foundation for your future. The right home is worth the wait. And when you find it, you'll know.
+        When the search feels endless, remember why you started. You're not just buying walls and a roof, you're building a foundation for your future. The right home is worth the wait. And when you find it, you'll know.
        </p>
       </div>
      </div>
@@ -1245,7 +1253,7 @@
        Adjust criteria when the market teaches you, but never compromise on true dealbreakers
       </li>
       <li>
-       Take strategic breaks when fatigue hits—returning with fresh eyes improves decision-making
+       Take strategic breaks when fatigue hits, returning with fresh eyes improves decision-making
       </li>
      </ul>
     </div>
@@ -1470,7 +1478,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
             </div>
             <h2 class="jhl-success-title">You're Connected!</h2>
-            <p class="jhl-success-subtitle">A verified DFW expert will reach out within 2 hours &mdash; usually much faster.</p>
+            <p class="jhl-success-subtitle">A verified DFW expert will reach out within 2 hours, usually much faster.</p>
 
             <div class="jhl-enrichment">
                 <div class="jhl-enrichment__label">Where are you in your journey?</div>
@@ -1535,7 +1543,7 @@ function renderProperties() {
                 <div class="tracker-item-rating">
                     ${[1,2,3,4,5].map(star => `
                         <span class="tracker-star ${prop.rating >= star ? 'active' : ''}"
-                              onclick="rateProperty(${index}, ${star})">★</span>
+                              onclick="rateProperty(${index}, ${star})"></span>
                     `).join('')}
                 </div>
                 <div class="tracker-item-actions">
@@ -1622,16 +1630,16 @@ function showFatigueResult() {
 
     if (total <= 6) {
         result.classList.add('low');
-        title.textContent = '✅ Energy Level: Good';
-        text.textContent = "You're in a healthy place! Your energy and enthusiasm are intact. Keep going at your current pace—just don't let this become a marathon without breaks.";
+        title.textContent = '✓ Energy Level: Good';
+        text.textContent = "You're in a healthy place! Your energy and enthusiasm are intact. Keep going at your current pace, just don't let this become a marathon without breaks.";
     } else if (total <= 10) {
         result.classList.add('medium');
-        title.textContent = '⚠️ Energy Level: Monitor';
+        title.textContent = ' Energy Level: Monitor';
         text.textContent = "You're showing some signs of fatigue. Consider limiting tours to 2-3 per week, taking a long weekend off, or reviewing whether your criteria needs adjustment. You're not burned out yet, but you're trending that way.";
     } else {
         result.classList.add('high');
-        title.textContent = '🛑 Energy Level: Take a Break';
-        text.textContent = "You're showing significant fatigue. This is the danger zone where bad decisions get made. Take at least a week off from active searching. Keep alerts on, but don't obsess. Return with fresh eyes—you'll see homes differently.";
+        title.textContent = ' Energy Level: Take a Break';
+        text.textContent = "You're showing significant fatigue. This is the danger zone where bad decisions get made. Take at least a week off from active searching. Keep alerts on, but don't obsess. Return with fresh eyes, you'll see homes differently.";
     }
 
     result.classList.add('visible');
@@ -1681,11 +1689,13 @@ function toggleAccordion(trigger) {
         const openNav = () => {
             mobileNav.classList.add('active');
             mobileNav.setAttribute('aria-hidden', 'false');
+            toggle.setAttribute('aria-expanded', 'true');
             document.body.style.overflow = 'hidden';
         };
         const closeNav = () => {
             mobileNav.classList.remove('active');
             mobileNav.setAttribute('aria-hidden', 'true');
+            toggle.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
         };
 
@@ -1722,11 +1732,13 @@ function toggleAccordion(trigger) {
             var openExplore = function() {
                 exploreMenu.classList.add('active');
                 exploreMenu.setAttribute('aria-hidden', 'false');
+                exploreBtn.setAttribute('aria-expanded', 'true');
                 document.body.style.overflow = 'hidden';
             };
             var closeExplore = function() {
                 exploreMenu.classList.remove('active');
                 exploreMenu.setAttribute('aria-hidden', 'true');
+                exploreBtn.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';
             };
 
@@ -1752,8 +1764,10 @@ function toggleAccordion(trigger) {
         trigger.addEventListener('click', () => {
             const item = trigger.parentElement;
             const isActive = item.classList.contains('active');
-            item.closest('.jhl-accordion').querySelectorAll('.jhl-accordion__item').forEach(i => i.classList.remove('active'));
-            if (!isActive) item.classList.add('active');
+            const acc = item.closest('.jhl-accordion');
+            acc.querySelectorAll('.jhl-accordion__item').forEach(i => i.classList.remove('active'));
+            acc.querySelectorAll('.jhl-accordion__trigger').forEach(t => t.setAttribute('aria-expanded', 'false'));
+            if (!isActive) { item.classList.add('active'); trigger.setAttribute('aria-expanded', 'true'); }
         });
     });
 })();
@@ -1830,7 +1844,7 @@ window.jhlTrack = function(event, data) {
     var headlines = {
         core:  { title: 'Get Matched with a Local Expert', sub: "We'll connect you with a vetted DFW professional who fits your needs. No pressure, no obligations." },
         '1':   { title: 'Get Matched with a Mortgage-Ready Advisor', sub: 'Our lender partners specialize in helping buyers build credit-ready profiles and get pre-approved.' },
-        '2':   { title: 'Connect with a Pre-Approval Specialist', sub: "Not sure which loan fits? Our mortgage partners will walk you through it \u2014 no pressure." },
+        '2':   { title: 'Connect with a Pre-Approval Specialist', sub: "Not sure which loan fits? Our mortgage partners will walk you through it, no pressure." },
         '3':   { title: 'Find a Local Buyer\'s Agent', sub: "We'll match you with a DFW agent who knows your target neighborhoods inside and out." },
         '4':   { title: 'Talk to a Negotiation-Savvy Agent', sub: 'Get matched with an agent who has a proven track record in competitive DFW markets.' },
         '5':   { title: 'Get Your Closing Team in Place', sub: "We'll connect you with inspectors, title professionals, and closing experts you can trust." },
@@ -1989,7 +2003,7 @@ window.jhlTrack = function(event, data) {
             timestamp: new Date().toISOString()
         };
 
-        // TODO: Replace with your GoHighLevel webhook URL
+        // GHL lead webhook (live, do not change without updating GHL)
         var GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/CHqaNRCWjmT6XyOUQtWd/webhook-trigger/8830eb17-1d96-4575-9f1d-82e4cba000f8';
 
         if (GHL_WEBHOOK_URL) {
@@ -2001,7 +2015,7 @@ window.jhlTrack = function(event, data) {
             .then(function() { showSuccess(); })
             .catch(function() { showSuccess(); }); // Still show success to user
         } else {
-            // No webhook configured — simulate success
+            // No webhook configured, simulate success
             setTimeout(function() { showSuccess(); }, 1000);
         }
 

@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
+    <!-- PostHog Analytics -->
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_J5leAeIhlii1DrCYpJ6deiNfyFrs6fDaYTJDCdcEWN1',{api_host:'https://us.i.posthog.com',person_profiles:'identified_only'});
+    </script>
+    <!-- End PostHog Analytics -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
@@ -10,8 +16,20 @@
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-  <link href="jhl-redesign.css" rel="stylesheet"/>
- </head>
+  <link href="jhl-redesign.css?v=20260711a" rel="stylesheet"/>
+     <link rel="canonical" href="https://justhomeleads.com/interest-rates-explained">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Just Home Leads">
+    <meta property="og:title" content="Understanding Interest Rates &amp; Mortgage Terms | Just Home Leads">
+    <meta property="og:description" content="DFW's trusted first-time homebuyer education platform.">
+    <meta property="og:url" content="https://justhomeleads.com/interest-rates-explained">
+    <meta property="og:image" content="https://justhomeleads.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
  <body data-page="interest-rates-explained" data-phase="2" data-stage="2.5">
   <!-- Skip Link -->
   <a class="skip-link" href="#main">
@@ -33,7 +51,7 @@
        Leads
       </div>
       <div class="jhl-logo__tagline">
-       Dallas–Fort Worth
+       Dallas-Fort Worth
       </div>
      </div>
     </a>
@@ -45,7 +63,7 @@
                     </a>
                     <div class="jhl-nav__dropdown jhl-nav__dropdown--mega">
                         <a class="jhl-nav__dropdown-featured" href="/journey">
-                            Journey Overview — See All Phases
+                            Journey Overview: See All Phases
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         </a>
                         <div class="jhl-nav__dropdown-grid">
@@ -87,7 +105,7 @@
                     </div>
                 </div>
                 <a class="jhl-nav__link" href="/webinar">Webinar</a>
-                <button class="jhl-explore-btn" id="explore-toggle" aria-label="Explore all topics">
+                <button class="jhl-explore-btn" id="explore-toggle" aria-label="Explore all topics" aria-expanded="false" aria-controls="explore-menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></svg>
                     Explore
                 </button>
@@ -98,7 +116,7 @@
                     </svg>
                 </a>
             </nav>
-    <button aria-label="Open menu" class="jhl-menu-toggle">
+    <button aria-label="Open menu" class="jhl-menu-toggle" aria-expanded="false" aria-controls="mobile-nav">
      <span>
      </span>
      <span>
@@ -129,6 +147,7 @@
                         <a href="/lender-shopping">Lender Shopping</a>
                         <a href="/active-search-strategies">Search Strategies</a>
                         <a href="/home-touring-guide">Home Touring</a>
+                        <a href="/neighborhood-research-guide">Neighborhoods</a>
                         <a href="/writing-winning-offers">Writing Offers</a>
                         <a href="/closing-costs-breakdown">Closing Costs</a>
                         <a href="/closing-day-guide">Closing Day</a>
@@ -243,6 +262,7 @@
                     <a href="/action-plan">12-Month Action Plan</a>
                     <a href="/honest-truth">The Honest Truth</a>
                     <a href="/reality-check">Reality Check Quiz</a>
+                    <a href="/red-flags-checklist">Red Flags Checklist</a>
                     <a href="/money-truth">Money Truth</a>
                     <a href="/market-timing">Market Timing</a>
                     <a href="/property-tax-guide">Property Tax Guide</a>
@@ -299,7 +319,7 @@
      What You'll Learn
     </h2>
     <p>
-     A 0.25% difference in your interest rate on a $380,000 loan costs you over $18,000 in extra interest over 30 years. Most first-time buyers never negotiate their rate—they just accept the first number they're given. This guide changes that.
+     A 0.25% difference in your interest rate on a $380,000 loan costs you over $18,000 in extra interest over 30 years. Most first-time buyers never negotiate their rate, they just accept the first number they're given. This guide changes that.
     </p>
     <div class="jhl-intro__objectives">
      <div class="jhl-intro__objective">
@@ -336,10 +356,10 @@
       Your mortgage interest rate is essentially the price you pay to borrow money. It's expressed as a percentage of your loan amount, charged annually but calculated into your monthly payment.
      </p>
      <p>
-      Here's the simple breakdown: if you borrow $380,000 at 7% interest over 30 years, you'll pay approximately $530,000 in interest alone—on top of the original $380,000. Your total repayment: roughly $910,000.
+      Here's the simple breakdown: if you borrow $380,000 at 7% interest over 30 years, you'll pay approximately $530,000 in interest alone, on top of the original $380,000. Your total repayment: roughly $910,000.
      </p>
      <p>
-      That sounds scary, and honestly, it should get your attention. But here's what matters: small rate differences compound dramatically over time, which is why understanding rates—and shopping for the best one—can save you tens of thousands of dollars.
+      That sounds scary, and honestly, it should get your attention. But here's what matters: small rate differences compound dramatically over time, which is why understanding rates, and shopping for the best one, can save you tens of thousands of dollars.
      </p>
      <h3>
       The Monthly Payment Reality
@@ -371,15 +391,13 @@
       That $126 monthly difference between 6.5% and 7.0%? Over 30 years, it adds up to $45,360. This is why rate shopping matters.
      </p>
      <div class="jhl-info-box jhl-info-box--important">
-      <div class="jhl-info-box__icon">
-       💡
-      </div>
+      <div class="jhl-info-box__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
       <div class="jhl-info-box__content">
        <strong>
         Industry Truth
        </strong>
        <p>
-        Most first-time buyers accept the first rate they're quoted without negotiating. Lenders expect you to shop around—and they often have room to adjust their initial offer.
+        Most first-time buyers accept the first rate they're quoted without negotiating. Lenders expect you to shop around, and they often have room to adjust their initial offer.
        </p>
       </div>
      </div>
@@ -391,7 +409,7 @@
       What Determines YOUR Specific Rate
      </h2>
      <p>
-      You've probably seen advertised rates and wondered why yours might be different. That's because your rate is personalized based on several factors you can influence—and some you can't.
+      You've probably seen advertised rates and wondered why yours might be different. That's because your rate is personalized based on several factors you can influence, and some you can't.
      </p>
      <h3>
       Factors You Can Control
@@ -437,7 +455,7 @@
       <strong>
        The Federal Reserve:
       </strong>
-      When the Fed raises or lowers rates, mortgage rates generally follow—though not directly or immediately.
+      When the Fed raises or lowers rates, mortgage rates generally follow, though not directly or immediately.
      </p>
      <p>
       <strong>
@@ -497,9 +515,7 @@
       At first glance, Lender A's lower interest rate looks better. But their higher APR tells you they're charging more in fees. When you compare the APRs (7.1% vs. 7.15%), the difference is much smaller than the interest rates suggested.
      </p>
      <div class="jhl-info-box jhl-info-box--tip">
-      <div class="jhl-info-box__icon">
-       📌
-      </div>
+      <div class="jhl-info-box__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17v5"/><path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z"/></svg></div>
       <div class="jhl-info-box__content">
        <strong>
         The Rule
@@ -574,9 +590,7 @@
       </div>
      </div>
      <div class="jhl-info-box jhl-info-box--warning">
-      <div class="jhl-info-box__icon">
-       ⚠️
-      </div>
+      <div class="jhl-info-box__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div>
       <div class="jhl-info-box__content">
        <strong>
         Our Take
@@ -692,9 +706,7 @@
       </li>
      </ul>
      <div class="jhl-info-box jhl-info-box--tip">
-      <div class="jhl-info-box__icon">
-       💡
-      </div>
+      <div class="jhl-info-box__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
       <div class="jhl-info-box__content">
        <strong>
         The Middle Ground
@@ -712,7 +724,7 @@
       Rate Locks: Protecting Your Rate
      </h2>
      <p>
-      Once you find a rate you like, you can "lock" it—meaning the lender guarantees that rate for a specific period, usually 30-60 days, while you close on your home.
+      Once you find a rate you like, you can "lock" it, meaning the lender guarantees that rate for a specific period, usually 30-60 days, while you close on your home.
      </p>
      <h3>
       How Rate Locks Work
@@ -755,9 +767,7 @@
       </li>
      </ul>
      <div class="jhl-info-box jhl-info-box--warning">
-      <div class="jhl-info-box__icon">
-       ⚠️
-      </div>
+      <div class="jhl-info-box__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div>
       <div class="jhl-info-box__content">
        <strong>
         Don't Lock Too Early
@@ -832,9 +842,7 @@
       </div>
      </div>
      <div class="jhl-info-box jhl-info-box--important">
-      <div class="jhl-info-box__icon">
-       📌
-      </div>
+      <div class="jhl-info-box__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17v5"/><path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z"/></svg></div>
       <div class="jhl-info-box__content">
        <strong>
         Our Honest Take
@@ -896,9 +904,7 @@
       The 2020-2021 rates were a historic anomaly, not the norm. Current rates, while higher than recent years, are actually normal by historical standards. Millions of Americans built wealth buying homes at 7%, 8%, and even higher rates.
      </p>
      <div class="jhl-info-box jhl-info-box--important">
-      <div class="jhl-info-box__icon">
-       💡
-      </div>
+      <div class="jhl-info-box__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
       <div class="jhl-info-box__content">
        <strong>
         The Real Question
@@ -932,7 +938,7 @@
        Don't open new credit accounts
       </li>
       <li>
-       Build your down payment—20% gets better rates
+       Build your down payment, 20% gets better rates
       </li>
      </ul>
      <h3>
@@ -949,13 +955,11 @@
        Ask each lender: "What would it take to get a lower rate?"
       </li>
       <li>
-       Negotiate—many lenders will match competitors
+       Negotiate, many lenders will match competitors
       </li>
      </ul>
      <div class="jhl-info-box jhl-info-box--tip">
-      <div class="jhl-info-box__icon">
-       💡
-      </div>
+      <div class="jhl-info-box__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
       <div class="jhl-info-box__content">
        <strong>
         Rates Are Negotiable
@@ -985,10 +989,10 @@
        Your credit score, down payment size, and DTI ratio are the factors you can control to get better rates
       </li>
       <li>
-       Use APR to compare loan offers, not just the interest rate—APR includes all fees and gives you the true cost
+       Use APR to compare loan offers, not just the interest rate, APR includes all fees and gives you the true cost
       </li>
       <li>
-       For most first-time buyers, buying points doesn't make sense—keep that cash for moving and homeownership costs
+       For most first-time buyers, buying points doesn't make sense, keep that cash for moving and homeownership costs
       </li>
       <li>
        A 30-year mortgage offers flexibility; you can always pay extra principal but can't lower a 15-year payment if times get tight
@@ -997,10 +1001,10 @@
        Lock your rate when you have a contract and are comfortable with the rate, typically 45-60 days before closing
       </li>
       <li>
-       Current rates (6.5-7.5%) are historically normal—don't let higher rates stop you if you can afford the payment
+       Current rates (6.5-7.5%) are historically normal, don't let higher rates stop you if you can afford the payment
       </li>
       <li>
-       Always shop at least 3 lenders and negotiate—rates aren't set in stone and lenders expect you to compare offers
+       Always shop at least 3 lenders and negotiate, rates aren't set in stone and lenders expect you to compare offers
       </li>
      </ul>
     </div>
@@ -1015,7 +1019,7 @@
      Ready to See What Rate You Qualify For?
     </h2>
     <p class="jhl-next-steps__subtitle">
-     Our verified network of DFW lenders can show you exactly what rates you qualify for—with no obligation.
+     Our verified network of DFW lenders can show you exactly what rates you qualify for, with no obligation.
     </p>
     <div class="jhl-next-steps__links">
      <a class="jhl-next-steps__link" href="/self-employed-guide" data-track-event="next_step_clicked" data-track-category="interest-rates" data-track-label="self-employed-guide">
@@ -1225,7 +1229,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
             </div>
             <h2 class="jhl-success-title">You're Connected!</h2>
-            <p class="jhl-success-subtitle">A verified DFW expert will reach out within 2 hours &mdash; usually much faster.</p>
+            <p class="jhl-success-subtitle">A verified DFW expert will reach out within 2 hours, usually much faster.</p>
 
             <div class="jhl-enrichment">
                 <div class="jhl-enrichment__label">Where are you in your journey?</div>
@@ -1292,11 +1296,13 @@
         const openNav = () => {
             mobileNav.classList.add('active');
             mobileNav.setAttribute('aria-hidden', 'false');
+            toggle.setAttribute('aria-expanded', 'true');
             document.body.style.overflow = 'hidden';
         };
         const closeNav = () => {
             mobileNav.classList.remove('active');
             mobileNav.setAttribute('aria-hidden', 'true');
+            toggle.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
         };
 
@@ -1333,11 +1339,13 @@
             var openExplore = function() {
                 exploreMenu.classList.add('active');
                 exploreMenu.setAttribute('aria-hidden', 'false');
+                exploreBtn.setAttribute('aria-expanded', 'true');
                 document.body.style.overflow = 'hidden';
             };
             var closeExplore = function() {
                 exploreMenu.classList.remove('active');
                 exploreMenu.setAttribute('aria-hidden', 'true');
+                exploreBtn.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';
             };
 
@@ -1363,8 +1371,10 @@
         trigger.addEventListener('click', () => {
             const item = trigger.parentElement;
             const isActive = item.classList.contains('active');
-            item.closest('.jhl-accordion').querySelectorAll('.jhl-accordion__item').forEach(i => i.classList.remove('active'));
-            if (!isActive) item.classList.add('active');
+            const acc = item.closest('.jhl-accordion');
+            acc.querySelectorAll('.jhl-accordion__item').forEach(i => i.classList.remove('active'));
+            acc.querySelectorAll('.jhl-accordion__trigger').forEach(t => t.setAttribute('aria-expanded', 'false'));
+            if (!isActive) { item.classList.add('active'); trigger.setAttribute('aria-expanded', 'true'); }
         });
     });
 })();
@@ -1441,7 +1451,7 @@ window.jhlTrack = function(event, data) {
     var headlines = {
         core:  { title: 'Get Matched with a Local Expert', sub: "We'll connect you with a vetted DFW professional who fits your needs. No pressure, no obligations." },
         '1':   { title: 'Get Matched with a Mortgage-Ready Advisor', sub: 'Our lender partners specialize in helping buyers build credit-ready profiles and get pre-approved.' },
-        '2':   { title: 'Connect with a Pre-Approval Specialist', sub: "Not sure which loan fits? Our mortgage partners will walk you through it \u2014 no pressure." },
+        '2':   { title: 'Connect with a Pre-Approval Specialist', sub: "Not sure which loan fits? Our mortgage partners will walk you through it, no pressure." },
         '3':   { title: 'Find a Local Buyer\'s Agent', sub: "We'll match you with a DFW agent who knows your target neighborhoods inside and out." },
         '4':   { title: 'Talk to a Negotiation-Savvy Agent', sub: 'Get matched with an agent who has a proven track record in competitive DFW markets.' },
         '5':   { title: 'Get Your Closing Team in Place', sub: "We'll connect you with inspectors, title professionals, and closing experts you can trust." },
@@ -1600,7 +1610,7 @@ window.jhlTrack = function(event, data) {
             timestamp: new Date().toISOString()
         };
 
-        // TODO: Replace with your GoHighLevel webhook URL
+        // GHL lead webhook (live, do not change without updating GHL)
         var GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/CHqaNRCWjmT6XyOUQtWd/webhook-trigger/8830eb17-1d96-4575-9f1d-82e4cba000f8';
 
         if (GHL_WEBHOOK_URL) {
@@ -1612,7 +1622,7 @@ window.jhlTrack = function(event, data) {
             .then(function() { showSuccess(); })
             .catch(function() { showSuccess(); }); // Still show success to user
         } else {
-            // No webhook configured — simulate success
+            // No webhook configured, simulate success
             setTimeout(function() { showSuccess(); }, 1000);
         }
 
