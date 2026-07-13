@@ -13,10 +13,9 @@
     <meta name="description" content="Join our free 45-minute webinar and learn what the real estate industry won't tell you about buying your first home in DFW.">
 
     <!-- JHL Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    <link rel="preload" href="/fonts/fraunces-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/jakarta-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/fonts.css?v=20260713a">
     <style>
         /* ========================================
            JHL DESIGN SYSTEM VARIABLES
@@ -174,10 +173,8 @@
         }
 
         .section-label {
-            font-size: 0.8rem;
+            font-size: 0.95rem;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
             color: var(--blue);
             margin-bottom: var(--space-xs);
         }
@@ -447,6 +444,62 @@
                 gap: var(--space-sm);
             }
         }
+
+        /* Host section (v2.2) */
+        .host-section {
+            background: var(--cream);
+            padding: var(--space-2xl) var(--space-md);
+        }
+
+        .host-card {
+            max-width: 860px;
+            margin: 0 auto;
+            display: flex;
+            gap: var(--space-lg);
+            align-items: center;
+            background: var(--white);
+            border: 1px solid #E8EAED;
+            border-radius: 16px;
+            padding: var(--space-xl);
+        }
+
+        .host-photo {
+            width: 168px;
+            height: 168px;
+            border-radius: 16px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .host-card h2 {
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin: 2px 0 4px;
+        }
+
+        .host-cred {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--green);
+            margin-bottom: var(--space-sm);
+        }
+
+        .host-card p {
+            color: var(--charcoal);
+            opacity: 0.85;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        @media (max-width: 640px) {
+            .host-card {
+                flex-direction: column;
+                text-align: center;
+                padding: var(--space-lg);
+            }
+        }
     </style>
     <link rel="canonical" href="https://justhomeleads.com/webinar">
     <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -523,6 +576,20 @@
     </section>
 
     <!-- REGISTRATION SECTION, GHL CALENDAR EMBED -->
+
+    <!-- YOUR HOST -->
+    <section class="host-section">
+        <div class="container host-card">
+            <img src="images/bradley-patterson.jpg" alt="Bradley Patterson, webinar host" class="host-photo" width="168" height="168" loading="lazy">
+            <div>
+                <div class="section-label">Your Host</div>
+                <h2>Bradley Patterson</h2>
+                <p class="host-cred">DFW real estate professional. Founder of Just Home Leads.</p>
+                <p>Bradley has spent his career walking DFW first-time buyers through the exact process this webinar covers: credit, pre-approval, house hunting, and closing, all with real local numbers. No script, no sales pitch, and every question gets a straight answer.</p>
+            </div>
+        </div>
+    </section>
+
     <section class="register-section" id="register">
         <div class="container">
             <div class="section-label" style="text-align:center;">Reserve Your Spot</div>

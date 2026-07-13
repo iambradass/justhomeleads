@@ -11,10 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Just Home Leads - Real People. Real Education. Real Wealth.</title>
     <meta name="description" content="DFW's trusted first-time homebuyer education platform. No BS, no pressure, just honest education to help you build generational wealth through homeownership.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="jhl-redesign.css?v=20260711a">
+    <link rel="preload" href="/fonts/fraunces-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/jakarta-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/fonts.css?v=20260713a">
+    <link rel="stylesheet" href="jhl-redesign.min.css?v=20260713a">
     <link rel="canonical" href="https://justhomeleads.com/">
     <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -291,6 +291,16 @@
                 </div>
 
                 <p class="jhl-hero__subtext">No credit card required. No pressure. Ever.</p>
+
+                <div class="jhl-hero__capture" id="hero-capture">
+                    <div class="jhl-hero__capture-label">Or get the free DFW buyer toolkit sent to your inbox:</div>
+                    <form class="jhl-hero__capture-form" id="hero-toolkit-form" novalidate>
+                        <input type="email" id="hero-toolkit-email" name="email" placeholder="your@email.com" autocomplete="email" aria-label="Email address" required>
+                        <button type="submit" class="btn btn--primary" id="hero-toolkit-btn">Send It</button>
+                    </form>
+                    <p class="jhl-hero__capture-note" id="hero-toolkit-note">One email with the toolkit link. No spam, unsubscribe anytime.</p>
+                    <p class="jhl-hero__capture-success" id="hero-toolkit-success" hidden>Done. The toolkit is on its way to your inbox.</p>
+                </div>
             </div>
             <div class="jhl-hero__visual">
                 <div class="jhl-journey-preview">
@@ -885,6 +895,56 @@
             stage: document.body.getAttribute('data-stage')
         });
     };
+
+// 7b. Hero toolkit email capture
+(function() {
+    var form = document.getElementById('hero-toolkit-form');
+    if (!form) return;
+    var email = document.getElementById('hero-toolkit-email');
+    var btn = document.getElementById('hero-toolkit-btn');
+    var note = document.getElementById('hero-toolkit-note');
+    var success = document.getElementById('hero-toolkit-success');
+    var WEBHOOK = 'https://services.leadconnectorhq.com/hooks/CHqaNRCWjmT6XyOUQtWd/webhook-trigger/8830eb17-1d96-4575-9f1d-82e4cba000f8';
+
+    function showSuccess() {
+        form.hidden = true;
+        note.hidden = true;
+        success.hidden = false;
+        localStorage.setItem('jhl-toolkit-optin', 'true');
+    }
+
+    if (localStorage.getItem('jhl-toolkit-optin') === 'true') {
+        showSuccess();
+        return;
+    }
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var v = email.value.trim();
+        if (!v || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
+            email.classList.add('error');
+            email.focus();
+            return;
+        }
+        email.classList.remove('error');
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+        fetch(WEBHOOK, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                email: v,
+                form_type: 'toolkit_optin',
+                source_page: 'index',
+                source_placement: 'hero_capture',
+                timestamp: new Date().toISOString()
+            })
+        }).then(showSuccess).catch(showSuccess);
+        if (window.jhlTrack) jhlTrack('toolkit_optin', { email_domain: v.split('@')[1] });
+    });
+
+    email.addEventListener('input', function() { email.classList.remove('error'); });
+})();
 
 // 8. Lead capture modal
 (function() {

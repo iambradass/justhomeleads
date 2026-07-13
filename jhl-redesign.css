@@ -1522,32 +1522,6 @@ strong, b {
    Updated: February 2026
    ======================================== */
 
-/* Updated Badge - Shows freshness of content */
-.jhl-updated-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 12px;
-    background: rgba(107, 70, 193, 0.08);
-    border: 1px solid rgba(107, 70, 193, 0.15);
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--purple);
-    margin-bottom: var(--space-sm);
-}
-
-.jhl-updated-badge svg {
-    width: 14px !important;
-    height: 14px !important;
-    max-width: 14px !important;
-    max-height: 14px !important;
-    min-width: 14px !important;
-    min-height: 14px !important;
-    opacity: 0.7;
-    flex-shrink: 0;
-}
-
 /* Page-Specific Stats - Horizontal bar for content pages */
 .jhl-page-stats {
     display: grid;
@@ -1585,28 +1559,6 @@ strong, b {
     line-height: 1.4;
 }
 
-/* Activity Badge - Shows recent activity */
-.jhl-activity-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: rgba(0, 200, 83, 0.08);
-    border-radius: 100px;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--charcoal);
-    margin-bottom: var(--space-md);
-}
-
-.jhl-activity-badge__dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--green);
-    animation: pulse 2s ease-in-out infinite;
-}
-
 @keyframes pulse {
     0%, 100% {
         opacity: 1;
@@ -1616,10 +1568,6 @@ strong, b {
         opacity: 0.6;
         transform: scale(1.2);
     }
-}
-
-.jhl-activity-badge__text {
-    color: var(--charcoal);
 }
 
 /* Responsive adjustments for social proof components */
@@ -6972,10 +6920,65 @@ strong, b {
     border-left-color: var(--electric-green);
 }
 
-.jhl-hero--pattern-credit .jhl-updated-badge, .jhl-hero--pattern-approval .jhl-updated-badge,
-.jhl-hero--pattern-inspection .jhl-updated-badge, .jhl-hero--pattern-closing .jhl-updated-badge,
-.jhl-hero--pattern-action .jhl-updated-badge {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.16);
-    color: rgba(255, 255, 255, 0.75);
+.jhl-hero--pattern-credit 
+/* Hero toolkit email capture (v2.2) */
+.jhl-hero__capture {
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--mist);
+    max-width: 480px;
+}
+
+.jhl-hero--centered .jhl-hero__capture {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.jhl-hero__capture-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+.jhl-hero__capture-form {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.jhl-hero__capture-form input {
+    flex: 1 1 220px;
+    min-height: 44px;
+    padding: 10px 14px;
+    border: 1px solid var(--mist);
+    border-radius: 10px;
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--charcoal);
+    background: var(--warm-white);
+}
+
+.jhl-hero__capture-form input:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(21, 101, 160, 0.15);
+}
+
+.jhl-hero__capture-form input.error {
+    border-color: var(--coral);
+    box-shadow: 0 0 0 3px rgba(255, 107, 91, 0.15);
+}
+
+.jhl-hero__capture-note {
+    font-size: 13px;
+    color: var(--slate);
+    margin: 8px 0 0;
+}
+
+.jhl-hero__capture-success {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--green-dark);
+    margin: 4px 0 0;
 }

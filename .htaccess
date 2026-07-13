@@ -17,6 +17,9 @@ RewriteRule ^ / [R=301,L]
 RewriteCond %{THE_REQUEST} \s/([^.\s?]+)\.html[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
 
+# Orphan page: consolidate on /webinar
+RewriteRule ^webinar-registration/?$ /webinar [R=301,L]
+
 # Serve page.html internally for clean URLs
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
