@@ -17,6 +17,7 @@
     <link rel="preload" href="/fonts/jakarta-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/fonts.css?v=20260713a">
   <link href="jhl-redesign.min.css?v=20260713a" rel="stylesheet"/>
+  <link rel="stylesheet" href="repairs/tools-f.css">
      <link rel="canonical" href="https://justhomeleads.com/appraisal-process">
     <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -1391,6 +1392,7 @@
 (function() {
     const pageId = document.body.getAttribute('data-page') || window.location.pathname;
     document.querySelectorAll('.jhl-checklist__item').forEach((item, index) => {
+        if (item.hasAttribute('onclick')) return;
         const key = 'jhl-check-' + pageId + '-' + index;
         if (localStorage.getItem(key) === 'checked') {
             item.classList.add('checked');
