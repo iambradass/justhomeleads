@@ -733,13 +733,25 @@
     (function() {
         var el = document.getElementById('jh-class-date');
         if (!el) return;
-        var now = new Date();
-        var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-        for (var m = 0; m < 14; m++) {
-            var d = new Date(now.getFullYear(), now.getMonth() + m + 1, 0, 12, 0, 0);
-            d.setDate(d.getDate() - ((d.getDay() - 5 + 7) % 7));
-            if (d > now) { el.textContent = 'Friday, ' + months[d.getMonth()] + ' ' + d.getDate(); return; }
+        function jhlCtNoon(y, m, d) {
+            // 12:00 PM America/Chicago for a calendar date, whatever the visitor's time zone
+            var guess = new Date(Date.UTC(y, m, d, 17, 0, 0));
+            var h = +new Intl.DateTimeFormat('en-US', { timeZone: 'America/Chicago', hour: 'numeric', hourCycle: 'h23' }).format(guess);
+            return new Date(guess.getTime() + (12 - h) * 3600000);
         }
+        function jhlNextWebinar() {
+            // Last Friday of each month, 12:00 PM CT
+            var now = new Date();
+            for (var m = 0; m < 14; m++) {
+                var last = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + m + 1, 0));
+                last.setUTCDate(last.getUTCDate() - ((last.getUTCDay() - 5 + 7) % 7));
+                var d = jhlCtNoon(last.getUTCFullYear(), last.getUTCMonth(), last.getUTCDate());
+                if (d > now) return d;
+            }
+            return now;
+        }
+        var d = jhlNextWebinar();
+        el.textContent = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Chicago', weekday: 'long', month: 'long', day: 'numeric' }).format(d);
     })();
 
     // 4. Reveal on scroll

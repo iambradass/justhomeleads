@@ -1,0 +1,1715 @@
+/* =====================================================================
+   JHL REPAIR PACK A — action-plan.html / credit-boost.html / moving-checklist.html
+   TEMPORARY file, loaded after jhl-redesign.min.css for preview only.
+   To be folded into jhl-redesign.css later — do not delete without
+   migrating these rules first.
+
+   Every selector below is scoped with [data-page="..."] because these
+   three pages reuse generic class names (progress-bar-container,
+   task-checkbox, task-item, number, label, icon, tip-card, week-header...)
+   for completely different components. NEVER remove the data-page scope
+   when editing this file.
+   ===================================================================== */
+
+/* ---------------------------------------------------------------------
+   Shared design tokens + icon library (still page-scoped on purpose)
+   --------------------------------------------------------------------- */
+[data-page="action-plan"],
+[data-page="credit-boost"],
+[data-page="moving-checklist"] {
+  --ap-navy: #0D2240;
+  --ap-blue: #1565A0;
+  --ap-sky: #EEF4FA;
+  --ap-green: #00C853;
+  --ap-volt: #00FF85;
+  --ap-text: #33404F;
+  --ap-muted: #5F6C7B;
+  --ap-line: #DCE4EE;
+  --ap-card-radius: 14px;
+  --ap-tag-radius: 6px;
+
+  --icon-trending-up: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%2223%206%2013.5%2015.5%208.5%2010.5%201%2018%22%3E%3C/polyline%3E%3Cpolyline%20points%3D%2217%206%2023%206%2023%2012%22%3E%3C/polyline%3E%3C/svg%3E");
+  --icon-trending-down: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%2223%2018%2013.5%208.5%208.5%2013.5%201%206%22%3E%3C/polyline%3E%3Cpolyline%20points%3D%2217%2018%2023%2018%2023%2012%22%3E%3C/polyline%3E%3C/svg%3E");
+  --icon-check-circle: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M22%2011.08V12a10%2010%200%201%201-5.93-9.14%22%3E%3C/path%3E%3Cpolyline%20points%3D%2222%204%2012%2014.01%209%2011.01%22%3E%3C/polyline%3E%3C/svg%3E");
+  --icon-target: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%229%22%3E%3C/circle%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%225%22%3E%3C/circle%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%221%22%3E%3C/circle%3E%3C/svg%3E");
+  --icon-clock: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%229%22%3E%3C/circle%3E%3Cpolyline%20points%3D%2212%207%2012%2012%2015.5%2014%22%3E%3C/polyline%3E%3C/svg%3E");
+  --icon-bar-chart: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cline%20x1%3D%226%22%20y1%3D%2220%22%20x2%3D%226%22%20y2%3D%2212%22%3E%3C/line%3E%3Cline%20x1%3D%2212%22%20y1%3D%2220%22%20x2%3D%2212%22%20y2%3D%226%22%3E%3C/line%3E%3Cline%20x1%3D%2218%22%20y1%3D%2220%22%20x2%3D%2218%22%20y2%3D%2215%22%3E%3C/line%3E%3C/svg%3E");
+  --icon-users: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M16%2020v-1.5a4%204%200%200%200-4-4H6a4%204%200%200%200-4%204V20%22%3E%3C/path%3E%3Ccircle%20cx%3D%229%22%20cy%3D%228%22%20r%3D%223.5%22%3E%3C/circle%3E%3Cpath%20d%3D%22M22%2020v-1.5a3.5%203.5%200%200%200-2.5-3.36%22%3E%3C/path%3E%3Cpath%20d%3D%22M16.5%204.1a3.5%203.5%200%200%201%200%206.8%22%3E%3C/path%3E%3C/svg%3E");
+  --icon-flag: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M5%2021V4%22%3E%3C/path%3E%3Cpath%20d%3D%22M5%204h13l-3%204.5L18%2013H5%22%3E%3C/path%3E%3C/svg%3E");
+  --icon-calendar: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%223.5%22%20y%3D%225%22%20width%3D%2217%22%20height%3D%2216%22%20rx%3D%222%22%3E%3C/rect%3E%3Cline%20x1%3D%223.5%22%20y1%3D%2210%22%20x2%3D%2220.5%22%20y2%3D%2210%22%3E%3C/line%3E%3Cline%20x1%3D%228%22%20y1%3D%222.5%22%20x2%3D%228%22%20y2%3D%226.5%22%3E%3C/line%3E%3Cline%20x1%3D%2216%22%20y1%3D%222.5%22%20x2%3D%2216%22%20y2%3D%226.5%22%3E%3C/line%3E%3C/svg%3E");
+  --icon-shield: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M12%203l7%203v6c0%204.5-3%207.5-7%209-4-1.5-7-4.5-7-9V6z%22%3E%3C/path%3E%3C/svg%3E");
+  --icon-file-text: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M7%203h7l5%205v13a1%201%200%200%201-1%201H7a1%201%200%200%201-1-1V4a1%201%200%200%201%201-1z%22%3E%3C/path%3E%3Cline%20x1%3D%229%22%20y1%3D%2213%22%20x2%3D%2215%22%20y2%3D%2213%22%3E%3C/line%3E%3Cline%20x1%3D%229%22%20y1%3D%2217%22%20x2%3D%2215%22%20y2%3D%2217%22%3E%3C/line%3E%3C/svg%3E");
+  --icon-star: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M12%202.5l3%206.6%207%20.8-5.2%204.9%201.4%207L12%2018l-6.2%203.8%201.4-7L2%2010l7-1z%22%3E%3C/path%3E%3C/svg%3E");
+  --icon-home-check: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M3.5%2011l8.5-7%208.5%207%22%3E%3C/path%3E%3Cpath%20d%3D%22M5.5%209.5V20a1%201%200%200%200%201%201H10v-5.5h4V21h3.5a1%201%200%200%200%201-1V9.5%22%3E%3C/path%3E%3Cpath%20d%3D%22M9.7%2016.2l1.5%201.5%203-3%22%3E%3C/path%3E%3C/svg%3E");
+  --icon-percent: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cline%20x1%3D%2219%22%20y1%3D%225%22%20x2%3D%225%22%20y2%3D%2219%22%3E%3C/line%3E%3Ccircle%20cx%3D%226.5%22%20cy%3D%226.5%22%20r%3D%222.5%22%3E%3C/circle%3E%3Ccircle%20cx%3D%2217.5%22%20cy%3D%2217.5%22%20r%3D%222.5%22%3E%3C/circle%3E%3C/svg%3E");
+  --icon-grid: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%223.5%22%20y%3D%223.5%22%20width%3D%2217%22%20height%3D%2217%22%20rx%3D%221.5%22%3E%3C/rect%3E%3Cline%20x1%3D%223.5%22%20y1%3D%229%22%20x2%3D%2220.5%22%20y2%3D%229%22%3E%3C/line%3E%3Cline%20x1%3D%223.5%22%20y1%3D%2215%22%20x2%3D%2220.5%22%20y2%3D%2215%22%3E%3C/line%3E%3Cline%20x1%3D%229.5%22%20y1%3D%223.5%22%20x2%3D%229.5%22%20y2%3D%2220.5%22%3E%3C/line%3E%3Cline%20x1%3D%2215%22%20y1%3D%223.5%22%20x2%3D%2215%22%20y2%3D%2220.5%22%3E%3C/line%3E%3C/svg%3E");
+  --icon-calculator: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%224.5%22%20y%3D%222.5%22%20width%3D%2215%22%20height%3D%2219%22%20rx%3D%222%22%3E%3C/rect%3E%3Cline%20x1%3D%228%22%20y1%3D%226.5%22%20x2%3D%2216%22%20y2%3D%226.5%22%3E%3C/line%3E%3Cline%20x1%3D%228%22%20y1%3D%2211%22%20x2%3D%228%22%20y2%3D%2211.01%22%3E%3C/line%3E%3Cline%20x1%3D%2212%22%20y1%3D%2211%22%20x2%3D%2212%22%20y2%3D%2211.01%22%3E%3C/line%3E%3Cline%20x1%3D%2216%22%20y1%3D%2211%22%20x2%3D%2216%22%20y2%3D%2211.01%22%3E%3C/line%3E%3Cline%20x1%3D%228%22%20y1%3D%2215%22%20x2%3D%228%22%20y2%3D%2215.01%22%3E%3C/line%3E%3Cline%20x1%3D%2212%22%20y1%3D%2215%22%20x2%3D%2212%22%20y2%3D%2215.01%22%3E%3C/line%3E%3Cline%20x1%3D%2216%22%20y1%3D%2215%22%20x2%3D%2216%22%20y2%3D%2217.5%22%3E%3C/line%3E%3Cline%20x1%3D%228%22%20y1%3D%2218.5%22%20x2%3D%228%22%20y2%3D%2218.51%22%3E%3C/line%3E%3Cline%20x1%3D%2212%22%20y1%3D%2218.5%22%20x2%3D%2212%22%20y2%3D%2218.51%22%3E%3C/line%3E%3C/svg%3E");
+  --icon-smartphone: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%227%22%20y%3D%222.5%22%20width%3D%2210%22%20height%3D%2219%22%20rx%3D%222%22%3E%3C/rect%3E%3Cline%20x1%3D%2211%22%20y1%3D%2218%22%20x2%3D%2213%22%20y2%3D%2218%22%3E%3C/line%3E%3C/svg%3E");
+  --icon-message-square: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M21%2011.5a8.38%208.38%200%200%201-8.5%208.4H4l3.4-3.4A8.4%208.4%200%201%201%2021%2011.5z%22%3E%3C/path%3E%3C/svg%3E");
+  --icon-snowflake: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cline%20x1%3D%2212%22%20y1%3D%222%22%20x2%3D%2212%22%20y2%3D%2222%22%3E%3C/line%3E%3Cline%20x1%3D%224.9%22%20y1%3D%225.9%22%20x2%3D%2219.1%22%20y2%3D%2218.1%22%3E%3C/line%3E%3Cline%20x1%3D%224.9%22%20y1%3D%2218.1%22%20x2%3D%2219.1%22%20y2%3D%225.9%22%3E%3C/line%3E%3C/svg%3E");
+  --icon-layers: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolygon%20points%3D%2212%203%2021%208%2012%2013%203%208%2012%203%22%3E%3C/polygon%3E%3Cpolyline%20points%3D%223%2013%2012%2018%2021%2013%22%3E%3C/polyline%3E%3Cpolyline%20points%3D%223%2017.5%2012%2022.5%2021%2017.5%22%3E%3C/polyline%3E%3C/svg%3E");
+  --icon-credit-card: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%222.5%22%20y%3D%225.5%22%20width%3D%2219%22%20height%3D%2213%22%20rx%3D%222%22%3E%3C/rect%3E%3Cline%20x1%3D%222.5%22%20y1%3D%2210%22%20x2%3D%2221.5%22%20y2%3D%2210%22%3E%3C/line%3E%3C/svg%3E");
+  --icon-zap: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231565A0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolygon%20points%3D%2213%202%204%2014%2011%2014%2010%2022%2020%2010%2013%2010%2013%202%22%3E%3C/polygon%3E%3C/svg%3E");
+  --icon-check-circle-green: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2300C853%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M22%2011.08V12a10%2010%200%201%201-5.93-9.14%22%3E%3C/path%3E%3Cpolyline%20points%3D%2222%204%2012%2014.01%209%2011.01%22%3E%3C/polyline%3E%3C/svg%3E");
+  --icon-star-green: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2300C853%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M12%202.5l3%206.6%207%20.8-5.2%204.9%201.4%207L12%2018l-6.2%203.8%201.4-7L2%2010l7-1z%22%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* =======================================================================
+   1. ACTION-PLAN.HTML
+   ======================================================================= */
+
+/* ---- Progress tracker card ---- */
+[data-page="action-plan"] .progress-tracker {
+  background: #fff;
+  border: 1px solid var(--ap-line);
+  border-radius: var(--ap-card-radius);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+[data-page="action-plan"] .progress-tracker h2 {
+  font-size: 20px;
+  color: var(--ap-navy);
+  margin: 0 0 16px;
+}
+
+/* Track + fill (fixes bug #2 — clipped percentage text) */
+[data-page="action-plan"] .progress-bar-container {
+  width: 100%;
+  height: 14px;
+  background: var(--ap-sky);
+  border: 1px solid var(--ap-line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+[data-page="action-plan"] .progress-bar-container #progressBar {
+  height: 100%;
+  background: var(--ap-blue);
+  border-radius: 6px;
+  transition: width 0.5s ease;
+  font-size: 0; /* hide any stray text node inside the fill itself */
+}
+[data-page="action-plan"] .progress-bar-label {
+  margin-top: 8px;
+  text-align: right;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ap-navy);
+}
+
+[data-page="action-plan"] .progress-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+[data-page="action-plan"] .progress-stat {
+  text-align: center;
+  padding: 14px 8px;
+  background: var(--ap-sky);
+  border-radius: 10px;
+}
+[data-page="action-plan"] .progress-stat .number {
+  font-family: var(--font-num, 'Fraunces', Georgia, serif);
+  font-size: clamp(22px, 5vw, 30px);
+  font-weight: 700;
+  color: var(--ap-navy);
+  line-height: 1.1;
+}
+[data-page="action-plan"] .progress-stat .label {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--ap-muted);
+  line-height: 1.3;
+}
+
+/* ---- Timeline nav (month buttons) ---- */
+[data-page="action-plan"] .timeline-nav {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 2px 12px;
+  margin-bottom: 20px;
+  scrollbar-width: thin;
+}
+[data-page="action-plan"] .timeline-nav::-webkit-scrollbar {
+  height: 6px;
+}
+[data-page="action-plan"] .timeline-nav::-webkit-scrollbar-thumb {
+  background: var(--ap-line);
+  border-radius: 4px;
+}
+[data-page="action-plan"] .month-button {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+}
+/* Bug #1: checkmark is hard-coded in every button — only show it when completed */
+[data-page="action-plan"] .month-button .checkmark {
+  display: none;
+}
+[data-page="action-plan"] .month-button.completed .checkmark {
+  display: inline-flex;
+  color: var(--ap-navy);
+  font-weight: 700;
+}
+
+/* ---- Month card ---- */
+[data-page="action-plan"] .month-card {
+  background: #fff;
+  border: 1px solid var(--ap-line);
+  border-radius: var(--ap-card-radius);
+  padding: 28px 24px;
+}
+[data-page="action-plan"] .month-header {
+  border-bottom: 1px solid var(--ap-line);
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+[data-page="action-plan"] .month-header h2 {
+  font-size: 26px;
+  color: var(--ap-navy);
+}
+[data-page="action-plan"] .month-header .theme {
+  margin-top: 6px;
+  font-size: 16px;
+  color: var(--ap-blue);
+  font-weight: 600;
+}
+
+[data-page="action-plan"] .focus-area {
+  background: var(--ap-sky);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 24px;
+}
+[data-page="action-plan"] .focus-area h3 {
+  font-size: 15px;
+  color: var(--ap-navy);
+  margin: 0 0 6px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+[data-page="action-plan"] .focus-area p {
+  font-size: 16px;
+  color: var(--ap-text);
+  line-height: 1.6;
+}
+
+[data-page="action-plan"] .tasks-section {
+  margin-bottom: 24px;
+}
+[data-page="action-plan"] .tasks-section > h3 {
+  font-size: 18px;
+  color: var(--ap-navy);
+  margin: 0 0 14px;
+}
+[data-page="action-plan"] .task-category {
+  margin-bottom: 20px;
+}
+[data-page="action-plan"] .task-category h4 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--ap-blue);
+  margin: 0 0 10px;
+}
+[data-page="action-plan"] .task-list {
+  border: 1px solid var(--ap-line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+[data-page="action-plan"] .task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  min-height: 44px;
+  border-bottom: 1px solid var(--ap-line);
+  cursor: pointer;
+  background: #fff;
+  transition: background 0.15s ease;
+}
+[data-page="action-plan"] .task-list .task-item:last-child {
+  border-bottom: none;
+}
+[data-page="action-plan"] .task-item:hover {
+  background: var(--ap-sky);
+}
+[data-page="action-plan"] .task-checkbox {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  border: 2px solid var(--ap-line);
+  border-radius: 6px;
+  background: #fff;
+  position: relative;
+  transition: all 0.15s ease;
+}
+[data-page="action-plan"] .task-item.completed .task-checkbox {
+  background: var(--ap-green);
+  border-color: var(--ap-green);
+}
+[data-page="action-plan"] .task-item.completed .task-checkbox::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 11px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+[data-page="action-plan"] .task-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ap-navy);
+  line-height: 1.4;
+}
+[data-page="action-plan"] .task-description {
+  margin-top: 3px;
+  font-size: 14px;
+  color: var(--ap-muted);
+  line-height: 1.5;
+}
+[data-page="action-plan"] .task-item.completed .task-title {
+  color: var(--ap-muted);
+  text-decoration: line-through;
+}
+[data-page="action-plan"] .task-item.completed .task-description {
+  opacity: 0.7;
+}
+
+[data-page="action-plan"] .tips-box {
+  background: var(--ap-sky);
+  border: 1px solid var(--ap-line);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+[data-page="action-plan"] .tips-box h4 {
+  font-size: 15px;
+  color: var(--ap-navy);
+  margin: 0 0 10px;
+}
+[data-page="action-plan"] .tips-box ul {
+  margin: 0;
+  padding-left: 20px;
+}
+[data-page="action-plan"] .tips-box li {
+  font-size: 15px;
+  color: var(--ap-text);
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+[data-page="action-plan"] .tips-box li:last-child {
+  margin-bottom: 0;
+}
+
+[data-page="action-plan"] .milestone-banner {
+  border: 1px solid var(--ap-blue);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  background: #fff;
+}
+[data-page="action-plan"] .milestone-banner h3 {
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--ap-blue);
+  margin: 0 0 6px;
+}
+[data-page="action-plan"] .milestone-banner p {
+  font-size: 16px;
+  color: var(--ap-text);
+  line-height: 1.5;
+}
+
+/* ---- Celebration section ---- */
+[data-page="action-plan"] .celebration-section {
+  text-align: center;
+  border: 1px solid var(--ap-line);
+  border-radius: 10px;
+  padding: 28px 20px;
+  margin-bottom: 20px;
+  background: var(--ap-navy);
+}
+[data-page="action-plan"] .celebration-section .emoji {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+  position: relative;
+}
+[data-page="action-plan"] .celebration-section .emoji::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 26px;
+  height: 26px;
+  transform: translate(-50%, -50%);
+  background: var(--icon-star-green) no-repeat center / contain;
+}
+/* Month 12 gets a distinct "welcome home" icon */
+[data-page="action-plan"] #month12 .celebration-section .emoji::before {
+  background-image: var(--icon-home-check);
+  filter: invert(63%) sepia(89%) saturate(1526%) hue-rotate(93deg) brightness(97%) contrast(105%);
+}
+[data-page="action-plan"] .celebration-section h3 {
+  font-size: 20px;
+  color: #fff;
+  margin: 0 0 10px;
+}
+[data-page="action-plan"] .celebration-section p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 auto;
+}
+[data-page="action-plan"] .celebration-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+[data-page="action-plan"] .celebration-btn {
+  min-height: 44px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+[data-page="action-plan"] .celebration-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+[data-page="action-plan"] .celebration-btn:last-child {
+  background: var(--ap-green);
+  border-color: var(--ap-green);
+  color: var(--ap-navy);
+}
+[data-page="action-plan"] .celebration-btn:last-child:hover {
+  background: #00b34a;
+}
+
+/* ---- Month navigation (prev/next) ---- */
+[data-page="action-plan"] .month-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+[data-page="action-plan"] .nav-btn {
+  min-height: 44px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--ap-line);
+  background: #fff;
+  color: var(--ap-navy);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+[data-page="action-plan"] .nav-btn.next {
+  background: var(--ap-blue);
+  border-color: var(--ap-blue);
+  color: #fff;
+  margin-left: auto;
+}
+[data-page="action-plan"] .nav-btn:hover:not(:disabled) {
+  border-color: var(--ap-blue);
+}
+[data-page="action-plan"] .nav-btn.next:hover:not(:disabled) {
+  background: #0f4d7f;
+}
+[data-page="action-plan"] .nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ---- Download section ---- */
+[data-page="action-plan"] .download-section {
+  text-align: center;
+  border: 1px solid var(--ap-line);
+  border-radius: var(--ap-card-radius);
+  padding: 32px 24px;
+  margin-top: 24px;
+  background: var(--ap-sky);
+}
+[data-page="action-plan"] .download-section h2 {
+  font-size: 22px;
+  color: var(--ap-navy);
+  margin: 0 0 8px;
+}
+[data-page="action-plan"] .download-section p {
+  font-size: 16px;
+  color: var(--ap-text);
+  margin-bottom: 20px;
+}
+[data-page="action-plan"] .download-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+[data-page="action-plan"] .download-btn {
+  min-height: 44px;
+  padding: 12px 22px;
+  border-radius: 8px;
+  border: 1px solid var(--ap-blue);
+  background: #fff;
+  color: var(--ap-blue);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+[data-page="action-plan"] .download-btn:hover {
+  background: var(--ap-blue);
+  color: #fff;
+}
+
+/* ---- Dismissible celebration toast (bug #3 — replaces alert()) ---- */
+[data-page="action-plan"] .ap-celebration-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translate(-50%, 16px);
+  width: calc(100% - 32px);
+  max-width: 420px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--ap-navy);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 16px 16px 16px 14px;
+  box-shadow: 0 8px 24px rgba(13, 34, 64, 0.25);
+  opacity: 0;
+  z-index: 9999;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+[data-page="action-plan"] .ap-celebration-toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+[data-page="action-plan"] .ap-celebration-toast__icon {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ap-green);
+  position: relative;
+}
+[data-page="action-plan"] .ap-celebration-toast__icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  transform: translate(-50%, -50%);
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%230D2240%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%2220%206%209%2017%204%2012%22%3E%3C/polyline%3E%3C/svg%3E") no-repeat center / contain;
+}
+[data-page="action-plan"] .ap-celebration-toast__body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+[data-page="action-plan"] .ap-celebration-toast__title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 3px;
+}
+[data-page="action-plan"] .ap-celebration-toast__text {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+[data-page="action-plan"] .ap-celebration-toast__close {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 6px;
+}
+[data-page="action-plan"] .ap-celebration-toast__close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  [data-page="action-plan"] .progress-stats {
+    gap: 8px;
+  }
+  [data-page="action-plan"] .month-card {
+    padding: 20px 16px;
+  }
+  [data-page="action-plan"] .celebration-actions {
+    flex-direction: column;
+  }
+  [data-page="action-plan"] .celebration-btn {
+    width: 100%;
+  }
+  [data-page="action-plan"] .month-navigation {
+    flex-wrap: wrap;
+  }
+  [data-page="action-plan"] .nav-btn {
+    flex: 1 1 auto;
+  }
+}
+
+/* =======================================================================
+   2. CREDIT-BOOST.HTML
+   ======================================================================= */
+
+[data-page="credit-boost"] .journey-context {
+  background: #fff;
+  border: 1px solid var(--ap-line);
+  border-radius: var(--ap-card-radius);
+  padding: 24px;
+}
+[data-page="credit-boost"] .journey-context h2 {
+  font-size: 20px;
+  color: var(--ap-navy);
+  margin: 0 0 10px;
+}
+[data-page="credit-boost"] .journey-context p {
+  font-size: 16px;
+  color: var(--ap-text);
+  line-height: 1.6;
+}
+[data-page="credit-boost"] .stage-badge {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 6px 12px;
+  border-radius: var(--ap-tag-radius);
+  background: var(--ap-sky);
+  color: var(--ap-blue);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+[data-page="credit-boost"] .reality-check {
+  margin-top: 20px;
+  background: var(--ap-sky);
+  border-radius: var(--ap-card-radius);
+  padding: 22px 24px;
+}
+[data-page="credit-boost"] .reality-check h3 {
+  font-size: 18px;
+  color: var(--ap-navy);
+  margin: 0 0 12px;
+}
+[data-page="credit-boost"] .reality-check ul {
+  margin: 0;
+  padding-left: 20px;
+}
+[data-page="credit-boost"] .reality-check li {
+  font-size: 16px;
+  color: var(--ap-text);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+[data-page="credit-boost"] .reality-check li:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- Impact calculator ---- */
+[data-page="credit-boost"] .impact-calculator {
+  background: #fff;
+  border: 1px solid var(--ap-line);
+  border-radius: var(--ap-card-radius);
+  padding: 28px 24px;
+  text-align: center;
+}
+[data-page="credit-boost"] .impact-calculator h2 {
+  font-size: 22px;
+  color: var(--ap-navy);
+  margin: 0 0 8px;
+}
+[data-page="credit-boost"] .impact-calculator .subtitle {
+  font-size: 16px;
+  color: var(--ap-muted);
+  margin-bottom: 24px;
+}
+[data-page="credit-boost"] .calculator-inputs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  text-align: left;
+  max-width: 480px;
+  margin: 0 auto;
+}
+[data-page="credit-boost"] .input-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ap-navy);
+  margin-bottom: 6px;
+}
+[data-page="credit-boost"] .input-group select,
+[data-page="credit-boost"] .input-group input {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--ap-line);
+  border-radius: 8px;
+  font-size: 16px;
+  color: var(--ap-text);
+  background: #fff;
+  box-sizing: border-box;
+}
+[data-page="credit-boost"] .input-group select:focus,
+[data-page="credit-boost"] .input-group input:focus {
+  outline: none;
+  border-color: var(--ap-blue);
+}
+[data-page="credit-boost"] .impact-results {
+  display: none;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--ap-line);
+}
+[data-page="credit-boost"] .impact-results.show {
+  display: block;
+}
+[data-page="credit-boost"] .impact-results h3 {
+  font-size: 16px;
+  color: var(--ap-muted);
+  margin: 0 0 6px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+[data-page="credit-boost"] .big-number {
+  font-family: var(--font-num, 'Fraunces', Georgia, serif);
+  font-size: clamp(36px, 9vw, 52px);
+  font-weight: 700;
+  color: var(--ap-navy);
+  line-height: 1.1;
+}
+[data-page="credit-boost"] .explanation {
+  margin-top: 6px;
+  font-size: 16px;
+  color: var(--ap-text);
+}
+
+/* ---- 90-day timeline (month tabs + week accordion) ---- */
+[data-page="credit-boost"] .timeline-section h2 {
+  font-size: 22px;
+  color: var(--ap-navy);
+  text-align: center;
+}
+[data-page="credit-boost"] .timeline-section .intro {
+  text-align: center;
+  font-size: 16px;
+  color: var(--ap-muted);
+  margin: 8px 0 24px;
+}
+[data-page="credit-boost"] .month-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+[data-page="credit-boost"] .month-tab {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid var(--ap-line);
+  background: #fff;
+  color: var(--ap-text);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+[data-page="credit-boost"] .month-tab.active {
+  background: var(--ap-navy);
+  border-color: var(--ap-navy);
+  color: #fff;
+}
+[data-page="credit-boost"] .month-content {
+  display: none;
+}
+[data-page="credit-boost"] .month-content.active {
+  display: block;
+}
+[data-page="credit-boost"] .month-header {
+  background: var(--ap-sky);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+[data-page="credit-boost"] .month-header h3 {
+  font-size: 18px;
+  color: var(--ap-navy);
+  margin: 0 0 8px;
+}
+[data-page="credit-boost"] .month-header .focus {
+  font-size: 15px;
+  color: var(--ap-text);
+  line-height: 1.5;
+  margin: 0;
+}
+
+[data-page="credit-boost"] .week-section {
+  border: 1px solid var(--ap-line);
+  border-radius: 10px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+[data-page="credit-boost"] .week-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  min-height: 44px;
+  background: #fff;
+}
+[data-page="credit-boost"] .week-header h4 {
+  font-size: 16px;
+  color: var(--ap-navy);
+  margin: 0;
+}
+[data-page="credit-boost"] .toggle-icon {
+  flex: 0 0 auto;
+  font-size: 12px;
+  color: var(--ap-blue);
+  transition: transform 0.2s ease;
+}
+[data-page="credit-boost"] .week-section.expanded .toggle-icon {
+  transform: rotate(180deg);
+}
+[data-page="credit-boost"] .week-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: var(--ap-sky);
+}
+[data-page="credit-boost"] .week-section.expanded .week-content {
+  max-height: 4000px;
+}
+[data-page="credit-boost"] .daily-action {
+  padding: 14px 16px;
+  border-top: 1px solid var(--ap-line);
+}
+[data-page="credit-boost"] .daily-action:first-child {
+  border-top: none;
+}
+[data-page="credit-boost"] .daily-action h5 {
+  font-size: 15px;
+  color: var(--ap-navy);
+  margin: 0 0 8px;
+}
+[data-page="credit-boost"] .daily-action ul {
+  margin: 0 0 10px;
+  padding-left: 20px;
+}
+[data-page="credit-boost"] .daily-action li {
+  font-size: 15px;
+  color: var(--ap-text);
+  line-height: 1.55;
+  margin-bottom: 4px;
+}
+[data-page="credit-boost"] .impact-badge,
+[data-page="credit-boost"] .time-badge {
+  display: inline-block;
+  margin: 4px 8px 0 0;
+  padding: 4px 10px;
+  border-radius: var(--ap-tag-radius);
+  font-size: 12px;
+  font-weight: 700;
+}
+[data-page="credit-boost"] .impact-badge {
+  background: rgba(0, 200, 83, 0.12);
+  color: #0a7a3c;
+}
+[data-page="credit-boost"] .time-badge {
+  background: #fff;
+  border: 1px solid var(--ap-line);
+  color: var(--ap-muted);
+}
+
+/* ---- Progress tracker widget (bug #4 — 4 icons) ---- */
+[data-page="credit-boost"] .progress-tracker {
+  background: #fff;
+  border: 1px solid var(--ap-line);
+  border-radius: var(--ap-card-radius);
+  padding: 28px 24px;
+  text-align: center;
+}
+[data-page="credit-boost"] .progress-tracker h2 {
+  font-size: 22px;
+  color: var(--ap-navy);
+  margin: 0 0 6px;
+}
+[data-page="credit-boost"] .progress-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+  text-align: center;
+}
+[data-page="credit-boost"] .progress-item {
+  border: 1px solid var(--ap-line);
+  border-radius: 10px;
+  padding: 16px 10px;
+  background: var(--ap-sky);
+}
+[data-page="credit-boost"] .progress-item .icon {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto 8px;
+  font-size: 0;
+  background: var(--icon-target) no-repeat center / contain;
+}
+[data-page="credit-boost"] .progress-item:nth-child(2) .icon {
+  background-image: var(--icon-flag);
+}
+[data-page="credit-boost"] .progress-item:nth-child(3) .icon {
+  background-image: var(--icon-trending-up);
+}
+[data-page="credit-boost"] .progress-item:nth-child(4) .icon {
+  background-image: var(--icon-clock);
+}
+[data-page="credit-boost"] .progress-item .label {
+  font-size: 12px;
+  color: var(--ap-muted);
+  margin-bottom: 4px;
+}
+[data-page="credit-boost"] .progress-item .value {
+  font-family: var(--font-num, 'Fraunces', Georgia, serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ap-navy);
+}
+[data-page="credit-boost"] .progress-bar-container {
+  width: 100%;
+  height: 14px;
+  background: var(--ap-sky);
+  border: 1px solid var(--ap-line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+[data-page="credit-boost"] .progress-bar-container .progress-bar {
+  height: 100%;
+  background: var(--ap-blue);
+  border-radius: 6px;
+  transition: width 0.5s ease;
+  font-size: 0;
+}
+
+/* ---- Case studies ---- */
+[data-page="credit-boost"] .case-studies h2 {
+  font-size: 22px;
+  color: var(--ap-navy);
+  text-align: center;
+}
+[data-page="credit-boost"] .case-studies > .intro {
+  text-align: center;
+  font-size: 16px;
+  color: var(--ap-muted);
+  margin: 8px 0 24px;
+}
+[data-page="credit-boost"] .case-study {
+  border: 1px solid var(--ap-line);
+  border-radius: var(--ap-card-radius);
+  padding: 22px 24px;
+  margin-bottom: 18px;
+}
+[data-page="credit-boost"] .case-study-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+[data-page="credit-boost"] .name {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ap-navy);
+}
+[data-page="credit-boost"] .score-change {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-num, 'Fraunces', Georgia, serif);
+  font-weight: 700;
+  font-size: 20px;
+}
+[data-page="credit-boost"] .score-change .before {
+  color: var(--ap-muted);
+}
+[data-page="credit-boost"] .score-change .arrow {
+  color: var(--ap-muted);
+  font-size: 16px;
+}
+[data-page="credit-boost"] .score-change .after {
+  color: var(--ap-green);
+}
+[data-page="credit-boost"] .situation,
+[data-page="credit-boost"] .actions,
+[data-page="credit-boost"] .result {
+  margin-top: 14px;
+}
+[data-page="credit-boost"] .situation h4,
+[data-page="credit-boost"] .actions h4 {
+  font-size: 13px;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--ap-blue);
+  margin: 0 0 6px;
+}
+[data-page="credit-boost"] .situation p {
+  font-size: 15px;
+  color: var(--ap-text);
+  line-height: 1.6;
+  font-style: italic;
+}
+[data-page="credit-boost"] .actions ul {
+  margin: 0;
+  padding-left: 20px;
+}
+[data-page="credit-boost"] .actions li {
+  font-size: 15px;
+  color: var(--ap-text);
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+[data-page="credit-boost"] .result {
+  background: var(--ap-sky);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 15px;
+  color: var(--ap-text);
+  line-height: 1.6;
+}
+
+/* ---- Strategy grid ---- */
+[data-page="credit-boost"] .strategies-section h2 {
+  font-size: 22px;
+  color: var(--ap-navy);
+  text-align: center;
+  margin-bottom: 20px;
+}
+[data-page="credit-boost"] .strategy-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+[data-page="credit-boost"] .strategy-card {
+  border: 1px solid var(--ap-line);
+  border-radius: var(--ap-card-radius);
+  padding: 22px 20px;
+  background: #fff;
+}
+[data-page="credit-boost"] .strategy-card .icon {
+  width: 34px;
+  height: 34px;
+  margin-bottom: 12px;
+  font-size: 0;
+  background: var(--icon-bar-chart) no-repeat center / contain;
+}
+[data-page="credit-boost"] .strategy-card:nth-child(2) .icon { background-image: var(--icon-check-circle); }
+[data-page="credit-boost"] .strategy-card:nth-child(3) .icon { background-image: var(--icon-users); }
+[data-page="credit-boost"] .strategy-card:nth-child(4) .icon { background-image: var(--icon-flag); }
+[data-page="credit-boost"] .strategy-card:nth-child(5) .icon { background-image: var(--icon-percent); }
+[data-page="credit-boost"] .strategy-card:nth-child(6) .icon { background-image: var(--icon-trending-up); }
+[data-page="credit-boost"] .strategy-card h3 {
+  font-size: 17px;
+  color: var(--ap-navy);
+  margin: 0 0 8px;
+}
+[data-page="credit-boost"] .strategy-card p {
+  font-size: 15px;
+  color: var(--ap-text);
+  line-height: 1.6;
+}
+[data-page="credit-boost"] .impact-stat {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 5px 10px;
+  border-radius: var(--ap-tag-radius);
+  background: rgba(0, 200, 83, 0.12);
+  color: #0a7a3c;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ---- Tools & templates ---- */
+[data-page="credit-boost"] .tools-section {
+  padding: var(--space-xl, 3rem) var(--space-md, 1.5rem);
+}
+[data-page="credit-boost"] .container-inner {
+  max-width: var(--max-width-wide, 1100px);
+  margin: 0 auto;
+}
+[data-page="credit-boost"] .tools-section h2 {
+  font-size: 22px;
+  color: var(--ap-navy);
+  text-align: center;
+  margin-bottom: 20px;
+}
+[data-page="credit-boost"] .tools-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+[data-page="credit-boost"] .tool-card {
+  border: 1px solid var(--ap-line);
+  border-radius: var(--ap-card-radius);
+  padding: 22px 20px;
+  background: var(--ap-sky);
+  text-align: center;
+}
+[data-page="credit-boost"] .tool-card .icon {
+  width: 34px;
+  height: 34px;
+  margin: 0 auto 12px;
+  font-size: 0;
+  background: var(--icon-grid) no-repeat center / contain;
+}
+[data-page="credit-boost"] .tool-card:nth-child(2) .icon { background-image: var(--icon-file-text); }
+[data-page="credit-boost"] .tool-card:nth-child(3) .icon { background-image: var(--icon-calculator); }
+[data-page="credit-boost"] .tool-card:nth-child(4) .icon { background-image: var(--icon-smartphone); }
+[data-page="credit-boost"] .tool-card:nth-child(5) .icon { background-image: var(--icon-message-square); }
+[data-page="credit-boost"] .tool-card:nth-child(6) .icon { background-image: var(--icon-bar-chart); }
+[data-page="credit-boost"] .tool-card h3 {
+  font-size: 16px;
+  color: var(--ap-navy);
+  margin: 0 0 8px;
+}
+[data-page="credit-boost"] .tool-card p {
+  font-size: 14px;
+  color: var(--ap-text);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+[data-page="credit-boost"] .btn-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid var(--ap-blue);
+  background: #fff;
+  color: var(--ap-blue);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+[data-page="credit-boost"] .btn-download:hover {
+  background: var(--ap-blue);
+  color: #fff;
+}
+
+/* ---- Pro tips grid ---- */
+[data-page="credit-boost"] .tips-section h2 {
+  font-size: 22px;
+  color: var(--ap-navy);
+  text-align: center;
+  margin-bottom: 20px;
+}
+[data-page="credit-boost"] .tips-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+[data-page="credit-boost"] .tip-card {
+  display: flex;
+  gap: 14px;
+  border: 1px solid var(--ap-line);
+  border-radius: 12px;
+  padding: 18px 20px;
+  background: #fff;
+}
+[data-page="credit-boost"] .tip-icon {
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: var(--ap-sky);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px 18px;
+  font-size: 0;
+}
+[data-page="credit-boost"] .tip-card:nth-child(1) .tip-icon { background-image: var(--icon-calendar); }
+[data-page="credit-boost"] .tip-card:nth-child(2) .tip-icon { background-image: var(--icon-credit-card); }
+[data-page="credit-boost"] .tip-card:nth-child(3) .tip-icon { background-image: var(--icon-clock); }
+[data-page="credit-boost"] .tip-card:nth-child(4) .tip-icon { background-image: var(--icon-zap); }
+[data-page="credit-boost"] .tip-card:nth-child(5) .tip-icon { background-image: var(--icon-snowflake); }
+[data-page="credit-boost"] .tip-card:nth-child(6) .tip-icon { background-image: var(--icon-layers); }
+[data-page="credit-boost"] .tip-content h4 {
+  font-size: 15px;
+  color: var(--ap-navy);
+  margin: 0 0 6px;
+}
+[data-page="credit-boost"] .tip-content p {
+  font-size: 14px;
+  color: var(--ap-text);
+  line-height: 1.6;
+}
+
+@media (min-width: 640px) {
+  [data-page="credit-boost"] .calculator-inputs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  [data-page="credit-boost"] .calculator-inputs .input-group:last-child {
+    grid-column: 1 / -1;
+    max-width: 240px;
+  }
+  [data-page="credit-boost"] .strategy-grid,
+  [data-page="credit-boost"] .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  [data-page="credit-boost"] .strategy-grid,
+  [data-page="credit-boost"] .tools-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  [data-page="credit-boost"] .progress-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* =======================================================================
+   3. MOVING-CHECKLIST.HTML
+   ======================================================================= */
+
+[data-page="moving-checklist"] .overall-progress {
+  background: #fff;
+  border: 1px solid var(--ap-line);
+  border-radius: var(--ap-card-radius);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+[data-page="moving-checklist"] .progress-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+[data-page="moving-checklist"] .progress-header h3 {
+  font-size: 18px;
+  color: var(--ap-navy);
+  margin: 0;
+}
+[data-page="moving-checklist"] .progress-stats {
+  display: flex;
+  gap: 20px;
+}
+[data-page="moving-checklist"] .progress-stat {
+  text-align: center;
+}
+[data-page="moving-checklist"] .progress-stat .number {
+  font-family: var(--font-num, 'Fraunces', Georgia, serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ap-navy);
+  line-height: 1.1;
+}
+[data-page="moving-checklist"] .progress-stat .label {
+  margin-top: 2px;
+  font-size: 11px;
+  color: var(--ap-muted);
+}
+[data-page="moving-checklist"] .progress-bar-container {
+  width: 100%;
+  height: 14px;
+  background: var(--ap-sky);
+  border: 1px solid var(--ap-line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+[data-page="moving-checklist"] .progress-bar-container .progress-bar-fill {
+  height: 100%;
+  background: var(--ap-blue);
+  border-radius: 6px;
+  transition: width 0.5s ease;
+  font-size: 0;
+}
+[data-page="moving-checklist"] .progress-bar-label {
+  margin-top: 8px;
+  text-align: right;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ap-navy);
+}
+
+/* ---- Week nav tabs ---- */
+[data-page="moving-checklist"] .week-nav {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 2px 12px;
+  margin-bottom: 20px;
+}
+[data-page="moving-checklist"] .week-tab {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--ap-line);
+  background: #fff;
+  color: var(--ap-text);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+[data-page="moving-checklist"] .week-tab.active {
+  background: var(--ap-navy);
+  border-color: var(--ap-navy);
+  color: #fff;
+}
+[data-page="moving-checklist"] .week-tab.completed:not(.active) {
+  border-color: var(--ap-green);
+  color: #0a7a3c;
+}
+[data-page="moving-checklist"] .tab-progress {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+}
+[data-page="moving-checklist"] .week-tab:not(.active) .tab-progress {
+  background: var(--ap-sky);
+  color: var(--ap-muted);
+}
+
+/* ---- Week panel ---- */
+[data-page="moving-checklist"] .week-panel {
+  display: none;
+}
+[data-page="moving-checklist"] .week-panel.active {
+  display: block;
+}
+[data-page="moving-checklist"] .week-header {
+  margin-bottom: 16px;
+}
+[data-page="moving-checklist"] .week-header h3 {
+  font-size: 20px;
+  color: var(--ap-navy);
+  margin: 0 0 6px;
+}
+[data-page="moving-checklist"] .week-header p {
+  font-size: 15px;
+  color: var(--ap-muted);
+  line-height: 1.5;
+}
+[data-page="moving-checklist"] .week-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+[data-page="moving-checklist"] .task-category h4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--ap-navy);
+  margin: 0 0 10px;
+}
+[data-page="moving-checklist"] .category-icon {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--ap-sky);
+  color: var(--ap-blue);
+}
+[data-page="moving-checklist"] .task-list {
+  border: 1px solid var(--ap-line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+[data-page="moving-checklist"] .task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  min-height: 44px;
+  border-bottom: 1px solid var(--ap-line);
+  cursor: pointer;
+  background: #fff;
+  transition: background 0.15s ease;
+}
+[data-page="moving-checklist"] .task-list .task-item:last-child {
+  border-bottom: none;
+}
+[data-page="moving-checklist"] .task-item:hover {
+  background: var(--ap-sky);
+}
+[data-page="moving-checklist"] .task-checkbox {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  border: 2px solid var(--ap-line);
+  border-radius: 6px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+/* The check SVG is hard-coded in the markup — hide it until the task is completed */
+[data-page="moving-checklist"] .task-checkbox svg {
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+[data-page="moving-checklist"] .task-item.completed .task-checkbox {
+  background: var(--ap-green);
+  border-color: var(--ap-green);
+}
+[data-page="moving-checklist"] .task-item.completed .task-checkbox svg {
+  opacity: 1;
+  stroke: #fff !important;
+}
+[data-page="moving-checklist"] .task-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ap-navy);
+  line-height: 1.4;
+}
+[data-page="moving-checklist"] .task-detail {
+  margin-top: 3px;
+  font-size: 14px;
+  color: var(--ap-muted);
+  line-height: 1.5;
+}
+[data-page="moving-checklist"] .task-item.completed .task-text {
+  color: var(--ap-muted);
+  text-decoration: line-through;
+}
+[data-page="moving-checklist"] .task-item.completed .task-detail {
+  opacity: 0.7;
+}
+[data-page="moving-checklist"] .task-content {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+[data-page="moving-checklist"] .task-badge {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  padding: 4px 9px;
+  border-radius: var(--ap-tag-radius);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+[data-page="moving-checklist"] .badge-priority {
+  background: rgba(21, 101, 160, 0.1);
+  color: var(--ap-blue);
+}
+[data-page="moving-checklist"] .badge-optional {
+  background: var(--ap-sky);
+  color: var(--ap-muted);
+}
+
+/* ---- Professional vs DIY comparison ---- */
+[data-page="moving-checklist"] .comparison-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+[data-page="moving-checklist"] .comparison-card {
+  position: relative;
+  border: 1px solid var(--ap-line);
+  border-radius: var(--ap-card-radius);
+  padding: 24px 20px;
+  background: #fff;
+}
+[data-page="moving-checklist"] .comparison-card.recommended {
+  border-color: var(--ap-blue);
+  border-width: 2px;
+}
+[data-page="moving-checklist"] .comparison-card.recommended::before {
+  content: 'Recommended';
+  position: absolute;
+  top: -11px;
+  left: 20px;
+  background: var(--ap-blue);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--ap-tag-radius);
+}
+[data-page="moving-checklist"] .comparison-card h4 {
+  font-size: 17px;
+  color: var(--ap-navy);
+  margin: 0 0 6px;
+}
+[data-page="moving-checklist"] .comparison-price {
+  font-family: var(--font-num, 'Fraunces', Georgia, serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ap-navy);
+}
+[data-page="moving-checklist"] .price-note {
+  font-size: 13px;
+  color: var(--ap-muted);
+  margin: 2px 0 16px;
+}
+[data-page="moving-checklist"] .comparison-features {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+[data-page="moving-checklist"] .comparison-feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--ap-text);
+}
+[data-page="moving-checklist"] .feature-check,
+[data-page="moving-checklist"] .feature-x {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+}
+[data-page="moving-checklist"] .feature-check {
+  background: rgba(0, 200, 83, 0.15);
+}
+[data-page="moving-checklist"] .feature-check::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: var(--icon-check-circle-green) no-repeat center / contain;
+}
+[data-page="moving-checklist"] .feature-x {
+  background: rgba(95, 108, 123, 0.12);
+}
+[data-page="moving-checklist"] .feature-x::before {
+  content: '\2715';
+  font-size: 11px;
+  line-height: 1;
+  color: var(--ap-muted);
+}
+
+/* ---- Moving day survival kit ---- */
+[data-page="moving-checklist"] .survival-kit {
+  background: var(--ap-navy);
+  border-radius: var(--ap-card-radius);
+  padding: 28px 24px;
+  color: #fff;
+}
+[data-page="moving-checklist"] .survival-kit h3 {
+  font-size: 20px;
+  color: #fff;
+  margin: 0 0 6px;
+}
+[data-page="moving-checklist"] .survival-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+[data-page="moving-checklist"] .survival-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 14px;
+  color: #fff;
+}
+[data-page="moving-checklist"] .survival-item svg {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  color: var(--ap-volt);
+}
+
+/* ---- Address change master list ---- */
+[data-page="moving-checklist"] .address-change-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+[data-page="moving-checklist"] .address-category {
+  border: 1px solid var(--ap-line);
+  border-radius: var(--ap-card-radius);
+  overflow: hidden;
+  background: #fff;
+}
+[data-page="moving-checklist"] .address-category-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: var(--ap-sky);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ap-navy);
+}
+[data-page="moving-checklist"] .address-category-header svg {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  color: var(--ap-blue);
+}
+[data-page="moving-checklist"] .address-list {
+  display: flex;
+  flex-direction: column;
+}
+[data-page="moving-checklist"] .address-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px;
+  min-height: 44px;
+  border-top: 1px solid var(--ap-line);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+[data-page="moving-checklist"] .address-item:hover {
+  background: var(--ap-sky);
+}
+[data-page="moving-checklist"] .mini-checkbox {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--ap-line);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+[data-page="moving-checklist"] .mini-checkbox svg {
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+[data-page="moving-checklist"] .address-item.completed .mini-checkbox {
+  background: var(--ap-green);
+  border-color: var(--ap-green);
+}
+[data-page="moving-checklist"] .address-item.completed .mini-checkbox svg {
+  opacity: 1;
+  stroke: #fff !important;
+}
+[data-page="moving-checklist"] .address-name {
+  font-size: 15px;
+  color: var(--ap-text);
+}
+[data-page="moving-checklist"] .address-item.completed .address-name {
+  color: var(--ap-muted);
+  text-decoration: line-through;
+}
+
+/* ---- DFW tips ---- */
+[data-page="moving-checklist"] .dfw-tips h3 {
+  font-size: 20px;
+  color: var(--ap-navy);
+  margin: 0 0 16px;
+}
+[data-page="moving-checklist"] .tip-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+[data-page="moving-checklist"] .tip-card {
+  border: 1px solid var(--ap-line);
+  border-radius: 12px;
+  padding: 18px 20px;
+  background: var(--ap-sky);
+}
+[data-page="moving-checklist"] .tip-card h5 {
+  font-size: 15px;
+  color: var(--ap-navy);
+  margin: 0 0 6px;
+}
+[data-page="moving-checklist"] .tip-card p {
+  font-size: 14px;
+  color: var(--ap-text);
+  line-height: 1.6;
+}
+
+@media (min-width: 640px) {
+  [data-page="moving-checklist"] .comparison-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  [data-page="moving-checklist"] .address-change-grid,
+  [data-page="moving-checklist"] .tip-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  [data-page="moving-checklist"] .comparison-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  [data-page="moving-checklist"] .address-change-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  [data-page="moving-checklist"] .survival-grid {
+    grid-template-columns: 1fr;
+  }
+  [data-page="moving-checklist"] .progress-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  [data-page="moving-checklist"] .progress-stats {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

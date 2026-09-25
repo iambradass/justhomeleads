@@ -17,6 +17,7 @@
     <link rel="preload" href="/fonts/jakarta-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/fonts.css?v=20260713a">
   <link href="jhl-redesign.min.css?v=20260713a" rel="stylesheet"/>
+  <link rel="stylesheet" href="repairs/tools-a.css">
      <link rel="canonical" href="https://justhomeleads.com/credit-boost">
     <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -1482,9 +1483,10 @@
        </div>
       </div>
       <div class="progress-bar-container">
-       <div class="progress-bar" id="overall-progress" style="width: 0%;">
-        0%
-       </div>
+       <div class="progress-bar" id="overall-progress" style="width: 0%;"></div>
+      </div>
+      <div class="progress-bar-label" id="overall-progress-label">
+       0% complete
       </div>
       <div style="text-align: center; margin-top: var(--space-md);">
        <button class="btn" onclick="updateProgress()">
@@ -2419,7 +2421,8 @@
 
             const progressPercent = Math.min((parseInt(daysCompleted) / 90) * 100, 100);
             document.getElementById('overall-progress').style.width = progressPercent + '%';
-            document.getElementById('overall-progress').textContent = Math.round(progressPercent) + '%';
+            const overallLabel = document.getElementById('overall-progress-label');
+            if (overallLabel) overallLabel.textContent = Math.round(progressPercent) + '% complete';
 
             alert('Progress updated! Keep going!');
         }

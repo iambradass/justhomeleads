@@ -24,6 +24,7 @@
     <link rel="preload" href="/fonts/jakarta-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/fonts.css?v=20260713a">
   <link href="jhl-redesign.min.css?v=20260713a" rel="stylesheet"/>
+  <link rel="stylesheet" href="repairs/tools-c.css">
      <link rel="canonical" href="https://justhomeleads.com/jargon-buster">
     <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -335,7 +336,7 @@
        <div class="search-box">
         <input autocomplete="off" class="search-input" id="searchInput" placeholder="Search terms... (try 'PMI', 'escrow', 'appraisal')" type="text"/>
         <span class="search-icon">
-         
+         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </span>
        </div>
        <div class="results-count" id="resultsCount">
@@ -440,7 +441,7 @@
        <!-- FINANCING TERMS -->
        <!-- APR -->
        <div class="term-item" data-category="financing" data-terms="apr annual percentage rate interest">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            A
@@ -460,7 +461,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -507,7 +508,7 @@
        </div>
        <!-- Amortization -->
        <div class="term-item" data-category="financing" data-terms="amortization payment schedule principal interest">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            A
@@ -527,7 +528,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -560,7 +561,7 @@
        </div>
        <!-- DTI -->
        <div class="term-item" data-category="financing" data-terms="dti debt to income ratio qualification">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            D
@@ -580,7 +581,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -613,7 +614,7 @@
        </div>
        <!-- Debt-to-Income Front-End -->
        <div class="term-item" data-category="financing" data-terms="front-end dti housing ratio piti">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">D</div>
           <div class="term-title">
@@ -624,7 +625,7 @@
          <div class="term-badges">
           <span class="badge financing">Financing</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -649,7 +650,7 @@
        </div>
        <!-- Deed -->
        <div class="term-item" data-category="closing" data-terms="deed ownership document title transfer">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">D</div>
           <div class="term-title">
@@ -660,7 +661,7 @@
          <div class="term-badges">
           <span class="badge closing">Closing</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -685,7 +686,7 @@
        </div>
        <!-- Deed of Trust -->
        <div class="term-item" data-category="closing" data-terms="deed of trust mortgage lien security">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">D</div>
           <div class="term-title">
@@ -696,7 +697,7 @@
          <div class="term-badges">
           <span class="badge closing">Closing</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -721,7 +722,7 @@
        </div>
        <!-- DFW HOA Culture -->
        <div class="term-item" data-category="dfw property" data-terms="dfw hoa homeowners association culture local">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">D</div>
           <div class="term-title">
@@ -733,7 +734,7 @@
           <span class="badge dfw">DFW</span>
           <span class="badge property">Property</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -757,7 +758,7 @@
        </div>
        <!-- DFW Median Home Price -->
        <div class="term-item" data-category="dfw property" data-terms="dfw median home price market average cost">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">D</div>
           <div class="term-title">
@@ -769,7 +770,7 @@
           <span class="badge dfw">DFW</span>
           <span class="badge property">Property</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -789,7 +790,7 @@
        </div>
        <!-- Disclosure -->
        <div class="term-item" data-category="contract" data-terms="disclosure seller required information defects">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">D</div>
           <div class="term-title">
@@ -800,7 +801,7 @@
          <div class="term-badges">
           <span class="badge contract">Contract</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -824,7 +825,7 @@
        </div>
        <!-- Down Payment -->
        <div class="term-item" data-category="financing" data-terms="down payment deposit upfront money equity">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">D</div>
           <div class="term-title">
@@ -835,7 +836,7 @@
          <div class="term-badges">
           <span class="badge financing">Financing</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -860,7 +861,7 @@
        </div>
        <!-- Dry Closing -->
        <div class="term-item" data-category="closing" data-terms="dry closing delayed funding keys wait">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">D</div>
           <div class="term-title">
@@ -871,7 +872,7 @@
          <div class="term-badges">
           <span class="badge closing">Closing</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -891,7 +892,7 @@
        </div>
        <!-- Dual Agency -->
        <div class="term-item" data-category="contract" data-terms="dual agency same agent buyer seller conflict">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">D</div>
           <div class="term-title">
@@ -902,7 +903,7 @@
          <div class="term-badges">
           <span class="badge contract">Contract</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -922,7 +923,7 @@
        </div>
        <!-- Due Diligence -->
        <div class="term-item" data-category="contract" data-terms="due diligence research investigation homework">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">D</div>
           <div class="term-title">
@@ -933,7 +934,7 @@
          <div class="term-badges">
           <span class="badge contract">Contract</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -957,7 +958,7 @@
        </div>
        <!-- Earnest Money -->
        <div class="term-item" data-category="contract" data-terms="earnest money deposit good faith contract">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            E
@@ -977,7 +978,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -1016,7 +1017,7 @@
        </div>
        <!-- Easement -->
        <div class="term-item" data-category="property" data-terms="easement access rights land use">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">E</div>
           <div class="term-title">
@@ -1027,7 +1028,7 @@
          <div class="term-badges">
           <span class="badge property">Property</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -1052,7 +1053,7 @@
        </div>
        <!-- Encroachment -->
        <div class="term-item" data-category="property" data-terms="encroachment boundary violation property line">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">E</div>
           <div class="term-title">
@@ -1063,7 +1064,7 @@
          <div class="term-badges">
           <span class="badge property">Property</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -1088,7 +1089,7 @@
        </div>
        <!-- Escalation Clause -->
        <div class="term-item" data-category="contract" data-terms="escalation clause automatic increase competitive offer">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">E</div>
           <div class="term-title">
@@ -1099,7 +1100,7 @@
          <div class="term-badges">
           <span class="badge contract">Contract</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -1124,7 +1125,7 @@
        </div>
        <!-- Escrow -->
        <div class="term-item" data-category="closing" data-terms="escrow account taxes insurance impound">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            E
@@ -1144,7 +1145,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -1183,7 +1184,7 @@
        </div>
        <!-- Fair Market Value -->
        <div class="term-item" data-category="property" data-terms="fair market value fmv worth market price">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">F</div>
           <div class="term-title">
@@ -1194,7 +1195,7 @@
          <div class="term-badges">
           <span class="badge property">Property</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -1219,7 +1220,7 @@
        </div>
        <!-- Financing Contingency -->
        <div class="term-item" data-category="financing contract" data-terms="financing contingency loan approval mortgage contingency">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            F
@@ -1242,7 +1243,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -1291,7 +1292,7 @@
        </div>
        <!-- Fixed Rate Mortgage -->
        <div class="term-item" data-category="financing" data-terms="fixed rate mortgage interest rate 30 year 15 year">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            F
@@ -1311,7 +1312,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -1360,7 +1361,7 @@
        </div>
        <!-- Flood Zone -->
        <div class="term-item" data-category="property" data-terms="flood zone fema flood plain insurance">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            F
@@ -1380,7 +1381,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -1425,7 +1426,7 @@
        </div>
        <!-- Foundation -->
        <div class="term-item" data-category="property inspection" data-terms="foundation slab pier beam structural">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            F
@@ -1448,7 +1449,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -1497,7 +1498,7 @@
        </div>
        <!-- FHA Loan -->
        <div class="term-item" data-category="financing" data-terms="fha loan federal housing administration low down payment">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            F
@@ -1517,7 +1518,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -1561,7 +1562,7 @@
        </div>
        <!-- HELOC -->
        <div class="term-item" data-category="financing" data-terms="heloc home equity line of credit second mortgage">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            H
@@ -1581,7 +1582,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -1626,7 +1627,7 @@
        </div>
        <!-- Home Equity -->
        <div class="term-item" data-category="financing property" data-terms="home equity value ownership asset wealth">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            H
@@ -1649,7 +1650,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -1698,7 +1699,7 @@
        </div>
        <!-- Home Inspection -->
        <div class="term-item" data-category="inspection" data-terms="home inspection inspector property inspection due diligence">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            H
@@ -1718,7 +1719,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -1771,7 +1772,7 @@
        </div>
        <!-- HOA -->
        <div class="term-item" data-category="property" data-terms="hoa homeowners association fees dues rules">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            H
@@ -1791,7 +1792,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -1836,7 +1837,7 @@
        </div>
        <!-- HOA Resale Certificate -->
        <div class="term-item" data-category="texas property" data-terms="hoa resale certificate texas disclosure">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            H
@@ -1859,7 +1860,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -1904,7 +1905,7 @@
        </div>
        <!-- HVAC Inspection -->
        <div class="term-item" data-category="inspection" data-terms="hvac inspection heating cooling air conditioning furnace">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            H
@@ -1924,7 +1925,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -1969,7 +1970,7 @@
        </div>
        <!-- Inspection Contingency -->
        <div class="term-item" data-category="inspection contract" data-terms="inspection contingency due diligence period option period">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            I
@@ -1992,7 +1993,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -2041,7 +2042,7 @@
        </div>
        <!-- Interest Rate -->
        <div class="term-item" data-category="financing" data-terms="interest rate APR mortgage rate">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            I
@@ -2061,7 +2062,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -2110,7 +2111,7 @@
        </div>
        <!-- Jumbo Loan -->
        <div class="term-item" data-category="financing" data-terms="jumbo loan conforming loan limit high balance">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            J
@@ -2130,7 +2131,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -2175,7 +2176,7 @@
        </div>
        <!-- Lead Paint -->
        <div class="term-item" data-category="inspection" data-terms="lead paint lead based paint disclosure 1978">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            L
@@ -2195,7 +2196,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -2240,7 +2241,7 @@
        </div>
        <!-- Lien -->
        <div class="term-item" data-category="closing property" data-terms="lien judgment tax lien mechanic lien title">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            L
@@ -2263,7 +2264,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -2308,7 +2309,7 @@
        </div>
        <!-- Listing Agreement -->
        <div class="term-item" data-category="contract" data-terms="listing agreement exclusive right to sell seller agent">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            L
@@ -2328,7 +2329,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -2373,7 +2374,7 @@
        </div>
        <!-- Loan Estimate -->
        <div class="term-item" data-category="financing" data-terms="loan estimate LE closing costs fees disclosure">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            L
@@ -2393,7 +2394,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -2442,7 +2443,7 @@
        </div>
        <!-- Lot -->
        <div class="term-item" data-category="property" data-terms="lot land parcel plot property lines">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            L
@@ -2462,7 +2463,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -2511,7 +2512,7 @@
        </div>
        <!-- Market Value -->
        <div class="term-item" data-category="property" data-terms="market value worth appraisal comps price">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            M
@@ -2531,7 +2532,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -2580,7 +2581,7 @@
        </div>
        <!-- MIP -->
        <div class="term-item" data-category="financing" data-terms="mip mortgage insurance premium fha insurance">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            M
@@ -2600,7 +2601,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -2649,7 +2650,7 @@
        </div>
        <!-- Mold Inspection -->
        <div class="term-item" data-category="inspection" data-terms="mold inspection mildew testing air quality">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            M
@@ -2669,7 +2670,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -2714,7 +2715,7 @@
        </div>
        <!-- MLS -->
        <div class="term-item" data-category="contract" data-terms="mls multiple listing service realtor database">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            M
@@ -2734,7 +2735,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -2779,7 +2780,7 @@
        </div>
        <!-- Multiple Offer -->
        <div class="term-item" data-category="contract" data-terms="multiple offer bidding war escalation competitive">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            M
@@ -2799,7 +2800,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -2844,7 +2845,7 @@
        </div>
        <!-- MUD Tax -->
        <div class="term-item" data-category="texas property" data-terms="mud tax municipal utility district texas">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            M
@@ -2867,7 +2868,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -2906,7 +2907,7 @@
        </div>
        <!-- North Texas Weather Impact -->
        <div class="term-item" data-category="dfw" data-terms="north texas weather hail tornado freeze storm">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            N
@@ -2926,7 +2927,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -2971,7 +2972,7 @@
        </div>
        <!-- Origination Fee -->
        <div class="term-item" data-category="financing closing" data-terms="origination fee lender fee points closing costs">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            O
@@ -2994,7 +2995,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -3043,7 +3044,7 @@
        </div>
        <!-- Option Period -->
        <div class="term-item" data-category="texas contract" data-terms="option period inspection due diligence unrestricted texas">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            O
@@ -3066,7 +3067,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -3105,7 +3106,7 @@
        </div>
        <!-- PMI -->
        <div class="term-item" data-category="financing" data-terms="pmi private mortgage insurance down payment less than 20">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            P
@@ -3125,7 +3126,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -3175,7 +3176,7 @@
        </div>
        <!-- Pier and Beam -->
        <div class="term-item" data-category="property" data-terms="pier and beam foundation elevated crawl space">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">P</div>
           <div class="term-title">
@@ -3186,7 +3187,7 @@
          <div class="term-badges">
           <span class="badge property">Property</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -3209,7 +3210,7 @@
        </div>
        <!-- PITI -->
        <div class="term-item" data-category="financing" data-terms="piti principal interest taxes insurance mortgage payment">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">P</div>
           <div class="term-title">
@@ -3220,7 +3221,7 @@
          <div class="term-badges">
           <span class="badge financing">Financing</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -3243,7 +3244,7 @@
        </div>
        <!-- Plat -->
        <div class="term-item" data-category="property" data-terms="plat map survey lot property lines subdivision">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">P</div>
           <div class="term-title">
@@ -3254,7 +3255,7 @@
          <div class="term-badges">
           <span class="badge property">Property</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -3277,7 +3278,7 @@
        </div>
        <!-- Points -->
        <div class="term-item" data-category="financing" data-terms="points discount points buy down rate mortgage">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">P</div>
           <div class="term-title">
@@ -3288,7 +3289,7 @@
          <div class="term-badges">
           <span class="badge financing">Financing</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -3311,7 +3312,7 @@
        </div>
        <!-- Possession Date -->
        <div class="term-item" data-category="contract" data-terms="possession date move in occupancy closing">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">P</div>
           <div class="term-title">
@@ -3322,7 +3323,7 @@
          <div class="term-badges">
           <span class="badge contract">Contract</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -3345,7 +3346,7 @@
        </div>
        <!-- Pre-Qualification -->
        <div class="term-item" data-category="financing" data-terms="pre-qualification pre-qual estimate mortgage approval">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">P</div>
           <div class="term-title">
@@ -3356,7 +3357,7 @@
          <div class="term-badges">
           <span class="badge financing">Financing</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -3379,7 +3380,7 @@
        </div>
        <!-- Principal -->
        <div class="term-item" data-category="financing" data-terms="principal loan amount borrowed balance equity">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">P</div>
           <div class="term-title">
@@ -3390,7 +3391,7 @@
          <div class="term-badges">
           <span class="badge financing">Financing</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -3413,7 +3414,7 @@
        </div>
        <!-- Property Tax Protest -->
        <div class="term-item" data-category="texas property" data-terms="property tax protest appeal appraisal district texas">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">P</div>
           <div class="term-title">
@@ -3425,7 +3426,7 @@
           <span class="badge texas">Texas</span>
           <span class="badge property">Property</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -3448,7 +3449,7 @@
        </div>
        <!-- Proration -->
        <div class="term-item" data-category="closing" data-terms="proration prorated taxes insurance utilities closing">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">P</div>
           <div class="term-title">
@@ -3459,7 +3460,7 @@
          <div class="term-badges">
           <span class="badge closing">Closing</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -3482,7 +3483,7 @@
        </div>
        <!-- Pre-Approval -->
        <div class="term-item" data-category="financing" data-terms="pre-approval preapproval qualified verified lender">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            P
@@ -3502,7 +3503,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -3552,7 +3553,7 @@
        </div>
        <!-- Radon Test -->
        <div class="term-item" data-category="inspection" data-terms="radon test gas cancer basement">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">R</div>
           <div class="term-title">
@@ -3563,7 +3564,7 @@
          <div class="term-badges">
           <span class="badge inspection">Inspection</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -3586,7 +3587,7 @@
        </div>
        <!-- Rate Lock -->
        <div class="term-item" data-category="financing" data-terms="rate lock interest rate guarantee float">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">R</div>
           <div class="term-title">
@@ -3597,7 +3598,7 @@
          <div class="term-badges">
           <span class="badge financing">Financing</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -3620,7 +3621,7 @@
        </div>
        <!-- Recording Fee -->
        <div class="term-item" data-category="closing" data-terms="recording fee county clerk deed title">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">R</div>
           <div class="term-title">
@@ -3631,7 +3632,7 @@
          <div class="term-badges">
           <span class="badge closing">Closing</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -3654,7 +3655,7 @@
        </div>
        <!-- Refinance -->
        <div class="term-item" data-category="financing" data-terms="refinance refi lower rate cash out mortgage">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">R</div>
           <div class="term-title">
@@ -3665,7 +3666,7 @@
          <div class="term-badges">
           <span class="badge financing">Financing</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -3688,7 +3689,7 @@
        </div>
        <!-- Re-Inspection -->
        <div class="term-item" data-category="inspection" data-terms="re-inspection follow up repairs verification">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">R</div>
           <div class="term-title">
@@ -3699,7 +3700,7 @@
          <div class="term-badges">
           <span class="badge inspection">Inspection</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -3722,7 +3723,7 @@
        </div>
        <!-- Repair Request -->
        <div class="term-item" data-category="inspection contract" data-terms="repair request amendment negotiation inspection">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">R</div>
           <div class="term-title">
@@ -3734,7 +3735,7 @@
           <span class="badge inspection">Inspection</span>
           <span class="badge contract">Contract</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -3757,7 +3758,7 @@
        </div>
        <!-- Roof Inspection -->
        <div class="term-item" data-category="inspection" data-terms="roof inspection shingles hail damage leak">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">R</div>
           <div class="term-title">
@@ -3774,7 +3775,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -3820,7 +3821,7 @@
        <!-- S-TERMS (7 terms) - Insert before Title Insurance -->
        <!-- Seller Concession -->
        <div class="term-item" data-category="contract closing" data-terms="seller concession credit closing costs">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            S
@@ -3843,7 +3844,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -3888,7 +3889,7 @@
        </div>
        <!-- Seller's Disclosure Notice -->
        <div class="term-item" data-category="texas contract" data-terms="seller disclosure notice texas required form">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            S
@@ -3911,7 +3912,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -3956,7 +3957,7 @@
        </div>
        <!-- Setback -->
        <div class="term-item" data-category="property" data-terms="setback building line zoning property line">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            S
@@ -3976,7 +3977,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -4025,7 +4026,7 @@
        </div>
        <!-- Settlement Statement -->
        <div class="term-item" data-category="closing" data-terms="settlement statement closing disclosure HUD-1">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            S
@@ -4045,7 +4046,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -4090,7 +4091,7 @@
        </div>
        <!-- Sewer Scope -->
        <div class="term-item" data-category="inspection" data-terms="sewer scope camera line inspection plumbing">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            S
@@ -4110,7 +4111,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -4151,7 +4152,7 @@
        </div>
        <!-- Slab Foundation -->
        <div class="term-item" data-category="property" data-terms="slab foundation concrete monolithic post-tension">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            S
@@ -4171,7 +4172,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -4216,7 +4217,7 @@
        </div>
        <!-- Survey -->
        <div class="term-item" data-category="property" data-terms="survey land property lines boundaries encroachment">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            S
@@ -4236,7 +4237,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -4285,7 +4286,7 @@
        </div>
        <!-- Title Insurance -->
        <div class="term-item" data-category="closing property" data-terms="title insurance ownership lien clear title">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            T
@@ -4308,7 +4309,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -4352,7 +4353,7 @@
        </div>
        <!-- Underwriting -->
        <div class="term-item" data-category="financing" data-terms="underwriting underwriter approval verification documentation">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            U
@@ -4372,7 +4373,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -4417,7 +4418,7 @@
        </div>
        <!-- T-47 Affidavit -->
        <div class="term-item" data-category="texas property" data-terms="t-47 affidavit texas survey residential">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            T
@@ -4440,7 +4441,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -4481,7 +4482,7 @@
        </div>
        <!-- Tarrant County vs Dallas County Taxes -->
        <div class="term-item" data-category="dfw texas" data-terms="tarrant dallas county taxes property tax rate dfw">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            T
@@ -4504,7 +4505,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -4549,7 +4550,7 @@
        </div>
        <!-- Termite Inspection -->
        <div class="term-item" data-category="inspection" data-terms="termite inspection wood destroying insects wdi pest">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            T
@@ -4569,7 +4570,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -4614,7 +4615,7 @@
        </div>
        <!-- Texas Homestead Exemption -->
        <div class="term-item" data-category="texas property" data-terms="texas homestead exemption property tax savings">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            T
@@ -4637,7 +4638,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -4682,7 +4683,7 @@
        </div>
        <!-- Transfer Tax -->
        <div class="term-item" data-category="closing" data-terms="transfer tax deed tax stamp tax texas">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            T
@@ -4702,7 +4703,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -4747,7 +4748,7 @@
        </div>
        <!-- TREC -->
        <div class="term-item" data-category="texas" data-terms="trec texas real estate commission regulator license">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            T
@@ -4767,7 +4768,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -4812,7 +4813,7 @@
        </div>
        <!-- USDA Loan -->
        <div class="term-item" data-category="financing" data-terms="usda loan rural development zero down government">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            U
@@ -4832,7 +4833,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -4881,7 +4882,7 @@
        </div>
        <!-- VA Loan -->
        <div class="term-item" data-category="financing" data-terms="va loan veterans military zero down government">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            V
@@ -4901,7 +4902,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -4950,7 +4951,7 @@
        </div>
        <!-- Warranty Deed -->
        <div class="term-item" data-category="closing property" data-terms="warranty deed general special title transfer">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            W
@@ -4973,7 +4974,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -5022,7 +5023,7 @@
        </div>
        <!-- WDI Report -->
        <div class="term-item" data-category="inspection" data-terms="wdi report wood destroying insects termite report">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            W
@@ -5042,7 +5043,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -5087,7 +5088,7 @@
        </div>
        <!-- Wire Fraud -->
        <div class="term-item" data-category="closing" data-terms="wire fraud scam closing wire transfer security">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            W
@@ -5107,7 +5108,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -5152,7 +5153,7 @@
        </div>
        <!-- Zoning -->
        <div class="term-item" data-category="property" data-terms="zoning residential commercial land use restrictions">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">
            Z
@@ -5172,7 +5173,7 @@
           </span>
          </div>
          <span class="term-toggle">
-          ▼
+          <svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
          </span>
         </div>
         <div class="term-content">
@@ -5217,7 +5218,7 @@
        </div>
        <!-- Adjustable Rate Mortgage (ARM) -->
        <div class="term-item" data-category="financing" data-terms="arm adjustable rate mortgage variable interest">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">A</div>
           <div class="term-title">
@@ -5228,7 +5229,7 @@
          <div class="term-badges">
           <span class="badge financing">Financing</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -5253,7 +5254,7 @@
        </div>
        <!-- Addendum -->
        <div class="term-item" data-category="contract" data-terms="addendum amendment addition contract">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">A</div>
           <div class="term-title">
@@ -5264,7 +5265,7 @@
          <div class="term-badges">
           <span class="badge contract">Contract</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -5288,7 +5289,7 @@
        </div>
        <!-- Amendment -->
        <div class="term-item" data-category="contract" data-terms="amendment change modification contract">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">A</div>
           <div class="term-title">
@@ -5299,7 +5300,7 @@
          <div class="term-badges">
           <span class="badge contract">Contract</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -5323,7 +5324,7 @@
        </div>
        <!-- Appraisal -->
        <div class="term-item" data-category="property" data-terms="appraisal value assessment comparison">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">A</div>
           <div class="term-title">
@@ -5334,7 +5335,7 @@
          <div class="term-badges">
           <span class="badge property">Property</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -5359,7 +5360,7 @@
        </div>
        <!-- Appraisal Contingency -->
        <div class="term-item" data-category="contract" data-terms="appraisal contingency protection clause">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">A</div>
           <div class="term-title">
@@ -5370,7 +5371,7 @@
          <div class="term-badges">
           <span class="badge contract">Contract</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -5395,7 +5396,7 @@
        </div>
        <!-- As-Is -->
        <div class="term-item" data-category="contract" data-terms="as-is no repairs sold condition">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">A</div>
           <div class="term-title">
@@ -5406,7 +5407,7 @@
          <div class="term-badges">
           <span class="badge contract">Contract</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -5426,7 +5427,7 @@
        </div>
        <!-- Assessed Value -->
        <div class="term-item" data-category="property" data-terms="assessed value tax appraisal district">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">A</div>
           <div class="term-title">
@@ -5437,7 +5438,7 @@
          <div class="term-badges">
           <span class="badge property">Property</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -5462,7 +5463,7 @@
        </div>
        <!-- Attorney Review -->
        <div class="term-item" data-category="closing" data-terms="attorney review lawyer legal closing">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">A</div>
           <div class="term-title">
@@ -5473,7 +5474,7 @@
          <div class="term-badges">
           <span class="badge closing">Closing</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -5493,7 +5494,7 @@
        </div>
        <!-- Binding Agreement -->
        <div class="term-item" data-category="contract" data-terms="binding agreement enforceable contract legal">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">B</div>
           <div class="term-title">
@@ -5504,7 +5505,7 @@
          <div class="term-badges">
           <span class="badge contract">Contract</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -5524,7 +5525,7 @@
        </div>
        <!-- Buyer Agent Agreement -->
        <div class="term-item" data-category="contract" data-terms="buyer agent agreement representation exclusive">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">B</div>
           <div class="term-title">
@@ -5535,7 +5536,7 @@
          <div class="term-badges">
           <span class="badge contract">Contract</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -5555,7 +5556,7 @@
        </div>
        <!-- Clear Title -->
        <div class="term-item" data-category="closing" data-terms="clear title clean ownership no liens">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">C</div>
           <div class="term-title">
@@ -5566,7 +5567,7 @@
          <div class="term-badges">
           <span class="badge closing">Closing</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -5591,7 +5592,7 @@
        </div>
        <!-- Closing Agent -->
        <div class="term-item" data-category="closing" data-terms="closing agent escrow officer title company">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">C</div>
           <div class="term-title">
@@ -5602,7 +5603,7 @@
          <div class="term-badges">
           <span class="badge closing">Closing</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -5626,7 +5627,7 @@
        </div>
        <!-- Closing Date -->
        <div class="term-item" data-category="contract" data-terms="closing date final settlement deadline">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">C</div>
           <div class="term-title">
@@ -5637,7 +5638,7 @@
          <div class="term-badges">
           <span class="badge contract">Contract</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -5657,7 +5658,7 @@
        </div>
        <!-- Closing Disclosure -->
        <div class="term-item" data-category="financing" data-terms="closing disclosure cd final costs breakdown">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">C</div>
           <div class="term-title">
@@ -5668,7 +5669,7 @@
          <div class="term-badges">
           <span class="badge financing">Financing</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -5693,7 +5694,7 @@
        </div>
        <!-- Closing Costs -->
        <div class="term-item" data-category="financing closing" data-terms="closing costs fees settlement charges">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">C</div>
           <div class="term-title">
@@ -5705,7 +5706,7 @@
           <span class="badge financing">Financing</span>
           <span class="badge closing">Closing</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -5730,7 +5731,7 @@
        </div>
        <!-- CMA -->
        <div class="term-item" data-category="property" data-terms="cma comparative market analysis pricing valuation">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">C</div>
           <div class="term-title">
@@ -5741,7 +5742,7 @@
          <div class="term-badges">
           <span class="badge property">Property</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -5766,7 +5767,7 @@
        </div>
        <!-- Commission -->
        <div class="term-item" data-category="contract" data-terms="commission agent fee realtor payment">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">C</div>
           <div class="term-title">
@@ -5777,7 +5778,7 @@
          <div class="term-badges">
           <span class="badge contract">Contract</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -5797,7 +5798,7 @@
        </div>
        <!-- Comparable Sales (Comps) -->
        <div class="term-item" data-category="property" data-terms="comps comparable sales comparables recent sales">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">C</div>
           <div class="term-title">
@@ -5808,7 +5809,7 @@
          <div class="term-badges">
           <span class="badge property">Property</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -5833,7 +5834,7 @@
        </div>
        <!-- Contingency -->
        <div class="term-item" data-category="contract" data-terms="contingency condition protection clause">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">C</div>
           <div class="term-title">
@@ -5844,7 +5845,7 @@
          <div class="term-badges">
           <span class="badge contract">Contract</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -5869,7 +5870,7 @@
        </div>
        <!-- Conventional Loan -->
        <div class="term-item" data-category="financing" data-terms="conventional loan fannie mae freddie mac">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">C</div>
           <div class="term-title">
@@ -5880,7 +5881,7 @@
          <div class="term-badges">
           <span class="badge financing">Financing</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -5905,7 +5906,7 @@
        </div>
        <!-- Counter Offer -->
        <div class="term-item" data-category="contract" data-terms="counter offer negotiation response">
-        <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-header" onclick="toggleTerm(this)" role="button" tabindex="0" aria-expanded="false">
          <div class="term-title-group">
           <div class="term-letter">C</div>
           <div class="term-title">
@@ -5916,7 +5917,7 @@
          <div class="term-badges">
           <span class="badge contract">Contract</span>
          </div>
-         <span class="term-toggle">▼</span>
+         <span class="term-toggle"><svg class="term-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
         </div>
         <div class="term-content">
          <div class="term-body">
@@ -6360,18 +6361,32 @@
         function toggleTerm(element) {
             const termItem = element.closest('.term-item');
             const isOpen = termItem.classList.contains('open');
-            
-            // Close all other terms
+
+            // Close all other terms (and keep their aria-expanded state in sync)
             document.querySelectorAll('.term-item').forEach(item => {
                 item.classList.remove('open');
+                const header = item.querySelector('.term-header');
+                if (header) header.setAttribute('aria-expanded', 'false');
             });
-            
+
             // Toggle current term
             if (!isOpen) {
                 termItem.classList.add('open');
+                element.setAttribute('aria-expanded', 'true');
             }
         }
-        
+
+        // Keyboard support: Enter/Space open or close the focused term header
+        // (mirrors the click handler so screen reader / keyboard users get the same behavior)
+        document.querySelectorAll('.term-header').forEach(function(header) {
+            header.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+                    e.preventDefault();
+                    toggleTerm(this);
+                }
+            });
+        });
+
         // Search for specific term (from related links)
         function searchTerm(term) {
             searchInput.value = term;

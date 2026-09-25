@@ -17,6 +17,7 @@
     <link rel="preload" href="/fonts/jakarta-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/fonts.css?v=20260713a">
   <link href="jhl-redesign.min.css?v=20260713a" rel="stylesheet"/>
+  <link rel="stylesheet" href="repairs/tools-a.css">
      <link rel="canonical" href="https://justhomeleads.com/action-plan">
     <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -367,9 +368,10 @@
        Your Progress
       </h2>
       <div class="progress-bar-container">
-       <div class="progress-bar" id="progressBar">
-        0%
-       </div>
+       <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <div class="progress-bar-label" id="progressBarLabel">
+       0% complete
       </div>
       <div class="progress-stats">
        <div class="progress-stat">
@@ -3295,7 +3297,8 @@
         const percentage = Math.round((completed / totalTasks) * 100);
 
         document.getElementById('progressBar').style.width = percentage + '%';
-        document.getElementById('progressBar').textContent = percentage + '%';
+        const progressLabel = document.getElementById('progressBarLabel');
+        if (progressLabel) progressLabel.textContent = percentage + '% complete';
         document.getElementById('completedTasks').textContent = completed;
         document.getElementById('completedMonths').textContent = completedMonths.size;
 
@@ -3333,18 +3336,45 @@
             updateProgress();
             updateMonthButtons();
 
-            // Show celebration
-            alert(` Congratulations! Month ${monthNumber} complete!
-
-You're ${Math.round((monthNumber / 12) * 100)}% through your journey to homeownership!
-
-Keep up the amazing work!`);
+            // Show an inline, dismissible celebration instead of a browser alert()
+            showCelebrationToast(monthNumber);
 
             // Move to next month if not at end
             if (monthNumber < 12) {
-                setTimeout(() => goToMonth(monthNumber + 1), 1000);
+                setTimeout(() => goToMonth(monthNumber + 1), 1800);
             }
         }
+    }
+
+    // Inline celebration toast (bottom of screen, auto-dismisses, closable)
+    function showCelebrationToast(monthNumber) {
+        // Remove any toast already on screen so they don't stack up
+        const existing = document.querySelector('.ap-celebration-toast');
+        if (existing) existing.remove();
+
+        const pct = Math.round((monthNumber / 12) * 100);
+        const toast = document.createElement('div');
+        toast.className = 'ap-celebration-toast';
+        toast.setAttribute('role', 'status');
+        toast.innerHTML = `
+            <div class="ap-celebration-toast__icon"></div>
+            <div class="ap-celebration-toast__body">
+                <div class="ap-celebration-toast__title">Month ${monthNumber} complete!</div>
+                <div class="ap-celebration-toast__text">You're ${pct}% through your journey to homeownership. Keep up the great work.</div>
+            </div>
+            <button type="button" class="ap-celebration-toast__close" aria-label="Dismiss">&times;</button>
+        `;
+        document.body.appendChild(toast);
+
+        // Trigger the enter transition on the next frame
+        requestAnimationFrame(() => toast.classList.add('show'));
+
+        const dismiss = () => {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 300);
+        };
+        toast.querySelector('.ap-celebration-toast__close').addEventListener('click', dismiss);
+        setTimeout(dismiss, 6000);
     }
 
     // Update month button styles

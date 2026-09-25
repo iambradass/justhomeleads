@@ -626,112 +626,7 @@
     <!-- =============================================
          SCROLL REVEAL ANIMATION
          ============================================= -->
-<!-- ========================================
-     LEAD CAPTURE MODAL
-     ======================================== -->
-<div class="jhl-modal-overlay" id="jhl-modal-overlay" role="presentation">
-    <div class="jhl-lead-modal" role="dialog" aria-modal="true" aria-labelledby="jhl-modal-title">
 
-        <!-- Close Button -->
-        <button class="jhl-lead-modal__close" id="jhl-modal-close" aria-label="Close">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-        </button>
-
-        <!-- FORM STATE -->
-        <div class="jhl-lead-modal__form" id="jhl-form-state">
-            <div class="jhl-lead-modal__header">
-                <div class="jhl-lead-modal__badge">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
-                    Verified Professionals
-                </div>
-                <h2 class="jhl-lead-modal__title" id="jhl-modal-title">Get Matched with a Local Expert</h2>
-                <p class="jhl-lead-modal__subtitle" id="jhl-modal-subtitle">We'll connect you with a vetted DFW professional who fits your needs. No pressure, no obligations.</p>
-            </div>
-
-            <div class="jhl-lead-modal__body">
-                <form class="jhl-lead-form" id="jhl-lead-form" novalidate>
-                    <div class="jhl-lead-form__field">
-                        <label class="jhl-lead-form__label" for="jhl-lead-name">First Name</label>
-                        <input class="jhl-lead-form__input" type="text" id="jhl-lead-name" name="first_name" placeholder="What should we call you?" autocomplete="given-name" required>
-                        <span class="jhl-lead-form__error" id="jhl-name-error"></span>
-                    </div>
-
-                    <div class="jhl-lead-form__field">
-                        <label class="jhl-lead-form__label" for="jhl-lead-email">Email</label>
-                        <input class="jhl-lead-form__input" type="email" id="jhl-lead-email" name="email" placeholder="your@email.com" autocomplete="email" required>
-                        <span class="jhl-lead-form__error" id="jhl-email-error"></span>
-                    </div>
-
-                    <div class="jhl-lead-form__field">
-                        <label class="jhl-lead-form__label" for="jhl-lead-phone">Phone <span class="optional">(for faster response)</span></label>
-                        <input class="jhl-lead-form__input" type="tel" id="jhl-lead-phone" name="phone" placeholder="(214) 555-0123" autocomplete="tel" inputmode="tel">
-                        <div class="jhl-lead-form__helper">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
-                            We text, we don't cold call.
-                        </div>
-                    </div>
-
-                    <button type="submit" class="jhl-lead-form__submit" id="jhl-submit-btn">
-                        <span class="jhl-btn-text">Connect Me with an Expert</span>
-                        <div class="jhl-spinner"></div>
-                    </button>
-
-                    <div class="jhl-lead-form__trust">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                        Your info stays private. No spam. No selling your data.
-                    </div>
-
-                    <div class="jhl-lead-form__social">
-                        Joined by <strong>12,000+</strong> DFW families. Average response time: <strong>under 2 hours</strong>.
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <!-- SUCCESS STATE -->
-        <div class="jhl-lead-modal__success" id="jhl-success-state">
-            <div class="jhl-success-check">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            </div>
-            <h2 class="jhl-success-title">You're Connected!</h2>
-            <p class="jhl-success-subtitle">A verified DFW expert will reach out within 2 hours, usually much faster.</p>
-
-            <div class="jhl-enrichment">
-                <div class="jhl-enrichment__label">Where are you in your journey?</div>
-                <div class="jhl-enrichment__options">
-                    <label class="jhl-enrichment__option"><input type="radio" name="journey_stage" value="exploring"><span>Just Exploring</span></label>
-                    <label class="jhl-enrichment__option"><input type="radio" name="journey_stage" value="finances"><span>Building Finances</span></label>
-                    <label class="jhl-enrichment__option"><input type="radio" name="journey_stage" value="shopping"><span>Ready to Shop</span></label>
-                    <label class="jhl-enrichment__option"><input type="radio" name="journey_stage" value="offers"><span>Making Offers</span></label>
-                    <label class="jhl-enrichment__option"><input type="radio" name="journey_stage" value="contract"><span>Under Contract</span></label>
-                    <label class="jhl-enrichment__option"><input type="radio" name="journey_stage" value="closing"><span>Closing</span></label>
-                    <label class="jhl-enrichment__option"><input type="radio" name="journey_stage" value="owner"><span>Already Own</span></label>
-                </div>
-            </div>
-
-            <div class="jhl-enrichment">
-                <div class="jhl-enrichment__label">What kind of help do you need?</div>
-                <div class="jhl-enrichment__options">
-                    <label class="jhl-enrichment__option"><input type="checkbox" name="help_type" value="agent"><span>Real Estate Agent</span></label>
-                    <label class="jhl-enrichment__option"><input type="checkbox" name="help_type" value="lender"><span>Mortgage Lender</span></label>
-                    <label class="jhl-enrichment__option"><input type="checkbox" name="help_type" value="inspector"><span>Home Inspector</span></label>
-                    <label class="jhl-enrichment__option"><input type="checkbox" name="help_type" value="general"><span>General Guidance</span></label>
-                </div>
-            </div>
-
-            <button class="jhl-success-done" id="jhl-success-close">Done</button>
-        </div>
-
-        <!-- ALREADY CONNECTED STATE -->
-        <div class="jhl-lead-modal__already" id="jhl-already-state">
-            <svg class="jhl-already-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <h2 class="jhl-already-title">You're Already Connected!</h2>
-            <p class="jhl-already-text">We've got your info and a verified expert is on it. Check your email or text us if you need anything.</p>
-            <button class="jhl-already-close" id="jhl-already-close">Got It</button>
-        </div>
-
-    </div>
-</div>
 
     <script>
         // Smooth reveal for learn cards on scroll
@@ -972,16 +867,28 @@
     (function() {
         var el = document.getElementById('next-webinar-date');
         if (!el) return;
-        var now = new Date();
-        for (var m = 0; m < 14; m++) {
-            var d = new Date(now.getFullYear(), now.getMonth() + m + 1, 0, 12, 0, 0);
-            d.setDate(d.getDate() - ((d.getDay() - 5 + 7) % 7));
-            if (d > now) {
-                var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-                el.textContent = 'Friday, ' + months[d.getMonth()] + ' ' + d.getDate() + ' \u00B7 12:00 PM CT';
-                return;
-            }
+        function jhlCtNoon(y, m, d) {
+            // 12:00 PM America/Chicago for a calendar date, whatever the visitor's time zone
+            var guess = new Date(Date.UTC(y, m, d, 17, 0, 0));
+            var h = +new Intl.DateTimeFormat('en-US', { timeZone: 'America/Chicago', hour: 'numeric', hourCycle: 'h23' }).format(guess);
+            return new Date(guess.getTime() + (12 - h) * 3600000);
         }
+        function jhlNextWebinar() {
+            // Last Friday of each month, 12:00 PM CT
+            var now = new Date();
+            for (var m = 0; m < 14; m++) {
+                var last = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + m + 1, 0));
+                last.setUTCDate(last.getUTCDate() - ((last.getUTCDay() - 5 + 7) % 7));
+                var d = jhlCtNoon(last.getUTCFullYear(), last.getUTCMonth(), last.getUTCDate());
+                if (d > now) return d;
+            }
+            return now;
+        }
+        var d = jhlNextWebinar();
+        var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+        var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Chicago', month: 'numeric', day: 'numeric' }).formatToParts(d);
+        var mo = +parts.find(function(p) { return p.type === 'month'; }).value, dy = parts.find(function(p) { return p.type === 'day'; }).value;
+        el.textContent = 'Friday, ' + months[mo - 1] + ' ' + dy + ' \u00B7 12:00 PM CT';
     })();
     </script>
 </body>
