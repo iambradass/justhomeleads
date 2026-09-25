@@ -17,6 +17,7 @@
     <link rel="preload" href="/fonts/jakarta-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/fonts.css?v=20260713a">
   <link href="jhl-redesign.min.css?v=20260713a" rel="stylesheet"/>
+  <link href="repairs/tools-g.css" rel="stylesheet"/>
      <link rel="canonical" href="https://justhomeleads.com/market-timing">
     <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -346,43 +347,18 @@
       <h3>
        Current DFW Market Snapshot
       </h3>
-      <div class="market-selector">
-       <label for="marketSelect">
-        View data for:
-       </label>
-       <select id="marketSelect" onchange="updateMarketData()">
-        <option value="dfw-overall">
-         DFW Overall
-        </option>
-        <option value="dallas">
-         Dallas County
-        </option>
-        <option value="tarrant">
-         Tarrant County (Fort Worth)
-        </option>
-        <option value="collin">
-         Collin County (Plano/Frisco)
-        </option>
-        <option value="denton">
-         Denton County
-        </option>
-        <option value="rockwall">
-         Rockwall County
-        </option>
-       </select>
-      </div>
       <div class="market-stats" id="marketStats">
        <div class="stat-card">
         <div class="label">
          Median Home Price
         </div>
-        <div class="value">
+        <div class="value" id="statPriceValue">
          $375K
         </div>
-        <div class="change">
+        <div class="change" id="statPriceChange">
          ↑ 4.2% YoY
         </div>
-        <div class="context">
+        <div class="context" id="statPriceContext">
          Still below peak pricing
         </div>
        </div>
@@ -390,13 +366,13 @@
         <div class="label">
          Days on Market
         </div>
-        <div class="value">
+        <div class="value" id="statDomValue">
          42
         </div>
-        <div class="change">
+        <div class="change" id="statDomChange">
          ↓ 18% YoY
         </div>
-        <div class="context">
+        <div class="context" id="statDomContext">
          Balanced market
         </div>
        </div>
@@ -404,13 +380,13 @@
         <div class="label">
          Inventory
         </div>
-        <div class="value">
+        <div class="value" id="statInvValue">
          3.2
         </div>
-        <div class="change">
+        <div class="change" id="statInvChange">
          ↑ Months Supply
         </div>
-        <div class="context">
+        <div class="context" id="statInvContext">
          Healthy supply level
         </div>
        </div>
@@ -418,13 +394,13 @@
         <div class="label">
          Avg. Interest Rate
         </div>
-        <div class="value">
+        <div class="value" id="statRateValue">
          6.5%
         </div>
-        <div class="change">
+        <div class="change" id="statRateChange">
          ↓ from 7.2% peak
         </div>
-        <div class="context">
+        <div class="context" id="statRateContext">
          Rates moderating
         </div>
        </div>
@@ -506,7 +482,7 @@
          Rent increases every year.
         </div>
        </div>
-       <div class="result-card own">
+       <div class="result-card own winner">
         <h4>
          Owning for 10 Years
         </h4>
@@ -1207,8 +1183,171 @@
     </div>
 </div>
 
-  
- 
+
+
+ <script>
+// =============================================
+// MARKET TIMING PAGE SCRIPTS
+// Market selector, rent-vs-own calculator, and the
+// "should I buy now or wait" quiz. None of this existed before,
+// the buttons/select in the markup had no matching functions.
+// =============================================
+
+// ---- 1. County market data (for the "View data for" selector) ----
+// ---- 2. Rent vs. own 10-year calculator ----
+// Standard 30-year amortization run for the full comparison window,
+// plus linear 5%/yr appreciation (the same appreciation rate already
+// used in the myth-busting copy above: "$17,500/year" on a $350K home).
+function amortize(loanAmount, annualRatePct, months) {
+    var r = annualRatePct / 100 / 12;
+    var n = 360; // 30-year fixed
+    var monthlyPayment = r === 0 ? loanAmount / n : loanAmount * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+    var balance = loanAmount;
+    var totalInterest = 0;
+    for (var i = 0; i < months; i++) {
+        var interest = balance * r;
+        var principal = monthlyPayment - interest;
+        balance -= principal;
+        totalInterest += interest;
+    }
+    return { monthlyPayment: monthlyPayment, remainingBalance: Math.max(balance, 0), totalInterestPaid: totalInterest, totalPaid: monthlyPayment * months };
+}
+
+function calculateComparison() {
+    var monthlyRent = parseFloat(document.getElementById('monthlyRent').value) || 0;
+    var homePrice = parseFloat(document.getElementById('homePrice').value) || 0;
+    var downPayment = parseFloat(document.getElementById('downPayment').value) || 0;
+    var interestRate = parseFloat(document.getElementById('interestRate').value) || 0;
+
+    var years = 10;
+    var months = years * 12;
+    var rentTotal = monthlyRent * 12 * years;
+
+    var loanAmount = Math.max(homePrice - downPayment, 0);
+    var amort = amortize(loanAmount, interestRate, months);
+    var principalPaid = loanAmount - amort.remainingBalance;
+    var appreciationGain = homePrice * 0.05 * years;
+    var equityBuilt = Math.round(principalPaid + appreciationGain);
+    var taxSavings = Math.round(amort.totalInterestPaid * 0.22); // ~22% federal bracket, mortgage interest deduction
+    var totalCashOut = downPayment + amort.totalPaid;
+    var ownNetCost = Math.max(Math.round(totalCashOut - equityBuilt - taxSavings), 0);
+
+    document.getElementById('rentTotal').textContent = '$' + Math.round(rentTotal).toLocaleString();
+    document.getElementById('ownTotal').textContent = '$' + ownNetCost.toLocaleString();
+    document.getElementById('equityBuilt').textContent = '$' + Math.round(equityBuilt / 1000) + 'K';
+    document.getElementById('taxSavings').textContent = '$' + Math.round(taxSavings / 1000) + 'K';
+
+    // Winner badge follows whichever option is actually cheaper for these inputs
+    var results = document.getElementById('comparisonResults');
+    var rentCard = results.querySelector('.result-card.rent');
+    var ownCard = results.querySelector('.result-card.own');
+    var badge = results.querySelector('.winner-badge');
+    if (badge) badge.remove();
+    var newBadge = document.createElement('div');
+    newBadge.className = 'winner-badge';
+    newBadge.textContent = 'Better Value';
+    rentCard.classList.remove('winner');
+    ownCard.classList.remove('winner');
+    if (rentTotal < ownNetCost) {
+        rentCard.appendChild(newBadge);
+        rentCard.classList.add('winner');
+    } else {
+        ownCard.appendChild(newBadge);
+        ownCard.classList.add('winner');
+    }
+
+    results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// ---- 3. "Should you buy now or wait" quiz ----
+var quizAnswers = {};
+var quizCurrentQuestion = 1;
+var quizTotalQuestions = 5;
+
+function selectOption(el, questionNum) {
+    var question = el.closest('.quiz-question');
+    question.querySelectorAll('.quiz-option').forEach(function(opt) {
+        opt.classList.remove('selected');
+    });
+    el.classList.add('selected');
+    quizAnswers[questionNum] = parseInt(el.getAttribute('data-value'), 10) || 0;
+
+    var nextBtn = document.getElementById('nextBtn');
+    if (nextBtn) nextBtn.disabled = false;
+    if (quizCurrentQuestion === quizTotalQuestions) {
+        nextBtn.textContent = 'See My Result →';
+    }
+}
+
+function updateQuizNav() {
+    var prevBtn = document.getElementById('prevBtn');
+    var nextBtn = document.getElementById('nextBtn');
+    prevBtn.disabled = quizCurrentQuestion === 1;
+    nextBtn.disabled = !quizAnswers[quizCurrentQuestion];
+    nextBtn.textContent = quizCurrentQuestion === quizTotalQuestions ? 'See My Result →' : 'Next →';
+    document.getElementById('quizProgress').textContent = 'Question ' + quizCurrentQuestion + ' of ' + quizTotalQuestions;
+}
+
+function showQuizQuestion(num) {
+    document.querySelectorAll('.quiz-question').forEach(function(q) {
+        q.classList.toggle('active', parseInt(q.getAttribute('data-question'), 10) === num);
+    });
+    updateQuizNav();
+}
+
+function nextQuestion() {
+    if (!quizAnswers[quizCurrentQuestion]) return;
+    if (quizCurrentQuestion === quizTotalQuestions) {
+        showQuizResult();
+        return;
+    }
+    quizCurrentQuestion++;
+    showQuizQuestion(quizCurrentQuestion);
+}
+
+function previousQuestion() {
+    if (quizCurrentQuestion === 1) return;
+    quizCurrentQuestion--;
+    showQuizQuestion(quizCurrentQuestion);
+}
+
+function showQuizResult() {
+    var total = 0;
+    for (var i = 1; i <= quizTotalQuestions; i++) total += quizAnswers[i] || 0;
+    // Max possible score is 50 (5 questions x 10 points)
+    var resultText = '';
+    if (total >= 40) {
+        resultText = "You're in a strong position to buy now. Your credit, savings, stability, and mindset all point toward moving forward with confidence.";
+    } else if (total >= 25) {
+        resultText = "You're close. A few months of focused prep, building savings or tightening up credit, could put you in a strong position to buy.";
+    } else if (total >= 10) {
+        resultText = 'Consider waiting 6 to 12 months. Use that time to build credit, grow your down payment, and get more stable before you shop.';
+    } else {
+        resultText = "Focus on building your foundation first. That's not a bad thing, it just means there's real work to do before you're ready to buy.";
+    }
+
+    document.querySelectorAll('.quiz-question').forEach(function(q) { q.classList.remove('active'); });
+    var nav = document.querySelector('.quiz-nav');
+    if (nav) nav.style.display = 'none';
+    document.getElementById('resultText').textContent = resultText;
+    document.getElementById('quizResult').classList.add('show');
+    document.getElementById('quizProgress').textContent = 'Your result';
+}
+
+function resetQuiz() {
+    quizAnswers = {};
+    quizCurrentQuestion = 1;
+    document.querySelectorAll('.quiz-option').forEach(function(opt) { opt.classList.remove('selected'); });
+    document.getElementById('quizResult').classList.remove('show');
+    var nav = document.querySelector('.quiz-nav');
+    if (nav) nav.style.display = '';
+    showQuizQuestion(1);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    updateQuizNav();
+});
+ </script>
  <script>
 // =============================================
 // JHL GLOBAL SCRIPTS v2.0
