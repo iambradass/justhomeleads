@@ -17,6 +17,7 @@
     <link rel="preload" href="/fonts/jakarta-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/fonts.css?v=20260713a">
   <link href="jhl-redesign.min.css?v=20260713a" rel="stylesheet"/>
+  <link rel="stylesheet" href="repairs/tools-e.css">
      <link rel="canonical" href="https://justhomeleads.com/active-search-strategies">
     <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -646,12 +647,12 @@
         + Add Property
        </button>
       </div>
+      <div class="tracker-empty" id="trackerEmpty">
+       <p>
+        No properties tracked yet. Add your first one above!
+       </p>
+      </div>
       <div class="tracker-list" id="trackerList">
-       <div class="tracker-empty" id="trackerEmpty">
-        <p>
-         No properties tracked yet. Add your first one above!
-        </p>
-       </div>
       </div>
       <div class="tracker-stats">
        <div class="tracker-stat">
@@ -1524,7 +1525,6 @@ function renderProperties() {
     if (properties.length === 0) {
         empty.style.display = 'block';
         list.innerHTML = '';
-        list.appendChild(empty);
     } else {
         empty.style.display = 'none';
         list.innerHTML = properties.map((prop, index) => `

@@ -88,7 +88,8 @@
   transition: width 0.5s ease;
   font-size: 0; /* hide any stray text node inside the fill itself */
 }
-[data-page="action-plan"] .progress-bar-label {
+[data-page="action-plan"] .progress-bar-label,
+[data-page="credit-boost"] .progress-bar-label {
   margin-top: 8px;
   text-align: right;
   font-size: 15px;

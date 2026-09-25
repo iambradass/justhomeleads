@@ -17,6 +17,7 @@
     <link rel="preload" href="/fonts/jakarta-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/fonts.css?v=20260713a">
   <link href="jhl-redesign.min.css?v=20260713a" rel="stylesheet"/>
+  <link rel="stylesheet" href="repairs/tools-d.css">
      <link rel="canonical" href="https://justhomeleads.com/writing-winning-offers">
     <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -345,7 +346,7 @@
      <div class="component-cards">
       <div class="component-card">
        <h4>
-        <svg fill="none" stroke="var(--electric-green)" stroke-width="2" viewbox="0 0 24 24">
+        <svg fill="none" stroke="var(--blue)" stroke-width="2" viewbox="0 0 24 24">
          <circle cx="12" cy="12" r="10">
          </circle>
          <path d="M12 6v12M8 10l4-4 4 4M8 14l4 4 4-4">
@@ -365,7 +366,7 @@
       </div>
       <div class="component-card">
        <h4>
-        <svg fill="none" stroke="var(--electric-green)" stroke-width="2" viewbox="0 0 24 24">
+        <svg fill="none" stroke="var(--blue)" stroke-width="2" viewbox="0 0 24 24">
          <rect height="16" rx="2" width="20" x="2" y="4">
          </rect>
          <path d="M12 9v6M9 12h6">
@@ -385,7 +386,7 @@
       </div>
       <div class="component-card">
        <h4>
-        <svg fill="none" stroke="var(--electric-green)" stroke-width="2" viewbox="0 0 24 24">
+        <svg fill="none" stroke="var(--blue)" stroke-width="2" viewbox="0 0 24 24">
          <path d="M3 21h18M4 18h16M5 14h14M6 10h12">
          </path>
          <path d="M12 3v7">
@@ -405,7 +406,7 @@
       </div>
       <div class="component-card">
        <h4>
-        <svg fill="none" stroke="var(--electric-green)" stroke-width="2" viewbox="0 0 24 24">
+        <svg fill="none" stroke="var(--blue)" stroke-width="2" viewbox="0 0 24 24">
          <path d="M19 5L5 19M5 5l14 14">
          </path>
          <circle cx="12" cy="12" r="9">
@@ -425,7 +426,7 @@
       </div>
       <div class="component-card">
        <h4>
-        <svg fill="none" stroke="var(--electric-green)" stroke-width="2" viewbox="0 0 24 24">
+        <svg fill="none" stroke="var(--blue)" stroke-width="2" viewbox="0 0 24 24">
          <rect height="18" rx="2" width="18" x="3" y="4">
          </rect>
          <path d="M3 10h18M8 2v4M16 2v4">
@@ -445,7 +446,7 @@
       </div>
       <div class="component-card">
        <h4>
-        <svg fill="none" stroke="var(--electric-green)" stroke-width="2" viewbox="0 0 24 24">
+        <svg fill="none" stroke="var(--blue)" stroke-width="2" viewbox="0 0 24 24">
          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z">
          </path>
          <path d="M9 12l2 2 4-4">
@@ -1340,7 +1341,7 @@
          </span>
         </div>
         <div class="strength-bar">
-         <div class="strength-fill" id="strength-fill" style="width: 75%; background: linear-gradient(90deg, var(--electric-green), var(--trust-purple));">
+         <div class="strength-fill" id="strength-fill" style="width: 75%;">
          </div>
         </div>
         <p id="strength-tips" class="jhl-offer__strength-tips">
@@ -1639,8 +1640,116 @@
     </div>
 </div>
 
-  
- 
+
+
+ <script>
+  // Earnest money calculator
+  (function() {
+    var input = document.getElementById('home-price');
+    if (!input) return;
+
+    function parsePrice(v) {
+      var n = parseFloat(String(v).replace(/[^0-9.]/g, ''));
+      return isNaN(n) ? 0 : n;
+    }
+    function fmt(n) {
+      return '$' + Math.round(n).toLocaleString();
+    }
+    function calcEarnest() {
+      var price = parsePrice(input.value) || 350000;
+      document.getElementById('earnest-standard').textContent = fmt(price * 0.01);
+      document.getElementById('earnest-competitive').textContent = fmt(price * 0.02);
+      document.getElementById('earnest-strong').textContent = fmt(price * 0.03);
+    }
+    input.addEventListener('input', calcEarnest);
+    calcEarnest();
+  })();
+
+  // Offer strategy builder
+  (function() {
+    var priceInput = document.getElementById('builder-price');
+    var earnestSel = document.getElementById('builder-earnest');
+    var downSel = document.getElementById('builder-down');
+    var optionSel = document.getElementById('builder-option');
+    var financingSel = document.getElementById('builder-financing');
+    var concessionsSel = document.getElementById('builder-concessions');
+    if (!priceInput || !earnestSel || !downSel || !optionSel || !financingSel || !concessionsSel) return;
+
+    function parsePrice(v) {
+      var n = parseFloat(String(v).replace(/[^0-9.]/g, ''));
+      return isNaN(n) ? 0 : n;
+    }
+    function fmt(n) {
+      return '$' + Math.round(n).toLocaleString();
+    }
+
+    var financingPoints = { cash: 20, conventional: 8, fha: 2, va: 4 };
+    var optionPoints = { '10': 0, '7': 8, '5': 14 };
+    var downPoints = { '3': 0, '5': 5, '10': 12, '20': 20 };
+    var earnestPoints = { '1': 0, '2': 8, '3': 14 };
+    var concessionPoints = { '0': 6, '1': 0, '2': -4, '3': -8 };
+
+    function calcBuilder() {
+      var price = parsePrice(priceInput.value) || 350000;
+      var earnestPct = parseFloat(earnestSel.value) || 0;
+      var downPct = parseFloat(downSel.value) || 0;
+      var concessionsPct = parseFloat(concessionsSel.value) || 0;
+
+      var earnestAmt = price * earnestPct / 100;
+      var downAmt = price * downPct / 100;
+      var loanAmt = price - downAmt;
+      var concessionsAmt = price * concessionsPct / 100;
+
+      document.getElementById('summary-earnest').textContent = fmt(earnestAmt);
+      document.getElementById('summary-down').textContent = fmt(downAmt);
+      document.getElementById('summary-loan').textContent = fmt(loanAmt);
+      document.getElementById('summary-concessions').textContent = fmt(concessionsAmt);
+
+      var score = 40;
+      score += downPoints[downSel.value] || 0;
+      score += earnestPoints[earnestSel.value] || 0;
+      score += optionPoints[optionSel.value] || 0;
+      score += financingPoints[financingSel.value] || 0;
+      score += concessionPoints[concessionsSel.value] || 0;
+      score = Math.max(0, Math.min(100, score));
+
+      var label, color, tip;
+      if (score < 40) {
+        label = 'Needs Work';
+        color = 'var(--coral)';
+        tip = 'This offer has real gaps. Consider more earnest money, a shorter option period, or stronger financing.';
+      } else if (score < 65) {
+        label = 'Fair';
+        color = 'var(--amber)';
+        tip = 'A workable offer. Increasing your earnest money or getting fully underwritten would strengthen it further.';
+      } else if (score < 85) {
+        label = 'Strong';
+        color = 'var(--blue)';
+        tip = 'Your offer is competitive. Consider getting fully underwritten to move from "strong" to "very strong."';
+      } else {
+        label = 'Very Strong';
+        color = 'var(--green)';
+        tip = 'This offer approaches cash-offer confidence. You are well positioned in most competitive situations.';
+      }
+
+      var labelEl = document.getElementById('strength-label');
+      labelEl.textContent = label;
+      labelEl.style.color = color;
+
+      var fill = document.getElementById('strength-fill');
+      fill.style.width = score + '%';
+      fill.style.background = color;
+
+      document.getElementById('strength-tips').textContent = tip;
+    }
+
+    [priceInput, earnestSel, downSel, optionSel, financingSel, concessionsSel].forEach(function(el) {
+      el.addEventListener('input', calcBuilder);
+      el.addEventListener('change', calcBuilder);
+    });
+    calcBuilder();
+  })();
+ </script>
  <script>
 // =============================================
 // JHL GLOBAL SCRIPTS v2.0
