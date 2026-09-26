@@ -28,6 +28,14 @@ RewriteRule ^ /%1 [R=301,L]
 # Orphan page: consolidate on /webinar
 RewriteRule ^webinar-registration/?$ /webinar [R=301,L]
 
+# Duplicate guides merged into one canonical page (2026-09-26)
+RewriteRule ^(pre-approval-process|resource-2-3a-pre-approval-expectations)/?$ /pre-approval [R=301,L]
+RewriteRule ^resource-2-2a-lender-shopping/?$ /lender-shopping [R=301,L]
+RewriteRule ^resource-2-2c-interest-rates/?$ /interest-rates-explained [R=301,L]
+RewriteRule ^resource-2-2d-self-employed/?$ /self-employed-guide [R=301,L]
+RewriteRule ^resource-2-3c-agent-selection/?$ /choosing-real-estate-agent [R=301,L]
+RewriteRule ^resource-1-2a-dfw-reality-check/?$ /reality-check [R=301,L]
+
 # Serve page.html internally for clean URLs
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f

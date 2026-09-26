@@ -627,3 +627,4 @@ body.jh .jhl-hero .jhl-badge { color: rgba(255,255,255,.78); }
 body.jh .jhl-hero .jhl-badge__dot { background: var(--jh-volt); }
 [data-page="webinar-confirmed"] .confirm-hero { background: var(--jh-navy); }
 [data-page="webinar-confirmed"] .confirm-hero::before { display: none; }
+[data-page="market-timing"] .jhl-page-hero__question { font-family: var(--jh-font); letter-spacing: -0.01em; }
