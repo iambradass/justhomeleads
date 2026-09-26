@@ -11,30 +11,6 @@
 
 
 /* ==============================================================
-   SITE-WIDE (unscoped - approved for all pages)
-   ============================================================== */
-
-/* .jhl-card--orange is used on ~30 pages but was never defined.
-   jhl-redesign.css only has --purple/--coral/--blue siblings
-   (see .jhl-card--bordered.jhl-card--purple etc. and
-   .jhl-card--purple .jhl-card__icon svg). Copying that exact
-   pattern with the site's existing --orange token (#FF6B35). */
-.jhl-card--bordered.jhl-card--orange {
-    border-left-color: var(--orange);
-}
-.jhl-card--orange .jhl-card__icon svg {
-    color: var(--orange);
-}
-
-/* .filter-btn (jhl-redesign.css ~line 2956) was only 36px tall -
-   below the 44px minimum tap target. Raising site-wide since every
-   page that uses category filter buttons inherits the same class. */
-.filter-btn {
-    min-height: 44px;
-}
-
-
-/* ==============================================================
    SHARED: search box + category filters + "no results" state
    Used identically on jargon-buster.html and faqs.html.
    Combined selectors below are still page-scoped (both sides of
@@ -568,3 +544,13 @@
     word-break: break-word;
     min-width: 0;
 }
+
+/* Journey: resource lists now link to the real guides */
+[data-page="journey"] .resources-needed ul { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 4px; }
+[data-page="journey"] .resources-needed li { padding: 0; margin: 0; }
+[data-page="journey"] .resources-needed li::before { content: none; }
+[data-page="journey"] .resources-needed a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-weight: 700; color: #1565A0; text-decoration: none; }
+[data-page="journey"] .resources-needed a::after { content: "\2192"; transition: transform .2s; }
+[data-page="journey"] .resources-needed a:hover { text-decoration: underline; text-underline-offset: 3px; }
+[data-page="journey"] .resources-needed a:hover::after { transform: translateX(3px); }
+[data-page="journey"] .you-are-here { border-radius: 6px; }

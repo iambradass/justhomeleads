@@ -15,7 +15,7 @@
     <link rel="preload" href="/fonts/jakarta-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/fonts.css?v=20260713a">
     <link rel="stylesheet" href="jhl-redesign.min.css?v=20260713a">
-    <link rel="stylesheet" href="jhl-v3.css?v=20260925a">
+    <link rel="stylesheet" href="/jhl-v3.css?v=20260926a">
     <link rel="canonical" href="https://justhomeleads.com/">
     <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -249,7 +249,7 @@
                             <span class="jh-stop__num" aria-hidden="true">6</span>
                             <a class="jh-stop__card" href="/closing-day-guide">
                                 <h3>Contract to keys</h3>
-                                <p>Inspection, appraisal, closing day. About 30 days of paperwork, then keys.</p>
+                                <p>Inspection, appraisal, closing day. Usually 30 to 45 days, then keys.</p>
                                 <span class="jh-stop__go">Start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                             </a>
                         </li>
@@ -744,6 +744,7 @@
             var now = new Date();
             for (var m = 0; m < 14; m++) {
                 var last = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + m + 1, 0));
+                if (last.getUTCMonth() === 11) continue; // no class in December (holidays)
                 last.setUTCDate(last.getUTCDate() - ((last.getUTCDay() - 5 + 7) % 7));
                 var d = jhlCtNoon(last.getUTCFullYear(), last.getUTCMonth(), last.getUTCDate());
                 if (d > now) return d;

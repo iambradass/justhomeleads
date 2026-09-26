@@ -407,4 +407,223 @@ body.jh *:focus-visible { outline: 3px solid var(--jh-volt); outline-offset: 3px
     .jh-hi path { animation: none; stroke-dashoffset: 0; }
     .jh-q, .jh-result { animation: none; }
 }
-.jhl-lead-modal__close { min-width: 44px; min-height: 44px; }
+.jhl-lead-modal__close, .jhl-modal-overlay .jhl-lead-modal__close { min-width: 44px; min-height: 44px; width: 44px; height: 44px; }
+
+/* ========================================
+   CONTENT PAGE TEMPLATE (v3 shell on v2 pages)
+   Pages opt in with <body class="jh">. Keeps each page's own
+   components; restyles the shared hero / intro / takeaways /
+   next-steps blocks and adds the step marker + pager.
+   ======================================== */
+body.jh {
+    --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #fff;
+}
+body.jh .jhl-section--cream { background: var(--jh-sky); }
+body.jh .jhl-section--cream-dark { background: #E4EDF6; }
+body.jh .jhl-section--white { background: #fff; }
+body.jh main h2, body.jh main h3 { letter-spacing: -0.02em; }
+
+/* Hero */
+body.jh .jhl-hero {
+    min-height: 0;
+    display: block;
+    padding: clamp(44px, 8vw, 96px) 0 clamp(44px, 7vw, 80px);
+    background: var(--jh-navy);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+body.jh .jhl-hero::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: linear-gradient(180deg, transparent 0%, #000 35%, #000 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 35%, #000 70%, transparent 100%);
+}
+body.jh .jhl-hero__inner { max-width: var(--jh-max); margin: 0 auto; padding: 0 var(--jh-gutter); box-sizing: border-box; }
+body.jh .jhl-hero__content,
+body.jh .jhl-hero--centered .jhl-hero__content { max-width: 860px; margin: 0; text-align: left; }
+body.jh .jhl-hero h1,
+body.jh .jhl-hero .jhl-hero__title {
+    color: #fff;
+    font-family: var(--jh-font);
+    font-size: clamp(38px, 7.2vw, 76px);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin: 0 0 20px;
+}
+body.jh .jhl-hero__title .highlight { color: var(--jh-volt); }
+body.jh .jhl-hero__subtitle,
+body.jh .jhl-hero--centered .jhl-hero__subtitle {
+    color: rgba(255,255,255,.84);
+    font-size: clamp(18px, 2.2vw, 21px);
+    line-height: 1.55;
+    max-width: 44ch;
+    margin: 0 0 8px;
+}
+body.jh .jhl-hero__subtext, body.jh .jhl-hero p { color: rgba(255,255,255,.8); }
+body.jh .jhl-hero__rule { background: var(--jh-volt); margin-left: 0; }
+body.jh .jhl-hero .jhl-journey-badge { display: none; }
+body.jh .jhl-hero__cta-group { justify-content: flex-start; }
+
+/* Step marker (replaces Phase / Stage labels) */
+.jh-stepmark { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin: 0 0 22px; }
+.jh-stepmark__label { font-size: 15px; font-weight: 600; color: rgba(255,255,255,.75); }
+.jh-stepmark__label a { color: #fff; font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--jh-volt); }
+.jh-stepmark__label a:hover { color: var(--jh-volt); }
+.jh-stepmark__dots { display: flex; gap: 6px; }
+.jh-stepmark__dots i { width: 22px; height: 6px; border-radius: 3px; background: rgba(255,255,255,.18); }
+.jh-stepmark__dots i.done { background: rgba(0,255,133,.45); }
+.jh-stepmark__dots i.here { background: var(--jh-volt); }
+
+/* Intro: "In this guide" */
+body.jh .jhl-intro { background: #fff; padding: clamp(40px, 6vw, 64px) 0 clamp(24px, 4vw, 40px); border: 0; }
+body.jh .jhl-intro__inner, body.jh .jhl-intro__inner--wide { max-width: var(--jh-max); margin: 0 auto; padding: 0 var(--jh-gutter); box-sizing: border-box; }
+body.jh .jhl-intro h2 { font-family: var(--jh-font); font-size: clamp(26px, 3.4vw, 34px); font-weight: 700; color: var(--jh-ink); margin: 0 0 14px; text-align: left; }
+body.jh .jhl-intro__inner > p { font-size: 18px; line-height: 1.65; color: var(--jh-text); max-width: 68ch; margin: 0 0 24px; text-align: left; }
+body.jh .jhl-intro__objectives { display: grid; grid-template-columns: 1fr; gap: 10px; max-width: none; margin: 0; }
+body.jh .jhl-intro__objective {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: var(--jh-sky); border: 0; border-radius: 12px;
+    padding: 14px 16px; font-size: 16px; font-weight: 600; color: var(--jh-ink); line-height: 1.45; text-align: left;
+}
+body.jh .jhl-intro__objective::before {
+    content: ""; position: static; flex: none; width: 20px; height: 20px; margin-top: 1px;
+    border-radius: 6px; background: var(--jh-navy) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300FF85' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 12px no-repeat;
+    color: transparent;
+}
+@media (min-width: 760px) { body.jh .jhl-intro__objectives { grid-template-columns: 1fr 1fr; } }
+
+/* Takeaways */
+body.jh .jhl-takeaways { border-radius: 20px; padding: clamp(28px, 5vw, 56px) clamp(22px, 5vw, 56px); background: var(--jh-navy); }
+body.jh .jhl-takeaways h2 { font-family: var(--jh-font); font-size: clamp(26px, 3.4vw, 36px); font-weight: 700; letter-spacing: -0.02em; }
+body.jh .jhl-takeaways li { padding: 10px 0 10px 32px; font-size: 17px; line-height: 1.5; border-bottom: 1px solid rgba(255,255,255,.08); }
+body.jh .jhl-takeaways li:last-child { border-bottom: 0; }
+body.jh .jhl-takeaways li::before {
+    content: ""; top: 13px; width: 20px; height: 20px; border-radius: 6px;
+    background: rgba(0,255,133,.14) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300FF85' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 12px no-repeat;
+}
+
+/* Pager: next step in the trail */
+.jh-pager { max-width: var(--jh-max); margin: 0 auto; padding: clamp(32px, 5vw, 56px) var(--jh-gutter); box-sizing: border-box; display: grid; gap: 12px; }
+.jh-pager a {
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 18px 20px; min-height: 44px; box-sizing: border-box;
+    border: 1px solid var(--jh-line); border-radius: 14px; background: #fff;
+    text-decoration: none; color: var(--jh-ink);
+    transition: border-color .2s, transform .2s var(--jh-ease), box-shadow .2s var(--jh-ease);
+}
+.jh-pager a:hover { border-color: var(--jh-blue); transform: translateY(-2px); box-shadow: 0 16px 30px -22px rgba(13,34,64,.4); }
+.jh-pager__dir { font-size: 14px; font-weight: 600; color: var(--jh-muted); }
+.jh-pager__title { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
+.jh-pager__next { background: var(--jh-navy) !important; border-color: var(--jh-navy) !important; color: #fff !important; }
+.jh-pager__next .jh-pager__dir { color: rgba(255,255,255,.7); }
+.jh-pager__next .jh-pager__title::after { content: " \2192"; color: var(--jh-volt); }
+@media (min-width: 760px) { .jh-pager { grid-template-columns: 1fr 1fr; } .jh-pager__next { text-align: right; } .jh-pager__only { grid-column: 2; } }
+
+/* Next steps (the human ask) */
+body.jh .jhl-next-steps { background: var(--jh-sky); padding: clamp(56px, 9vw, 104px) 0; text-align: left; }
+body.jh .jhl-next-steps__inner { max-width: var(--jh-max); margin: 0 auto; padding: 0 var(--jh-gutter); box-sizing: border-box; }
+body.jh .jhl-next-steps h2, body.jh .jhl-next-steps__title { font-family: var(--jh-font); font-size: clamp(30px, 4.6vw, 52px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.05; color: var(--jh-ink); max-width: 20ch; margin: 0 0 14px; }
+body.jh .jhl-next-steps__subtitle { font-size: 18px; color: var(--jh-muted); max-width: 56ch; margin: 0 0 28px; }
+body.jh .jhl-next-steps__links { justify-content: flex-start; gap: 10px; margin: 0 0 28px; }
+body.jh .jhl-next-steps__link { min-height: 48px; display: inline-flex; align-items: center; padding: 0 18px; font-size: 15px; border-radius: 10px; background: #fff; border-color: var(--jh-line); color: var(--jh-ink); }
+body.jh .jhl-next-steps .btn { min-height: 52px; border-radius: 10px; background: var(--jh-navy); color: #fff; box-shadow: none; }
+body.jh .jhl-next-steps .btn:hover { background: var(--jh-navy-soft); }
+body.jh .jhl-next-steps__promise { font-size: 15px; color: var(--jh-muted); }
+
+/* Old shell pieces that no longer exist in v3 markup */
+body.jh .jhl-header, body.jh .jhl-mobile-nav, body.jh .jhl-explore-menu { display: none; }
+
+/* Webinar pages keep their own layout; match v3 heading rhythm */
+[data-page^="webinar"] h1, [data-page^="webinar"] h2, [data-page^="webinar"] h3 { letter-spacing: -0.03em; }
+body.jh .jhl-takeaways ul { padding: 0; margin: 0; }
+body.jh .jhl-takeaways__inner > :last-child { margin-bottom: 0; }
+
+/* Sentence case everywhere: neutralize legacy all-caps labels */
+body.jh .you-are-here, body.jh .stat-label, body.jh .input-group label,
+body.jh .snapshot-result .label, body.jh .calc-result-card .label, body.jh .plan-stat .label,
+body.jh .method-badge, body.jh .requirements h5, body.jh .optimizer-result .label,
+body.jh .jhl-lead-modal__badge, body.jh .jhl-enrichment__label { text-transform: none; letter-spacing: 0; }
+[data-page="webinar-confirmed"] .countdown-unit, [data-page="webinar-confirmed"] .time-tag { text-transform: none; letter-spacing: 0; }
+
+/* ---------- 6 steps page ---------- */
+.jh-hero--short { padding-bottom: clamp(56px, 9vw, 104px); }
+.jh-hero__actions { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
+.jh-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; counter-reset: none; }
+.jh-step {
+    position: relative; background: #fff; border: 1px solid var(--jh-line); border-radius: 20px;
+    padding: 24px 20px; display: flex; flex-direction: column; gap: 14px;
+    scroll-margin-top: calc(var(--jh-header-h) + 16px);
+}
+.jh-step__head { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.jh-step__num {
+    width: 56px; height: 56px; flex: none; border-radius: 50%; display: grid; place-items: center;
+    background: var(--jh-navy); color: var(--jh-volt); font: 800 26px/1 var(--jh-num);
+}
+.jh-step__of { display: block; font-size: 14px; font-weight: 600; color: var(--jh-muted); }
+.jh-step h2 { font-size: clamp(26px, 3.6vw, 36px); }
+.jh-step__pin { display: none; position: absolute; top: -14px; right: 20px; background: var(--jh-volt); color: var(--jh-navy); font-size: 13px; font-weight: 700; padding: 7px 10px; border-radius: 6px; }
+.jh-step.is-here { border-color: var(--jh-navy); box-shadow: 0 0 0 2px var(--jh-navy); }
+.jh-step.is-here .jh-step__pin { display: inline-block; }
+.jh-step.is-here .jh-step__num { background: var(--jh-volt); color: var(--jh-navy); }
+.jh-step__desc { font-size: 18px; line-height: 1.55; color: var(--jh-text); max-width: 62ch; }
+.jh-step__tip { font-size: 16px; font-weight: 600; color: var(--jh-ink); background: var(--jh-sky); border-radius: 10px; padding: 12px 14px; max-width: 62ch; }
+.jh-step__guides { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--jh-line); }
+.jh-step__guides li { border-bottom: 1px solid var(--jh-line); }
+.jh-step__guides a {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    min-height: 52px; padding: 8px 2px; text-decoration: none; color: var(--jh-ink); font-weight: 600; font-size: 16px;
+}
+.jh-step__guides a::after { content: "\2192"; color: var(--jh-blue); font-weight: 700; transition: transform .2s var(--jh-ease); }
+.jh-step__guides a:hover { color: var(--jh-blue); }
+.jh-step__guides a:hover::after { transform: translateX(4px); }
+.jh-step__go { align-self: flex-start; margin-top: 4px; }
+@media (min-width: 900px) {
+    .jh-step { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 48px; padding: 36px 40px; }
+    .jh-step__head, .jh-step__desc, .jh-step__tip, .jh-step__go { grid-column: 1; }
+    .jh-step__guides { grid-column: 2; grid-row: 1 / span 4; align-self: start; }
+    .jh-step__guides--wide { grid-template-columns: 1fr 1fr; column-gap: 48px; }
+}
+
+
+/* Site-wide fixes (moved from repairs/tools-c.css so every page gets them) */
+/* ==============================================================
+   SITE-WIDE (unscoped - approved for all pages)
+   ============================================================== */
+
+/* .jhl-card--orange is used on ~30 pages but was never defined.
+   jhl-redesign.css only has --purple/--coral/--blue siblings
+   (see .jhl-card--bordered.jhl-card--purple etc. and
+   .jhl-card--purple .jhl-card__icon svg). Copying that exact
+   pattern with the site's existing --orange token (#FF6B35). */
+.jhl-card--bordered.jhl-card--orange {
+    border-left-color: var(--orange);
+}
+.jhl-card--orange .jhl-card__icon svg {
+    color: var(--orange);
+}
+
+/* .filter-btn (jhl-redesign.css ~line 2956) was only 36px tall -
+   below the 44px minimum tap target. Raising site-wide since every
+   page that uses category filter buttons inherits the same class. */
+.filter-btn {
+    min-height: 44px;
+}
+
+
+/* Bare color modifiers (without --bordered) had no styling; give them a flat accent edge */
+.jhl-card.jhl-card--green:not(.jhl-card--bordered)  { border-top: 3px solid var(--jh-green); }
+.jhl-card.jhl-card--blue:not(.jhl-card--bordered)   { border-top: 3px solid var(--jh-blue); }
+.jhl-card.jhl-card--purple:not(.jhl-card--bordered) { border-top: 3px solid #6B46C1; }
+.jhl-card.jhl-card--orange:not(.jhl-card--bordered) { border-top: 3px solid #FF6B35; }
+.jhl-card.jhl-card--coral:not(.jhl-card--bordered),
+.jhl-card.jhl-card--red:not(.jhl-card--bordered)    { border-top: 3px solid #FF6B5B; }
+body.jh .jhl-hero .jhl-badge { color: rgba(255,255,255,.78); }
+body.jh .jhl-hero .jhl-badge__dot { background: var(--jh-volt); }
+[data-page="webinar-confirmed"] .confirm-hero { background: var(--jh-navy); }
+[data-page="webinar-confirmed"] .confirm-hero::before { display: none; }

@@ -1,9 +1,9 @@
 /* =====================================================================
-   JHL REPAIR PACK D — writing-winning-offers.html / negotiation-strategies.html
+   JHL REPAIR PACK D - writing-winning-offers.html / negotiation-strategies.html
                        multiple-offer-situations.html / final-walkthrough.html
                        final-loan-approval.html
    TEMPORARY file, loaded after jhl-redesign.min.css for preview only.
-   To be folded into jhl-redesign.css later — do not delete without
+   To be folded into jhl-redesign.css later - do not delete without
    migrating these rules first.
 
    Every selector below is scoped with [data-page="..."] because several
@@ -1817,3 +1817,4 @@
   color: var(--slate);
   text-align: center;
 }
+[data-page="writing-winning-offers"] .jhl-offer__strength-note { margin-top: 10px; font-size: 14px; line-height: 1.5; color: #5F6C7B; }

@@ -16,6 +16,7 @@
     <link rel="preload" href="/fonts/fraunces-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/jakarta-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/fonts.css?v=20260713a">
+    <link rel="stylesheet" href="/jhl-v3.css?v=20260926a">
     <style>
         /* ========================================
            JHL DESIGN SYSTEM VARIABLES
@@ -30,7 +31,7 @@
             --coral: #FF6B5B;
             --purple: #6B46C1;
             --white: #FFFFFF;
-            --font-display: 'Fraunces', serif;
+            --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-body: 'Plus Jakarta Sans', sans-serif;
             --space-xs: 8px;
             --space-sm: 16px;
@@ -515,6 +516,57 @@
     <meta name="twitter:card" content="summary_large_image">
 </head>
 <body data-page="webinar" data-phase="core" data-stage="core">
+    <header class="jh-header" id="header">
+        <div class="jh-wrap jh-header__inner">
+            <a class="jh-brand" href="/" aria-label="Just Home Leads home">
+                <svg viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="100" fill="#16305A"/><polygon points="256,92 84,262 428,262" fill="#fff"/><rect x="132" y="262" width="248" height="166" fill="#fff"/><rect x="218" y="318" width="76" height="110" fill="#00FF85"/></svg>
+                <span class="jh-brand__word">Just<b>Home</b>Leads</span>
+            </a>
+            <nav class="jh-nav" aria-label="Main">
+                <a href="/honest-truth">Start here</a>
+                <a href="/journey">The 6 steps</a>
+                <a href="/financial-toolkit">Tools</a>
+                <a href="/faqs">Questions</a>
+                <a href="/webinar" aria-current="page">Free class</a>
+            </nav>
+            <a class="jh-btn jh-btn--volt jh-header__cta" href="/#check">Am I ready?</a>
+            <button class="jh-menu-btn" id="jh-menu-open" aria-expanded="false" aria-controls="jh-sheet">
+                Menu
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+            </button>
+        </div>
+    </header>
+    <div class="jh-sheet" id="jh-sheet" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true">
+        <div class="jh-sheet__top">
+            <a class="jh-brand" href="/" aria-label="Just Home Leads home">
+                <svg viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="100" fill="#16305A"/><polygon points="256,92 84,262 428,262" fill="#fff"/><rect x="132" y="262" width="248" height="166" fill="#fff"/><rect x="218" y="318" width="76" height="110" fill="#00FF85"/></svg>
+                <span class="jh-brand__word">Just<b>Home</b>Leads</span>
+            </a>
+            <button class="jh-sheet__close" id="jh-menu-close" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <div class="jh-sheet__body">
+            <nav class="jh-sheet__main" aria-label="Main">
+                <a href="/honest-truth">Start here <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="/journey">The 6 steps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="/financial-toolkit">Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="/faqs">Questions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="/webinar">Free class <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </nav>
+            <p class="jh-sheet__label">Jump to a step</p>
+            <ol class="jh-sheet__steps">
+                <li><a href="/honest-truth"><span>1</span> Can I do this?</a></li>
+                <li><a href="/credit-essentials"><span>2</span> Get your money ready</a></li>
+                <li><a href="/pre-approval"><span>3</span> Get pre-approved</a></li>
+                <li><a href="/active-search-strategies"><span>4</span> Find your home</a></li>
+                <li><a href="/writing-winning-offers"><span>5</span> Make an offer</a></li>
+                <li><a href="/closing-day-guide"><span>6</span> Contract to keys</a></li>
+            </ol>
+            <a class="jh-btn jh-btn--volt" href="/#check">Am I ready? 60-second check</a>
+        </div>
+    </div>
+
 
     <!-- HERO SECTION -->
     <section class="webinar-hero">
@@ -908,6 +960,7 @@
             var now = new Date();
             for (var m = 0; m < 14; m++) {
                 var last = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + m + 1, 0));
+                if (last.getUTCMonth() === 11) continue; // no class in December (holidays)
                 last.setUTCDate(last.getUTCDate() - ((last.getUTCDay() - 5 + 7) % 7));
                 var d = jhlCtNoon(last.getUTCFullYear(), last.getUTCMonth(), last.getUTCDate());
                 if (d > now) return d;
@@ -921,5 +974,53 @@
         el.textContent = 'Friday, ' + months[mo - 1] + ' ' + dy + ' \u00B7 12:00 PM CT';
     })();
     </script>
+
+    <footer class="jh-footer">
+        <div class="jh-wrap">
+            <div class="jh-footer__grid">
+                <div class="jh-footer__brand">
+                    <a class="jh-brand" href="/" aria-label="Just Home Leads home">
+                        <svg viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="100" fill="#16305A"/><polygon points="256,92 84,262 428,262" fill="#fff"/><rect x="132" y="262" width="248" height="166" fill="#fff"/><rect x="218" y="318" width="76" height="110" fill="#00FF85"/></svg>
+                        <span class="jh-brand__word">Just<b>Home</b>Leads</span>
+                    </a>
+                    <p>Straight answers for first-time buyers in Dallas-Fort Worth. Free to use, always.</p>
+                </div>
+                <div>
+                    <h4>The 6 steps</h4>
+                    <ul>
+                        <li><a href="/honest-truth">1. Can I do this?</a></li>
+                        <li><a href="/credit-essentials">2. Get your money ready</a></li>
+                        <li><a href="/pre-approval">3. Get pre-approved</a></li>
+                        <li><a href="/active-search-strategies">4. Find your home</a></li>
+                        <li><a href="/writing-winning-offers">5. Make an offer</a></li>
+                        <li><a href="/closing-day-guide">6. Contract to keys</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="/#check">Am I ready?</a></li>
+                        <li><a href="/financial-toolkit">Calculators</a></li>
+                        <li><a href="/faqs">Questions</a></li>
+                        <li><a href="/jargon-buster">Words you'll hear</a></li>
+                        <li><a href="/webinar">Free class</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Us</h4>
+                    <ul>
+                        <li><a href="#verified-network">Talk to a person</a></li>
+                        <li><a href="/privacy">Privacy</a></li>
+                        <li><a href="/terms">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="jh-footer__bottom">
+                <span>&copy; 2026 Just Home Leads</span>
+                <span>Dallas-Fort Worth, Texas</span>
+            </div>
+        </div>
+    </footer>
+    <script src="/jhl-v3.js?v=20260926a" defer></script>
 </body>
 </html>
