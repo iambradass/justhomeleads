@@ -17,6 +17,8 @@
     <link rel="preload" href="/fonts/jakarta-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/fonts.css?v=20260713a">
   <link href="jhl-redesign.min.css?v=20260713a" rel="stylesheet"/>
+    <link rel="stylesheet" href="/jhl-v3.css?v=20260926a">
+  <link rel="stylesheet" href="/repairs/tools-d.css?v=20260926a">
      <link rel="canonical" href="https://justhomeleads.com/final-loan-approval">
     <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -30,247 +32,65 @@
     <meta property="og:image" content="https://justhomeleads.com/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
 </head>
- <body data-page="final-loan-approval" data-phase="5" data-stage="5.5">
+ <body class="jh" data-page="final-loan-approval" data-phase="5" data-stage="5.5">
   <!-- Skip Link -->
   <a class="skip-link" href="#main">
    Skip to content
   </a>
   <!-- JHL HEADER v4.1 -->
-  <header class="jhl-header" id="header">
-   <div class="jhl-header__inner">
-    <a class="jhl-logo" href="/">
-     <div class="jhl-logo__icon">
-      <img src="jhl-logo.jpeg" alt="Just Home Leads logo" width="40" height="40" style="width:100%;height:100%;object-fit:contain;border-radius:8px;">
-     </div>
-     <div class="jhl-logo__text">
-      <div class="jhl-logo__wordmark">
-       Just
-       <span>
-        Home
-       </span>
-       Leads
-      </div>
-      <div class="jhl-logo__tagline">
-       Dallas-Fort Worth
-      </div>
-     </div>
-    </a>
-    <nav class="jhl-nav">
-                <div class="jhl-nav__item">
-                    <a class="jhl-nav__link" href="/journey">
-                        Your Journey
-                        <svg class="jhl-nav__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
-                    </a>
-                    <div class="jhl-nav__dropdown jhl-nav__dropdown--mega">
-                        <a class="jhl-nav__dropdown-featured" href="/journey">
-                            Journey Overview: See All Phases
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        </a>
-                        <div class="jhl-nav__dropdown-grid">
-                            <div>
-                                <div class="jhl-nav__dropdown-heading">Explore</div>
-                                <a class="jhl-nav__dropdown-link" href="/credit-essentials">Credit Essentials</a>
-                                <a class="jhl-nav__dropdown-link" href="/down-payment">Down Payment Guide</a>
-                                <a class="jhl-nav__dropdown-link" href="/financial-toolkit">Financial Toolkit</a>
-                                <div class="jhl-nav__dropdown-heading">Get Approved</div>
-                                <a class="jhl-nav__dropdown-link" href="/pre-approval">Pre-Approval Guide</a>
-                                <a class="jhl-nav__dropdown-link" href="/mortgage-types">Mortgage Types</a>
-                                <a class="jhl-nav__dropdown-link" href="/lender-shopping">Lender Shopping</a>
-                            </div>
-                            <div>
-                                <div class="jhl-nav__dropdown-heading">Find Your Home</div>
-                                <a class="jhl-nav__dropdown-link" href="/active-search-strategies">Search Strategies</a>
-                                <a class="jhl-nav__dropdown-link" href="/home-touring-guide">Home Touring</a>
-                                <a class="jhl-nav__dropdown-link" href="/neighborhood-research-guide">Neighborhoods</a>
-                                <div class="jhl-nav__dropdown-heading">Close &amp; Move In</div>
-                                <a class="jhl-nav__dropdown-link" href="/writing-winning-offers">Writing Offers</a>
-                                <a class="jhl-nav__dropdown-link" href="/closing-costs-breakdown">Closing Costs</a>
-                                <a class="jhl-nav__dropdown-link" href="/home-maintenance-schedule">Home Maintenance</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="jhl-nav__item">
-                    <a class="jhl-nav__link" href="/faqs">
-                        Resources
-                        <svg class="jhl-nav__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
-                    </a>
-                    <div class="jhl-nav__dropdown">
-                        <a class="jhl-nav__dropdown-link" href="/faqs">FAQs</a>
-                        <a class="jhl-nav__dropdown-link" href="/jargon-buster">Jargon Buster</a>
-                        <a class="jhl-nav__dropdown-link" href="/action-plan">Action Plan</a>
-                        <a class="jhl-nav__dropdown-link" href="/honest-truth">Honest Truth</a>
-                        <a class="jhl-nav__dropdown-link" href="/reality-check">Reality Check</a>
-                        <a class="jhl-nav__dropdown-link" href="/money-truth">Money Truth</a>
-                    </div>
-                </div>
-                <a class="jhl-nav__link" href="/webinar">Webinar</a>
-                <button class="jhl-explore-btn" id="explore-toggle" aria-label="Explore all topics" aria-expanded="false" aria-controls="explore-menu">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></svg>
-                    Explore
-                </button>
-                <a class="btn btn--primary" href="/journey">
-                    Get Started
-                    <svg class="btn__arrow" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                        <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
-                    </svg>
-                </a>
+  <header class="jh-header" id="header">
+        <div class="jh-wrap jh-header__inner">
+            <a class="jh-brand" href="/" aria-label="Just Home Leads home">
+                <svg viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="100" fill="#16305A"/><polygon points="256,92 84,262 428,262" fill="#fff"/><rect x="132" y="262" width="248" height="166" fill="#fff"/><rect x="218" y="318" width="76" height="110" fill="#00FF85"/></svg>
+                <span class="jh-brand__word">Just<b>Home</b>Leads</span>
+            </a>
+            <nav class="jh-nav" aria-label="Main">
+                <a href="/honest-truth">Start here</a>
+                <a href="/journey" aria-current="page">The 6 steps</a>
+                <a href="/financial-toolkit">Tools</a>
+                <a href="/faqs">Questions</a>
+                <a href="/webinar">Free class</a>
             </nav>
-    <button aria-label="Open menu" class="jhl-menu-toggle" aria-expanded="false" aria-controls="mobile-nav">
-     <span>
-     </span>
-     <span>
-     </span>
-     <span>
-     </span>
-    </button>
-   </div>
-  </header>
-<div class="jhl-mobile-nav" id="mobile-nav" aria-hidden="true">
-    <div class="jhl-mobile-nav__overlay"></div>
-    <div class="jhl-mobile-nav__panel">
-        <button class="jhl-mobile-nav__close" aria-label="Close menu">&times;</button>
-        <nav class="jhl-mobile-nav__links">
-                <a href="/">Home</a>
-                <div class="jhl-mobile-nav__group">
-                    <button class="jhl-mobile-nav__group-toggle" aria-expanded="false">
-                        Your Journey
-                        <svg class="jhl-mobile-nav__group-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
-                    </button>
-                    <div class="jhl-mobile-nav__group-body">
-                        <a href="/journey">Journey Overview</a>
-                        <a href="/credit-essentials">Credit Essentials</a>
-                        <a href="/down-payment">Down Payment</a>
-                        <a href="/financial-toolkit">Financial Toolkit</a>
-                        <a href="/pre-approval">Pre-Approval</a>
-                        <a href="/mortgage-types">Mortgage Types</a>
-                        <a href="/lender-shopping">Lender Shopping</a>
-                        <a href="/active-search-strategies">Search Strategies</a>
-                        <a href="/home-touring-guide">Home Touring</a>
-                        <a href="/neighborhood-research-guide">Neighborhoods</a>
-                        <a href="/writing-winning-offers">Writing Offers</a>
-                        <a href="/closing-costs-breakdown">Closing Costs</a>
-                        <a href="/closing-day-guide">Closing Day</a>
-                        <a href="/home-maintenance-schedule">Home Maintenance</a>
-                    </div>
-                </div>
-                <div class="jhl-mobile-nav__group">
-                    <button class="jhl-mobile-nav__group-toggle" aria-expanded="false">
-                        Resources
-                        <svg class="jhl-mobile-nav__group-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
-                    </button>
-                    <div class="jhl-mobile-nav__group-body">
-                        <a href="/faqs">FAQs</a>
-                        <a href="/jargon-buster">Jargon Buster</a>
-                        <a href="/action-plan">Action Plan</a>
-                        <a href="/honest-truth">Honest Truth</a>
-                        <a href="/reality-check">Reality Check</a>
-                        <a href="/money-truth">Money Truth</a>
-                    </div>
-                </div>
-                <a href="/webinar">Webinar</a>
-                <a href="/journey" class="btn btn--primary">Get Started</a>
+            <a class="jh-btn jh-btn--volt jh-header__cta" href="/#check">Am I ready?</a>
+            <button class="jh-menu-btn" id="jh-menu-open" aria-expanded="false" aria-controls="jh-sheet">
+                Menu
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="jh-sheet" id="jh-sheet" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true">
+        <div class="jh-sheet__top">
+            <a class="jh-brand" href="/" aria-label="Just Home Leads home">
+                <svg viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="100" fill="#16305A"/><polygon points="256,92 84,262 428,262" fill="#fff"/><rect x="132" y="262" width="248" height="166" fill="#fff"/><rect x="218" y="318" width="76" height="110" fill="#00FF85"/></svg>
+                <span class="jh-brand__word">Just<b>Home</b>Leads</span>
+            </a>
+            <button class="jh-sheet__close" id="jh-menu-close" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <div class="jh-sheet__body">
+            <nav class="jh-sheet__main" aria-label="Main">
+                <a href="/honest-truth">Start here <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="/journey">The 6 steps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="/financial-toolkit">Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="/faqs">Questions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="/webinar">Free class <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
             </nav>
-    </div>
-</div>
-    <!-- Full-Screen Explore Menu -->
-    <div class="jhl-explore-menu" id="explore-menu" aria-hidden="true">
-        <div class="jhl-explore-menu__bg"></div>
-        <div class="jhl-explore-menu__inner">
-            <div class="jhl-explore-menu__header">
-                <h2 class="jhl-explore-menu__title">Explore <span>Your Journey</span></h2>
-                <button class="jhl-explore-menu__close" id="explore-close" aria-label="Close menu">&times;</button>
-            </div>
-
-            <div class="jhl-explore-menu__quick">
-                <a href="/journey">Journey Map</a>
-                <a href="/reality-check">Am I Ready?</a>
-                <a href="/webinar">Free Webinar</a>
-                <a href="/financial-toolkit">Financial Toolkit</a>
-                <a href="/action-plan">12-Month Action Plan</a>
-            </div>
-
-            <div class="jhl-explore-menu__phases">
-                <div class="jhl-explore-menu__phase">
-                    <div class="jhl-explore-menu__phase-num">Phase 1</div>
-                    <div class="jhl-explore-menu__phase-title">Financial Prep</div>
-                    <a href="/credit-essentials">Credit Essentials</a>
-                    <a href="/credit-boost">Credit Boost Plan</a>
-                    <a href="/debt-vs-saving">Debt vs. Saving</a>
-                    <a href="/down-payment">Down Payment Guide</a>
-                    <a href="/financial-toolkit">Financial Toolkit</a>
-                </div>
-
-                <div class="jhl-explore-menu__phase">
-                    <div class="jhl-explore-menu__phase-num">Phase 2</div>
-                    <div class="jhl-explore-menu__phase-title">Getting Pre-Approved</div>
-                    <a href="/pre-approval">Pre-Approval Guide</a>
-                    <a href="/pre-approval-process">The Process</a>
-                    <a href="/mortgage-types">Mortgage Types</a>
-                    <a href="/interest-rates-explained">Interest Rates</a>
-                    <a href="/lender-shopping">Lender Shopping</a>
-                    <a href="/choosing-real-estate-agent">Choosing an Agent</a>
-                </div>
-
-                <div class="jhl-explore-menu__phase">
-                    <div class="jhl-explore-menu__phase-num">Phase 3</div>
-                    <div class="jhl-explore-menu__phase-title">House Hunting</div>
-                    <a href="/home-priorities-worksheet">Priorities Worksheet</a>
-                    <a href="/active-search-strategies">Search Strategies</a>
-                    <a href="/evaluating-properties">Evaluating Properties</a>
-                    <a href="/home-touring-guide">Home Touring Guide</a>
-                    <a href="/neighborhood-research-guide">Neighborhood Research</a>
-                    <a href="/school-district-guide">School Districts</a>
-                </div>
-
-                <div class="jhl-explore-menu__phase">
-                    <div class="jhl-explore-menu__phase-num">Phase 4</div>
-                    <div class="jhl-explore-menu__phase-title">Making an Offer</div>
-                    <a href="/writing-winning-offers">Writing Offers</a>
-                    <a href="/negotiation-strategies">Negotiation Strategies</a>
-                    <a href="/multiple-offer-situations">Multiple Offers</a>
-                    <a href="/competitive-market-strategy">Competitive Markets</a>
-                </div>
-
-                <div class="jhl-explore-menu__phase">
-                    <div class="jhl-explore-menu__phase-num">Phase 5</div>
-                    <div class="jhl-explore-menu__phase-title">Under Contract</div>
-                    <a href="/home-inspection-guide">Home Inspection</a>
-                    <a href="/appraisal-process">Appraisal Process</a>
-                    <a href="/title-and-survey">Title &amp; Survey</a>
-                    <a href="/closing-costs-breakdown">Closing Costs</a>
-                    <a href="/final-loan-approval">Final Loan Approval</a>
-                </div>
-
-                <div class="jhl-explore-menu__phase">
-                    <div class="jhl-explore-menu__phase-num">Phase 6 &amp; 7</div>
-                    <div class="jhl-explore-menu__phase-title">Closing &amp; Homeownership</div>
-                    <a href="/final-walkthrough">Final Walkthrough</a>
-                    <a href="/closing-day-guide">Closing Day Guide</a>
-                    <a href="/first-week-homeowner">First Week as Owner</a>
-                    <a href="/home-maintenance-schedule">Maintenance Schedule</a>
-                    <a href="/building-equity">Building Equity</a>
-                    <a href="/moving-checklist">Moving Checklist</a>
-                </div>
-            </div>
-
-            <div class="jhl-explore-menu__resources">
-                <div class="jhl-explore-menu__resources-title">Resources &amp; Tools</div>
-                <div class="jhl-explore-menu__resources-grid">
-                    <a href="/faqs">FAQs</a>
-                    <a href="/jargon-buster">Jargon Buster (107 terms)</a>
-                    <a href="/action-plan">12-Month Action Plan</a>
-                    <a href="/honest-truth">The Honest Truth</a>
-                    <a href="/reality-check">Reality Check Quiz</a>
-                    <a href="/red-flags-checklist">Red Flags Checklist</a>
-                    <a href="/money-truth">Money Truth</a>
-                    <a href="/market-timing">Market Timing</a>
-                    <a href="/property-tax-guide">Property Tax Guide</a>
-                    <a href="/homeowner-resources">Homeowner Resources</a>
-                </div>
-            </div>
+            <p class="jh-sheet__label">Jump to a step</p>
+            <ol class="jh-sheet__steps">
+                <li><a href="/honest-truth"><span>1</span> Can I do this?</a></li>
+                <li><a href="/credit-essentials"><span>2</span> Get your money ready</a></li>
+                <li><a href="/pre-approval"><span>3</span> Get pre-approved</a></li>
+                <li><a href="/active-search-strategies"><span>4</span> Find your home</a></li>
+                <li><a href="/writing-winning-offers"><span>5</span> Make an offer</a></li>
+                <li><a href="/closing-day-guide"><span>6</span> Contract to keys</a></li>
+            </ol>
+            <a class="jh-btn jh-btn--volt" href="/#check">Am I ready? 60-second check</a>
         </div>
     </div>
+
+
 
 
   <!-- ========================================
@@ -285,6 +105,7 @@
    </div>
    <div class="jhl-hero__inner">
     <div class="jhl-hero__content">
+     <div class="jh-stepmark"><span class="jh-stepmark__label">Step 6 of 6: <a href="/closing-day-guide">Contract to keys</a></span><span class="jh-stepmark__dots" aria-hidden="true"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="here"></i></span></div>
      <h1>
       Final Loan Approval: From Underwriting to Clear to Close
      </h1>
@@ -292,14 +113,7 @@
       You're in the home stretch. Understanding the final approval process, and avoiding last-minute pitfalls, is the key to closing day success.
      </p>
 
-     <div class="jhl-journey-badge">
-      <span>
-       Phase 5: Contract to Close
-      </span>
-      <span>
-       Stage 5.2: Loan Finalization
-      </span>
-     </div>
+     
     </div>
    </div>
   </section>
@@ -308,9 +122,7 @@
      ======================================== -->
   <section class="jhl-intro">
    <div class="jhl-intro__inner">
-    <h2>
-     What You'll Learn
-    </h2>
+    <h2>In this guide</h2>
     <p>
      About 8% of mortgage applications are denied after pre-approval. Most of these failures happen because borrowers make financial changes during underwriting. This guide shows you exactly what happens during final approval and what NOT to do.
     </p>
@@ -424,7 +236,7 @@
       <div class="review-items">
        <div class="review-item">
         <div class="review-icon">
-         
+         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         </div>
         <h5>
          Income Verification
@@ -435,7 +247,7 @@
        </div>
        <div class="review-item">
         <div class="review-icon">
-         
+         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
         </div>
         <h5>
          Employment Verification
@@ -446,7 +258,7 @@
        </div>
        <div class="review-item">
         <div class="review-icon">
-         
+         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
         </div>
         <h5>
          Credit Re-Check
@@ -457,7 +269,7 @@
        </div>
        <div class="review-item">
         <div class="review-icon">
-         
+         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-1"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
         </div>
         <h5>
          Asset Verification
@@ -468,7 +280,7 @@
        </div>
        <div class="review-item">
         <div class="review-icon">
-         
+         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="17"/></svg>
         </div>
         <h5>
          Debt Ratio Calculation
@@ -479,7 +291,7 @@
        </div>
        <div class="review-item">
         <div class="review-icon">
-         
+         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg>
         </div>
         <h5>
          Property Review
@@ -507,9 +319,7 @@
       <div class="dont-do-grid">
        <div class="dont-card">
         <h4>
-         <span>
-          
-         </span>
+         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><line x1="4" y1="4" x2="20" y2="20"/></svg></span>
          Don't Change Jobs
         </h4>
         <p>
@@ -518,9 +328,7 @@
        </div>
        <div class="dont-card">
         <h4>
-         <span>
-          
-         </span>
+         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="4" y1="4" x2="20" y2="20"/></svg></span>
          Don't Open New Credit
         </h4>
         <p>
@@ -529,9 +337,7 @@
        </div>
        <div class="dont-card">
         <h4>
-         <span>
-          
-         </span>
+         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/><line x1="5" y1="21" x2="19" y2="3"/></svg></span>
          Don't Make Large Purchases
         </h4>
         <p>
@@ -540,9 +346,7 @@
        </div>
        <div class="dont-card">
         <h4>
-         <span>
-          
-         </span>
+         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></span>
          Don't Move Money Around
         </h4>
         <p>
@@ -551,9 +355,7 @@
        </div>
        <div class="dont-card">
         <h4>
-         <span>
-          
-         </span>
+         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m17 8 2 2 4-4"/></svg></span>
          Don't Co-Sign Anything
         </h4>
         <p>
@@ -562,9 +364,7 @@
        </div>
        <div class="dont-card">
         <h4>
-         <span>
-          
-         </span>
+         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><path d="M9 15h1"/></svg></span>
          Don't Close Credit Accounts
         </h4>
         <p>
@@ -803,7 +603,7 @@
        <p class="jhl-card__desc">
         Your lender verifies employment right before closing. If you've changed jobs or lost your job, the loan is immediately on hold.
        </p>
-       <p class="jhl-card__desc" style="color: var(--electric-green); font-weight: 600; margin-top: 8px;">
+       <p class="jhl-card__desc" style="color: var(--green-dark); font-weight: 600; margin-top: 8px;">
         Prevention: Don't quit or change jobs until after closing.
        </p>
       </div>
@@ -814,7 +614,7 @@
        <p class="jhl-card__desc">
         New credit, late payments, or increased balances can drop your score below the threshold needed for your loan program.
        </p>
-       <p class="jhl-card__desc" style="color: var(--electric-green); font-weight: 600; margin-top: 8px;">
+       <p class="jhl-card__desc" style="color: var(--green-dark); font-weight: 600; margin-top: 8px;">
         Prevention: Don't use credit, set all bills to autopay.
        </p>
       </div>
@@ -825,7 +625,7 @@
        <p class="jhl-card__desc">
         Depositing more than 50% of your monthly income in cash requires explanation and documentation of the source.
        </p>
-       <p class="jhl-card__desc" style="color: var(--electric-green); font-weight: 600; margin-top: 8px;">
+       <p class="jhl-card__desc" style="color: var(--green-dark); font-weight: 600; margin-top: 8px;">
         Prevention: Avoid cash deposits entirely.
        </p>
       </div>
@@ -836,7 +636,7 @@
        <p class="jhl-card__desc">
         Can't get homeowner's insurance (due to roof age, claims history, etc.) or insurance is significantly more expensive than estimated.
        </p>
-       <p class="jhl-card__desc" style="color: var(--electric-green); font-weight: 600; margin-top: 8px;">
+       <p class="jhl-card__desc" style="color: var(--green-dark); font-weight: 600; margin-top: 8px;">
         Prevention: Get insurance quotes early in the process.
        </p>
       </div>
@@ -847,7 +647,7 @@
        <p class="jhl-card__desc">
         Discovery of new damage, agreed repairs not completed, or items missing from the home.
        </p>
-       <p class="jhl-card__desc" style="color: var(--electric-green); font-weight: 600; margin-top: 8px;">
+       <p class="jhl-card__desc" style="color: var(--green-dark); font-weight: 600; margin-top: 8px;">
         Prevention: Do your final walkthrough carefully.
        </p>
       </div>
@@ -858,7 +658,7 @@
        <p class="jhl-card__desc">
         Scammers hack email to send fake wire instructions. You send closing funds to the wrong account.
        </p>
-       <p class="jhl-card__desc" style="color: var(--electric-green); font-weight: 600; margin-top: 8px;">
+       <p class="jhl-card__desc" style="color: var(--green-dark); font-weight: 600; margin-top: 8px;">
         Prevention: ALWAYS verify wire instructions by phone.
        </p>
       </div>
@@ -912,6 +712,7 @@
   <!-- ========================================
      SECTION 5: NEXT STEPS / CTA
      ======================================== -->
+  <nav class="jh-pager" aria-label="Keep going"><a class="jh-pager__prev" href="/closing-costs-breakdown"><span class="jh-pager__dir">Back</span><span class="jh-pager__title">Closing Costs Breakdown</span></a><a class="jh-pager__next" href="/final-walkthrough"><span class="jh-pager__dir">Next up</span><span class="jh-pager__title">Final Walkthrough Checklist</span></a></nav>
   <section class="jhl-next-steps" id="verified-network">
    <div class="jhl-next-steps__inner">
     <h2>
@@ -943,123 +744,52 @@
    </div>
   </section>
   <!-- JHL FOOTER v4.1 -->
-  <footer class="jhl-footer">
-   <div class="jhl-footer__inner">
-    <div class="jhl-footer__grid">
-     <div class="jhl-footer__brand">
-      <div class="jhl-footer__logo">
-       Just
-       <span>
-        Home
-       </span>
-       Leads
-      </div>
-      <p>
-       Real people. Real education. Real wealth. DFW's trusted first-time homebuyer education platform.
-      </p>
-     </div>
-     <div class="jhl-footer__section">
-      <h4>
-       Your Journey
-      </h4>
-      <ul>
-       <li>
-        <a href="/journey">
-         Journey Map
-        </a>
-       </li>
-       <li>
-        <a href="/honest-truth">
-         Getting Started
-        </a>
-       </li>
-       <li>
-        <a href="/credit-essentials">
-         Build Foundation
-        </a>
-       </li>
-       <li>
-        <a href="/active-search-strategies">
-         Active Shopping
-        </a>
-       </li>
-       <li>
-        <a href="/closing-day-guide">
-         Closing Process
-        </a>
-       </li>
-      </ul>
-     </div>
-     <div class="jhl-footer__section">
-      <h4>
-       Resources
-      </h4>
-      <ul>
-       <li>
-        <a href="/faqs">
-         Buyer FAQs
-        </a>
-       </li>
-       <li>
-        <a href="/jargon-buster">
-         Jargon Buster
-        </a>
-       </li>
-       <li>
-        <a href="/action-plan">
-         Action Plan
-        </a>
-       </li>
-       <li>
-        <a href="/mortgage-types">
-         Mortgage Types
-        </a>
-       </li>
-      </ul>
-     </div>
-     <div class="jhl-footer__section">
-      <h4>
-       Connect
-      </h4>
-      <ul>
-       <li>
-        <a href="#verified-network">
-         Verified Network
-        </a>
-       </li>
-       <li>
-        <a href="/reality-check">
-         Am I Ready?
-        </a>
-       </li>
-       <li>
-        <a href="/privacy">
-         Privacy Policy
-        </a>
-       </li>
-       <li>
-        <a href="/terms">
-         Terms of Use
-        </a>
-       </li>
-      </ul>
-     </div>
-    </div>
-    <div class="jhl-footer__bottom">
-     <p>
-      © 2026 Just Home Leads. DFW's First-Time Homebuyer Education Platform.
-     </p>
-     <div class="jhl-footer__legal">
-      <a href="/privacy">
-       Privacy
-      </a>
-      <a href="/terms">
-       Terms
-      </a>
-     </div>
-    </div>
-   </div>
-  </footer>
+  <footer class="jh-footer">
+        <div class="jh-wrap">
+            <div class="jh-footer__grid">
+                <div class="jh-footer__brand">
+                    <a class="jh-brand" href="/" aria-label="Just Home Leads home">
+                        <svg viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="100" fill="#16305A"/><polygon points="256,92 84,262 428,262" fill="#fff"/><rect x="132" y="262" width="248" height="166" fill="#fff"/><rect x="218" y="318" width="76" height="110" fill="#00FF85"/></svg>
+                        <span class="jh-brand__word">Just<b>Home</b>Leads</span>
+                    </a>
+                    <p>Straight answers for first-time buyers in Dallas-Fort Worth. Free to use, always.</p>
+                </div>
+                <div>
+                    <h4>The 6 steps</h4>
+                    <ul>
+                        <li><a href="/honest-truth">1. Can I do this?</a></li>
+                        <li><a href="/credit-essentials">2. Get your money ready</a></li>
+                        <li><a href="/pre-approval">3. Get pre-approved</a></li>
+                        <li><a href="/active-search-strategies">4. Find your home</a></li>
+                        <li><a href="/writing-winning-offers">5. Make an offer</a></li>
+                        <li><a href="/closing-day-guide">6. Contract to keys</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="/#check">Am I ready?</a></li>
+                        <li><a href="/financial-toolkit">Calculators</a></li>
+                        <li><a href="/faqs">Questions</a></li>
+                        <li><a href="/jargon-buster">Words you'll hear</a></li>
+                        <li><a href="/webinar">Free class</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Us</h4>
+                    <ul>
+                        <li><a href="#verified-network">Talk to a person</a></li>
+                        <li><a href="/privacy">Privacy</a></li>
+                        <li><a href="/terms">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="jh-footer__bottom">
+                <span>&copy; 2026 Just Home Leads</span>
+                <span>Dallas-Fort Worth, Texas</span>
+            </div>
+        </div>
+    </footer>
 <!-- ========================================
      LEAD CAPTURE MODAL
      ======================================== -->
@@ -1189,8 +919,8 @@ function updateProgress() {
     document.getElementById('progressText').textContent = `${checked} of ${total} steps completed`;
 
     if (checked === total) {
-        document.getElementById('progressText').innerHTML = ' All steps completed! Ready for closing day!';
-        document.getElementById('progressText').style.color = 'var(--electric-green)';
+        document.getElementById('progressText').innerHTML = 'All steps completed! Ready for closing day!';
+        document.getElementById('progressText').style.color = 'var(--green-dark)';
     } else {
         document.getElementById('progressText').style.color = 'var(--gray-medium)';
     }
@@ -1604,5 +1334,6 @@ window.jhlTrack = function(event, data) {
 })();
 
 </script>
+    <script src="/jhl-v3.js?v=20260926a" defer></script>
 </body>
 </html>

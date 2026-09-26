@@ -1,0 +1,2040 @@
+/* =====================================================================
+   JHL REPAIR PACK G - market-timing / money-truth / credit-essentials /
+   property-tax-guide / lender-shopping / closing-costs-breakdown /
+   terms / privacy / honest-truth / closing-day-guide
+   TEMPORARY file, loaded after jhl-redesign.min.css for preview only.
+   To be folded into jhl-redesign.css later, do not delete without
+   migrating these rules first.
+
+   Every selector below is scoped with [data-page="..."] because these
+   pages reuse generic class names (range, label, value, total, name,
+   description, highlight...) that are already used elsewhere in the
+   site's CSS for different components. NEVER remove the data-page
+   scope when editing this file.
+
+   Design tokens follow the v3 flat/border look: navy #0D2240,
+   blue #1565A0, sky #EEF4FA, green #00C853, electric green #00FF85
+   (accents on navy only), coral #FF6B5B, amber #F59E0B, red #DC2626,
+   text #33404F, muted #5F6C7B, line #DCE4EE. 1px borders, 12-16px
+   radius, no gradients, no glow, no pill badges, sentence case labels.
+   ===================================================================== */
+
+:root {
+  --g-navy: #0D2240;
+  --g-navy-deep: #081830;
+  --g-blue: #1565A0;
+  --g-sky: #EEF4FA;
+  --g-green: #00C853;
+  --g-volt: #00FF85;
+  --g-coral: #FF6B5B;
+  --g-amber: #F59E0B;
+  --g-red: #DC2626;
+  --g-text: #33404F;
+  --g-muted: #5F6C7B;
+  --g-line: #DCE4EE;
+  --g-radius: 14px;
+  --g-radius-sm: 8px;
+}
+
+/* =======================================================================
+   SHARED PATTERNS (used on more than one of this pack's pages)
+   ======================================================================= */
+
+/* ---- Flat calculator input grid (shared: market-timing money-truth
+   property-tax-guide closing-costs-breakdown). The site already ships a
+   global .input-group with proper 48px inputs; these rules only add the
+   grid wrapper + a couple of page-specific extras. ---- */
+[data-page="market-timing"] .calculator-inputs,
+[data-page="closing-costs-breakdown"] .calc-inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+[data-page="property-tax-guide"] .calc-grid,
+[data-page="money-truth"] .calc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 20px 0 16px;
+}
+
+/* calc-input-group: only scoped to home-maintenance-schedule elsewhere.
+   property-tax-guide and money-truth reuse the same markup pattern. */
+[data-page="property-tax-guide"] .calc-input-group,
+[data-page="money-truth"] .calc-input-group {
+  margin-bottom: 0;
+}
+[data-page="property-tax-guide"] .calc-input-group label,
+[data-page="money-truth"] .calc-input-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--g-muted);
+  margin-bottom: 6px;
+}
+[data-page="property-tax-guide"] .calc-input-group input,
+[data-page="property-tax-guide"] .calc-input-group select,
+[data-page="money-truth"] .calc-input-group input,
+[data-page="money-truth"] .calc-input-group select {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius-sm);
+  font-size: 16px;
+  font-family: var(--jh-font, inherit);
+  color: var(--g-text);
+  background: #fff;
+  box-sizing: border-box;
+}
+[data-page="property-tax-guide"] .calc-input-group input:focus,
+[data-page="property-tax-guide"] .calc-input-group select:focus,
+[data-page="money-truth"] .calc-input-group input:focus,
+[data-page="money-truth"] .calc-input-group select:focus {
+  outline: none;
+  border-color: var(--g-blue);
+  box-shadow: 0 0 0 3px rgba(21, 101, 160, 0.15);
+}
+/* This one is a plain <label><input type=checkbox> ...text</label> row */
+[data-page="property-tax-guide"] .calc-input-group:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+  grid-column: 1 / -1;
+}
+[data-page="property-tax-guide"] .calc-input-group label:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--g-text);
+  cursor: pointer;
+  min-height: 44px;
+}
+[data-page="property-tax-guide"] .calc-input-group input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  min-height: 0;
+  accent-color: var(--g-blue);
+  flex-shrink: 0;
+}
+
+/* Small muted helper text under a calculator input (market-timing) */
+[data-page="market-timing"] .helper {
+  font-size: 12px;
+  color: var(--g-muted);
+  margin-top: 4px;
+}
+
+/* money-truth's "Calculate YOUR Total Cash Needed" results grid uses a
+   different class name than the site's global .calc-results component */
+[data-page="money-truth"] .calc-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+/* .calculator-section wrapper: only scoped to home-maintenance-schedule
+   elsewhere (false negative), money-truth reuses the same markup */
+[data-page="money-truth"] .calculator-section {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  padding: 24px;
+}
+[data-page="money-truth"] .calculator-section h3 {
+  font-size: 19px;
+  color: var(--g-navy);
+  text-align: center;
+  margin: 0 0 6px;
+}
+
+/* ---- Flat "Calculate" buttons (shared) ---- */
+[data-page="market-timing"] .calculate-btn,
+[data-page="closing-costs-breakdown"] .btn-calculate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 52px;
+  padding: 0 28px;
+  background: var(--g-navy);
+  color: #fff;
+  border: 0;
+  border-radius: var(--g-radius-sm);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+  width: 100%;
+  max-width: 360px;
+  margin: 4px auto 0;
+}
+[data-page="market-timing"] .calculate-btn:hover,
+[data-page="closing-costs-breakdown"] .btn-calculate:hover {
+  background: var(--g-navy-deep);
+  transform: translateY(-1px);
+}
+[data-page="market-timing"] div.calculator-section > .calculate-btn,
+[data-page="closing-costs-breakdown"] .cost-calculator > .btn-calculate {
+  display: flex;
+}
+
+/* ---- Comparison table + overflow wrapper (property-tax-guide +
+   closing-costs-breakdown each use their own instance of a raw table) ---- */
+[data-page="property-tax-guide"] .table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  margin: 20px 0 8px;
+}
+[data-page="property-tax-guide"] .table-responsive .comparison-table,
+[data-page="closing-costs-breakdown"] .comparison-table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+[data-page="closing-costs-breakdown"] .comparison-table {
+  min-width: 520px;
+}
+[data-page="property-tax-guide"] .table-responsive .comparison-table th,
+[data-page="property-tax-guide"] .table-responsive .comparison-table td,
+[data-page="closing-costs-breakdown"] .comparison-table th,
+[data-page="closing-costs-breakdown"] .comparison-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--g-line);
+}
+[data-page="property-tax-guide"] .table-responsive .comparison-table thead th,
+[data-page="closing-costs-breakdown"] .comparison-table thead th {
+  background: var(--g-sky);
+  color: var(--g-navy);
+  font-size: 13px;
+  font-weight: 700;
+}
+[data-page="property-tax-guide"] .table-responsive .comparison-table tbody tr:last-child td,
+[data-page="closing-costs-breakdown"] .comparison-table tbody tr:last-child td {
+  border-bottom: none;
+}
+[data-page="property-tax-guide"] .caption {
+  font-size: 13px;
+  color: var(--g-muted);
+  text-align: center;
+  margin: 8px 0 0;
+}
+/* closing-costs-breakdown "who pays" cell tags */
+[data-page="closing-costs-breakdown"] .buyer-pays,
+[data-page="closing-costs-breakdown"] .seller-pays,
+[data-page="closing-costs-breakdown"] .either-pays {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+}
+[data-page="closing-costs-breakdown"] .buyer-pays { background: rgba(21,101,160,0.08); color: var(--g-blue); }
+[data-page="closing-costs-breakdown"] .seller-pays { background: rgba(0,200,83,0.1); color: #00A843; }
+[data-page="closing-costs-breakdown"] .either-pays { background: rgba(245,158,11,0.12); color: #B45309; }
+
+/* =======================================================================
+   1. MARKET-TIMING.HTML
+   ======================================================================= */
+
+/* Hero callout banner under the subtitle */
+[data-page="market-timing"] .jhl-page-hero__question {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 24px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--g-radius);
+  font-family: var(--jh-num, 'Fraunces', Georgia, serif);
+  font-size: clamp(19px, 4vw, 26px);
+  font-weight: 700;
+  color: var(--g-volt);
+}
+
+/* "Honest truth" callout card */
+[data-page="market-timing"] .truth-bomb {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-left: 4px solid var(--g-navy);
+  border-radius: var(--g-radius);
+  padding: 24px;
+  margin-bottom: 28px;
+}
+[data-page="market-timing"] .truth-bomb h3 {
+  font-family: var(--jh-num, 'Fraunces', Georgia, serif);
+  font-size: 22px;
+  color: var(--g-navy);
+  margin: 0 0 12px;
+}
+[data-page="market-timing"] .truth-bomb p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--g-text);
+  margin: 0 0 14px;
+}
+[data-page="market-timing"] .emphasis {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--g-blue);
+  padding: 12px 16px;
+  background: var(--g-sky);
+  border-radius: var(--g-radius-sm);
+}
+
+/* Market dashboard: county selector + live stat grid */
+[data-page="market-timing"] .market-dashboard {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  padding: 24px;
+}
+[data-page="market-timing"] .market-dashboard h3 {
+  font-family: var(--jh-num, 'Fraunces', Georgia, serif);
+  font-size: 20px;
+  color: var(--g-navy);
+  margin: 0 0 16px;
+}
+[data-page="market-timing"] .market-selector {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+[data-page="market-timing"] .market-selector label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--g-muted);
+}
+[data-page="market-timing"] .market-selector select {
+  flex: 1;
+  min-width: 200px;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius-sm);
+  font-size: 16px;
+  color: var(--g-text);
+  background: #fff;
+}
+[data-page="market-timing"] .market-selector select:focus {
+  outline: none;
+  border-color: var(--g-blue);
+  box-shadow: 0 0 0 3px rgba(21, 101, 160, 0.15);
+}
+[data-page="market-timing"] .market-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+/* .stat-card is already styled globally (white/border/shadow); these
+   rules style the label/value/change/context children which have no
+   CSS anywhere else on the site. */
+[data-page="market-timing"] .market-stats .stat-card {
+  text-align: center;
+  padding: 18px 12px;
+}
+[data-page="market-timing"] .market-stats .label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--g-muted);
+  margin-bottom: 6px;
+}
+[data-page="market-timing"] .market-stats .value {
+  font-family: var(--jh-num, 'Fraunces', Georgia, serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--g-navy);
+  line-height: 1.1;
+}
+[data-page="market-timing"] .market-stats .change {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--g-green);
+  margin-top: 4px;
+}
+[data-page="market-timing"] .market-stats .context {
+  font-size: 12px;
+  color: var(--g-muted);
+  margin-top: 2px;
+}
+
+/* Rent vs. own calculator results */
+[data-page="market-timing"] .comparison-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+[data-page="market-timing"] .result-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  padding: 22px;
+  text-align: center;
+}
+[data-page="market-timing"] .result-card h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--g-muted);
+  margin: 0 0 10px;
+}
+[data-page="market-timing"] .result-card .total {
+  font-family: var(--jh-num, 'Fraunces', Georgia, serif);
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--g-text);
+  line-height: 1.1;
+}
+[data-page="market-timing"] .result-card .breakdown {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--g-line);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--g-text);
+  text-align: left;
+}
+[data-page="market-timing"] .result-card.own .total {
+  color: var(--g-navy);
+}
+[data-page="market-timing"] .result-card.rent .total {
+  color: var(--g-coral);
+}
+[data-page="market-timing"] .result-card.winner {
+  border-color: var(--g-green);
+  background: rgba(0, 200, 83, 0.04);
+}
+[data-page="market-timing"] .winner-badge {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 5px 14px;
+  background: var(--g-green);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+/* Myth vs truth cards: .myth-card is global; .myth / .truth children need
+   their own contrast styling (currently undifferentiated text). */
+[data-page="market-timing"] .myth-card .myth {
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px dashed var(--g-line);
+}
+[data-page="market-timing"] .myth-card .myth h4 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--g-coral);
+  background: rgba(255, 107, 91, 0.1);
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin: 0 0 8px;
+}
+[data-page="market-timing"] .myth-card .myth p {
+  color: var(--g-muted);
+  font-style: italic;
+}
+[data-page="market-timing"] .myth-card .truth h4 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(0, 200, 83, 0.12);
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin: 0 0 8px;
+  /* color intentionally not overridden here: global .myth-card .truth
+     already sets a readable green for this element */
+}
+
+/* Decision framework: two-column buy-now / wait comparison */
+[data-page="market-timing"] .decision-framework {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  padding: 24px;
+  margin-bottom: 28px;
+}
+[data-page="market-timing"] .decision-framework h3 {
+  font-family: var(--jh-num, 'Fraunces', Georgia, serif);
+  font-size: 22px;
+  color: var(--g-navy);
+  margin: 0 0 8px;
+}
+[data-page="market-timing"] .decision-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+@media (min-width: 640px) {
+  [data-page="market-timing"] .decision-grid { grid-template-columns: 1fr 1fr; }
+}
+[data-page="market-timing"] .decision-column {
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius-sm);
+  padding: 18px 20px;
+}
+[data-page="market-timing"] .decision-column:first-child {
+  border-top: 3px solid var(--g-green);
+}
+[data-page="market-timing"] .decision-column:last-child {
+  border-top: 3px solid var(--g-amber);
+}
+[data-page="market-timing"] .decision-column h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  color: var(--g-navy);
+  margin: 0 0 12px;
+}
+[data-page="market-timing"] .decision-column ul {
+  margin: 0;
+  padding-left: 20px;
+}
+[data-page="market-timing"] .decision-column li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--g-text);
+  margin-bottom: 6px;
+}
+
+/* Real buyer stories */
+[data-page="market-timing"] .story-card {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-left: 4px solid var(--g-blue);
+  border-radius: var(--g-radius);
+  padding: 20px 22px;
+  margin-bottom: 16px;
+}
+[data-page="market-timing"] .story-card.jumped { border-left-color: var(--g-green); }
+[data-page="market-timing"] .story-card.waited { border-left-color: var(--g-coral); }
+[data-page="market-timing"] .story-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+[data-page="market-timing"] .avatar {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--g-navy);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+}
+[data-page="market-timing"] .story-card.jumped .avatar { background: var(--g-green); color: var(--g-navy); }
+[data-page="market-timing"] .story-card.waited .avatar { background: var(--g-coral); }
+[data-page="market-timing"] .story-info h4 {
+  font-size: 16px;
+  color: var(--g-navy);
+  margin: 0;
+}
+[data-page="market-timing"] .story-info .decision {
+  font-size: 13px;
+  color: var(--g-muted);
+  margin-top: 2px;
+}
+[data-page="market-timing"] .story-content {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--g-text);
+  font-style: italic;
+  margin-bottom: 12px;
+}
+[data-page="market-timing"] .outcome {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--g-navy);
+  padding: 10px 14px;
+  background: var(--g-sky);
+  border-radius: var(--g-radius-sm);
+}
+[data-page="market-timing"] .story-card.jumped .outcome { background: rgba(0, 200, 83, 0.08); color: #00A843; }
+[data-page="market-timing"] .story-card.waited .outcome { background: rgba(255, 107, 91, 0.08); color: #C4432F; }
+
+/* Should-I-buy-now quiz */
+[data-page="market-timing"] .quiz-section {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  padding: 28px 24px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+[data-page="market-timing"] .quiz-section h3 {
+  font-family: var(--jh-num, 'Fraunces', Georgia, serif);
+  font-size: 24px;
+  color: var(--g-navy);
+  text-align: center;
+  margin: 0 0 6px;
+}
+[data-page="market-timing"] .quiz-section > p {
+  text-align: center;
+  color: var(--g-muted);
+  margin: 0 0 20px;
+}
+[data-page="market-timing"] .quiz-progress {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--g-blue);
+  margin-bottom: 20px;
+}
+[data-page="market-timing"] .quiz-question {
+  display: none;
+}
+[data-page="market-timing"] .quiz-question.active {
+  display: block;
+}
+[data-page="market-timing"] .quiz-question h4 {
+  font-size: 17px;
+  color: var(--g-navy);
+  margin: 0 0 16px;
+}
+[data-page="market-timing"] .quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+[data-page="market-timing"] .quiz-option {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius-sm);
+  font-size: 15px;
+  color: var(--g-text);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+[data-page="market-timing"] .quiz-option:hover {
+  border-color: var(--g-blue);
+  background: var(--g-sky);
+}
+[data-page="market-timing"] .quiz-option.selected {
+  border-color: var(--g-blue);
+  background: var(--g-sky);
+  color: var(--g-navy);
+  font-weight: 600;
+}
+[data-page="market-timing"] .quiz-result {
+  display: none;
+  text-align: center;
+  padding-top: 8px;
+}
+[data-page="market-timing"] .quiz-result.show {
+  display: block;
+}
+[data-page="market-timing"] .quiz-result h4 {
+  font-family: var(--jh-num, 'Fraunces', Georgia, serif);
+  font-size: 22px;
+  color: var(--g-navy);
+  margin: 0 0 14px;
+}
+[data-page="market-timing"] .recommendation {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--g-text);
+  text-align: left;
+  padding: 18px 20px;
+  background: var(--g-sky);
+  border-radius: var(--g-radius-sm);
+  margin-bottom: 20px;
+}
+[data-page="market-timing"] .quiz-nav {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+[data-page="market-timing"] .quiz-btn {
+  flex: 1;
+  min-height: 48px;
+  border: 1px solid var(--g-navy);
+  background: #fff;
+  color: var(--g-navy);
+  border-radius: var(--g-radius-sm);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+[data-page="market-timing"] .quiz-btn:last-child {
+  background: var(--g-navy);
+  color: #fff;
+}
+[data-page="market-timing"] .quiz-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+[data-page="market-timing"] .quiz-btn:not(:disabled):hover {
+  background: var(--g-sky);
+}
+[data-page="market-timing"] .quiz-btn:last-child:not(:disabled):hover {
+  background: var(--g-navy-deep);
+}
+
+/* =======================================================================
+   2. MONEY-TRUTH.HTML
+   ======================================================================= */
+
+[data-page="money-truth"] .total-summary {
+  text-align: center;
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  padding: 28px 24px;
+}
+[data-page="money-truth"] .total-summary h2 {
+  font-size: 20px;
+  color: var(--g-navy);
+  margin: 0 0 12px;
+}
+[data-page="money-truth"] .total-amount {
+  font-family: var(--jh-num, 'Fraunces', Georgia, serif);
+  font-size: clamp(32px, 7vw, 44px);
+  font-weight: 700;
+  color: var(--g-navy);
+  line-height: 1.1;
+}
+[data-page="money-truth"] .total-context {
+  font-size: 14px;
+  color: var(--g-muted);
+  margin-top: 6px;
+}
+[data-page="money-truth"] .total-breakdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--g-line);
+}
+[data-page="money-truth"] .breakdown-item .amount {
+  font-family: var(--jh-num, 'Fraunces', Georgia, serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--g-blue);
+}
+[data-page="money-truth"] .breakdown-item .label {
+  font-size: 12px;
+  color: var(--g-muted);
+  margin-top: 4px;
+}
+
+/* Cost tables (down payment / closing costs / pre-closing / hidden costs) */
+[data-page="money-truth"] .cost-table {
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+[data-page="money-truth"] .cost-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: var(--g-sky);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--g-navy);
+}
+[data-page="money-truth"] .cost-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--g-line);
+}
+[data-page="money-truth"] .cost-item .name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--g-text);
+}
+[data-page="money-truth"] .cost-item .description {
+  font-size: 13px;
+  color: var(--g-muted);
+  padding: 0;
+  margin-top: 2px;
+}
+[data-page="money-truth"] .cost-amount {
+  flex-shrink: 0;
+  font-family: var(--jh-num, 'Fraunces', Georgia, serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--g-navy);
+  text-align: right;
+}
+[data-page="money-truth"] .cost-amount.range { color: var(--g-blue); }
+[data-page="money-truth"] .cost-row.total {
+  background: var(--g-navy);
+}
+[data-page="money-truth"] .cost-row.total .name { color: #fff; font-weight: 700; }
+[data-page="money-truth"] .cost-row.total .cost-amount { color: var(--g-volt); font-size: 18px; }
+[data-page="money-truth"] .cost-row.subtotal { background: var(--g-sky); }
+[data-page="money-truth"] .cost-row.subtotal .description { color: var(--g-muted); }
+
+/* Down-payment scenario tabs */
+[data-page="money-truth"] .scenario-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+[data-page="money-truth"] .scenario-tab {
+  flex: 1;
+  min-width: 130px;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--g-line);
+  background: #fff;
+  color: var(--g-text);
+  border-radius: var(--g-radius-sm);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+[data-page="money-truth"] .scenario-tab:hover {
+  border-color: var(--g-blue);
+}
+[data-page="money-truth"] .scenario-tab.active {
+  background: var(--g-navy);
+  border-color: var(--g-navy);
+  color: #fff;
+}
+[data-page="money-truth"] .scenario-content {
+  display: none;
+}
+[data-page="money-truth"] .scenario-content.active {
+  display: block;
+  animation: gFadeIn 0.3s ease;
+}
+
+/* Monthly payment stacked bar visual */
+[data-page="money-truth"] .payment-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+[data-page="money-truth"] .payment-bar {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  align-items: center;
+  gap: 12px;
+}
+[data-page="money-truth"] .payment-bar-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--g-muted);
+}
+[data-page="money-truth"] .payment-bar-track {
+  position: relative;
+  height: 32px;
+  background: var(--g-sky);
+  border-radius: 6px;
+  overflow: hidden;
+}
+[data-page="money-truth"] .payment-bar-fill {
+  height: 100%;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 6px;
+  transition: width 0.6s ease;
+}
+[data-page="money-truth"] .payment-bar-fill.principal { background: var(--g-navy); }
+[data-page="money-truth"] .payment-bar-fill.interest { background: var(--g-blue); }
+[data-page="money-truth"] .payment-bar-fill.taxes { background: var(--g-amber); }
+[data-page="money-truth"] .payment-bar-fill.insurance { background: #7C8CA6; }
+[data-page="money-truth"] .payment-bar-fill.pmi { background: var(--g-coral); }
+[data-page="money-truth"] .payment-total {
+  text-align: center;
+  padding: 16px;
+  background: var(--g-sky);
+  border-radius: var(--g-radius-sm);
+}
+[data-page="money-truth"] .payment-total .amount {
+  font-family: var(--jh-num, 'Fraunces', Georgia, serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--g-navy);
+}
+[data-page="money-truth"] .payment-total .label {
+  font-size: 13px;
+  color: var(--g-muted);
+  margin-top: 2px;
+}
+
+/* Hidden first-year costs grid */
+[data-page="money-truth"] .hidden-costs {
+  margin: 8px 0 20px;
+}
+[data-page="money-truth"] .hidden-costs h3 {
+  font-size: 19px;
+  color: var(--g-navy);
+  margin: 0 0 16px;
+}
+[data-page="money-truth"] .hidden-costs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+[data-page="money-truth"] .hidden-cost-item {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius-sm);
+  padding: 16px 18px;
+}
+[data-page="money-truth"] .hidden-cost-item h4 {
+  font-size: 15px;
+  color: var(--g-navy);
+  margin: 0 0 6px;
+}
+[data-page="money-truth"] .hidden-cost-item .amount {
+  font-family: var(--jh-num, 'Fraunces', Georgia, serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--g-blue);
+  margin-bottom: 6px;
+  display: block;
+}
+[data-page="money-truth"] .hidden-cost-item p {
+  font-size: 13px;
+  color: var(--g-muted);
+  margin: 0;
+}
+
+@keyframes gFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =======================================================================
+   3. CREDIT-ESSENTIALS.HTML
+   ======================================================================= */
+
+/* Credit score range spectrum bar */
+[data-page="credit-essentials"] .score-spectrum {
+  height: 20px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #DC2626 0%, var(--g-coral) 25%, var(--g-amber) 50%, #7BC94C 75%, var(--g-green) 100%);
+  margin-bottom: 12px;
+}
+[data-page="credit-essentials"] .score-labels {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  text-align: center;
+}
+[data-page="credit-essentials"] .score-label .range {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--g-navy);
+  display: block;
+}
+[data-page="credit-essentials"] .score-label .rating {
+  font-size: 11px;
+  color: var(--g-muted);
+  margin-top: 2px;
+}
+
+/* Loan requirement cards */
+[data-page="credit-essentials"] .requirements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+}
+[data-page="credit-essentials"] .requirement-card {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  padding: 20px;
+}
+[data-page="credit-essentials"] .requirement-card h3 {
+  font-size: 17px;
+  color: var(--g-navy);
+  margin: 0 0 4px;
+}
+[data-page="credit-essentials"] .loan-type {
+  font-size: 13px;
+  color: var(--g-muted);
+  margin: 0 0 14px;
+}
+[data-page="credit-essentials"] .requirement-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 0;
+  border-top: 1px solid var(--g-line);
+  font-size: 14px;
+}
+[data-page="credit-essentials"] .requirement-row .label {
+  color: var(--g-muted);
+}
+[data-page="credit-essentials"] .requirement-row .value {
+  font-weight: 700;
+  color: var(--g-text);
+  text-align: right;
+}
+[data-page="credit-essentials"] .requirement-row .value.highlight {
+  color: var(--g-blue);
+  font-size: 16px;
+}
+
+/* Score factor breakdown */
+[data-page="credit-essentials"] .factor-item {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+[data-page="credit-essentials"] .factor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+[data-page="credit-essentials"] .factor-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+[data-page="credit-essentials"] .factor-title h3 {
+  font-size: 16px;
+  color: var(--g-navy);
+  margin: 0;
+}
+[data-page="credit-essentials"] .factor-percentage {
+  flex-shrink: 0;
+  font-family: var(--jh-num, 'Fraunces', Georgia, serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--g-blue);
+}
+[data-page="credit-essentials"] .factor-bar {
+  height: 10px;
+  background: var(--g-sky);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+[data-page="credit-essentials"] .factor-bar-fill {
+  height: 100%;
+  background: var(--g-blue);
+  border-radius: 5px;
+  transition: width 0.6s ease;
+}
+[data-page="credit-essentials"] .factor-description {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--g-text);
+  margin-bottom: 8px;
+}
+[data-page="credit-essentials"] .factor-description:last-child { margin-bottom: 0; }
+[data-page="credit-essentials"] .factor-description strong { color: var(--g-navy); }
+
+/* 30/60/90-day plan tabs: .plan-tabs is undefined; .plan-tab/.plan-content
+   are already global (legacy support), only the tab bar itself needs it */
+[data-page="credit-essentials"] .plan-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+/* .timeline is a bare class already used for a different (auto-fit grid)
+   component elsewhere; this page's 30/60/90 day plan needs its own
+   vertical-line timeline, so it's fully redefined under the page scope */
+[data-page="credit-essentials"] .timeline {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 20px;
+}
+[data-page="credit-essentials"] .timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background: var(--g-line);
+}
+[data-page="credit-essentials"] .timeline-item {
+  position: relative;
+  margin-bottom: 22px;
+}
+[data-page="credit-essentials"] .timeline-item:last-child { margin-bottom: 0; }
+[data-page="credit-essentials"] .timeline-marker {
+  position: absolute;
+  left: -40px;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--g-navy);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+[data-page="credit-essentials"] .timeline-content h4 {
+  font-size: 16px;
+  color: var(--g-navy);
+  margin: 0 0 8px;
+}
+[data-page="credit-essentials"] .timeline-content ul {
+  margin: 0;
+  padding-left: 20px;
+}
+[data-page="credit-essentials"] .timeline-content li {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--g-text);
+  margin-bottom: 4px;
+}
+
+/* Myth grid (2-up on desktop) */
+[data-page="credit-essentials"] .myth-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+[data-page="credit-essentials"] .myth-item {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  padding: 20px;
+}
+[data-page="credit-essentials"] .myth-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+[data-page="credit-essentials"] .myth-header h3 {
+  font-size: 15px;
+  color: var(--g-coral);
+  margin: 0;
+  line-height: 1.4;
+}
+[data-page="credit-essentials"] .reality-content h4 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #00A843;
+  background: rgba(0, 200, 83, 0.1);
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin: 0 0 8px;
+}
+[data-page="credit-essentials"] .reality-content p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--g-text);
+  margin: 0;
+}
+
+/* What hurts / what doesn't */
+[data-page="credit-essentials"] .warning-box {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-left: 4px solid var(--g-coral);
+  border-radius: var(--g-radius);
+  padding: 24px;
+}
+[data-page="credit-essentials"] .warning-box h3 {
+  font-size: 19px;
+  color: var(--g-navy);
+  margin: 0 0 12px;
+}
+[data-page="credit-essentials"] .warning-box ul {
+  margin: 8px 0 18px;
+  padding-left: 20px;
+}
+[data-page="credit-essentials"] .warning-box li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--g-text);
+  margin-bottom: 6px;
+}
+
+/* Quick action cards */
+[data-page="credit-essentials"] .action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+[data-page="credit-essentials"] .action-card {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  padding: 20px;
+  text-align: center;
+}
+[data-page="credit-essentials"] .action-icon {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: var(--g-sky);
+  color: var(--g-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+[data-page="credit-essentials"] .action-card:last-child .action-icon {
+  background: rgba(255, 107, 91, 0.1);
+  color: var(--g-coral);
+}
+[data-page="credit-essentials"] .action-icon svg {
+  width: 22px;
+  height: 22px;
+}
+[data-page="credit-essentials"] .action-card h3 {
+  font-size: 15px;
+  color: var(--g-navy);
+  margin: 0 0 6px;
+}
+[data-page="credit-essentials"] .action-card p {
+  font-size: 13px;
+  color: var(--g-muted);
+  margin: 0 0 10px;
+}
+[data-page="credit-essentials"] .impact {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--g-green);
+  padding: 4px 10px;
+  background: rgba(0, 200, 83, 0.08);
+  border-radius: 6px;
+  display: inline-block;
+}
+[data-page="credit-essentials"] .action-card:last-child .impact {
+  color: var(--g-coral);
+  background: rgba(255, 107, 91, 0.08);
+}
+
+/* =======================================================================
+   4. PROPERTY-TAX-GUIDE.HTML
+   ======================================================================= */
+
+[data-page="property-tax-guide"] .jhl-stat__value--orange {
+  color: var(--g-amber);
+}
+
+[data-page="property-tax-guide"] .tax-calculator {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  padding: 24px;
+}
+[data-page="property-tax-guide"] .tax-calculator h3 {
+  font-size: 19px;
+  color: var(--g-navy);
+  text-align: center;
+  margin: 0 0 6px;
+}
+[data-page="property-tax-guide"] .tax-calculator > p {
+  text-align: center;
+  color: var(--g-muted);
+  font-size: 14px;
+  margin: 0 0 4px;
+}
+[data-page="property-tax-guide"] .calc-result {
+  text-align: center;
+  background: var(--g-navy);
+  border-radius: var(--g-radius-sm);
+  padding: 20px;
+  margin: 20px 0 16px;
+}
+[data-page="property-tax-guide"] .calc-result-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+}
+[data-page="property-tax-guide"] .calc-result-value {
+  font-family: var(--jh-num, 'Fraunces', Georgia, serif);
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--g-volt);
+  margin: 6px 0;
+}
+[data-page="property-tax-guide"] .calc-result-note {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+}
+[data-page="property-tax-guide"] .calc-breakdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+}
+[data-page="property-tax-guide"] .breakdown-item {
+  text-align: center;
+  padding: 14px 10px;
+  background: var(--g-sky);
+  border-radius: var(--g-radius-sm);
+}
+[data-page="property-tax-guide"] .breakdown-value {
+  font-family: var(--jh-num, 'Fraunces', Georgia, serif);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--g-navy);
+}
+[data-page="property-tax-guide"] .breakdown-label {
+  font-size: 12px;
+  color: var(--g-muted);
+  margin-top: 4px;
+}
+
+/* County comparison cards */
+[data-page="property-tax-guide"] .county-comparison {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin: 20px 0;
+}
+[data-page="property-tax-guide"] .county-card {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius-sm);
+  padding: 16px;
+  text-align: center;
+}
+[data-page="property-tax-guide"] .county-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--g-navy);
+  margin-bottom: 8px;
+}
+[data-page="property-tax-guide"] .county-rate {
+  font-family: var(--jh-num, 'Fraunces', Georgia, serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--g-blue);
+}
+[data-page="property-tax-guide"] .county-rate-label {
+  font-size: 11px;
+  color: var(--g-muted);
+  margin: 2px 0 8px;
+}
+[data-page="property-tax-guide"] .county-example {
+  font-size: 12px;
+  color: var(--g-text);
+  padding-top: 8px;
+  border-top: 1px solid var(--g-line);
+}
+
+/* Homestead / exemption cards */
+[data-page="property-tax-guide"] .exemption-card {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  padding: 20px;
+  margin-bottom: 14px;
+}
+[data-page="property-tax-guide"] .exemption-card.highlight {
+  border-color: var(--g-green);
+  background: rgba(0, 200, 83, 0.04);
+}
+[data-page="property-tax-guide"] .exemption-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+[data-page="property-tax-guide"] .exemption-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--g-navy);
+}
+[data-page="property-tax-guide"] .exemption-savings {
+  font-size: 13px;
+  font-weight: 700;
+  color: #00A843;
+  background: rgba(0, 200, 83, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+[data-page="property-tax-guide"] .exemption-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--g-text);
+  margin: 0 0 8px;
+}
+[data-page="property-tax-guide"] .exemption-card p:last-child { margin-bottom: 0; }
+
+/* Escrow monthly payment breakdown */
+[data-page="property-tax-guide"] .escrow-visual {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  padding: 22px;
+  margin: 16px 0;
+}
+[data-page="property-tax-guide"] .escrow-visual h4 {
+  font-size: 17px;
+  color: var(--g-navy);
+  margin: 0 0 6px;
+}
+[data-page="property-tax-guide"] .escrow-breakdown {
+  margin-top: 12px;
+}
+[data-page="property-tax-guide"] .escrow-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-top: 1px solid var(--g-line);
+  font-size: 15px;
+}
+[data-page="property-tax-guide"] .escrow-row:first-child { border-top: none; }
+[data-page="property-tax-guide"] .escrow-label { color: var(--g-muted); }
+[data-page="property-tax-guide"] .escrow-value { font-weight: 700; color: var(--g-text); }
+[data-page="property-tax-guide"] .escrow-row:last-child {
+  border-top: 2px solid var(--g-navy);
+  margin-top: 4px;
+  padding-top: 14px;
+}
+[data-page="property-tax-guide"] .escrow-row:last-child .escrow-label,
+[data-page="property-tax-guide"] .escrow-row:last-child .escrow-value {
+  color: var(--g-navy);
+  font-weight: 700;
+  font-size: 17px;
+}
+
+/* =======================================================================
+   5. LENDER-SHOPPING.HTML
+   ======================================================================= */
+
+[data-page="lender-shopping"] .comparison-tool {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  padding: 24px;
+}
+[data-page="lender-shopping"] .comparison-tool h3 {
+  font-size: 19px;
+  color: var(--g-navy);
+  text-align: center;
+  margin: 0 0 6px;
+}
+[data-page="lender-shopping"] .comparison-tool .intro {
+  text-align: center;
+  color: var(--g-muted);
+  font-size: 14px;
+  margin: 0 0 20px;
+}
+[data-page="lender-shopping"] .lender-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+@media (min-width: 720px) {
+  [data-page="lender-shopping"] .lender-columns { grid-template-columns: repeat(3, 1fr); }
+}
+[data-page="lender-shopping"] .lender-column {
+  position: relative;
+  background: var(--g-sky);
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius-sm);
+  padding: 18px;
+}
+[data-page="lender-shopping"] .lender-column.recommended {
+  background: #fff;
+  border: 2px solid var(--g-green);
+}
+[data-page="lender-shopping"] .lender-column h4 {
+  font-size: 15px;
+  color: var(--g-navy);
+  margin: 0 0 12px;
+}
+[data-page="lender-shopping"] .lender-column .badge {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 3px 10px;
+  background: var(--g-green);
+  color: var(--g-navy);
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 6px;
+}
+[data-page="lender-shopping"] .input-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--g-muted);
+  margin: 12px 0 4px;
+}
+[data-page="lender-shopping"] .input-label:first-of-type { margin-top: 0; }
+[data-page="lender-shopping"] .lender-input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--g-line);
+  border-radius: 6px;
+  font-size: 15px;
+  color: var(--g-text);
+  background: #fff;
+  box-sizing: border-box;
+}
+[data-page="lender-shopping"] .lender-input:focus {
+  outline: none;
+  border-color: var(--g-blue);
+  box-shadow: 0 0 0 3px rgba(21, 101, 160, 0.15);
+}
+[data-page="lender-shopping"] .cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 32px;
+  background: var(--g-navy);
+  color: #fff;
+  border: 0;
+  border-radius: var(--g-radius-sm);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+[data-page="lender-shopping"] .cta-button:hover {
+  background: var(--g-navy-deep);
+  transform: translateY(-1px);
+}
+
+/* Comparison results table */
+[data-page="lender-shopping"] .comparison-results {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--g-line);
+}
+[data-page="lender-shopping"] .comparison-results h4 {
+  font-size: 18px;
+  color: var(--g-navy);
+  text-align: center;
+  margin: 0 0 4px;
+}
+[data-page="lender-shopping"] .result-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px 6px;
+  padding: 12px 0;
+  border-top: 1px solid var(--g-line);
+}
+[data-page="lender-shopping"] .result-label {
+  grid-column: 1 / -1;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--g-muted);
+  margin-bottom: 4px;
+}
+[data-page="lender-shopping"] .result-value {
+  font-family: var(--jh-num, 'Fraunces', Georgia, serif);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--g-text);
+  text-align: center;
+}
+@media (min-width: 480px) {
+  [data-page="lender-shopping"] .result-row {
+    grid-template-columns: 1fr repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    align-items: center;
+  }
+  [data-page="lender-shopping"] .result-label { margin-bottom: 0; }
+  [data-page="lender-shopping"] .result-value { font-size: 15px; }
+}
+[data-page="lender-shopping"] .result-value.winner {
+  color: #00A843;
+}
+[data-page="lender-shopping"] .result-row.jhl-lender__result-total {
+  background: var(--g-sky);
+  border-radius: var(--g-radius-sm);
+  border-top: none;
+  margin-top: 6px;
+}
+[data-page="lender-shopping"] .jhl-lender__result-label-lg {
+  color: var(--g-navy);
+  font-weight: 700;
+}
+
+/* Questions to ask */
+[data-page="lender-shopping"] .question-category {
+  margin-bottom: 24px;
+}
+[data-page="lender-shopping"] .question-category h3 {
+  font-size: 18px;
+  color: var(--g-navy);
+  margin: 0 0 14px;
+}
+[data-page="lender-shopping"] .question-item {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+[data-page="lender-shopping"] .question-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--g-text);
+  margin-bottom: 6px;
+}
+[data-page="lender-shopping"] .question-why {
+  font-size: 13px;
+  color: var(--g-muted);
+}
+
+/* Red flag grid */
+[data-page="lender-shopping"] .red-flag-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
+}
+[data-page="lender-shopping"] .red-flag-item {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-left: 4px solid var(--g-coral);
+  border-radius: var(--g-radius-sm);
+  padding: 16px 18px;
+}
+[data-page="lender-shopping"] .red-flag-item h4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--g-navy);
+  margin: 0 0 8px;
+}
+[data-page="lender-shopping"] .red-flag-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 107, 91, 0.1);
+  color: var(--g-coral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+[data-page="lender-shopping"] .red-flag-icon svg {
+  width: 18px;
+  height: 18px;
+}
+[data-page="lender-shopping"] .red-flag-item p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--g-text);
+  margin: 0;
+}
+
+/* Rate vs fees comparison cards + scenarios (comparison-cards/.comparison-card
+   are only scoped to moving-checklist elsewhere, false negative) */
+[data-page="lender-shopping"] .comparison-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+[data-page="lender-shopping"] .comparison-card {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  padding: 20px;
+}
+[data-page="lender-shopping"] .comparison-card h3 {
+  font-size: 17px;
+  color: var(--g-navy);
+  margin: 0 0 12px;
+}
+[data-page="lender-shopping"] .scenario {
+  background: var(--g-sky);
+  border-radius: var(--g-radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+[data-page="lender-shopping"] .scenario h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--g-blue);
+  margin: 0 0 8px;
+}
+[data-page="lender-shopping"] .scenario-details {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--g-text);
+  margin-bottom: 10px;
+}
+[data-page="lender-shopping"] .scenario-result {
+  font-size: 14px;
+  line-height: 1.8;
+  font-weight: 700;
+  color: var(--g-navy);
+  padding-top: 10px;
+  border-top: 1px solid var(--g-line);
+}
+
+/* =======================================================================
+   6. CLOSING-COSTS-BREAKDOWN.HTML
+   ======================================================================= */
+
+[data-page="closing-costs-breakdown"] .cost-calculator {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  padding: 24px;
+}
+[data-page="closing-costs-breakdown"] .cost-calculator h3 {
+  font-size: 19px;
+  color: var(--g-navy);
+  text-align: center;
+  margin: 0 0 4px;
+}
+[data-page="closing-costs-breakdown"] .results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+[data-page="closing-costs-breakdown"] .result-card {
+  background: var(--g-sky);
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius-sm);
+  padding: 16px;
+  text-align: center;
+}
+[data-page="closing-costs-breakdown"] .result-card.highlight {
+  background: var(--g-navy);
+  border-color: var(--g-navy);
+}
+[data-page="closing-costs-breakdown"] .result-value {
+  font-family: var(--jh-num, 'Fraunces', Georgia, serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--g-navy);
+}
+[data-page="closing-costs-breakdown"] .result-card.highlight .result-value {
+  color: var(--g-volt);
+}
+[data-page="closing-costs-breakdown"] .result-label {
+  font-size: 12px;
+  color: var(--g-muted);
+  margin-top: 4px;
+}
+[data-page="closing-costs-breakdown"] .result-card.highlight .result-label {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Expandable fee categories */
+[data-page="closing-costs-breakdown"] .category-section {
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+[data-page="closing-costs-breakdown"] .category-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  cursor: pointer;
+  background: #fff;
+  transition: background 0.2s ease;
+}
+[data-page="closing-costs-breakdown"] .category-header:hover {
+  background: var(--g-sky);
+}
+[data-page="closing-costs-breakdown"] .category-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--g-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+[data-page="closing-costs-breakdown"] .category-header h3 {
+  flex: 1;
+  font-size: 16px;
+  color: var(--g-navy);
+  margin: 0;
+}
+[data-page="closing-costs-breakdown"] .category-toggle {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: var(--g-muted);
+  transition: transform 0.25s ease;
+}
+[data-page="closing-costs-breakdown"] .category-section.expanded .category-toggle {
+  transform: rotate(180deg);
+}
+[data-page="closing-costs-breakdown"] .category-items {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+[data-page="closing-costs-breakdown"] .category-section.expanded .category-items {
+  max-height: 2000px;
+}
+[data-page="closing-costs-breakdown"] .cost-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--g-line);
+}
+[data-page="closing-costs-breakdown"] .jhl-info-box.cost-item,
+[data-page="closing-costs-breakdown"] .category-items > .jhl-info-box {
+  display: flex;
+  border-top: none;
+  margin: 12px 16px;
+  padding: 16px;
+}
+[data-page="closing-costs-breakdown"] .cost-item-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--g-text);
+}
+[data-page="closing-costs-breakdown"] .cost-item-desc {
+  font-size: 12px;
+  color: var(--g-muted);
+  margin-top: 2px;
+}
+[data-page="closing-costs-breakdown"] .cost-item-range {
+  flex-shrink: 0;
+  text-align: right;
+}
+[data-page="closing-costs-breakdown"] .cost-item-range .range {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--g-navy);
+}
+[data-page="closing-costs-breakdown"] .cost-item-range .negotiable {
+  display: block;
+  font-size: 11px;
+  color: var(--g-green);
+  margin-top: 2px;
+}
+
+/* =======================================================================
+   7. TERMS.HTML
+   ======================================================================= */
+
+[data-page="terms"] .toc {
+  background: #fff;
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  padding: 24px;
+}
+[data-page="terms"] .toc h2 {
+  font-size: 18px;
+  color: var(--g-navy);
+  margin: 0 0 16px;
+}
+[data-page="terms"] .toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+}
+@media (min-width: 640px) {
+  [data-page="terms"] .toc-list { grid-template-columns: 1fr 1fr; }
+}
+[data-page="terms"] .toc-list a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 8px 10px;
+  border-radius: var(--g-radius-sm);
+  color: var(--g-text);
+  text-decoration: none;
+  font-size: 15px;
+  transition: background 0.2s ease;
+}
+[data-page="terms"] .toc-list a:hover {
+  background: var(--g-sky);
+  color: var(--g-navy);
+}
+[data-page="terms"] .toc-number {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--g-sky);
+  color: var(--g-blue);
+  font-size: 12px;
+  font-weight: 700;
+}
+[data-page="terms"] .toc-list a:hover .toc-number {
+  background: var(--g-blue);
+  color: #fff;
+}
+
+/* Numbered section headings + readability measure for legal copy
+   (.section-number is only styled under .worksheet-section elsewhere) */
+[data-page="terms"] .policy-section .jhl-section__inner {
+  max-width: 760px;
+}
+[data-page="terms"] .policy-section p,
+[data-page="terms"] .policy-section li {
+  font-size: 16px;
+  line-height: 1.7;
+}
+[data-page="terms"] .policy-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+[data-page="terms"] .section-number {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--g-navy);
+  color: #fff;
+  font-family: var(--jh-num, 'Fraunces', Georgia, serif);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* =======================================================================
+   8. PRIVACY.HTML
+   ======================================================================= */
+
+[data-page="privacy"] .policy-section .jhl-section__inner {
+  max-width: 760px;
+}
+[data-page="privacy"] .policy-section p,
+[data-page="privacy"] .policy-section li {
+  font-size: 16px;
+  line-height: 1.7;
+}
+[data-page="privacy"] h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+[data-page="privacy"] .section-number {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--g-navy);
+  color: #fff;
+  font-family: var(--jh-num, 'Fraunces', Georgia, serif);
+  font-size: 15px;
+  font-weight: 700;
+}
+[data-page="privacy"] .data-table {
+  width: 100%;
+  min-width: 460px;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 16px 0;
+}
+[data-page="privacy"] .data-table th,
+[data-page="privacy"] .data-table td {
+  padding: 10px 14px;
+  text-align: left;
+  border: 1px solid var(--g-line);
+}
+[data-page="privacy"] .data-table thead th {
+  background: var(--g-sky);
+  color: var(--g-navy);
+  font-size: 12px;
+  font-weight: 700;
+}
+[data-page="privacy"] .jhl-section__inner:has(.data-table) {
+  overflow-x: auto;
+}
+
+/* =======================================================================
+   9. HONEST-TRUTH.HTML
+   ======================================================================= */
+
+/* Everything else on this page (.quiz-intro .quiz-container .question
+   .question-number .option .option.selected .results .score-badge
+   .result-content .next-steps .cta-group) is already fully styled
+   globally. Only the per-question options wrapper is undefined. */
+[data-page="honest-truth"] .options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+[data-page="honest-truth"] .options .option {
+  margin-bottom: 0;
+}
+
+/* BUG FIX: a shared global rule "#results{display:none} #results.active,
+   #results[style*=\"display:block\"]{display:block}" exists for a
+   DIFFERENT page's results panel that also happens to use id="results"
+   and toggles visibility with .active or an inline style. That bare ID
+   selector (specificity 1,0,0) outranks this quiz's own ".results.show"
+   class rule (0,2,0), so the quiz results stayed hidden (display:none)
+   after submitting even though the JS correctly added the "show" class.
+   This ID+class selector matches or exceeds it so the quiz actually
+   reveals its results. */
+[data-page="honest-truth"] #results.show {
+  display: block;
+}
+
+/* =======================================================================
+   10. CLOSING-DAY-GUIDE.HTML
+   ======================================================================= */
+
+/* Danger variant modeled on the existing .jhl-info-box--warning (coral),
+   using red for a higher-severity alert (wire fraud). */
+[data-page="closing-day-guide"] .jhl-info-box--danger {
+  background: rgba(220, 38, 38, 0.06);
+  border-left-color: var(--g-red);
+}
+[data-page="closing-day-guide"] .jhl-info-box--danger .jhl-info-box__icon svg {
+  color: var(--g-red);
+}

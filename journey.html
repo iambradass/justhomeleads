@@ -1,1650 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+<head>
     <!-- PostHog Analytics -->
     <script>
         !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
         posthog.init('phc_J5leAeIhlii1DrCYpJ6deiNfyFrs6fDaYTJDCdcEWN1',{api_host:'https://us.i.posthog.com',person_profiles:'identified_only'});
     </script>
     <!-- End PostHog Analytics -->
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Your Homebuying Journey Map | Just Home Leads
-  </title>
-  <meta content="See exactly where you are in your homebuying journey and what comes next. From exploration to closing, your personalized 12-24 month roadmap to homeownership in DFW." name="description"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 6 Steps to Buying a Home in DFW | Just Home Leads</title>
+    <meta name="description" content="Buying a home in Dallas-Fort Worth is 6 steps, not 60. See every step in order, the guides for each one, and find out which step you are on.">
     <link rel="preload" href="/fonts/fraunces-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/jakarta-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/fonts.css?v=20260713a">
-  <link href="jhl-redesign.min.css?v=20260713a" rel="stylesheet"/>
-     <link rel="canonical" href="https://justhomeleads.com/journey">
+    <link rel="stylesheet" href="jhl-redesign.min.css?v=20260713a">
+    <link rel="stylesheet" href="/jhl-v3.css?v=20260926a">
+    <link rel="canonical" href="https://justhomeleads.com/journey">
     <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Just Home Leads">
-    <meta property="og:title" content="Your Homebuying Journey Map | Just Home Leads">
-    <meta property="og:description" content="DFW's trusted first-time homebuyer education platform.">
+    <meta property="og:title" content="The 6 steps to buying a home in DFW">
+    <meta property="og:description" content="Every step in order, the guides for each one, and a 60-second check to find your step.">
     <meta property="og:url" content="https://justhomeleads.com/journey">
     <meta property="og:image" content="https://justhomeleads.com/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
 </head>
- <body data-page="journey" data-phase="core" data-stage="core">
-  <!-- Skip Link -->
-  <a class="skip-link" href="#main">
-   Skip to content
-  </a>
-  <!-- JHL HEADER v4.1 -->
-  <header class="jhl-header" id="header">
-   <div class="jhl-header__inner">
-    <a class="jhl-logo" href="/">
-     <div class="jhl-logo__icon">
-      <img src="jhl-logo.jpeg" alt="Just Home Leads logo" width="40" height="40" style="width:100%;height:100%;object-fit:contain;border-radius:8px;">
-     </div>
-     <div class="jhl-logo__text">
-      <div class="jhl-logo__wordmark">
-       Just
-       <span>
-        Home
-       </span>
-       Leads
-      </div>
-      <div class="jhl-logo__tagline">
-       Dallas-Fort Worth
-      </div>
-     </div>
-    </a>
-    <nav class="jhl-nav">
-                <div class="jhl-nav__item">
-                    <a class="jhl-nav__link" href="/journey">
-                        Your Journey
-                        <svg class="jhl-nav__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
-                    </a>
-                    <div class="jhl-nav__dropdown jhl-nav__dropdown--mega">
-                        <a class="jhl-nav__dropdown-featured" href="/journey">
-                            Journey Overview: See All Phases
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        </a>
-                        <div class="jhl-nav__dropdown-grid">
-                            <div>
-                                <div class="jhl-nav__dropdown-heading">Explore</div>
-                                <a class="jhl-nav__dropdown-link" href="/credit-essentials">Credit Essentials</a>
-                                <a class="jhl-nav__dropdown-link" href="/down-payment">Down Payment Guide</a>
-                                <a class="jhl-nav__dropdown-link" href="/financial-toolkit">Financial Toolkit</a>
-                                <div class="jhl-nav__dropdown-heading">Get Approved</div>
-                                <a class="jhl-nav__dropdown-link" href="/pre-approval">Pre-Approval Guide</a>
-                                <a class="jhl-nav__dropdown-link" href="/mortgage-types">Mortgage Types</a>
-                                <a class="jhl-nav__dropdown-link" href="/lender-shopping">Lender Shopping</a>
-                            </div>
-                            <div>
-                                <div class="jhl-nav__dropdown-heading">Find Your Home</div>
-                                <a class="jhl-nav__dropdown-link" href="/active-search-strategies">Search Strategies</a>
-                                <a class="jhl-nav__dropdown-link" href="/home-touring-guide">Home Touring</a>
-                                <a class="jhl-nav__dropdown-link" href="/neighborhood-research-guide">Neighborhoods</a>
-                                <div class="jhl-nav__dropdown-heading">Close &amp; Move In</div>
-                                <a class="jhl-nav__dropdown-link" href="/writing-winning-offers">Writing Offers</a>
-                                <a class="jhl-nav__dropdown-link" href="/closing-costs-breakdown">Closing Costs</a>
-                                <a class="jhl-nav__dropdown-link" href="/home-maintenance-schedule">Home Maintenance</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="jhl-nav__item">
-                    <a class="jhl-nav__link" href="/faqs">
-                        Resources
-                        <svg class="jhl-nav__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
-                    </a>
-                    <div class="jhl-nav__dropdown">
-                        <a class="jhl-nav__dropdown-link" href="/faqs">FAQs</a>
-                        <a class="jhl-nav__dropdown-link" href="/jargon-buster">Jargon Buster</a>
-                        <a class="jhl-nav__dropdown-link" href="/action-plan">Action Plan</a>
-                        <a class="jhl-nav__dropdown-link" href="/honest-truth">Honest Truth</a>
-                        <a class="jhl-nav__dropdown-link" href="/reality-check">Reality Check</a>
-                        <a class="jhl-nav__dropdown-link" href="/money-truth">Money Truth</a>
-                    </div>
-                </div>
-                <a class="jhl-nav__link" href="/webinar">Webinar</a>
-                <button class="jhl-explore-btn" id="explore-toggle" aria-label="Explore all topics" aria-expanded="false" aria-controls="explore-menu">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></svg>
-                    Explore
-                </button>
-                <a class="btn btn--primary" href="/journey">
-                    Get Started
-                    <svg class="btn__arrow" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                        <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
-                    </svg>
-                </a>
+<body class="jh" data-page="journey" data-phase="core" data-stage="core">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- JH HEADER v3 -->
+    <header class="jh-header" id="header">
+        <div class="jh-wrap jh-header__inner">
+            <a class="jh-brand" href="/" aria-label="Just Home Leads home">
+                <svg viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="100" fill="#16305A"/><polygon points="256,92 84,262 428,262" fill="#fff"/><rect x="132" y="262" width="248" height="166" fill="#fff"/><rect x="218" y="318" width="76" height="110" fill="#00FF85"/></svg>
+                <span class="jh-brand__word">Just<b>Home</b>Leads</span>
+            </a>
+            <nav class="jh-nav" aria-label="Main">
+                <a href="/honest-truth">Start here</a>
+                <a href="/journey" aria-current="page">The 6 steps</a>
+                <a href="/financial-toolkit">Tools</a>
+                <a href="/faqs">Questions</a>
+                <a href="/webinar">Free class</a>
             </nav>
-    <button aria-label="Open menu" class="jhl-menu-toggle" aria-expanded="false" aria-controls="mobile-nav">
-     <span>
-     </span>
-     <span>
-     </span>
-     <span>
-     </span>
-    </button>
-   </div>
-  </header>
-<div class="jhl-mobile-nav" id="mobile-nav" aria-hidden="true">
-    <div class="jhl-mobile-nav__overlay"></div>
-    <div class="jhl-mobile-nav__panel">
-        <button class="jhl-mobile-nav__close" aria-label="Close menu">&times;</button>
-        <nav class="jhl-mobile-nav__links">
-                <a href="/">Home</a>
-                <div class="jhl-mobile-nav__group">
-                    <button class="jhl-mobile-nav__group-toggle" aria-expanded="false">
-                        Your Journey
-                        <svg class="jhl-mobile-nav__group-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
-                    </button>
-                    <div class="jhl-mobile-nav__group-body">
-                        <a href="/journey">Journey Overview</a>
-                        <a href="/credit-essentials">Credit Essentials</a>
-                        <a href="/down-payment">Down Payment</a>
-                        <a href="/financial-toolkit">Financial Toolkit</a>
-                        <a href="/pre-approval">Pre-Approval</a>
-                        <a href="/mortgage-types">Mortgage Types</a>
-                        <a href="/lender-shopping">Lender Shopping</a>
-                        <a href="/active-search-strategies">Search Strategies</a>
-                        <a href="/home-touring-guide">Home Touring</a>
-                        <a href="/neighborhood-research-guide">Neighborhoods</a>
-                        <a href="/writing-winning-offers">Writing Offers</a>
-                        <a href="/closing-costs-breakdown">Closing Costs</a>
-                        <a href="/closing-day-guide">Closing Day</a>
-                        <a href="/home-maintenance-schedule">Home Maintenance</a>
-                    </div>
-                </div>
-                <div class="jhl-mobile-nav__group">
-                    <button class="jhl-mobile-nav__group-toggle" aria-expanded="false">
-                        Resources
-                        <svg class="jhl-mobile-nav__group-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
-                    </button>
-                    <div class="jhl-mobile-nav__group-body">
-                        <a href="/faqs">FAQs</a>
-                        <a href="/jargon-buster">Jargon Buster</a>
-                        <a href="/action-plan">Action Plan</a>
-                        <a href="/honest-truth">Honest Truth</a>
-                        <a href="/reality-check">Reality Check</a>
-                        <a href="/money-truth">Money Truth</a>
-                    </div>
-                </div>
-                <a href="/webinar">Webinar</a>
-                <a href="/journey" class="btn btn--primary">Get Started</a>
+            <a class="jh-btn jh-btn--volt jh-header__cta" href="/#check">Am I ready?</a>
+            <button class="jh-menu-btn" id="jh-menu-open" aria-expanded="false" aria-controls="jh-sheet">
+                Menu
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="jh-sheet" id="jh-sheet" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true">
+        <div class="jh-sheet__top">
+            <a class="jh-brand" href="/" aria-label="Just Home Leads home">
+                <svg viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="100" fill="#16305A"/><polygon points="256,92 84,262 428,262" fill="#fff"/><rect x="132" y="262" width="248" height="166" fill="#fff"/><rect x="218" y="318" width="76" height="110" fill="#00FF85"/></svg>
+                <span class="jh-brand__word">Just<b>Home</b>Leads</span>
+            </a>
+            <button class="jh-sheet__close" id="jh-menu-close" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <div class="jh-sheet__body">
+            <nav class="jh-sheet__main" aria-label="Main">
+                <a href="/honest-truth">Start here <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="/journey">The 6 steps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="/financial-toolkit">Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="/faqs">Questions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="/webinar">Free class <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
             </nav>
+            <p class="jh-sheet__label">Jump to a step</p>
+            <ol class="jh-sheet__steps">
+                <li><a href="/honest-truth"><span>1</span> Can I do this?</a></li>
+                <li><a href="/credit-essentials"><span>2</span> Get your money ready</a></li>
+                <li><a href="/pre-approval"><span>3</span> Get pre-approved</a></li>
+                <li><a href="/active-search-strategies"><span>4</span> Find your home</a></li>
+                <li><a href="/writing-winning-offers"><span>5</span> Make an offer</a></li>
+                <li><a href="/closing-day-guide"><span>6</span> Contract to keys</a></li>
+            </ol>
+            <a class="jh-btn jh-btn--volt" href="/#check">Am I ready? 60-second check</a>
+        </div>
     </div>
-</div>
-    <!-- Full-Screen Explore Menu -->
-    <div class="jhl-explore-menu" id="explore-menu" aria-hidden="true">
-        <div class="jhl-explore-menu__bg"></div>
-        <div class="jhl-explore-menu__inner">
-            <div class="jhl-explore-menu__header">
-                <h2 class="jhl-explore-menu__title">Explore <span>Your Journey</span></h2>
-                <button class="jhl-explore-menu__close" id="explore-close" aria-label="Close menu">&times;</button>
-            </div>
 
-            <div class="jhl-explore-menu__quick">
-                <a href="/journey">Journey Map</a>
-                <a href="/reality-check">Am I Ready?</a>
-                <a href="/webinar">Free Webinar</a>
-                <a href="/financial-toolkit">Financial Toolkit</a>
-                <a href="/action-plan">12-Month Action Plan</a>
-            </div>
-
-            <div class="jhl-explore-menu__phases">
-                <div class="jhl-explore-menu__phase">
-                    <div class="jhl-explore-menu__phase-num">Phase 1</div>
-                    <div class="jhl-explore-menu__phase-title">Financial Prep</div>
-                    <a href="/credit-essentials">Credit Essentials</a>
-                    <a href="/credit-boost">Credit Boost Plan</a>
-                    <a href="/debt-vs-saving">Debt vs. Saving</a>
-                    <a href="/down-payment">Down Payment Guide</a>
-                    <a href="/financial-toolkit">Financial Toolkit</a>
-                </div>
-
-                <div class="jhl-explore-menu__phase">
-                    <div class="jhl-explore-menu__phase-num">Phase 2</div>
-                    <div class="jhl-explore-menu__phase-title">Getting Pre-Approved</div>
-                    <a href="/pre-approval">Pre-Approval Guide</a>
-                    <a href="/pre-approval-process">The Process</a>
-                    <a href="/mortgage-types">Mortgage Types</a>
-                    <a href="/interest-rates-explained">Interest Rates</a>
-                    <a href="/lender-shopping">Lender Shopping</a>
-                    <a href="/choosing-real-estate-agent">Choosing an Agent</a>
-                </div>
-
-                <div class="jhl-explore-menu__phase">
-                    <div class="jhl-explore-menu__phase-num">Phase 3</div>
-                    <div class="jhl-explore-menu__phase-title">House Hunting</div>
-                    <a href="/home-priorities-worksheet">Priorities Worksheet</a>
-                    <a href="/active-search-strategies">Search Strategies</a>
-                    <a href="/evaluating-properties">Evaluating Properties</a>
-                    <a href="/home-touring-guide">Home Touring Guide</a>
-                    <a href="/neighborhood-research-guide">Neighborhood Research</a>
-                    <a href="/school-district-guide">School Districts</a>
-                </div>
-
-                <div class="jhl-explore-menu__phase">
-                    <div class="jhl-explore-menu__phase-num">Phase 4</div>
-                    <div class="jhl-explore-menu__phase-title">Making an Offer</div>
-                    <a href="/writing-winning-offers">Writing Offers</a>
-                    <a href="/negotiation-strategies">Negotiation Strategies</a>
-                    <a href="/multiple-offer-situations">Multiple Offers</a>
-                    <a href="/competitive-market-strategy">Competitive Markets</a>
-                </div>
-
-                <div class="jhl-explore-menu__phase">
-                    <div class="jhl-explore-menu__phase-num">Phase 5</div>
-                    <div class="jhl-explore-menu__phase-title">Under Contract</div>
-                    <a href="/home-inspection-guide">Home Inspection</a>
-                    <a href="/appraisal-process">Appraisal Process</a>
-                    <a href="/title-and-survey">Title &amp; Survey</a>
-                    <a href="/closing-costs-breakdown">Closing Costs</a>
-                    <a href="/final-loan-approval">Final Loan Approval</a>
-                </div>
-
-                <div class="jhl-explore-menu__phase">
-                    <div class="jhl-explore-menu__phase-num">Phase 6 &amp; 7</div>
-                    <div class="jhl-explore-menu__phase-title">Closing &amp; Homeownership</div>
-                    <a href="/final-walkthrough">Final Walkthrough</a>
-                    <a href="/closing-day-guide">Closing Day Guide</a>
-                    <a href="/first-week-homeowner">First Week as Owner</a>
-                    <a href="/home-maintenance-schedule">Maintenance Schedule</a>
-                    <a href="/building-equity">Building Equity</a>
-                    <a href="/moving-checklist">Moving Checklist</a>
+    <main id="main">
+        <section class="jh-hero jh-hero--short">
+            <div class="jh-wrap">
+                <p class="jh-hero__kicker">The whole process, in order</p>
+                <h1>6 steps. <span class="jh-hi">Not 60.<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14 C 80 4, 200 4, 296 12"/></svg></span></h1>
+                <p class="jh-hero__lede">Everybody makes buying a home sound like a maze. It is really a trail. Do these in order, one at a time, and you will always know what comes next.</p>
+                <div class="jh-hero__actions">
+                    <a class="jh-btn jh-btn--volt" href="/#check">Find my step in 60 seconds <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                 </div>
             </div>
+        </section>
 
-            <div class="jhl-explore-menu__resources">
-                <div class="jhl-explore-menu__resources-title">Resources &amp; Tools</div>
-                <div class="jhl-explore-menu__resources-grid">
-                    <a href="/faqs">FAQs</a>
-                    <a href="/jargon-buster">Jargon Buster (107 terms)</a>
-                    <a href="/action-plan">12-Month Action Plan</a>
-                    <a href="/honest-truth">The Honest Truth</a>
-                    <a href="/reality-check">Reality Check Quiz</a>
-                    <a href="/red-flags-checklist">Red Flags Checklist</a>
-                    <a href="/money-truth">Money Truth</a>
-                    <a href="/market-timing">Market Timing</a>
-                    <a href="/property-tax-guide">Property Tax Guide</a>
-                    <a href="/homeowner-resources">Homeowner Resources</a>
+        <section class="jh-sec" aria-label="The 6 steps">
+            <div class="jh-wrap">
+                <ol class="jh-steps">
+            <li class="jh-step jh-reveal" id="step-1" data-step="1">
+                <div class="jh-step__head">
+                    <span class="jh-step__num" aria-hidden="true">1</span>
+                    <div>
+                        <span class="jh-step__of">Step 1 of 6</span>
+                        <h2>Can I do this?</h2>
+                    </div>
+                    <span class="jh-step__pin">You are here</span>
+                </div>
+                <p class="jh-step__desc">Figure out what buying really costs in DFW, whether now is the right time, and where you honestly stand today.</p>
+                <p class="jh-step__tip">Start with the 60-second check, then the honest numbers.</p>
+                <ul class="jh-step__guides">
+<li><a href="/honest-truth">The Honest Truth About Homebuying</a></li>
+<li><a href="/money-truth">The Money Truth</a></li>
+<li><a href="/market-timing">DFW Market Timing Guide</a></li>
+<li><a href="/action-plan">Your 12-Month Homebuying Action Plan</a></li>
+                </ul>
+                <a class="jh-btn jh-btn--navy jh-step__go" href="/honest-truth">Start step 1 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </li>
+            <li class="jh-step jh-reveal" id="step-2" data-step="2">
+                <div class="jh-step__head">
+                    <span class="jh-step__num" aria-hidden="true">2</span>
+                    <div>
+                        <span class="jh-step__of">Step 2 of 6</span>
+                        <h2>Get your money ready</h2>
+                    </div>
+                    <span class="jh-step__pin">You are here</span>
+                </div>
+                <p class="jh-step__desc">Credit, savings and debt. These are the three numbers a lender looks at first, and the step most people spend the longest on.</p>
+                <p class="jh-step__tip">You can do this part at your own pace. Small fixes add up fast.</p>
+                <ul class="jh-step__guides">
+<li><a href="/credit-essentials">Credit Score Essentials for First-Time Buyers</a></li>
+<li><a href="/credit-boost">The 90-Day Credit Boost Plan</a></li>
+<li><a href="/debt-vs-saving">Debt Paydown vs. Saving Strategy</a></li>
+<li><a href="/down-payment">Down Payment Acceleration Guide</a></li>
+<li><a href="/financial-toolkit">Financial Preparation Toolkit</a></li>
+                </ul>
+                <a class="jh-btn jh-btn--navy jh-step__go" href="/credit-essentials">Start step 2 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </li>
+            <li class="jh-step jh-reveal" id="step-3" data-step="3">
+                <div class="jh-step__head">
+                    <span class="jh-step__num" aria-hidden="true">3</span>
+                    <div>
+                        <span class="jh-step__of">Step 3 of 6</span>
+                        <h2>Get pre-approved</h2>
+                    </div>
+                    <span class="jh-step__pin">You are here</span>
+                </div>
+                <p class="jh-step__desc">A lender checks your finances and puts your budget in writing. Then you pick the agent who will help you shop.</p>
+                <p class="jh-step__tip">Compare at least 3 lenders. It is the easiest money you will ever save.</p>
+                <ul class="jh-step__guides">
+<li><a href="/pre-approval">Pre-Approval 101: Your First Real Step</a></li>
+<li><a href="/resource-2-2b-document-checklist">Don&#x27;t Let Missing Paperwork Kill Your Deal</a></li>
+<li><a href="/pre-approval-next-steps">Your Pre-Approval Number: Now What?</a></li>
+<li><a href="/mortgage-types">Mortgage Types: Find Your Best Fit</a></li>
+<li><a href="/interest-rates-explained">Understanding Interest Rates &amp; Mortgage Terms</a></li>
+<li><a href="/lender-shopping">Lender Shopping Guide</a></li>
+<li><a href="/self-employed-guide">Self-Employed &amp; Non-Traditional Income Guide</a></li>
+<li><a href="/choosing-real-estate-agent">Choosing a Real Estate Agent</a></li>
+                </ul>
+                <a class="jh-btn jh-btn--navy jh-step__go" href="/pre-approval">Start step 3 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </li>
+            <li class="jh-step jh-reveal" id="step-4" data-step="4">
+                <div class="jh-step__head">
+                    <span class="jh-step__num" aria-hidden="true">4</span>
+                    <div>
+                        <span class="jh-step__of">Step 4 of 6</span>
+                        <h2>Find your home</h2>
+                    </div>
+                    <span class="jh-step__pin">You are here</span>
+                </div>
+                <p class="jh-step__desc">Tour homes without getting fooled, spot red flags early, and choose the right part of town for your life and budget.</p>
+                <p class="jh-step__tip">Decide your must-haves before you fall for a kitchen.</p>
+                <ul class="jh-step__guides">
+<li><a href="/home-priorities-worksheet">Home Priorities Worksheet</a></li>
+<li><a href="/active-search-strategies">Active Search Strategies</a></li>
+<li><a href="/home-touring-guide">The Home Touring Masterclass</a></li>
+<li><a href="/evaluating-properties">Evaluating Properties Like a Pro</a></li>
+<li><a href="/red-flags-checklist">Red Flags Checklist</a></li>
+<li><a href="/neighborhood-research-guide">DFW Neighborhood Research Guide</a></li>
+<li><a href="/school-district-guide">DFW School District Deep Dive</a></li>
+<li><a href="/property-tax-guide">DFW Property Tax Survival Guide</a></li>
+<li><a href="/new-vs-existing-homes">New Construction vs. Existing Homes</a></li>
+                </ul>
+                <a class="jh-btn jh-btn--navy jh-step__go" href="/active-search-strategies">Start step 4 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </li>
+            <li class="jh-step jh-reveal" id="step-5" data-step="5">
+                <div class="jh-step__head">
+                    <span class="jh-step__num" aria-hidden="true">5</span>
+                    <div>
+                        <span class="jh-step__of">Step 5 of 6</span>
+                        <h2>Make an offer</h2>
+                    </div>
+                    <span class="jh-step__pin">You are here</span>
+                </div>
+                <p class="jh-step__desc">Decide how much to offer, what to ask the seller for, and how to win without overpaying.</p>
+                <p class="jh-step__tip">In Texas, the option period is your safety net. Protect it.</p>
+                <ul class="jh-step__guides">
+<li><a href="/writing-winning-offers">Writing Winning Offers</a></li>
+<li><a href="/competitive-market-strategy">DFW Competitive Market Strategy</a></li>
+<li><a href="/multiple-offer-situations">Navigating Multiple Offer Situations</a></li>
+<li><a href="/negotiation-strategies">Negotiation Strategies</a></li>
+                </ul>
+                <a class="jh-btn jh-btn--navy jh-step__go" href="/writing-winning-offers">Start step 5 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </li>
+            <li class="jh-step jh-reveal" id="step-6" data-step="6">
+                <div class="jh-step__head">
+                    <span class="jh-step__num" aria-hidden="true">6</span>
+                    <div>
+                        <span class="jh-step__of">Step 6 of 6</span>
+                        <h2>Contract to keys</h2>
+                    </div>
+                    <span class="jh-step__pin">You are here</span>
+                </div>
+                <p class="jh-step__desc">Inspection, appraisal, final loan approval and closing day. Usually about 30 to 45 days of paperwork, then keys.</p>
+                <p class="jh-step__tip">Do not open new credit or change jobs until you close.</p>
+                <ul class="jh-step__guides">
+<li><a href="/home-inspection-guide">The Home Inspection: Your Last Line of Defense</a></li>
+<li><a href="/appraisal-process">The Appraisal Process: What It Is and Why It Matters</a></li>
+<li><a href="/title-and-survey">Title Insurance &amp; Property Surveys Explained</a></li>
+<li><a href="/closing-costs-breakdown">Closing Costs Breakdown</a></li>
+<li><a href="/final-loan-approval">Final Loan Approval: From Underwriting to Clear to Close</a></li>
+<li><a href="/final-walkthrough">Final Walkthrough Checklist</a></li>
+<li><a href="/closing-day-guide">Closing Day Guide</a></li>
+                </ul>
+                <a class="jh-btn jh-btn--navy jh-step__go" href="/closing-day-guide">Start step 6 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="jh-sec jh-sec--sky" aria-labelledby="after-title">
+            <div class="jh-wrap">
+                <div class="jh-sec__head">
+                    <h2 id="after-title">After you move in.</h2>
+                    <p>The first week, the move itself, and keeping your home (and its value) in good shape.</p>
+                </div>
+                <ul class="jh-step__guides jh-step__guides--wide">
+<li><a href="/first-week-homeowner">Your First Week as a Homeowner</a></li>
+<li><a href="/moving-checklist">Your Complete Moving Checklist</a></li>
+<li><a href="/homeowner-resources">You Did It!</a></li>
+<li><a href="/home-maintenance-schedule">Home Maintenance Schedule</a></li>
+<li><a href="/building-equity">Building Home Equity</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FREE CLASS -->
+        <section class="jh-class" aria-labelledby="class-title">
+            <div class="jh-wrap jh-class__grid">
+                <div class="jh-reveal">
+                    <h2 id="class-title">Not ready for a lender? Come to the free class.</h2>
+                    <p>One hour, live, online. We walk through the whole thing start to finish and answer your questions. Camera off is totally fine.</p>
+                </div>
+                <div class="jh-class__when jh-reveal">
+                    <span class="jh-class__label">Next class</span>
+                    <span class="jh-class__date" id="jh-class-date">Last Friday of the month</span>
+                    <span class="jh-class__time">12:00 PM Central, online</span>
+                    <a class="jh-btn jh-btn--volt" href="/webinar">Save my seat <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <div class="jh-class__host">
+                        <img src="images/bradley-patterson.jpg" alt="" width="44" height="44" loading="lazy">
+                        <span>Hosted by Bradley Patterson, founder of Just Home Leads</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
+        <!-- HUMAN ASK -->
+        <section class="jh-sec" id="verified-network" aria-labelledby="human-title">
+            <div class="jh-wrap jh-human">
+                <div class="jh-reveal">
+                    <h2 id="human-title">Rather talk to a real person?</h2>
+                    <p>When you're ready, we'll connect you with one local lender or agent we trust. You text them when you want. Nobody calls you at dinner.</p>
+                </div>
+                <div class="jh-human__actions jh-reveal">
+                    <a class="jh-btn jh-btn--navy" href="#verified-network">Connect me with someone <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a class="jh-textlink" href="/#check">Not sure yet? Take the readiness check</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <!-- ========================================
-     SECTION 1: PAGE HERO (Centered variant)
-     ======================================== -->
-  <section class="jhl-hero jhl-hero--centered">
-   <div class="jhl-hero__bg">
-    <div class="jhl-hero__shape jhl-hero__shape--1"></div>
-    <div class="jhl-hero__shape jhl-hero__shape--2"></div>
-   </div>
-   <div class="jhl-hero__inner">
-    <div class="jhl-hero__content">
-     <span class="jhl-badge"> Your Complete Roadmap</span>
-     <h1>Your Homebuying Journey Map</h1>
-     <p class="jhl-hero__subtitle">See the complete path from "Should I buy?" to "Keys in hand!", simplified, realistic, and personalized to where YOU are right now.</p>
+    <!-- JH FOOTER v3 -->
+    <footer class="jh-footer">
+        <div class="jh-wrap">
+            <div class="jh-footer__grid">
+                <div class="jh-footer__brand">
+                    <a class="jh-brand" href="/" aria-label="Just Home Leads home">
+                        <svg viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="100" fill="#16305A"/><polygon points="256,92 84,262 428,262" fill="#fff"/><rect x="132" y="262" width="248" height="166" fill="#fff"/><rect x="218" y="318" width="76" height="110" fill="#00FF85"/></svg>
+                        <span class="jh-brand__word">Just<b>Home</b>Leads</span>
+                    </a>
+                    <p>Straight answers for first-time buyers in Dallas-Fort Worth. Free to use, always.</p>
+                </div>
+                <div>
+                    <h4>The 6 steps</h4>
+                    <ul>
+                        <li><a href="/honest-truth">1. Can I do this?</a></li>
+                        <li><a href="/credit-essentials">2. Get your money ready</a></li>
+                        <li><a href="/pre-approval">3. Get pre-approved</a></li>
+                        <li><a href="/active-search-strategies">4. Find your home</a></li>
+                        <li><a href="/writing-winning-offers">5. Make an offer</a></li>
+                        <li><a href="/closing-day-guide">6. Contract to keys</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="/#check">Am I ready?</a></li>
+                        <li><a href="/financial-toolkit">Calculators</a></li>
+                        <li><a href="/faqs">Questions</a></li>
+                        <li><a href="/jargon-buster">Words you'll hear</a></li>
+                        <li><a href="/webinar">Free class</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Us</h4>
+                    <ul>
+                        <li><a href="#verified-network">Talk to a person</a></li>
+                        <li><a href="/privacy">Privacy</a></li>
+                        <li><a href="/terms">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="jh-footer__bottom">
+                <span>&copy; 2026 Just Home Leads</span>
+                <span>Dallas-Fort Worth, Texas</span>
+            </div>
+        </div>
+    </footer>
 
-     <div class="jhl-hero__cta-group">
-      <a href="#main" class="btn btn--primary" data-track-event="hero_cta_clicked" data-track-category="journey" data-track-label="find-your-stage">
-       Find Your Stage
-       <svg class="btn__arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-      <a href="/honest-truth" class="btn btn--outline" data-track-event="hero_cta_clicked" data-track-category="journey" data-track-label="am-i-ready">Not Sure If You're Ready?</a>
-     </div>
-    </div>
-   </div>
-  </section>
-  <!-- ========================================
-     SECTION 2: INTRO (What You'll Learn)
-     ======================================== -->
-  <section class="jhl-intro">
-   <div class="jhl-intro__inner">
-    <h2>
-     The Complete Journey at a Glance
-    </h2>
-    <p>
-     Most people think homebuying is: save money → look at houses → buy house.
-     <strong>
-      LOL, NO.
-     </strong>
-    </p>
-    <p>
-     The real journey has
-     <strong>
-      6 major phases
-     </strong>
-     with
-     <strong>
-      18 distinct stages
-     </strong>
-     spanning
-     <strong>
-      12-24 months
-     </strong>
-     (on average). Some people move faster, some slower. There is no "right" timeline, only YOUR timeline.
-    </p>
-    <p>
-     <strong>
-      Here's what makes this different:
-     </strong>
-     We'll show you exactly where you are, what comes next, and what you need at each stage. No mystery. No gatekeeping. Just the roadmap.
-    </p>
-    <div class="timeline-stats" data-track-event="stats_viewed" data-track-category="journey" data-track-label="intro-stats">
-     <div class="stat-card">
-      <span class="stat-number">6</span>
-      <span class="stat-label">Major Phases</span>
-     </div>
-     <div class="stat-card">
-      <span class="stat-number">18</span>
-      <span class="stat-label">Key Stages</span>
-     </div>
-     <div class="stat-card">
-      <span class="stat-number">12-24</span>
-      <span class="stat-label">Months (Average)</span>
-     </div>
-     <div class="stat-card">
-      <span class="stat-number">&infin;</span>
-      <span class="stat-label">Your Own Pace</span>
-     </div>
-    </div>
-   </div>
-  </section>
-  <!-- ========================================
-     SECTION 3: CORE CONTENT
-     ======================================== -->
-  <main id="main">
-   <section class="jhl-section jhl-section--white">
-    <div class="jhl-section__inner">
-     <div class="timeline-selector" data-track-event="stage_selector_viewed" data-track-category="journey" data-track-label="stage-selector">
-      <h3>Where Are You in Your Journey?</h3>
-      <p class="jhl-journey__selector-desc">Select your current stage to personalize the timeline:</p>
-      <div class="selector-buttons">
-       <button class="stage-btn active" data-stage="exploration" data-track-event="stage_selected" data-track-category="journey" data-track-label="exploration"> Just Exploring</button>
-       <button class="stage-btn" data-stage="foundation" data-track-event="stage_selected" data-track-category="journey" data-track-label="foundation"> Building Foundation</button>
-       <button class="stage-btn" data-stage="preparation" data-track-event="stage_selected" data-track-category="journey" data-track-label="preparation"> Preparing to Buy</button>
-       <button class="stage-btn" data-stage="shopping" data-track-event="stage_selected" data-track-category="journey" data-track-label="shopping"> Shopping for Homes</button>
-       <button class="stage-btn" data-stage="contract" data-track-event="stage_selected" data-track-category="journey" data-track-label="contract"> Under Contract</button>
-       <button class="stage-btn" data-stage="homeowner" data-track-event="stage_selected" data-track-category="journey" data-track-label="homeowner"> Already a Homeowner</button>
-      </div>
-      <p class="jhl-journey__selector-hint">Don't know? Pick "Just Exploring" and we'll help you figure it out.</p>
-     </div>
-     <div class="journey-timeline">
-      <!-- PHASE 1: EXPLORATION -->
-      <div class="phase-section">
-       <div class="phase-header">
-        <h2>
-         Phase 1: Exploration &amp; Discovery
-        </h2>
-        <div class="phase-meta">
-         <span>
-          ⏱ Timeline: 1-3 months
-         </span>
-         <span>
-           Goal: Decide if homeownership is right for you
-         </span>
-         <span>
-           Feeling: Curious, overwhelmed, hopeful
-         </span>
-        </div>
-       </div>
-       <!-- Stage 1.1 -->
-       <div class="stage-item right current" data-phase="exploration">
-        <div class="stage-content" onclick="toggleDetails(this)">
-         <h3>
-          Initial Awareness
-         </h3>
-         <p>
-          You're thinking about buying a home but not sure if you're ready or how to start.
-         </p>
-         <span class="you-are-here">
-           YOU ARE HERE
-         </span>
-         <div class="expandable-content">
-          <div class="detail-section">
-           <h4>
-            What's Happening:
-           </h4>
-           <p>
-            You've started wondering if homeownership makes sense. Maybe you saw a friend's new house, maybe rent went up again, or maybe you're just tired of landlords.
-           </p>
-           <div class="key-questions">
-            <strong>
-             Questions You're Asking:
-            </strong>
-            <ul>
-             <li>
-              "Am I ready to buy a home?"
-             </li>
-             <li>
-              "Can I even afford this?"
-             </li>
-             <li>
-              "What does the process look like?"
-             </li>
-             <li>
-              "Am I too young/old/late?"
-             </li>
-            </ul>
-           </div>
-           <div class="resources-needed">
-            <strong>
-             Resources You Need:
-            </strong>
-            <ul>
-             <li>
-              Honest readiness assessment (you just did this!)
-             </li>
-             <li>
-              Journey map overview (you're reading it now!)
-             </li>
-             <li>
-              First-time buyer FAQs
-             </li>
-             <li>
-              Rent vs. buy calculator
-             </li>
-            </ul>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="stage-marker">
-         <div class="stage-dot">
-          1
-         </div>
-        </div>
-        <div class="stage-details">
-         <strong>
-          Week 1-2
-         </strong>
-         Starting to explore
-        </div>
-       </div>
-       <!-- Stage 1.2 -->
-       <div class="stage-item left" data-phase="exploration">
-        <div class="stage-content" onclick="toggleDetails(this)">
-         <h3>
-          Initial Research
-         </h3>
-         <p>
-          Googling everything, getting conflicting advice, learning the basics (and feeling overwhelmed).
-         </p>
-         <div class="expandable-content">
-          <div class="detail-section">
-           <h4>
-            What's Happening:
-           </h4>
-           <p>
-            You're deep in research mode. YouTube videos, Reddit threads, asking friends, reading articles. Information overload is real.
-           </p>
-           <div class="key-questions">
-            <strong>
-             Questions You're Asking:
-            </strong>
-            <ul>
-             <li>
-              "How much do I actually need for down payment?"
-             </li>
-             <li>
-              "What's a good credit score?"
-             </li>
-             <li>
-              "What are closing costs?"
-             </li>
-             <li>
-              "Do I really need 20% down?"
-             </li>
-            </ul>
-           </div>
-           <div class="resources-needed">
-            <strong>
-             Resources You Need:
-            </strong>
-            <ul>
-             <li>
-              DFW market reality check (real prices, real stats)
-             </li>
-             <li>
-              Complete cost breakdown
-             </li>
-             <li>
-              Credit score essentials
-             </li>
-             <li>
-              Jargon buster (real estate dictionary)
-             </li>
-            </ul>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="stage-marker">
-         <div class="stage-dot">
-          2
-         </div>
-        </div>
-        <div class="stage-details">
-         <strong>
-          Week 3-6
-         </strong>
-         Learning the basics
-        </div>
-       </div>
-       <!-- Stage 1.3 -->
-       <div class="stage-item right" data-phase="exploration">
-        <div class="stage-content" onclick="toggleDetails(this)">
-         <h3>
-          Serious Consideration
-         </h3>
-         <p>
-          Deciding if you're actually going to do this or if you need more time to prepare.
-         </p>
-         <div class="expandable-content">
-          <div class="detail-section">
-           <h4>
-            What's Happening:
-           </h4>
-           <p>
-            Research is done. Now it's decision time: commit to the journey or wait? This is where many people either move forward or get stuck.
-           </p>
-           <div class="key-questions">
-            <strong>
-             Questions You're Asking:
-            </strong>
-            <ul>
-             <li>
-              "Can I really afford DFW's market?"
-             </li>
-             <li>
-              "Should I wait for prices to drop?"
-             </li>
-             <li>
-              "How do I start preparing financially?"
-             </li>
-             <li>
-              "When should I talk to a lender?"
-             </li>
-            </ul>
-           </div>
-           <div class="resources-needed">
-            <strong>
-             Resources You Need:
-            </strong>
-            <ul>
-             <li>
-              12-month action plan
-             </li>
-             <li>
-              Market timing decision guide
-             </li>
-             <li>
-              Pre-approval 101
-             </li>
-             <li>
-              Financial preparation toolkit
-             </li>
-            </ul>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="stage-marker">
-         <div class="stage-dot">
-          3
-         </div>
-        </div>
-        <div class="stage-details">
-         <strong>
-          Week 7-12
-         </strong>
-         Committing to journey
-        </div>
-       </div>
-      </div>
-      <!-- PHASE 2: FOUNDATION BUILDING -->
-      <div class="phase-section">
-       <div class="phase-header">
-        <h2>
-         Phase 2: Foundation Building
-        </h2>
-        <div class="phase-meta">
-         <span>
-          ⏱ Timeline: 3-9 months
-         </span>
-         <span>
-           Goal: Get pre-approved for a mortgage
-         </span>
-         <span>
-           Feeling: Determined, motivated, sometimes discouraged
-         </span>
-        </div>
-       </div>
-       <!-- Stage 2.1 -->
-       <div class="stage-item left" data-phase="foundation">
-        <div class="stage-content" onclick="toggleDetails(this)">
-         <h3>
-          Financial Foundation
-         </h3>
-         <p>
-          Building credit, saving for down payment, paying down debt, learning about mortgages.
-         </p>
-         <div class="expandable-content">
-          <div class="detail-section">
-           <h4>
-            What's Happening:
-           </h4>
-           <p>
-            You're actively working on your finances. Every paycheck, some money goes to savings. You're checking your credit score monthly. Progress feels slow but it's happening.
-           </p>
-           <div class="key-questions">
-            <strong>
-             Questions You're Asking:
-            </strong>
-            <ul>
-             <li>
-              "How can I save faster?"
-             </li>
-             <li>
-              "Pay off debt or save for down payment?"
-             </li>
-             <li>
-              "How do I build credit quickly?"
-             </li>
-             <li>
-              "What mortgage type is right for me?"
-             </li>
-            </ul>
-           </div>
-           <div class="resources-needed">
-            <strong>
-             Resources You Need:
-            </strong>
-            <ul>
-             <li>
-              90-day credit boost plan
-             </li>
-             <li>
-              Mortgage types comparison
-             </li>
-             <li>
-              Down payment acceleration guide
-             </li>
-             <li>
-              Debt vs. savings strategy
-             </li>
-            </ul>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="stage-marker">
-         <div class="stage-dot">
-          4
-         </div>
-        </div>
-        <div class="stage-details">
-         <strong>
-          Month 1-3
-         </strong>
-         Building your foundation
-        </div>
-       </div>
-       <!-- Stage 2.2 -->
-       <div class="stage-item right" data-phase="foundation">
-        <div class="stage-content" onclick="toggleDetails(this)">
-         <h3>
-          Mortgage Education
-         </h3>
-         <p>
-          Learning about rates, terms, lenders, and preparing documents for pre-approval.
-         </p>
-         <div class="expandable-content">
-          <div class="detail-section">
-           <h4>
-            What's Happening:
-           </h4>
-           <p>
-            You're deep in mortgage education. FHA vs. Conventional. 15-year vs. 30-year. Points. APR. It's a lot, but you're getting it.
-           </p>
-           <div class="key-questions">
-            <strong>
-             Questions You're Asking:
-            </strong>
-            <ul>
-             <li>
-              "How do I find a good lender?"
-             </li>
-             <li>
-              "What documents do I need?"
-             </li>
-             <li>
-              "How do interest rates work?"
-             </li>
-             <li>
-              "15-year or 30-year mortgage?"
-             </li>
-            </ul>
-           </div>
-           <div class="resources-needed">
-            <strong>
-             Resources You Need:
-            </strong>
-            <ul>
-             <li>
-              Lender shopping guide
-             </li>
-             <li>
-              Pre-approval document checklist
-             </li>
-             <li>
-              Interest rates explained
-             </li>
-             <li>
-              Self-employed income guide
-             </li>
-            </ul>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="stage-marker">
-         <div class="stage-dot">
-          5
-         </div>
-        </div>
-        <div class="stage-details">
-         <strong>
-          Month 4-6
-         </strong>
-         Understanding mortgages
-        </div>
-       </div>
-       <!-- Stage 2.3 -->
-       <div class="stage-item left" data-phase="foundation">
-        <div class="stage-content" onclick="toggleDetails(this)">
-         <h3>
-          Pre-Approval Achievement
-         </h3>
-         <p>
-          Getting pre-approved! This is HUGE, it means a lender officially says they'll loan you money.
-         </p>
-         <div class="expandable-content">
-          <div class="detail-section">
-           <h4>
-            What's Happening:
-           </h4>
-           <p>
-            You submitted your application, provided documents, and got your pre-approval letter. This makes it REAL. You now know exactly what you can afford.
-           </p>
-           <div class="key-questions">
-            <strong>
-             Questions You're Asking:
-            </strong>
-            <ul>
-             <li>
-              "What happens during pre-approval?"
-             </li>
-             <li>
-              "How long is pre-approval good for?"
-             </li>
-             <li>
-              "Can I start looking at houses now?"
-             </li>
-             <li>
-              "Do I need an agent yet?"
-             </li>
-            </ul>
-           </div>
-           <div class="resources-needed">
-            <strong>
-             Resources You Need:
-            </strong>
-            <ul>
-             <li>
-              Pre-approval day guide
-             </li>
-             <li>
-              Understanding your approval amount
-             </li>
-             <li>
-              Real estate agent selection guide
-             </li>
-             <li>
-              Next steps roadmap
-             </li>
-            </ul>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="stage-marker">
-         <div class="stage-dot">
-          6
-         </div>
-        </div>
-        <div class="stage-details">
-         <strong>
-          Month 7-9
-         </strong>
-         Major milestone!
-        </div>
-       </div>
-      </div>
-      <!-- PHASE 3: PREPARATION -->
-      <div class="phase-section">
-       <div class="phase-header">
-        <h2>
-         Phase 3: Preparation &amp; Readiness
-        </h2>
-        <div class="phase-meta">
-         <span>
-          ⏱ Timeline: 1-2 months
-         </span>
-         <span>
-           Goal: Understand market &amp; define search criteria
-         </span>
-         <span>
-           Feeling: Excited, nervous, eager
-         </span>
-        </div>
-       </div>
-       <div class="stage-item right" data-phase="preparation">
-        <div class="stage-content" onclick="toggleDetails(this)">
-         <h3>
-          Market Education
-         </h3>
-         <p>
-          Learning DFW neighborhoods, property taxes, schools, and what you can afford where.
-         </p>
-         <div class="expandable-content">
-          <div class="detail-section">
-           <h4>What's Happening:</h4>
-           <p>You're pre-approved and it's time to get smart about the DFW market. Property taxes here average 2.1-2.5% of home value, that's higher than most states and it seriously impacts your monthly payment. You're learning which neighborhoods fit your budget and lifestyle.</p>
-           <div class="key-questions">
-            <strong>Questions You're Asking:</strong>
-            <ul>
-             <li>"Which DFW neighborhoods can I actually afford?"</li>
-             <li>"How much do property taxes add to my payment?"</li>
-             <li>"How do I research school districts?"</li>
-             <li>"What's the difference between Frisco, McKinney, and Fort Worth pricing?"</li>
-            </ul>
-           </div>
-           <div class="resources-needed">
-            <strong>Resources You Need:</strong>
-            <ul>
-             <li>Neighborhood research guide</li>
-             <li>Property tax calculator &amp; guide</li>
-             <li>School district comparison tool</li>
-             <li>DFW market reality check</li>
-            </ul>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="stage-marker">
-         <div class="stage-dot">
-          7
-         </div>
-        </div>
-        <div class="stage-details">
-         <strong>
-          Week 1-3
-         </strong>
-         <br/>
-         Understanding DFW market
-        </div>
-       </div>
-       <div class="stage-item left" data-phase="preparation">
-        <div class="stage-content" onclick="toggleDetails(this)">
-         <h3>
-          Home Search Preparation
-         </h3>
-         <p>
-          Learning what to look for in homes, how to evaluate properties, and touring strategies.
-         </p>
-         <div class="expandable-content">
-          <div class="detail-section">
-           <h4>What's Happening:</h4>
-           <p>Before you start touring homes, you need to know what you're looking at. Foundation issues, roof age, HVAC systems, lot placement, these things matter more than granite countertops. You're also defining your must-haves vs. nice-to-haves.</p>
-           <div class="key-questions">
-            <strong>Questions You're Asking:</strong>
-            <ul>
-             <li>"What should I look for when touring a home?"</li>
-             <li>"How do I tell if a house has hidden problems?"</li>
-             <li>"What are red flags in a listing?"</li>
-             <li>"Should I go to open houses or schedule private tours?"</li>
-            </ul>
-           </div>
-           <div class="resources-needed">
-            <strong>Resources You Need:</strong>
-            <ul>
-             <li>Home touring guide &amp; checklist</li>
-             <li>Evaluating properties guide</li>
-             <li>Home priorities worksheet</li>
-             <li>Red flags checklist</li>
-            </ul>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="stage-marker">
-         <div class="stage-dot">
-          8
-         </div>
-        </div>
-        <div class="stage-details">
-         <strong>
-          Week 4-6
-         </strong>
-         <br/>
-         Preparing to tour homes
-        </div>
-       </div>
-       <div class="stage-item right" data-phase="preparation">
-        <div class="stage-content" onclick="toggleDetails(this)">
-         <h3>
-          Financial Fine-Tuning
-         </h3>
-         <p>
-          Understanding closing costs, earnest money, option periods, and final cash needs.
-         </p>
-         <div class="expandable-content">
-          <div class="detail-section">
-           <h4>What's Happening:</h4>
-           <p>You know what you're pre-approved for, but the sticker price isn't the whole picture. Closing costs in Texas typically run 2-5% of the purchase price. You need earnest money (1-2%) ready to go, plus option period fees ($200-500). Time to crunch the real numbers.</p>
-           <div class="key-questions">
-            <strong>Questions You're Asking:</strong>
-            <ul>
-             <li>"How much cash do I actually need beyond the down payment?"</li>
-             <li>"What are closing costs and who pays what?"</li>
-             <li>"What's an option period and how much does it cost?"</li>
-             <li>"Can I negotiate closing cost credits from the seller?"</li>
-            </ul>
-           </div>
-           <div class="resources-needed">
-            <strong>Resources You Need:</strong>
-            <ul>
-             <li>Closing costs breakdown calculator</li>
-             <li>Cash-to-close estimator</li>
-             <li>Negotiation strategies guide</li>
-             <li>Texas option period explainer</li>
-            </ul>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="stage-marker">
-         <div class="stage-dot">
-          9
-         </div>
-        </div>
-        <div class="stage-details">
-         <strong>
-          Week 7-8
-         </strong>
-         <br/>
-         Final financial prep
-        </div>
-       </div>
-      </div>
-      <!-- PHASE 4: ACTIVE SHOPPING -->
-      <div class="phase-section">
-       <div class="phase-header">
-        <h2>
-         Phase 4: Active Shopping &amp; Offer
-        </h2>
-        <div class="phase-meta">
-         <span>
-          ⏱ Timeline: 1-6 months (varies widely!)
-         </span>
-         <span>
-           Goal: Get an offer accepted
-         </span>
-         <span>
-           Feeling: Excited, frustrated, hopeful, anxious
-         </span>
-        </div>
-       </div>
-       <div class="stage-item left" data-phase="shopping">
-        <div class="stage-content" onclick="toggleDetails(this)">
-         <h3>
-          Active House Hunting
-         </h3>
-         <p>
-          Touring homes, attending open houses, stalking Zillow, trying to find "the one."
-         </p>
-         <div class="expandable-content">
-          <div class="detail-section">
-           <h4>What's Happening:</h4>
-           <p>This is the part everyone imagines when they think "homebuying." You're touring homes, scrolling listings at 2 AM, and learning that photos lie. The average DFW buyer tours 8-12 homes before finding the right one. Don't rush, and don't fall in love with the staging.</p>
-           <div class="key-questions">
-            <strong>Questions You're Asking:</strong>
-            <ul>
-             <li>"How many homes should I tour before making an offer?"</li>
-             <li>"How do I know when I've found 'the one'?"</li>
-             <li>"Should I look at new construction or existing homes?"</li>
-             <li>"What if I keep losing homes to other buyers?"</li>
-            </ul>
-           </div>
-           <div class="resources-needed">
-            <strong>Resources You Need:</strong>
-            <ul>
-             <li>Active search strategies</li>
-             <li>New vs. existing homes comparison</li>
-             <li>Home touring checklist</li>
-             <li>Competitive market strategy guide</li>
-            </ul>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="stage-marker">
-         <div class="stage-dot">
-          10
-         </div>
-        </div>
-        <div class="stage-details">
-         <strong>
-          Weeks-Months
-         </strong>
-         <br/>
-         Finding your home
-        </div>
-       </div>
-       <div class="stage-item right" data-phase="shopping">
-        <div class="stage-content" onclick="toggleDetails(this)">
-         <h3>
-          Making Offers
-         </h3>
-         <p>
-          Writing offers, possibly competing with others, negotiating, waiting (the hardest part!).
-         </p>
-         <div class="expandable-content">
-          <div class="detail-section">
-           <h4>What's Happening:</h4>
-           <p>You found a home you love. Now comes the nerve-wracking part: writing an offer. In competitive DFW markets, homes can get 3-10+ offers. Your agent will help you write a strong offer, but be prepared for counteroffers, multiple rounds, and sometimes losing to cash buyers. It's emotional, but it's normal.</p>
-           <div class="key-questions">
-            <strong>Questions You're Asking:</strong>
-            <ul>
-             <li>"How much should I offer above or below asking?"</li>
-             <li>"What's an escalation clause?"</li>
-             <li>"Should I waive the appraisal or inspection?"</li>
-             <li>"What if my offer gets rejected?"</li>
-            </ul>
-           </div>
-           <div class="resources-needed">
-            <strong>Resources You Need:</strong>
-            <ul>
-             <li>Writing winning offers guide</li>
-             <li>Negotiation strategies</li>
-             <li>Multiple offer situations guide</li>
-             <li>Competitive market strategy</li>
-            </ul>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="stage-marker">
-         <div class="stage-dot">
-          11
-         </div>
-        </div>
-        <div class="stage-details">
-         <strong>
-          Variable timing
-         </strong>
-         <br/>
-         The waiting game
-        </div>
-       </div>
-       <div class="stage-item left" data-phase="shopping">
-        <div class="stage-content" onclick="toggleDetails(this)">
-         <h3>
-          Offer Accepted!
-         </h3>
-         <p>
-           YOUR OFFER WAS ACCEPTED! Now the real work begins with inspections and paperwork.
-         </p>
-         <div class="expandable-content">
-          <div class="detail-section">
-           <h4>What's Happening:</h4>
-           <p>CELEBRATE! But briefly, because now the clock starts. In Texas, you typically have a 7-10 day option period to inspect the home and decide if you want to proceed. Your earnest money is deposited, your lender starts the appraisal process, and everything shifts into high gear.</p>
-           <div class="key-questions">
-            <strong>Questions You're Asking:</strong>
-            <ul>
-             <li>"What happens immediately after my offer is accepted?"</li>
-             <li>"When do I pay earnest money?"</li>
-             <li>"How fast do I need to schedule an inspection?"</li>
-             <li>"Can the seller back out?"</li>
-            </ul>
-           </div>
-           <div class="resources-needed">
-            <strong>Resources You Need:</strong>
-            <ul>
-             <li>Under contract timeline</li>
-             <li>Home inspection guide</li>
-             <li>Option period explainer</li>
-             <li>Appraisal process guide</li>
-            </ul>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="stage-marker">
-         <div class="stage-dot">
-          12
-         </div>
-        </div>
-        <div class="stage-details">
-         <strong>
-          The best day!
-         </strong>
-         <br/>
-         Huge milestone
-        </div>
-       </div>
-      </div>
-      <!-- PHASE 5: UNDER CONTRACT -->
-      <div class="phase-section">
-       <div class="phase-header">
-        <h2>
-         Phase 5: Under Contract to Closing
-        </h2>
-        <div class="phase-meta">
-         <span>
-          ⏱ Timeline: 30-45 days
-         </span>
-         <span>
-           Goal: Close successfully and get keys!
-         </span>
-         <span>
-           Feeling: Excited, anxious, impatient, overwhelmed
-         </span>
-        </div>
-       </div>
-       <div class="stage-item right" data-phase="contract">
-        <div class="stage-content" onclick="toggleDetails(this)">
-         <h3>
-          Option Period &amp; Inspection
-         </h3>
-         <p>
-          Home inspection, negotiating repairs, deciding to proceed or walk away.
-         </p>
-         <div class="expandable-content">
-          <div class="detail-section">
-           <h4>What's Happening:</h4>
-           <p>The option period is your safety net. A professional inspector examines the home top to bottom, roof, foundation, plumbing, electrical, HVAC, everything. In Texas, the option period fee ($200-500) gives you the right to walk away for any reason during this window. The inspection report will likely find things. Don't panic, negotiate.</p>
-           <div class="key-questions">
-            <strong>Questions You're Asking:</strong>
-            <ul>
-             <li>"What does a home inspection actually cover?"</li>
-             <li>"What repairs should I ask the seller to fix?"</li>
-             <li>"When should I walk away from a deal?"</li>
-             <li>"Do I need extra inspections (pest, mold, foundation)?"</li>
-            </ul>
-           </div>
-           <div class="resources-needed">
-            <strong>Resources You Need:</strong>
-            <ul>
-             <li>Home inspection guide</li>
-             <li>Repair negotiation strategies</li>
-             <li>Red flags that kill deals</li>
-             <li>Title &amp; survey explainer</li>
-            </ul>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="stage-marker">
-         <div class="stage-dot">
-          13
-         </div>
-        </div>
-        <div class="stage-details">
-         <strong>
-          Days 1-10
-         </strong>
-         <br/>
-         Inspection critical!
-        </div>
-       </div>
-       <div class="stage-item left" data-phase="contract">
-        <div class="stage-content" onclick="toggleDetails(this)">
-         <h3>
-          Appraisal &amp; Financing
-         </h3>
-         <p>
-          Lender orders appraisal, underwriting reviews everything, shopping for insurance.
-         </p>
-         <div class="expandable-content">
-          <div class="detail-section">
-           <h4>What's Happening:</h4>
-           <p>Your lender orders an appraisal to confirm the home is worth what you're paying. Meanwhile, underwriting is combing through your finances with a fine-toothed comb. DO NOT make any big purchases, change jobs, or move money around right now. You're also shopping for homeowner's insurance, get quotes from 3-4 companies.</p>
-           <div class="key-questions">
-            <strong>Questions You're Asking:</strong>
-            <ul>
-             <li>"What if the appraisal comes in low?"</li>
-             <li>"What documents does underwriting need from me?"</li>
-             <li>"How do I shop for homeowner's insurance?"</li>
-             <li>"What can cause my loan to fall through at this stage?"</li>
-            </ul>
-           </div>
-           <div class="resources-needed">
-            <strong>Resources You Need:</strong>
-            <ul>
-             <li>Appraisal process guide</li>
-             <li>Final loan approval checklist</li>
-             <li>Insurance shopping tips</li>
-             <li>Things NOT to do while under contract</li>
-            </ul>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="stage-marker">
-         <div class="stage-dot">
-          14
-         </div>
-        </div>
-        <div class="stage-details">
-         <strong>
-          Days 10-30
-         </strong>
-         <br/>
-         Waiting on lender
-        </div>
-       </div>
-       <div class="stage-item right" data-phase="contract">
-        <div class="stage-content" onclick="toggleDetails(this)">
-         <h3>
-          Final Preparations
-         </h3>
-         <p>
-          Final walkthrough, reviewing closing disclosure, preparing for closing day.
-         </p>
-         <div class="expandable-content">
-          <div class="detail-section">
-           <h4>What's Happening:</h4>
-           <p>You're in the home stretch. The lender issues your Closing Disclosure (CD) at least 3 days before closing, review every number carefully. You'll do a final walkthrough to make sure the home is in the condition you agreed to and repairs were completed. Wire your cash-to-close funds. This is really happening.</p>
-           <div class="key-questions">
-            <strong>Questions You're Asking:</strong>
-            <ul>
-             <li>"What should I check during the final walkthrough?"</li>
-             <li>"How do I read my Closing Disclosure?"</li>
-             <li>"How do I safely wire closing funds?"</li>
-             <li>"What do I need to bring to closing?"</li>
-            </ul>
-           </div>
-           <div class="resources-needed">
-            <strong>Resources You Need:</strong>
-            <ul>
-             <li>Final walkthrough checklist</li>
-             <li>Closing Disclosure review guide</li>
-             <li>Wire fraud prevention tips</li>
-             <li>Closing day preparation guide</li>
-            </ul>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="stage-marker">
-         <div class="stage-dot">
-          15
-         </div>
-        </div>
-        <div class="stage-details">
-         <strong>
-          Days 30-43
-         </strong>
-         <br/>
-         Almost there!
-        </div>
-       </div>
-       <div class="stage-item left" data-phase="contract">
-        <div class="stage-content" onclick="toggleDetails(this)">
-         <h3>
-          CLOSING DAY!
-         </h3>
-         <p>
-           Signing papers, getting keys, officially becoming a HOMEOWNER!
-         </p>
-         <div class="expandable-content">
-          <div class="detail-section">
-           <h4>What's Happening:</h4>
-           <p>THE BIG DAY. You'll sit at a table (usually at the title company), sign approximately one million documents (it feels like it), hand over your certified funds, and then... you get the keys. In Texas, the home is officially yours once the deed is recorded at the county, usually same day or next business day. You did it!</p>
-           <div class="key-questions">
-            <strong>Questions You're Asking:</strong>
-            <ul>
-             <li>"How long does closing actually take?"</li>
-             <li>"What am I signing?"</li>
-             <li>"When do I actually get the keys?"</li>
-             <li>"What do I do first when I move in?"</li>
-            </ul>
-           </div>
-           <div class="resources-needed">
-            <strong>Resources You Need:</strong>
-            <ul>
-             <li>Closing day guide</li>
-             <li>First week homeowner checklist</li>
-             <li>Moving checklist</li>
-             <li>Homeowner resources hub</li>
-            </ul>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="stage-marker">
-         <div class="stage-dot">
-          16
-         </div>
-        </div>
-        <div class="stage-details">
-         <strong>
-          Day 45
-         </strong>
-         <br/>
-         KEYS IN HAND!
-        </div>
-       </div>
-      </div>
-      <!-- PHASE 6: HOMEOWNERSHIP -->
-      <div class="phase-section">
-       <div class="phase-header">
-        <h2>
-         Phase 6: Homeownership &amp; Wealth Building
-        </h2>
-        <div class="phase-meta">
-         <span>
-          ⏱ Timeline: Ongoing (years!)
-         </span>
-         <span>
-           Goal: Build wealth through homeownership
-         </span>
-         <span>
-           Feeling: Proud, learning, sometimes overwhelmed
-         </span>
-        </div>
-       </div>
-       <div class="stage-item right" data-phase="homeowner">
-        <div class="stage-content" onclick="toggleDetails(this)">
-         <h3>
-          First Month Homeowner
-         </h3>
-         <p>
-          Moving in, learning your home systems, handling first mortgage payment, settling in.
-         </p>
-         <div class="expandable-content">
-          <div class="detail-section">
-           <h4>What's Happening:</h4>
-           <p>Welcome home! The first month is a whirlwind: setting up utilities, changing locks, finding where the water shutoff is, and making your first mortgage payment (usually about 30-45 days after closing). You'll also want to file your homestead exemption, in Texas, this can save you hundreds on property taxes annually. Don't forget to update your address everywhere.</p>
-           <div class="key-questions">
-            <strong>Questions You're Asking:</strong>
-            <ul>
-             <li>"When is my first mortgage payment due?"</li>
-             <li>"What's a homestead exemption and how do I file it?"</li>
-             <li>"What should I do in the first week?"</li>
-             <li>"How do I set up all my utilities?"</li>
-            </ul>
-           </div>
-           <div class="resources-needed">
-            <strong>Resources You Need:</strong>
-            <ul>
-             <li>First week homeowner checklist</li>
-             <li>Moving checklist</li>
-             <li>Home maintenance schedule</li>
-             <li>Homestead exemption guide</li>
-            </ul>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="stage-marker">
-         <div class="stage-dot">
-          17
-         </div>
-        </div>
-        <div class="stage-details">
-         <strong>
-          Month 1
-         </strong>
-         <br/>
-         New homeowner!
-        </div>
-       </div>
-       <div class="stage-item left" data-phase="homeowner">
-        <div class="stage-content" onclick="toggleDetails(this)">
-         <h3>
-          Ongoing Success
-         </h3>
-         <p>
-          Maintenance, building equity, renovations, refinancing, eventually buying investment properties or moving up.
-         </p>
-         <div class="expandable-content">
-          <div class="detail-section">
-           <h4>What's Happening:</h4>
-           <p>This is the long game, and it's where homeownership truly pays off. Your home builds equity over time through appreciation and mortgage paydown. Regular maintenance protects your investment. Smart renovations can boost value. Eventually, you might refinance for a better rate, tap equity for upgrades, or use your experience to buy investment properties.</p>
-           <div class="key-questions">
-            <strong>Questions You're Asking:</strong>
-            <ul>
-             <li>"How do I build equity faster?"</li>
-             <li>"What maintenance do I need to do seasonally?"</li>
-             <li>"When does it make sense to refinance?"</li>
-             <li>"How do I start building wealth through real estate?"</li>
-            </ul>
-           </div>
-           <div class="resources-needed">
-            <strong>Resources You Need:</strong>
-            <ul>
-             <li>Building equity guide</li>
-             <li>Home maintenance schedule</li>
-             <li>Homeowner resources hub</li>
-             <li>Wealth-building through real estate</li>
-            </ul>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="stage-marker">
-         <div class="stage-dot">
-          18
-         </div>
-        </div>
-        <div class="stage-details">
-         <strong>
-          Years 1-10+
-         </strong>
-         <br/>
-         Building wealth!
-        </div>
-       </div>
-      </div>
-     </div>
-     <!-- Verified Network CTA -->
-     <div class="jhl-info-box jhl-info-box--tip jhl-mt-xl" data-track-event="verified_network_viewed" data-track-category="journey" data-track-label="timeline-cta">
-      <div class="jhl-info-box__icon">
-       <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="jhl-info-box__content">
-       <strong>Need help navigating your journey?</strong>
-       <p>Every stage is easier with the right guide. Connect with a verified local expert in our network who can walk you through exactly where you are and what's next.</p>
-       <a href="#verified-network" class="btn btn--primary jhl-mt-sm" data-track-event="verified_network_clicked" data-track-category="journey" data-track-label="timeline-bottom-cta">
-        Connect with a Verified Expert
-        <svg class="btn__arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-       </a>
-      </div>
-     </div>
-    </div>
-   </section>
-  </main>
-  <!-- ========================================
-     SECTION 4: KEY TAKEAWAYS
-     ======================================== -->
-  <div class="jhl-takeaways__wrapper">
-   <section class="jhl-takeaways">
-    <div class="jhl-takeaways__inner">
-     <h2>
-      Key Takeaways
-     </h2>
-     <ul>
-      <li>
-       The homebuying journey has 6 distinct phases with 18 stages, typically taking 12-24 months
-      </li>
-      <li>
-       Your timeline is unique, there's no "right" speed, only what works for you
-      </li>
-      <li>
-       Each stage has specific questions, challenges, and resources you'll need
-      </li>
-      <li>
-       Understanding where you are helps you focus on what matters NOW instead of getting overwhelmed
-      </li>
-      <li>
-       This journey is marathon, not a sprint, pace yourself and celebrate each milestone
-      </li>
-     </ul>
-    </div>
-   </section>
-  </div>
-  <!-- ========================================
-     SECTION 5: NEXT STEPS / CTA
-     ======================================== -->
-  <section class="jhl-next-steps" id="verified-network">
-   <div class="jhl-next-steps__inner">
-    <h2>Ready to Take Your Next Step?</h2>
-    <p class="jhl-next-steps__subtitle">Based on where you are in the journey, explore resources designed for your stage</p>
-    <div class="jhl-next-steps__links">
-     <a class="jhl-next-steps__link" href="/honest-truth" data-track-event="next_step_clicked" data-track-category="journey" data-track-label="honest-truth">Am I Ready? →</a>
-     <a class="jhl-next-steps__link" href="/credit-essentials" data-track-event="next_step_clicked" data-track-category="journey" data-track-label="credit-essentials">Credit Essentials →</a>
-     <a class="jhl-next-steps__link" href="/mortgage-types" data-track-event="next_step_clicked" data-track-category="journey" data-track-label="mortgage-types">Mortgage Types →</a>
-     <a class="jhl-next-steps__link" href="/financial-toolkit" data-track-event="next_step_clicked" data-track-category="journey" data-track-label="financial-toolkit">Financial Toolkit →</a>
-    </div>
-    <a class="btn btn--green" href="#verified-network" data-track-event="verified_network_clicked" data-track-category="journey" data-track-label="next-steps-cta">
-     Connect with a Verified Local Expert
-     <svg class="btn__arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-    </a>
-   </div>
-  </section>
-  <!-- JHL FOOTER v4.1 -->
-  <footer class="jhl-footer">
-   <div class="jhl-footer__inner">
-    <div class="jhl-footer__grid">
-     <div class="jhl-footer__brand">
-      <div class="jhl-footer__logo">
-       Just
-       <span>
-        Home
-       </span>
-       Leads
-      </div>
-      <p>
-       Real people. Real education. Real wealth. DFW's trusted first-time homebuyer education platform.
-      </p>
-     </div>
-     <div class="jhl-footer__section">
-      <h4>
-       Your Journey
-      </h4>
-      <ul>
-       <li>
-        <a href="/journey">
-         Journey Map
-        </a>
-       </li>
-       <li>
-        <a href="/honest-truth">
-         Getting Started
-        </a>
-       </li>
-       <li>
-        <a href="/credit-essentials">
-         Build Foundation
-        </a>
-       </li>
-       <li>
-        <a href="/active-search-strategies">
-         Active Shopping
-        </a>
-       </li>
-       <li>
-        <a href="/closing-day-guide">
-         Closing Process
-        </a>
-       </li>
-      </ul>
-     </div>
-     <div class="jhl-footer__section">
-      <h4>
-       Resources
-      </h4>
-      <ul>
-       <li>
-        <a href="/faqs">
-         Buyer FAQs
-        </a>
-       </li>
-       <li>
-        <a href="/jargon-buster">
-         Jargon Buster
-        </a>
-       </li>
-       <li>
-        <a href="/action-plan">
-         Action Plan
-        </a>
-       </li>
-       <li>
-        <a href="/mortgage-types">
-         Mortgage Types
-        </a>
-       </li>
-      </ul>
-     </div>
-     <div class="jhl-footer__section">
-      <h4>
-       Connect
-      </h4>
-      <ul>
-       <li>
-        <a href="#verified-network">
-         Verified Network
-        </a>
-       </li>
-       <li>
-        <a href="/reality-check">
-         Am I Ready?
-        </a>
-       </li>
-       <li>
-        <a href="/privacy">
-         Privacy Policy
-        </a>
-       </li>
-       <li>
-        <a href="/terms">
-         Terms of Use
-        </a>
-       </li>
-      </ul>
-     </div>
-    </div>
-    <div class="jhl-footer__bottom">
-     <p>
-      © 2026 Just Home Leads. DFW's First-Time Homebuyer Education Platform.
-     </p>
-     <div class="jhl-footer__legal">
-      <a href="/privacy">
-       Privacy
-      </a>
-      <a href="/terms">
-       Terms
-      </a>
-     </div>
-    </div>
-   </div>
-  </footer>
 <!-- ========================================
      LEAD CAPTURE MODAL
      ======================================== -->
@@ -1700,9 +385,6 @@
                         Your info stays private. No spam. No selling your data.
                     </div>
 
-                    <div class="jhl-lead-form__social">
-                        Joined by <strong>12,000+</strong> DFW families. Average response time: <strong>under 2 hours</strong>.
-                    </div>
                 </form>
             </div>
         </div>
@@ -1752,242 +434,238 @@
     </div>
 </div>
 
-  
-  
- 
- <script>
-  // Stage selector functionality
-    const stageButtons = document.querySelectorAll('.stage-btn');
-    const stageItems = document.querySelectorAll('.stage-item');
 
-    stageButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            stageButtons.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
+    <script>
+    // =============================================
+    // JH v3 SCRIPTS
+    // =============================================
+    window.jhlDataLayer = window.jhlDataLayer || [];
+    window.jhlTrack = function(event, data) {
+        window.jhlDataLayer.push({ event: event, data: data, timestamp: new Date().toISOString(), page: document.body.getAttribute('data-page') });
+        if (window.posthog && posthog.capture) posthog.capture(event, data);
+    };
+    function jhStore(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
 
-            const selectedStage = this.dataset.stage;
-            updateTimeline(selectedStage, true);
-        });
-    });
-
-    function updateTimeline(selectedStage, shouldScroll) {
-        let phaseMarked = false;
-        stageItems.forEach(item => {
-            item.classList.remove('current', 'completed');
-
-            const itemPhase = item.dataset.phase;
-
-            if (itemPhase === selectedStage && !phaseMarked) {
-                phaseMarked = true;
-                item.classList.add('current');
-                if (!item.querySelector('.you-are-here')) {
-                    const badge = document.createElement('span');
-                    badge.className = 'you-are-here';
-                    badge.textContent = ' YOU ARE HERE';
-                    item.querySelector('.stage-content').appendChild(badge);
-                }
-            } else {
-                const badge = item.querySelector('.you-are-here');
-                if (badge) badge.remove();
-            }
-
-            const phaseOrder = ['exploration', 'foundation', 'preparation', 'shopping', 'contract', 'homeowner'];
-            const selectedIndex = phaseOrder.indexOf(selectedStage);
-            const itemIndex = phaseOrder.indexOf(itemPhase);
-
-            if (itemIndex < selectedIndex) {
-                item.classList.add('completed');
-            }
-        });
-
-        const firstCurrent = document.querySelector('.stage-item.current');
-        if (firstCurrent && shouldScroll) {
-            firstCurrent.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-    }
-
-    function toggleDetails(element) {
-        const expandable = element.querySelector('.expandable-content');
-        if (expandable) {
-            expandable.classList.toggle('expanded');
-        }
-    }
-
-    updateTimeline('exploration');
- </script>
- <script>
-// =============================================
-// JHL GLOBAL SCRIPTS v2.0
-// =============================================
-
-// 1. Header scroll effect
-(function() {
-    const header = document.getElementById('header');
-    if (header) {
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 50);
-        });
-    }
-})();
-
-// 2. Mobile navigation
-(function() {
-    const toggle = document.querySelector('.jhl-menu-toggle');
-    const mobileNav = document.getElementById('mobile-nav');
-    const closeBtn = document.querySelector('.jhl-mobile-nav__close');
-    const overlay = document.querySelector('.jhl-mobile-nav__overlay');
-
-    if (toggle && mobileNav) {
-        const openNav = () => {
-            mobileNav.classList.add('active');
-            mobileNav.setAttribute('aria-hidden', 'false');
-            toggle.setAttribute('aria-expanded', 'true');
-            document.body.style.overflow = 'hidden';
-        };
-        const closeNav = () => {
-            mobileNav.classList.remove('active');
-            mobileNav.setAttribute('aria-hidden', 'true');
-            toggle.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-        };
-
-        toggle.addEventListener('click', openNav);
-        if (closeBtn) closeBtn.addEventListener('click', closeNav);
-        if (overlay) overlay.addEventListener('click', closeNav);
-
-        mobileNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', closeNav);
-        });
-    }
-})();
-
-
-    // 2b. Mobile nav accordion toggles
+    // 1. Mobile menu sheet
     (function() {
-        document.querySelectorAll('.jhl-mobile-nav__group-toggle').forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                var expanded = btn.getAttribute('aria-expanded') === 'true';
-                btn.setAttribute('aria-expanded', String(!expanded));
-                var body = btn.nextElementSibling;
-                if (body) body.classList.toggle('active');
-            });
-        });
-    })();
-    // 2c. Full-screen explore menu
-    (function() {
-        var exploreBtn = document.getElementById('explore-toggle');
-        var exploreMenu = document.getElementById('explore-menu');
-        var exploreClose = document.getElementById('explore-close');
-        var exploreBg = exploreMenu ? exploreMenu.querySelector('.jhl-explore-menu__bg') : null;
-
-        if (exploreBtn && exploreMenu) {
-            var openExplore = function() {
-                exploreMenu.classList.add('active');
-                exploreMenu.setAttribute('aria-hidden', 'false');
-                exploreBtn.setAttribute('aria-expanded', 'true');
-                document.body.style.overflow = 'hidden';
-            };
-            var closeExplore = function() {
-                exploreMenu.classList.remove('active');
-                exploreMenu.setAttribute('aria-hidden', 'true');
-                exploreBtn.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-            };
-
-            exploreBtn.addEventListener('click', openExplore);
-            if (exploreClose) exploreClose.addEventListener('click', closeExplore);
-            if (exploreBg) exploreBg.addEventListener('click', closeExplore);
-
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && exploreMenu.classList.contains('active')) {
-                    closeExplore();
-                }
-            });
-
-            exploreMenu.querySelectorAll('a').forEach(function(link) {
-                link.addEventListener('click', closeExplore);
-            });
+        var sheet = document.getElementById('jh-sheet');
+        var openBtn = document.getElementById('jh-menu-open');
+        var closeBtn = document.getElementById('jh-menu-close');
+        if (!sheet || !openBtn) return;
+        function open() {
+            sheet.classList.add('is-open'); sheet.setAttribute('aria-hidden', 'false');
+            openBtn.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden';
+            closeBtn.focus();
         }
+        function close() {
+            sheet.classList.remove('is-open'); sheet.setAttribute('aria-hidden', 'true');
+            openBtn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = '';
+            openBtn.focus();
+        }
+        openBtn.addEventListener('click', open);
+        closeBtn.addEventListener('click', close);
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && sheet.classList.contains('is-open')) close(); });
+        sheet.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', function() { if (sheet.classList.contains('is-open')) close(); }); });
     })();
 
-    // 3. Accordion functionality
-(function() {
-    document.querySelectorAll('.jhl-accordion__trigger').forEach(trigger => {
-        trigger.addEventListener('click', () => {
-            const item = trigger.parentElement;
-            const isActive = item.classList.contains('active');
-            const acc = item.closest('.jhl-accordion');
-            acc.querySelectorAll('.jhl-accordion__item').forEach(i => i.classList.remove('active'));
-            acc.querySelectorAll('.jhl-accordion__trigger').forEach(t => t.setAttribute('aria-expanded', 'false'));
-            if (!isActive) { item.classList.add('active'); trigger.setAttribute('aria-expanded', 'true'); }
-        });
-    });
-})();
+    // 2. Readiness check
+    (function() {
+        var qs = Array.prototype.slice.call(document.querySelectorAll('.jh-q'));
+        if (!qs.length) return;
+        var meter = document.querySelectorAll('.jh-check__meter i');
+        var count = document.getElementById('jh-count');
+        var back = document.getElementById('jh-back');
+        var result = document.getElementById('jh-result');
+        var trail = document.querySelectorAll('.jh-stop');
+        var answers = {}, keys = {}, idx = 0;
 
-// 4. Checklist toggle with localStorage persistence
-(function() {
-    const pageId = document.body.getAttribute('data-page') || window.location.pathname;
-    document.querySelectorAll('.jhl-checklist__item').forEach((item, index) => {
-        const key = 'jhl-check-' + pageId + '-' + index;
-        if (localStorage.getItem(key) === 'checked') {
-            item.classList.add('checked');
+        var TODO = {
+            clow:  ['Pull your free credit reports and dispute anything wrong', '/credit-essentials', 'Credit basics'],
+            c580:  ['Pay card balances under 30% of the limit to lift your score fast', '/credit-boost', 'The credit boost plan'],
+            cunk:  ['Check your score for free. Checking your own never hurts it', '/credit-essentials', 'Credit basics'],
+            s0:    ['Start a separate house fund, even $50 a paycheck counts', '/down-payment', 'Down payment options'],
+            s2:    ['Ask about Texas down payment help. You may need less than you think', '/down-payment', 'Down payment options'],
+            jself: ['Have your last 2 years of tax returns ready. Lenders will ask', '/self-employed-guide', 'Self-employed buyers'],
+            jnew:  ['Stay put at your job until you close. New jobs are fine, job hopping is not', '/pre-approval', 'Pre-approval basics'],
+            jnone: ['Get 30 days of pay stubs on the books before applying', '/honest-truth', 'The honest truth'],
+            d800:  ['Pay down the smallest balance first to free up monthly room', '/debt-vs-saving', 'Debt vs. saving'],
+            dhigh: ['Hold off on new debt (no car shopping) and pay down balances', '/debt-vs-saving', 'Debt vs. saving']
+        };
+        var TIERS = {
+            1: { tag: "You're on Step 1", title: 'Not yet. And that is completely normal.', body: 'Most buyers start right here. A few focused months usually get you to the point where a lender says yes. Start with these:' },
+            2: { tag: "You're on Step 2", title: "You're closer than you think.", body: "You're past the starting line. Tighten up the money side and you could be pre-approved in a few months. Focus here:" },
+            3: { tag: "You're on Step 3", title: 'You could talk to a lender now.', body: 'Your numbers look like someone who can get pre-approved. Your next moves:' }
+        };
+
+        function show(i) {
+            qs.forEach(function(q, n) { q.classList.toggle('is-active', n === i); });
+            meter.forEach(function(m, n) { m.classList.toggle('on', n <= i); });
+            count.textContent = 'Question ' + (i + 1) + ' of ' + qs.length;
+            back.hidden = i === 0;
+            result.classList.remove('is-active');
+            idx = i;
         }
-        item.addEventListener('click', () => {
-            item.classList.toggle('checked');
-            if (item.classList.contains('checked')) {
-                localStorage.setItem(key, 'checked');
-            } else {
-                localStorage.removeItem(key);
+
+        function pinTrail(step) {
+            trail.forEach(function(s) {
+                var n = +s.getAttribute('data-step');
+                s.classList.toggle('is-here', n === step);
+                s.classList.toggle('is-done', n < step);
+            });
+        }
+
+        function score() {
+            var total = 0; for (var k in answers) total += answers[k];
+            var step = total >= 9 ? 3 : total >= 6 ? 2 : 1;
+            if (keys.credit === 'clow' || keys.job === 'jnone') step = 1;
+            return { total: total, step: step };
+        }
+
+        function render(r) {
+            var t = TIERS[r.step];
+            document.getElementById('jh-r-tag').textContent = t.tag + ' of 6';
+            document.getElementById('jh-r-title').textContent = t.title;
+            document.getElementById('jh-r-body').textContent = t.body;
+            var list = document.getElementById('jh-r-todo'); list.innerHTML = '';
+            var more = document.getElementById('jh-r-more'); more.innerHTML = '';
+            var items = [];
+            ['credit', 'saved', 'job', 'debt'].forEach(function(q) { if (TODO[keys[q]]) items.push(TODO[keys[q]]); });
+            if (r.step === 3 || items.length < 2) {
+                items.push(['Get quotes from 3 lenders in the same week', '/lender-shopping', 'How to compare lenders']);
+                items.push(['Gather your documents once, so pre-approval takes days, not weeks', '/resource-2-2b-document-checklist', 'Document checklist']);
             }
-        });
-    });
-})();
+            var check = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
+            var seen = {};
+            items.slice(0, 3).forEach(function(it) {
+                var li = document.createElement('li'); li.innerHTML = check + '<span></span>'; li.lastChild.textContent = it[0]; list.appendChild(li);
+                if (!seen[it[1]]) { seen[it[1]] = 1; var a = document.createElement('a'); a.className = 'jh-textlink'; a.href = it[1]; a.textContent = it[2]; more.appendChild(a); }
+            });
+            if (r.step === 3) { var h = document.createElement('a'); h.className = 'jh-textlink'; h.href = '#verified-network'; h.textContent = 'Talk to a lender we trust'; more.appendChild(h); }
+            else { var w = document.createElement('a'); w.className = 'jh-textlink'; w.href = '/webinar'; w.textContent = 'Come to the free class'; more.appendChild(w); }
+        }
 
-// 5. Smooth reveal on scroll
-(function() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+        function finish() {
+            var r = score();
+            qs.forEach(function(q) { q.classList.remove('is-active'); });
+            meter.forEach(function(m) { m.classList.add('on'); });
+            count.textContent = 'Done. Here is your answer.';
+            back.hidden = true;
+            render(r);
+            result.classList.add('is-active');
+            document.getElementById('jh-r-title').focus({ preventScroll: true });
+            pinTrail(r.step);
+            jhStore('jh-ready', JSON.stringify({ step: r.step, total: r.total, keys: keys, at: Date.now() }));
+            jhlTrack('readiness_completed', { step: r.step, score: r.total, credit: keys.credit, saved: keys.saved, job: keys.job, debt: keys.debt });
+            var top = result.getBoundingClientRect().top + window.scrollY - 90;
+            if (result.getBoundingClientRect().top < 70) window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+
+        qs.forEach(function(q, n) {
+            var name = q.getAttribute('data-q');
+            q.querySelectorAll('.jh-opt').forEach(function(btn) {
+                btn.setAttribute('aria-pressed', 'false');
+                btn.addEventListener('click', function() {
+                    q.querySelectorAll('.jh-opt').forEach(function(b) { b.setAttribute('aria-pressed', 'false'); });
+                    btn.setAttribute('aria-pressed', 'true');
+                    answers[name] = +btn.getAttribute('data-v');
+                    keys[name] = btn.getAttribute('data-k');
+                    if (n === 0) jhlTrack('readiness_started', {});
+                    setTimeout(function() { if (n < qs.length - 1) show(n + 1); else finish(); }, 220);
+                });
+            });
+        });
+        back.addEventListener('click', function() { if (idx > 0) show(idx - 1); });
+        document.getElementById('jh-redo').addEventListener('click', function() {
+            answers = {}; keys = {};
+            document.querySelectorAll('.jh-opt').forEach(function(b) { b.setAttribute('aria-pressed', 'false'); });
+            pinTrail(0); show(0);
+        });
+
+        // Returning visitor: pin the trail from their last result
+        try { var saved = JSON.parse(jhStore('jh-ready') || 'null'); if (saved && saved.step) pinTrail(saved.step); } catch (e) {}
+
+        // Email my plan
+        var form = document.getElementById('jh-plan');
+        var email = document.getElementById('jh-plan-email');
+        var btn = document.getElementById('jh-plan-btn');
+        var done = document.getElementById('jh-plan-done');
+        var WEBHOOK = 'https://services.leadconnectorhq.com/hooks/CHqaNRCWjmT6XyOUQtWd/webhook-trigger/8830eb17-1d96-4575-9f1d-82e4cba000f8';
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var v = email.value.trim();
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { email.classList.add('is-error'); email.focus(); return; }
+            email.classList.remove('is-error');
+            btn.disabled = true; btn.textContent = 'Sending...';
+            var r = score();
+            var payload = {
+                email: v, form_type: 'readiness_plan', source_page: 'index', source_placement: 'readiness_check',
+                readiness_step: r.step, readiness_score: r.total,
+                credit_band: keys.credit, savings_band: keys.saved, income_type: keys.job, debt_band: keys.debt,
+                timestamp: new Date().toISOString()
+            };
+            function ok() { form.hidden = true; done.hidden = false; }
+            fetch(WEBHOOK, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }).then(ok).catch(ok);
+            jhlTrack('readiness_plan_optin', { step: r.step, email_domain: v.split('@')[1] });
+        });
+        email.addEventListener('input', function() { email.classList.remove('is-error'); });
+    })();
+
+    // 2b. Journey: pin the saved readiness step
+    (function() {
+        try {
+            var saved = JSON.parse(localStorage.getItem('jh-ready') || 'null');
+            if (!saved || !saved.step) return;
+            var el = document.getElementById('step-' + saved.step);
+            if (el) el.classList.add('is-here');
+        } catch (e) {}
+    })();
+
+    // 3. Next free class: last Friday of the month, 12:00 PM CT
+    (function() {
+        var el = document.getElementById('jh-class-date');
+        if (!el) return;
+        function jhlCtNoon(y, m, d) {
+            // 12:00 PM America/Chicago for a calendar date, whatever the visitor's time zone
+            var guess = new Date(Date.UTC(y, m, d, 17, 0, 0));
+            var h = +new Intl.DateTimeFormat('en-US', { timeZone: 'America/Chicago', hour: 'numeric', hourCycle: 'h23' }).format(guess);
+            return new Date(guess.getTime() + (12 - h) * 3600000);
+        }
+        function jhlNextWebinar() {
+            // Last Friday of each month, 12:00 PM CT
+            var now = new Date();
+            for (var m = 0; m < 14; m++) {
+                var last = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + m + 1, 0));
+                if (last.getUTCMonth() === 11) continue; // no class in December (holidays)
+                last.setUTCDate(last.getUTCDate() - ((last.getUTCDay() - 5 + 7) % 7));
+                var d = jhlCtNoon(last.getUTCFullYear(), last.getUTCMonth(), last.getUTCDate());
+                if (d > now) return d;
             }
+            return now;
+        }
+        var d = jhlNextWebinar();
+        el.textContent = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Chicago', weekday: 'long', month: 'long', day: 'numeric' }).format(d);
+    })();
+
+    // 4. Reveal on scroll
+    (function() {
+        var els = document.querySelectorAll('.jh-reveal');
+        if (!('IntersectionObserver' in window)) { els.forEach(function(e) { e.classList.add('is-in'); }); return; }
+        var io = new IntersectionObserver(function(entries) {
+            entries.forEach(function(en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        els.forEach(function(e) { io.observe(e); });
+    })();
+
+    // 5. Local file preview link fixer
+    (function() {
+        if (window.location.protocol !== 'file:') return;
+        document.querySelectorAll('a[href^="/"]').forEach(function(link) {
+            var p = link.getAttribute('href');
+            if (p === '/') link.setAttribute('href', 'index.html');
+            else if (p.indexOf('/#') === 0) link.setAttribute('href', 'index.html' + p.slice(1));
+            else if (p.indexOf('.') === -1) link.setAttribute('href', p.slice(1) + '.html');
         });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-    document.querySelectorAll('.jhl-card, .jhl-stat, .jhl-testimonial, .jhl-step, .jhl-timeline__item').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-})();
-
-// 6. Local file preview link fixer
-(function() {
-    if (window.location.protocol === 'file:') {
-        document.querySelectorAll('a[href^="/"]').forEach(link => {
-            const path = link.getAttribute('href');
-            if (path && path !== '/' && !path.includes('.')) {
-                link.setAttribute('href', path.slice(1) + '.html');
-            } else if (path === '/') {
-                link.setAttribute('href', 'index.html');
-            }
-        });
-    }
-})();
-
-// 7. Tracking-ready data layer (for future GHL integration)
-window.jhlDataLayer = window.jhlDataLayer || [];
-window.jhlTrack = function(event, data) {
-    window.jhlDataLayer.push({
-        event: event,
-        data: data,
-        timestamp: new Date().toISOString(),
-        page: document.body.getAttribute('data-page'),
-        phase: document.body.getAttribute('data-phase'),
-        stage: document.body.getAttribute('data-stage')
-    });
-};
+    })();
 
 // 8. Lead capture modal
 (function() {
@@ -2197,6 +875,6 @@ window.jhlTrack = function(event, data) {
     });
 })();
 
-</script>
+    </script>
 </body>
 </html>

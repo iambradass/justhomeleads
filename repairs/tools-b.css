@@ -1,0 +1,1766 @@
+/* =====================================================================
+   JHL REPAIR PACK B - home-maintenance-schedule.html / evaluating-properties.html
+                       down-payment.html / debt-vs-saving.html
+   TEMPORARY file, loaded after jhl-redesign.min.css for preview only.
+   To be folded into jhl-redesign.css later - do not delete without
+   migrating these rules first.
+
+   Every selector below is scoped with [data-page="..."] because these
+   four pages reuse generic class names (progress-bar-container,
+   task-checkbox, strategy-card, difficulty-easy, savings-potential...)
+   for completely different components. NEVER remove the data-page scope
+   when editing this file.
+
+   Color reference (matches the v3 tokens in jhl-v3.css, hardcoded here
+   as plain hex so this file has zero dependency on other repair packs):
+     navy #0D2240   blue #1565A0   sky #EEF4FA   green #00C853
+     electric green #00FF85 (navy backgrounds only)
+     coral #FF6B5B (warnings/hard)   amber #F59E0B (medium)
+     text #33404F   muted #5F6C7B   line #DCE4EE
+   ===================================================================== */
+
+
+/* =====================================================================
+   PAGE: home-maintenance-schedule.html
+   Dashboard progress bar, schedule tabs/panels, maintenance task cards,
+   budget calculator, systems lifespan guide.
+   ===================================================================== */
+
+/* --- Dashboard progress card --- */
+[data-page="home-maintenance-schedule"] .progress-container {
+  margin: 24px 0 8px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #DCE4EE;
+  border-radius: 16px;
+}
+[data-page="home-maintenance-schedule"] .progress-percentage {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0D2240;
+}
+[data-page="home-maintenance-schedule"] .progress-bar-bg {
+  height: 12px;
+  background: #EEF4FA;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+[data-page="home-maintenance-schedule"] .progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1565A0, #00C853);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+[data-page="home-maintenance-schedule"] .progress-stats {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 14px;
+  color: #5F6C7B;
+}
+
+/* --- Schedule tab bar --- */
+[data-page="home-maintenance-schedule"] .schedule-nav {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 2px 10px;
+  margin: 20px 0 24px;
+  scrollbar-width: none;
+}
+[data-page="home-maintenance-schedule"] .schedule-nav::-webkit-scrollbar { display: none; }
+[data-page="home-maintenance-schedule"] .schedule-tab {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 1px solid #DCE4EE;
+  background: #fff;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  color: #33404F;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .15s ease, border-color .15s ease, color .15s ease;
+}
+[data-page="home-maintenance-schedule"] .schedule-tab:hover { border-color: #1565A0; }
+[data-page="home-maintenance-schedule"] .schedule-tab .tab-count {
+  font-size: 12px;
+  font-weight: 600;
+  color: #5F6C7B;
+  background: #EEF4FA;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+[data-page="home-maintenance-schedule"] .schedule-tab.active {
+  background: #0D2240;
+  border-color: #0D2240;
+  color: #fff;
+}
+[data-page="home-maintenance-schedule"] .schedule-tab.active .tab-count {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+/* --- Schedule panels (only the active one shows) --- */
+[data-page="home-maintenance-schedule"] .schedule-panel { display: none; }
+[data-page="home-maintenance-schedule"] .schedule-panel.active { display: block; }
+[data-page="home-maintenance-schedule"] .schedule-header { margin-bottom: 16px; }
+[data-page="home-maintenance-schedule"] .schedule-header h3 {
+  font-size: 22px;
+  color: #0D2240;
+  margin-bottom: 6px;
+}
+[data-page="home-maintenance-schedule"] .schedule-header p {
+  font-size: 14px;
+  color: #5F6C7B;
+  margin: 0;
+}
+[data-page="home-maintenance-schedule"] .season-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0D2240;
+  margin: 28px 0 14px;
+  padding-top: 20px;
+  border-top: 1px solid #DCE4EE;
+}
+[data-page="home-maintenance-schedule"] .schedule-body > .season-title:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+/* --- Task grid + maintenance task cards --- */
+[data-page="home-maintenance-schedule"] .task-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+@media (min-width: 720px) {
+  [data-page="home-maintenance-schedule"] .task-grid { grid-template-columns: repeat(2, 1fr); }
+}
+[data-page="home-maintenance-schedule"] .maintenance-task {
+  background: #fff;
+  border: 1px solid #DCE4EE;
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color .15s ease, background .15s ease;
+}
+[data-page="home-maintenance-schedule"] .maintenance-task.completed {
+  background: #F2FBF6;
+  border-color: #00C853;
+}
+[data-page="home-maintenance-schedule"] .task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+[data-page="home-maintenance-schedule"] .task-title-area { flex: 1; min-width: 0; }
+[data-page="home-maintenance-schedule"] .task-title {
+  font-weight: 700;
+  font-size: 16px;
+  color: #0D2240;
+  margin-bottom: 4px;
+}
+[data-page="home-maintenance-schedule"] .maintenance-task.completed .task-title {
+  color: #5F6C7B;
+  text-decoration: line-through;
+  text-decoration-color: #B9E7CB;
+}
+[data-page="home-maintenance-schedule"] .task-frequency {
+  font-size: 13px;
+  color: #5F6C7B;
+}
+[data-page="home-maintenance-schedule"] .task-checkbox-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+[data-page="home-maintenance-schedule"] .task-checkbox {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border: 2px solid #DCE4EE;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: #fff;
+  transition: background .15s ease, border-color .15s ease;
+}
+[data-page="home-maintenance-schedule"] .task-checkbox svg {
+  color: #fff;
+  opacity: 0;
+  transition: opacity .15s ease;
+}
+[data-page="home-maintenance-schedule"] .task-checkbox.checked {
+  background: #00C853;
+  border-color: #00C853;
+}
+[data-page="home-maintenance-schedule"] .task-checkbox.checked svg { opacity: 1; }
+[data-page="home-maintenance-schedule"] .task-checkbox:focus-visible {
+  outline: 3px solid #00FF85;
+  outline-offset: 2px;
+}
+[data-page="home-maintenance-schedule"] .checkbox-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #5F6C7B;
+}
+[data-page="home-maintenance-schedule"] .task-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #33404F;
+  margin: 0;
+}
+[data-page="home-maintenance-schedule"] .task-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+[data-page="home-maintenance-schedule"] .meta-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  background: #EEF4FA;
+  color: #1565A0;
+}
+[data-page="home-maintenance-schedule"] .meta-badge.difficulty-easy { background: rgba(0, 200, 83, 0.12); color: #00A843; }
+[data-page="home-maintenance-schedule"] .meta-badge.difficulty-medium { background: rgba(245, 158, 11, 0.14); color: #B45309; }
+[data-page="home-maintenance-schedule"] .meta-badge.difficulty-hard { background: rgba(255, 107, 91, 0.16); color: #C93C2E; }
+[data-page="home-maintenance-schedule"] .meta-badge.type-diy { background: rgba(21, 101, 160, 0.12); color: #1565A0; }
+[data-page="home-maintenance-schedule"] .meta-badge.type-pro { background: rgba(13, 34, 64, 0.08); color: #0D2240; }
+[data-page="home-maintenance-schedule"] .task-tips {
+  background: #EEF4FA;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+[data-page="home-maintenance-schedule"] .task-tips-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1565A0;
+  margin-bottom: 4px;
+}
+[data-page="home-maintenance-schedule"] .task-tips p {
+  font-size: 13px;
+  color: #33404F;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* --- Budget calculator --- */
+[data-page="home-maintenance-schedule"] .calculator-section {
+  background: #fff;
+  border: 1px solid #DCE4EE;
+  border-radius: 16px;
+  padding: 24px;
+  margin: 24px 0;
+}
+[data-page="home-maintenance-schedule"] .calculator-title {
+  font-size: 22px;
+  color: #0D2240;
+  margin-bottom: 6px;
+}
+[data-page="home-maintenance-schedule"] .calculator-subtitle {
+  font-size: 14px;
+  color: #5F6C7B;
+  margin-bottom: 20px;
+}
+[data-page="home-maintenance-schedule"] .calculator-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 720px) {
+  [data-page="home-maintenance-schedule"] .calculator-grid { grid-template-columns: 1fr 1.1fr; align-items: start; }
+}
+[data-page="home-maintenance-schedule"] .calc-input-group { margin-bottom: 16px; }
+[data-page="home-maintenance-schedule"] .calc-input-group:last-child { margin-bottom: 0; }
+[data-page="home-maintenance-schedule"] .calc-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #33404F;
+  margin-bottom: 6px;
+}
+[data-page="home-maintenance-schedule"] .calc-input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid #DCE4EE;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #0D2240;
+  background: #fff;
+  font-family: inherit;
+}
+[data-page="home-maintenance-schedule"] select.calc-input { -webkit-appearance: none; appearance: none; }
+[data-page="home-maintenance-schedule"] .calc-input:focus {
+  outline: none;
+  border-color: #1565A0;
+  box-shadow: 0 0 0 3px rgba(21, 101, 160, 0.15);
+}
+/* .calc-results is already a grid (auto-fit, minmax 180px) via jhl-redesign.css */
+[data-page="home-maintenance-schedule"] .calc-result-item {
+  background: #EEF4FA;
+  border: 1px solid #DCE4EE;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+[data-page="home-maintenance-schedule"] .calc-result-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #5F6C7B;
+}
+[data-page="home-maintenance-schedule"] .calc-result-value {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #0D2240;
+}
+[data-page="home-maintenance-schedule"] .calc-result-value.annual { color: #00A843; }
+[data-page="home-maintenance-schedule"] .calc-note {
+  grid-column: 1 / -1;
+  font-size: 12px;
+  color: #5F6C7B;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+/* --- Systems lifespan guide --- */
+[data-page="home-maintenance-schedule"] .lifespan-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 640px) {
+  [data-page="home-maintenance-schedule"] .lifespan-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  [data-page="home-maintenance-schedule"] .lifespan-grid { grid-template-columns: repeat(3, 1fr); }
+}
+[data-page="home-maintenance-schedule"] .lifespan-card {
+  background: #fff;
+  border: 1px solid #DCE4EE;
+  border-radius: 16px;
+  padding: 20px;
+}
+/* Icon placeholders were emptied out upstream (no emoji left to replace), hide the empty box */
+[data-page="home-maintenance-schedule"] .lifespan-icon { display: none; }
+[data-page="home-maintenance-schedule"] .lifespan-system {
+  font-weight: 700;
+  font-size: 16px;
+  color: #0D2240;
+  margin-bottom: 10px;
+}
+[data-page="home-maintenance-schedule"] .lifespan-years { margin-bottom: 10px; }
+[data-page="home-maintenance-schedule"] .lifespan-bar {
+  height: 8px;
+  background: #EEF4FA;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+[data-page="home-maintenance-schedule"] .lifespan-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1565A0, #00C853);
+  border-radius: 999px;
+}
+[data-page="home-maintenance-schedule"] .lifespan-number {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1565A0;
+}
+[data-page="home-maintenance-schedule"] .lifespan-details {
+  font-size: 13px;
+  color: #33404F;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+[data-page="home-maintenance-schedule"] .lifespan-cost {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0D2240;
+  background: #EEF4FA;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+
+/* =====================================================================
+   PAGE: evaluating-properties.html
+   Category-tabbed evaluation checklist + property comparison matrix.
+   ===================================================================== */
+
+[data-page="evaluating-properties"] .checklist-container {
+  background: #fff;
+  border: 1px solid #DCE4EE;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px 0;
+}
+[data-page="evaluating-properties"] .checklist-container h3 {
+  font-size: 18px;
+  color: #0D2240;
+  margin-bottom: 6px;
+}
+[data-page="evaluating-properties"] .checklist-container > p {
+  font-size: 14px;
+  color: #5F6C7B;
+  margin: 0;
+}
+[data-page="evaluating-properties"] .checklist-categories {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 18px 0 8px;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+[data-page="evaluating-properties"] .checklist-categories::-webkit-scrollbar { display: none; }
+[data-page="evaluating-properties"] .category-tab {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid #DCE4EE;
+  background: #fff;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #33404F;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .15s ease, border-color .15s ease, color .15s ease;
+}
+[data-page="evaluating-properties"] .category-tab:hover { border-color: #1565A0; }
+[data-page="evaluating-properties"] .category-tab.active {
+  background: #0D2240;
+  border-color: #0D2240;
+  color: #fff;
+}
+[data-page="evaluating-properties"] .checklist-panel { display: none; }
+[data-page="evaluating-properties"] .checklist-panel.active { display: block; }
+[data-page="evaluating-properties"] .checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 4px;
+  border-bottom: 1px solid #DCE4EE;
+  cursor: pointer;
+  min-height: 44px;
+}
+[data-page="evaluating-properties"] .checklist-item:last-child { border-bottom: none; }
+[data-page="evaluating-properties"] .check-box {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border: 2px solid #DCE4EE;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: background .15s ease, border-color .15s ease;
+}
+/* The checkmark svg ships with no width/height, so it renders at the
+   browser's default (huge). Constrain it and hide it until checked. */
+[data-page="evaluating-properties"] .check-box svg {
+  width: 16px;
+  height: 16px;
+  opacity: 0;
+  transition: opacity .15s ease;
+}
+[data-page="evaluating-properties"] .checklist-item.checked .check-box {
+  background: #00C853;
+  border-color: #00C853;
+}
+[data-page="evaluating-properties"] .checklist-item.checked .check-box svg {
+  opacity: 1;
+  stroke: #fff;
+}
+[data-page="evaluating-properties"] .checklist-content h5 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0D2240;
+  margin-bottom: 4px;
+}
+[data-page="evaluating-properties"] .checklist-content p {
+  font-size: 13px;
+  color: #5F6C7B;
+  margin: 0;
+  line-height: 1.5;
+}
+[data-page="evaluating-properties"] .checklist-item.checked .checklist-content h5 {
+  color: #5F6C7B;
+  text-decoration: line-through;
+  text-decoration-color: #B9E7CB;
+}
+[data-page="evaluating-properties"] .checklist-progress { margin-top: 20px; }
+[data-page="evaluating-properties"] .progress-bar-container {
+  height: 10px;
+  background: #EEF4FA;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+[data-page="evaluating-properties"] .progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1565A0, #00C853);
+  border-radius: 999px;
+  transition: width .4s ease;
+}
+[data-page="evaluating-properties"] .progress-text {
+  font-size: 13px;
+  color: #5F6C7B;
+  text-align: center;
+  margin: 0;
+}
+
+/* Informational "staging tricks" cards use .jhl-card (already styled) with an
+   --orange modifier that jhl-redesign.css never defines (only purple/coral/
+   blue exist). Give it the same left-accent treatment those get. */
+[data-page="evaluating-properties"] .jhl-card--orange {
+  border-left: 4px solid #F59E0B;
+  border-radius: 12px;
+}
+
+/* --- Property comparison matrix --- */
+[data-page="evaluating-properties"] .matrix-container {
+  background: #fff;
+  border: 1px solid #DCE4EE;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px 0;
+}
+[data-page="evaluating-properties"] .matrix-container h3 {
+  font-size: 18px;
+  color: #0D2240;
+  margin-bottom: 6px;
+}
+[data-page="evaluating-properties"] .matrix-container > p {
+  font-size: 14px;
+  color: #5F6C7B;
+  margin: 0;
+}
+[data-page="evaluating-properties"] .matrix-add-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 20px;
+}
+[data-page="evaluating-properties"] .matrix-input {
+  flex: 1 1 200px;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid #DCE4EE;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #0D2240;
+  font-family: inherit;
+}
+[data-page="evaluating-properties"] .matrix-input:focus {
+  outline: none;
+  border-color: #1565A0;
+  box-shadow: 0 0 0 3px rgba(21, 101, 160, 0.15);
+}
+[data-page="evaluating-properties"] .matrix-btn {
+  min-height: 48px;
+  padding: 0 20px;
+  background: #0D2240;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+[data-page="evaluating-properties"] .matrix-btn:hover { background: #1565A0; }
+[data-page="evaluating-properties"] .matrix-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid #DCE4EE;
+  border-radius: 12px;
+  position: relative;
+}
+[data-page="evaluating-properties"] .matrix-table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+}
+[data-page="evaluating-properties"] .matrix-table th,
+[data-page="evaluating-properties"] .matrix-table td {
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 13px;
+  color: #33404F;
+  border-bottom: 1px solid #DCE4EE;
+  white-space: nowrap;
+}
+[data-page="evaluating-properties"] .matrix-table th {
+  background: #EEF4FA;
+  color: #0D2240;
+  font-weight: 700;
+}
+[data-page="evaluating-properties"] .matrix-table tbody tr:last-child td { border-bottom: none; }
+[data-page="evaluating-properties"] .matrix-table td strong { color: #0D2240; }
+[data-page="evaluating-properties"] .score-input {
+  width: 56px;
+  min-height: 40px;
+  padding: 0 6px;
+  text-align: center;
+  border: 1px solid #DCE4EE;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+}
+[data-page="evaluating-properties"] .score-input:focus {
+  outline: none;
+  border-color: #1565A0;
+  box-shadow: 0 0 0 3px rgba(21, 101, 160, 0.15);
+}
+[data-page="evaluating-properties"] .total-score { font-weight: 700; color: #00A843; }
+[data-page="evaluating-properties"] .remove-property {
+  min-height: 36px;
+  padding: 0 12px;
+  background: #fff;
+  border: 1px solid #FF6B5B;
+  color: #FF6B5B;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+[data-page="evaluating-properties"] .remove-property:hover { background: #FF6B5B; color: #fff; }
+[data-page="evaluating-properties"] .matrix-empty {
+  text-align: center;
+  padding: 28px 16px;
+  color: #5F6C7B;
+  font-size: 14px;
+}
+[data-page="evaluating-properties"] .matrix-empty p { margin: 0; }
+/* Visible "scroll for more" affordance on narrow screens, per the brief */
+@media (max-width: 640px) {
+  [data-page="evaluating-properties"] .matrix-table-wrapper::before {
+    content: "Swipe to see all columns \2192";
+    display: block;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    background: #EEF4FA;
+    color: #1565A0;
+    border-bottom: 1px solid #DCE4EE;
+    position: sticky;
+    left: 0;
+  }
+}
+
+
+/* =====================================================================
+   PAGE: down-payment.html
+   Savings tracker, acceleration strategy cards, DPA program cards,
+   expense optimizer + savings-potential results card, side hustle
+   filters/cards, 90-day action phases.
+   ===================================================================== */
+
+/* --- Down payment progress tracker --- */
+[data-page="down-payment"] .savings-tracker {
+  background: #fff;
+  border: 1px solid #DCE4EE;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px 0;
+}
+[data-page="down-payment"] .tracker-inputs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+@media (min-width: 640px) {
+  [data-page="down-payment"] .tracker-inputs { grid-template-columns: repeat(3, 1fr); }
+}
+[data-page="down-payment"] .progress-bar-container { margin: 20px 0; }
+[data-page="down-payment"] .progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 700;
+  color: #33404F;
+  margin-bottom: 8px;
+}
+/* .progress-bar / .progress-fill are already styled globally (shared with
+   other worksheet pages) so the fill itself works without extra CSS here. */
+[data-page="down-payment"] .timeline-estimate {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #DCE4EE;
+}
+[data-page="down-payment"] .timeline-estimate h3 {
+  font-size: 15px;
+  color: #5F6C7B;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+[data-page="down-payment"] .months {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #0D2240;
+}
+
+/* --- 10 acceleration strategy cards --- */
+[data-page="down-payment"] .strategy-card {
+  background: #fff;
+  border: 1px solid #DCE4EE;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* Icon spans were emptied out upstream (no emoji left to replace) */
+[data-page="down-payment"] .strategy-header,
+[data-page="down-payment"] .strategy-icon { display: none; }
+[data-page="down-payment"] .strategy-card h3 {
+  font-size: 17px;
+  color: #0D2240;
+  margin: 0;
+}
+[data-page="down-payment"] .potential-savings {
+  display: inline-flex;
+  align-self: flex-start;
+  font-size: 13px;
+  font-weight: 700;
+  color: #00A843;
+  background: rgba(0, 200, 83, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+[data-page="down-payment"] .strategy-card > p {
+  font-size: 14px;
+  color: #33404F;
+  line-height: 1.6;
+  margin: 0;
+}
+[data-page="down-payment"] .strategy-steps {
+  background: #EEF4FA;
+  border-radius: 10px;
+  padding: 14px;
+}
+[data-page="down-payment"] .strategy-steps h4 {
+  font-size: 13px;
+  color: #0D2240;
+  margin-bottom: 8px;
+}
+[data-page="down-payment"] .strategy-steps ul {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+[data-page="down-payment"] .strategy-steps li {
+  font-size: 13px;
+  color: #33404F;
+  line-height: 1.5;
+}
+[data-page="down-payment"] .difficulty-badge {
+  align-self: flex-start;
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+[data-page="down-payment"] .difficulty-badge.difficulty-easy { background: rgba(0, 200, 83, 0.12); color: #00A843; }
+[data-page="down-payment"] .difficulty-badge.difficulty-medium { background: rgba(245, 158, 11, 0.14); color: #B45309; }
+[data-page="down-payment"] .difficulty-badge.difficulty-hard { background: rgba(255, 107, 91, 0.16); color: #C93C2E; }
+
+/* --- DFW down payment assistance program cards ---
+   .jhl-section--navy forces color:white (and white h2/h3/h4) on every
+   descendant so the section intro is readable. The white .program-card
+   sitting inside it inherited that white text too, making the card title
+   and detail lines invisible-on-white. Reset color back to normal inside
+   each card. */
+[data-page="down-payment"] .jhl-section--navy .program-card {
+  color: #33404F;
+}
+[data-page="down-payment"] .jhl-section--navy .program-card h3 {
+  color: #0D2240;
+}
+[data-page="down-payment"] .program-amount {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0D2240;
+  text-align: center;
+  padding: 16px;
+  background: #EEF4FA;
+}
+[data-page="down-payment"] .program-requirements {
+  padding: 16px;
+  font-size: 13px;
+  color: #33404F;
+  line-height: 1.8;
+  border-top: 1px solid #DCE4EE;
+}
+[data-page="down-payment"] .program-requirements strong { color: #0D2240; }
+[data-page="down-payment"] .documentation-needed h4 {
+  font-size: 14px;
+  color: #0D2240;
+  margin-bottom: 8px;
+}
+[data-page="down-payment"] .documentation-needed ul {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+[data-page="down-payment"] .documentation-needed li {
+  font-size: 13px;
+  color: #33404F;
+  line-height: 1.5;
+}
+
+/* --- Expense optimizer + results card ---
+   .savings-potential collides with a global rule in jhl-redesign.css
+   (~line 4816: font-size:12px; white-space:nowrap; color:green) meant for
+   a small inline label elsewhere on the site. Here it wraps a whole
+   results card (h3 + big amount + annual line), and nowrap forced it
+   377px wide at a 375px viewport. This page-scoped selector has higher
+   specificity ([data-page] + .savings-potential vs. just .savings-potential)
+   so it wins outright, no !important needed. */
+[data-page="down-payment"] .expense-input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid #DCE4EE;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #0D2240;
+  text-align: right;
+  font-family: inherit;
+}
+[data-page="down-payment"] .expense-input:focus {
+  outline: none;
+  border-color: #1565A0;
+  box-shadow: 0 0 0 3px rgba(21, 101, 160, 0.15);
+}
+[data-page="down-payment"] .savings-potential {
+  white-space: normal;
+  font-size: inherit;
+  color: inherit;
+  background: #0D2240;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  margin-top: 24px;
+}
+[data-page="down-payment"] .savings-potential h3 {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+[data-page="down-payment"] .savings-amount {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #00FF85;
+  line-height: 1;
+}
+[data-page="down-payment"] .savings-annual {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 8px;
+}
+[data-page="down-payment"] .savings-annual strong { color: #fff; }
+[data-page="down-payment"] .savings-potential p { color: rgba(255, 255, 255, 0.7); }
+
+/* --- Side hustle filters + cards --- */
+[data-page="down-payment"] .hustle-filters {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 16px 0 20px;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+[data-page="down-payment"] .hustle-filters::-webkit-scrollbar { display: none; }
+/* .filter-btn / .filter-btn.active are already styled globally */
+[data-page="down-payment"] .hustle-card {
+  background: #fff;
+  border: 1px solid #DCE4EE;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+[data-page="down-payment"] .hustle-card h3 {
+  font-size: 17px;
+  color: #0D2240;
+  margin: 0;
+}
+[data-page="down-payment"] .income-range {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #00A843;
+}
+[data-page="down-payment"] .time-commitment {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1565A0;
+  background: #EEF4FA;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+[data-page="down-payment"] .time-commitment .tc-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+[data-page="down-payment"] .hustle-card > p {
+  font-size: 14px;
+  color: #33404F;
+  line-height: 1.6;
+  margin: 0;
+}
+[data-page="down-payment"] .skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+[data-page="down-payment"] .skill-tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: #33404F;
+  background: #F3F5F8;
+  border: 1px solid #DCE4EE;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* --- 90-day acceleration action phases --- */
+[data-page="down-payment"] .action-phase {
+  padding: 20px 0;
+  border-bottom: 1px solid #DCE4EE;
+}
+[data-page="down-payment"] .action-phase:last-child { border-bottom: none; }
+[data-page="down-payment"] .action-phase h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 16px;
+  color: #0D2240;
+  margin-bottom: 12px;
+}
+[data-page="down-payment"] .action-phase ul {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+[data-page="down-payment"] .action-phase li {
+  font-size: 14px;
+  color: #33404F;
+  line-height: 1.6;
+}
+
+
+/* =====================================================================
+   PAGE: debt-vs-saving.html
+   DTI calculator, DTI range visual, DTI-based strategy grid, debt
+   priority list, balanced-approach calculator, real-buyer scenario
+   tabs, debt payoff comparison table, 30-day action plan, truth bomb.
+
+   Note: this page's custom "jhl-*" component classes (jhl-calculator__
+   siblings, jhl-strategy-*, jhl-debt-*, jhl-scenario-*, jhl-comparison-
+   table, jhl-action-plan...) have ZERO rules anywhere in jhl-redesign.css
+   beyond the shared shell (jhl-section, jhl-card-grid, jhl-info-box,
+   .btn, .filter-btn). The brief only called out the comparison-table
+   overflow explicitly, but every calculator/tab/card on this page was
+   rendering as unstyled stacked text, so the whole page is covered here.
+   ===================================================================== */
+
+[data-page="debt-vs-saving"] .jhl-section-label {
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1565A0;
+  background: #EEF4FA;
+  padding: 4px 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* --- DTI calculator --- */
+[data-page="debt-vs-saving"] .jhl-calculator__header { margin-bottom: 20px; }
+[data-page="debt-vs-saving"] .jhl-calculator__header h3 {
+  font-size: 20px;
+  color: #0D2240;
+  margin-bottom: 6px;
+}
+[data-page="debt-vs-saving"] .jhl-calculator__header p {
+  font-size: 14px;
+  color: #5F6C7B;
+  margin: 0;
+}
+[data-page="debt-vs-saving"] .jhl-input-group { position: relative; margin-bottom: 4px; }
+[data-page="debt-vs-saving"] .jhl-input-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #33404F;
+  margin-bottom: 6px;
+}
+[data-page="debt-vs-saving"] .jhl-input-prefix {
+  position: absolute;
+  left: 14px;
+  bottom: 0;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  color: #5F6C7B;
+  font-size: 16px;
+  pointer-events: none;
+}
+[data-page="debt-vs-saving"] .jhl-input-group input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px 0 28px;
+  border: 1px solid #DCE4EE;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #0D2240;
+  font-family: inherit;
+}
+[data-page="debt-vs-saving"] .jhl-input-group input:focus {
+  outline: none;
+  border-color: #1565A0;
+  box-shadow: 0 0 0 3px rgba(21, 101, 160, 0.15);
+}
+[data-page="debt-vs-saving"] .jhl-results-panel {
+  margin-top: 24px;
+  background: #0D2240;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+}
+[data-page="debt-vs-saving"] .jhl-dti-status {
+  font-size: 14px;
+  font-weight: 700;
+  color: #00FF85;
+  margin-bottom: 8px;
+}
+[data-page="debt-vs-saving"] .jhl-dti-display {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+[data-page="debt-vs-saving"] .jhl-dti-message {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 auto;
+}
+[data-page="debt-vs-saving"] .jhl-dti-message strong { color: #fff; }
+[data-page="debt-vs-saving"] .jhl-debt-breakdown {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+@media (max-width: 480px) {
+  [data-page="debt-vs-saving"] .jhl-debt-breakdown { grid-template-columns: 1fr; }
+}
+[data-page="debt-vs-saving"] .jhl-breakdown-item {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 12px;
+}
+[data-page="debt-vs-saving"] .jhl-breakdown-label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 4px;
+}
+[data-page="debt-vs-saving"] .jhl-breakdown-value {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* --- DTI range visual --- */
+[data-page="debt-vs-saving"] .jhl-dti-ranges {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+[data-page="debt-vs-saving"] .jhl-dti-range-bar {
+  background: #fff;
+  border: 1px solid #DCE4EE;
+  border-radius: 14px;
+  padding: 16px;
+}
+[data-page="debt-vs-saving"] .jhl-range-percentage {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+[data-page="debt-vs-saving"] .jhl-range-bar-visual {
+  height: 28px;
+  background: #EEF4FA;
+  border-radius: 999px;
+  overflow: hidden;
+}
+[data-page="debt-vs-saving"] .jhl-range-fill {
+  height: 100%;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  transition: width .4s ease;
+  /* The bar's width is a data-driven inline % (e.g. 20% for the best tier),
+     which is often too narrow to hold its own label ("Excellent" got
+     clipped by the track's overflow:hidden). Force it to always be at
+     least as wide as its label so the text never gets cut off. */
+  min-width: fit-content;
+}
+[data-page="debt-vs-saving"] .jhl-range-description {
+  font-size: 13px;
+  color: #5F6C7B;
+  margin-top: 8px;
+}
+
+/* --- DTI-based strategy grid --- */
+[data-page="debt-vs-saving"] .jhl-strategy-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+@media (min-width: 720px) {
+  [data-page="debt-vs-saving"] .jhl-strategy-grid { grid-template-columns: repeat(2, 1fr); }
+}
+[data-page="debt-vs-saving"] .jhl-strategy-card {
+  background: #fff;
+  border: 1px solid #DCE4EE;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+[data-page="debt-vs-saving"] .jhl-strategy-badge {
+  align-self: flex-start;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 6px;
+  color: #fff;
+}
+[data-page="debt-vs-saving"] .jhl-strategy-badge--green { background: #00A843; }
+[data-page="debt-vs-saving"] .jhl-strategy-badge--yellow { background: #B45309; }
+[data-page="debt-vs-saving"] .jhl-strategy-badge--orange { background: #C2410C; }
+[data-page="debt-vs-saving"] .jhl-strategy-badge--red { background: #DC2626; }
+[data-page="debt-vs-saving"] .jhl-strategy-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0D2240;
+}
+[data-page="debt-vs-saving"] .jhl-strategy-desc {
+  font-size: 14px;
+  color: #33404F;
+  line-height: 1.6;
+  margin: 0;
+}
+[data-page="debt-vs-saving"] .jhl-strategy-allocation {
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 40px;
+}
+[data-page="debt-vs-saving"] .jhl-allocation-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 6px;
+  text-align: center;
+}
+[data-page="debt-vs-saving"] .jhl-strategy-action {
+  font-size: 13px;
+  color: #33404F;
+  line-height: 1.6;
+  background: #EEF4FA;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+[data-page="debt-vs-saving"] .jhl-strategy-action strong { color: #0D2240; }
+
+/* --- Debt priority hierarchy --- */
+[data-page="debt-vs-saving"] .jhl-debt-priority-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+}
+[data-page="debt-vs-saving"] .jhl-debt-item {
+  background: #fff;
+  border: 1px solid #DCE4EE;
+  border-radius: 16px;
+  padding: 18px;
+}
+[data-page="debt-vs-saving"] .jhl-debt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+[data-page="debt-vs-saving"] .jhl-debt-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+[data-page="debt-vs-saving"] .jhl-debt-rank {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+}
+[data-page="debt-vs-saving"] .jhl-debt-rank--high { background: #FF6B5B; }
+[data-page="debt-vs-saving"] .jhl-debt-rank--medium { background: #F59E0B; }
+[data-page="debt-vs-saving"] .jhl-debt-rank--low { background: #00C853; }
+[data-page="debt-vs-saving"] .jhl-debt-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0D2240;
+}
+[data-page="debt-vs-saving"] .jhl-debt-rate {
+  font-size: 13px;
+  color: #5F6C7B;
+  margin-top: 2px;
+}
+[data-page="debt-vs-saving"] .jhl-priority-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  height: fit-content;
+}
+[data-page="debt-vs-saving"] .jhl-priority-badge--high { background: rgba(255, 107, 91, 0.14); color: #C93C2E; }
+[data-page="debt-vs-saving"] .jhl-priority-badge--medium { background: rgba(245, 158, 11, 0.14); color: #B45309; }
+[data-page="debt-vs-saving"] .jhl-priority-badge--low { background: rgba(0, 200, 83, 0.12); color: #00A843; }
+[data-page="debt-vs-saving"] .jhl-debt-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid #DCE4EE;
+}
+[data-page="debt-vs-saving"] .jhl-detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+[data-page="debt-vs-saving"] .jhl-detail-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0D2240;
+}
+[data-page="debt-vs-saving"] .jhl-detail-text {
+  font-size: 13px;
+  color: #33404F;
+  line-height: 1.5;
+}
+
+/* --- Balanced approach calculator --- */
+[data-page="debt-vs-saving"] .jhl-balanced-calculator {
+  background: #fff;
+  border: 1px solid #DCE4EE;
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 20px;
+}
+[data-page="debt-vs-saving"] .jhl-slider-container { margin-bottom: 24px; }
+[data-page="debt-vs-saving"] .jhl-slider-value {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #0D2240;
+  text-align: center;
+  margin: 8px 0;
+}
+[data-page="debt-vs-saving"] .jhl-slider-input {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: #EEF4FA;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  margin-top: 8px;
+  min-height: 8px;
+}
+[data-page="debt-vs-saving"] .jhl-slider-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #1565A0;
+  border: 3px solid #fff;
+  box-shadow: 0 1px 4px rgba(13, 34, 64, 0.3);
+  cursor: pointer;
+}
+[data-page="debt-vs-saving"] .jhl-slider-input::-moz-range-thumb {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #1565A0;
+  border: 3px solid #fff;
+  box-shadow: 0 1px 4px rgba(13, 34, 64, 0.3);
+  cursor: pointer;
+}
+[data-page="debt-vs-saving"] .jhl-allocation-results {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+[data-page="debt-vs-saving"] .jhl-allocation-card {
+  background: #EEF4FA;
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+}
+[data-page="debt-vs-saving"] .jhl-allocation-icon {
+  font-size: 11px;
+  font-weight: 700;
+  color: #1565A0;
+  margin-bottom: 6px;
+}
+[data-page="debt-vs-saving"] .jhl-allocation-amount {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #0D2240;
+  margin: 4px 0;
+}
+[data-page="debt-vs-saving"] .jhl-allocation-label {
+  font-size: 12px;
+  color: #5F6C7B;
+}
+[data-page="debt-vs-saving"] .jhl-projection {
+  background: #0D2240;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+}
+[data-page="debt-vs-saving"] .jhl-projection-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 14px;
+}
+[data-page="debt-vs-saving"] .jhl-projection-values {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+[data-page="debt-vs-saving"] .jhl-projection-number {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+}
+[data-page="debt-vs-saving"] .jhl-projection .jhl-allocation-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- Real buyer scenario tabs --- */
+[data-page="debt-vs-saving"] .jhl-scenario-tabs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 20px 0;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+[data-page="debt-vs-saving"] .jhl-scenario-tabs::-webkit-scrollbar { display: none; }
+[data-page="debt-vs-saving"] .jhl-scenario-tab {
+  flex: 0 0 auto;
+  min-width: 150px;
+  background: #fff;
+  border: 1px solid #DCE4EE;
+  border-radius: 14px;
+  padding: 14px 16px;
+  cursor: pointer;
+  text-align: left;
+}
+[data-page="debt-vs-saving"] .jhl-scenario-tab.active {
+  background: #0D2240;
+  border-color: #0D2240;
+}
+[data-page="debt-vs-saving"] .jhl-tab-emoji {
+  font-size: 11px;
+  font-weight: 700;
+  color: #1565A0;
+  margin-bottom: 4px;
+}
+[data-page="debt-vs-saving"] .jhl-scenario-tab.active .jhl-tab-emoji { color: #00FF85; }
+[data-page="debt-vs-saving"] .jhl-tab-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0D2240;
+}
+[data-page="debt-vs-saving"] .jhl-scenario-tab.active .jhl-tab-name { color: #fff; }
+[data-page="debt-vs-saving"] .jhl-tab-subtitle {
+  font-size: 12px;
+  color: #5F6C7B;
+  margin-top: 2px;
+}
+[data-page="debt-vs-saving"] .jhl-scenario-tab.active .jhl-tab-subtitle { color: rgba(255, 255, 255, 0.7); }
+[data-page="debt-vs-saving"] .jhl-scenario-content { display: none; margin-top: 20px; }
+[data-page="debt-vs-saving"] .jhl-scenario-content.active { display: block; }
+[data-page="debt-vs-saving"] .jhl-scenario-profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+[data-page="debt-vs-saving"] .jhl-profile-avatar {
+  width: 64px;
+  min-height: 64px;
+  border-radius: 16px;
+  background: #0D2240;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  padding: 6px;
+  line-height: 1.2;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+[data-page="debt-vs-saving"] .jhl-profile-info h3 {
+  font-size: 18px;
+  color: #0D2240;
+  margin-bottom: 4px;
+}
+[data-page="debt-vs-saving"] .jhl-profile-details {
+  font-size: 13px;
+  color: #5F6C7B;
+}
+[data-page="debt-vs-saving"] .jhl-numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+@media (min-width: 640px) {
+  [data-page="debt-vs-saving"] .jhl-numbers-grid { grid-template-columns: repeat(3, 1fr); }
+}
+[data-page="debt-vs-saving"] .jhl-number-box {
+  background: #EEF4FA;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+[data-page="debt-vs-saving"] .jhl-number-label {
+  font-size: 11px;
+  color: #5F6C7B;
+  margin-bottom: 4px;
+}
+[data-page="debt-vs-saving"] .jhl-number-value {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0D2240;
+}
+[data-page="debt-vs-saving"] .jhl-strategy-steps {
+  background: #fff;
+  border: 1px solid #DCE4EE;
+  border-radius: 14px;
+  padding: 18px;
+  margin: 16px 0;
+}
+[data-page="debt-vs-saving"] .jhl-strategy-steps h4 {
+  font-size: 15px;
+  color: #0D2240;
+  margin-bottom: 12px;
+}
+[data-page="debt-vs-saving"] .jhl-step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+[data-page="debt-vs-saving"] .jhl-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+[data-page="debt-vs-saving"] .jhl-step-number {
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  border-radius: 50%;
+  background: #1565A0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+[data-page="debt-vs-saving"] .jhl-step-text {
+  font-size: 14px;
+  color: #33404F;
+  line-height: 1.5;
+  padding-top: 2px;
+}
+[data-page="debt-vs-saving"] .jhl-result-box {
+  background: rgba(0, 200, 83, 0.06);
+  border-left: 4px solid #00C853;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 16px 0;
+}
+[data-page="debt-vs-saving"] .jhl-result-box h4 {
+  font-size: 15px;
+  color: #0D2240;
+  margin-bottom: 8px;
+}
+[data-page="debt-vs-saving"] .jhl-key-insight {
+  background: #EEF4FA;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 14px;
+  color: #33404F;
+  line-height: 1.6;
+}
+[data-page="debt-vs-saving"] .jhl-key-insight strong { color: #0D2240; }
+
+/* --- Debt payoff comparison table (the overflow the brief called out) ---
+   Raw <table> inside .jhl-comparison-table was 233px wider than a 375px
+   viewport. Wrap it in a horizontal scroll container with a visible
+   "swipe" hint instead of trying to restack 5 columns of prose. */
+[data-page="debt-vs-saving"] .jhl-comparison-table {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid #DCE4EE;
+  border-radius: 14px;
+  margin: 20px 0;
+}
+[data-page="debt-vs-saving"] .jhl-comparison-table table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+}
+[data-page="debt-vs-saving"] .jhl-comparison-table th,
+[data-page="debt-vs-saving"] .jhl-comparison-table td {
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 13px;
+  color: #33404F;
+  border-bottom: 1px solid #DCE4EE;
+  vertical-align: top;
+}
+[data-page="debt-vs-saving"] .jhl-comparison-table th {
+  background: #0D2240;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+[data-page="debt-vs-saving"] .jhl-comparison-table tbody tr:last-child td { border-bottom: none; }
+[data-page="debt-vs-saving"] .jhl-method-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0D2240;
+}
+[data-page="debt-vs-saving"] .jhl-method-subtitle {
+  font-size: 12px;
+  color: #5F6C7B;
+  margin-top: 2px;
+}
+[data-page="debt-vs-saving"] .jhl-pros-list,
+[data-page="debt-vs-saving"] .jhl-cons-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 180px;
+}
+[data-page="debt-vs-saving"] .jhl-pros-list li { color: #00A843; }
+[data-page="debt-vs-saving"] .jhl-cons-list li { color: #C93C2E; }
+@media (max-width: 640px) {
+  [data-page="debt-vs-saving"] .jhl-comparison-table::before {
+    content: "Swipe to see all columns \2192";
+    display: block;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    background: #EEF4FA;
+    color: #1565A0;
+    border-bottom: 1px solid #DCE4EE;
+    position: sticky;
+    left: 0;
+    width: fit-content;
+    border-radius: 8px 8px 0 0;
+  }
+}
+
+/* --- 30-day action plan --- */
+[data-page="debt-vs-saving"] .jhl-action-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+[data-page="debt-vs-saving"] .jhl-plan-week {
+  background: #fff;
+  border: 1px solid #DCE4EE;
+  border-radius: 16px;
+  padding: 18px;
+}
+[data-page="debt-vs-saving"] .jhl-week-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+[data-page="debt-vs-saving"] .jhl-week-number {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 10px;
+  background: #1565A0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+[data-page="debt-vs-saving"] .jhl-week-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0D2240;
+}
+[data-page="debt-vs-saving"] .jhl-task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+[data-page="debt-vs-saving"] .jhl-task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+[data-page="debt-vs-saving"] .jhl-task-checkbox {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border: 2px solid #DCE4EE;
+  border-radius: 6px;
+  margin-top: 2px;
+}
+[data-page="debt-vs-saving"] .jhl-task-text {
+  font-size: 14px;
+  color: #33404F;
+  line-height: 1.5;
+}
+
+/* --- Truth bomb closer --- */
+[data-page="debt-vs-saving"] .jhl-truth-bomb {
+  background: #0D2240;
+  border-radius: 16px;
+  padding: 28px;
+}
+[data-page="debt-vs-saving"] .jhl-truth-bomb-icon {
+  display: inline-flex;
+  font-size: 11px;
+  font-weight: 700;
+  color: #00FF85;
+  background: rgba(0, 255, 133, 0.12);
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+[data-page="debt-vs-saving"] .jhl-truth-bomb h3 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+[data-page="debt-vs-saving"] .jhl-truth-bomb p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+}
+[data-page="debt-vs-saving"] .jhl-truth-bomb p strong { color: #fff; }

@@ -1,0 +1,556 @@
+/* ==============================================================
+   REPAIR BATCH C - tools-c.css
+   Temporary preview stylesheet for: jargon-buster.html, faqs.html,
+   school-district-guide.html, journey.html.
+
+   This file will be folded into jhl-redesign.css later. Every rule
+   is scoped with a [data-page="..."] attribute selector so it can't
+   leak onto pages other agents are touching in this same worktree,
+   except the two site-wide rules explicitly called out below.
+   ============================================================== */
+
+
+/* ==============================================================
+   SHARED: search box + category filters + "no results" state
+   Used identically on jargon-buster.html and faqs.html.
+   Combined selectors below are still page-scoped (both sides of
+   the comma carry a [data-page] qualifier) - this just avoids
+   duplicating the same declarations twice.
+   ============================================================== */
+
+[data-page="jargon-buster"] .search-section,
+[data-page="faqs"] .search-section {
+    margin-bottom: 24px;
+}
+
+[data-page="jargon-buster"] .search-box,
+[data-page="faqs"] .search-box {
+    position: relative;
+    margin-bottom: 14px;
+}
+
+/* Large, easy-to-tap search input (52px tall, 16px text per spec) */
+[data-page="jargon-buster"] .search-input,
+[data-page="faqs"] .search-input {
+    width: 100%;
+    height: 52px;
+    padding: 0 20px 0 48px;
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--navy);
+    background: var(--warm-white);
+    border: 1px solid #DCE4EE;
+    border-radius: 12px;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-page="jargon-buster"] .search-input:focus,
+[data-page="faqs"] .search-input:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(21, 101, 160, 0.12);
+}
+
+[data-page="jargon-buster"] .search-input::placeholder,
+[data-page="faqs"] .search-input::placeholder {
+    color: var(--slate);
+}
+
+[data-page="jargon-buster"] .search-icon,
+[data-page="faqs"] .search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    color: var(--slate);
+    pointer-events: none;
+}
+
+[data-page="jargon-buster"] .results-count,
+[data-page="faqs"] .search-results-count {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--slate);
+    margin-bottom: 14px;
+}
+
+[data-page="jargon-buster"] .category-filters,
+[data-page="faqs"] .category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* filter-btn min-height 44px comes from the site-wide rule above;
+   everything else about its look is page-scoped here so it matches
+   the flat v3 language (10px radius, NOT a 999px pill). */
+[data-page="jargon-buster"] .filter-btn,
+[data-page="faqs"] .filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    border-radius: 10px;
+}
+
+[data-page="jargon-buster"] .filter-btn .count,
+[data-page="faqs"] .filter-btn .count {
+    font-size: 12px;
+    font-weight: 700;
+    opacity: 0.7;
+}
+
+/* "No results" empty state - hidden by default, JS adds .show
+   (see filterTerms()/filterFAQs() in each page's <script>) */
+[data-page="jargon-buster"] .no-results,
+[data-page="faqs"] .no-results {
+    display: none;
+    text-align: center;
+    padding: 48px 24px;
+    background: #EEF4FA;
+    border: 1px solid #DCE4EE;
+    border-radius: 16px;
+}
+
+[data-page="jargon-buster"] .no-results.show,
+[data-page="faqs"] .no-results.show {
+    display: block;
+}
+
+[data-page="jargon-buster"] .no-results h3,
+[data-page="faqs"] .no-results h3 {
+    font-size: 18px;
+    color: var(--navy);
+    margin: 0 0 8px;
+}
+
+[data-page="jargon-buster"] .no-results p,
+[data-page="faqs"] .no-results p {
+    font-size: 15px;
+    color: var(--slate);
+    margin: 0;
+}
+
+
+/* ==============================================================
+   JARGON BUSTER - term glossary (jargon-buster.html)
+   The whole term list had zero CSS: every term body rendered as
+   permanently-expanded raw text (56,000px tall page). Everything
+   below builds the collapsed-by-default accordion rows.
+   ============================================================== */
+
+[data-page="jargon-buster"] .terms-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+[data-page="jargon-buster"] .term-item {
+    border: 1px solid #DCE4EE;
+    border-radius: 12px;
+    background: var(--warm-white);
+}
+
+/* Hide filtered-out terms (search / category filter toggles this) */
+[data-page="jargon-buster"] .term-item.hidden {
+    display: none;
+}
+
+[data-page="jargon-buster"] .term-header {
+    display: flex;
+    flex-wrap: wrap; /* ~20% of terms carry 2 badges (e.g. "DFW" + "Property") -
+        wrapping lets the badge row drop to its own line instead of squeezing
+        the title into a sliver that wraps mid-word ("young/old/late" style) */
+    align-items: center;
+    gap: 10px 12px;
+    padding: 16px;
+    min-height: 44px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+[data-page="jargon-buster"] .term-header:hover {
+    background: #F7FAFC;
+}
+
+/* Keyboard-focus ring for the role="button" header (added via JS attrs) */
+[data-page="jargon-buster"] .term-header:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: -2px;
+    border-radius: 12px;
+}
+
+[data-page="jargon-buster"] .term-title-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1 1 auto;
+    min-width: 200px; /* forces badges/toggle to wrap to their own row instead of
+        squeezing the title narrower than this on small screens */
+}
+
+[data-page="jargon-buster"] .term-letter {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--navy);
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+[data-page="jargon-buster"] .term-title {
+    min-width: 0;
+}
+
+[data-page="jargon-buster"] .term-title h3 {
+    font-size: 17px;
+    line-height: 1.3;
+    color: var(--navy);
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+/* The category prints twice: .term-category (plain text under the
+   title) and .term-badges .badge (small tag). Per spec, keep only
+   one visible - hiding the plain-text duplicate, keeping the tag. */
+[data-page="jargon-buster"] .term-category {
+    display: none;
+}
+
+[data-page="jargon-buster"] .term-badges {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+    margin-left: auto; /* pins badges (and the toggle after them) to the right
+        edge of whichever line they end up on once the header wraps */
+}
+
+[data-page="jargon-buster"] .badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0;
+    border-radius: 6px; /* small rounded-rect tag, not a 999px pill */
+    white-space: nowrap;
+    color: var(--blue);
+    background: var(--blue-light);
+}
+
+/* One color per data-category value used on this page */
+[data-page="jargon-buster"] .badge.financing  { color: var(--blue); background: var(--blue-light); }
+[data-page="jargon-buster"] .badge.contract   { color: var(--purple); background: rgba(107, 70, 193, 0.1); }
+[data-page="jargon-buster"] .badge.property   { color: var(--green-dark); background: rgba(0, 200, 83, 0.1); }
+[data-page="jargon-buster"] .badge.closing    { color: var(--coral); background: rgba(255, 107, 91, 0.1); }
+[data-page="jargon-buster"] .badge.inspection { color: var(--amber); background: rgba(245, 158, 11, 0.12); }
+[data-page="jargon-buster"] .badge.texas      { color: var(--navy); background: var(--mist); }
+[data-page="jargon-buster"] .badge.dfw        { color: var(--orange); background: rgba(255, 107, 53, 0.1); }
+
+[data-page="jargon-buster"] .term-toggle {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: var(--slate);
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+[data-page="jargon-buster"] .term-toggle-icon {
+    width: 100%;
+    height: 100%;
+}
+
+[data-page="jargon-buster"] .term-item.open .term-toggle {
+    transform: rotate(180deg);
+    color: var(--blue);
+}
+
+/* Collapse/expand via the CSS grid 0fr -> 1fr trick. This handles
+   wildly variable content height (some terms have every sub-block,
+   some have just a definition) without JS measuring scrollHeight. */
+[data-page="jargon-buster"] .term-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+}
+
+[data-page="jargon-buster"] .term-item.open .term-content {
+    grid-template-rows: 1fr;
+}
+
+[data-page="jargon-buster"] .term-body {
+    overflow: hidden;
+    min-height: 0; /* required so the grid row can actually shrink to 0 */
+    padding: 0 16px; /* horizontal only while closed - vertical padding on a
+        collapsed grid row still renders (it isn't sized by grid-template-rows),
+        so a fixed bottom padding here would leak a sliver of the closed term.
+        Bottom padding is added only once .term-item.open, below. */
+}
+
+[data-page="jargon-buster"] .term-item.open .term-body {
+    padding-bottom: 16px;
+}
+
+[data-page="jargon-buster"] .term-definition {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--charcoal);
+    margin-bottom: 12px;
+}
+
+[data-page="jargon-buster"] .term-plain-english,
+[data-page="jargon-buster"] .term-example,
+[data-page="jargon-buster"] .term-spanish,
+[data-page="jargon-buster"] .term-aka {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--charcoal);
+    padding: 12px 14px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+[data-page="jargon-buster"] .term-plain-english {
+    background: rgba(0, 200, 83, 0.06);
+    border-left: 3px solid var(--green);
+}
+
+[data-page="jargon-buster"] .term-example {
+    background: #F7FAFC;
+    border-left: 3px solid var(--slate);
+}
+
+[data-page="jargon-buster"] .term-spanish {
+    background: rgba(21, 101, 160, 0.06);
+    border-left: 3px solid var(--blue);
+}
+
+[data-page="jargon-buster"] .term-aka {
+    background: var(--mist);
+    border-left: 3px solid var(--navy);
+}
+
+[data-page="jargon-buster"] .term-plain-english strong,
+[data-page="jargon-buster"] .term-example strong,
+[data-page="jargon-buster"] .term-spanish strong,
+[data-page="jargon-buster"] .term-aka strong {
+    display: block;
+    color: var(--navy);
+    margin-bottom: 4px;
+    font-size: 13px;
+}
+
+[data-page="jargon-buster"] .term-related {
+    font-size: 14px;
+    padding-top: 10px;
+    margin-top: 4px;
+    border-top: 1px solid var(--mist);
+}
+
+[data-page="jargon-buster"] .term-related strong {
+    display: block;
+    color: var(--navy);
+    margin-bottom: 6px;
+    font-size: 13px;
+}
+
+/* Related-term links as plain text links, not pill buttons */
+[data-page="jargon-buster"] .term-related a {
+    display: inline-block;
+    padding: 4px 0;
+    margin-right: 16px;
+    color: var(--blue);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+[data-page="jargon-buster"] .term-related a:hover {
+    color: var(--blue-hover);
+}
+
+/* Quick Stats grid (keeps the existing copy, including the "0
+   Industry Jargon" stat - copy is not ours to change) */
+[data-page="jargon-buster"] .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+[data-page="jargon-buster"] .stat-card {
+    text-align: center;
+    padding: 20px 12px;
+    background: var(--warm-white);
+    border: 1px solid #DCE4EE;
+    border-radius: 12px;
+}
+
+[data-page="jargon-buster"] .stat-number {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+}
+
+[data-page="jargon-buster"] .stat-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--slate);
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+@media (min-width: 768px) {
+    [data-page="jargon-buster"] .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+/* ==============================================================
+   FAQS - accordion header badges + inline callouts (faqs.html)
+   The base .jhl-accordion__* component already has CSS; only the
+   page-specific additions below were undefined.
+   ============================================================== */
+
+[data-page="faqs"] .jhl-accordion__header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+[data-page="faqs"] .faq-category-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0;
+    border-radius: 6px; /* small rounded-rect, not a pill */
+    white-space: nowrap;
+    color: var(--blue);
+    background: var(--blue-light);
+}
+
+[data-page="faqs"] .faq-category-badge.money   { color: var(--green-dark); background: rgba(0, 200, 83, 0.1); }
+[data-page="faqs"] .faq-category-badge.credit  { color: var(--purple); background: rgba(107, 70, 193, 0.1); }
+[data-page="faqs"] .faq-category-badge.process { color: var(--blue); background: var(--blue-light); }
+[data-page="faqs"] .faq-category-badge.fears   { color: var(--coral); background: rgba(255, 107, 91, 0.1); }
+[data-page="faqs"] .faq-category-badge.dfw     { color: var(--orange); background: rgba(255, 107, 53, 0.1); }
+
+[data-page="faqs"] .reality-check,
+[data-page="faqs"] .helpful-tip {
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 14px 0;
+}
+
+[data-page="faqs"] .reality-check {
+    background: rgba(255, 107, 91, 0.07);
+    border-left: 3px solid var(--coral);
+}
+
+[data-page="faqs"] .helpful-tip {
+    background: rgba(0, 200, 83, 0.06);
+    border-left: 3px solid var(--green);
+}
+
+[data-page="faqs"] .reality-check strong,
+[data-page="faqs"] .helpful-tip strong {
+    display: block;
+    color: var(--navy);
+    margin-bottom: 4px;
+}
+
+
+/* ==============================================================
+   SCHOOL DISTRICT GUIDE - comparison table overflow fix
+   .comparison-table had zero CSS (raw <table>), which caused a
+   4px overflow at 375px. Wrapped in a horizontal-scroll container
+   in the HTML and given real flat-style borders here.
+   ============================================================== */
+
+[data-page="school-district-guide"] .table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid #DCE4EE;
+    border-radius: 12px;
+    margin: 16px 0;
+}
+
+[data-page="school-district-guide"] .comparison-table {
+    width: 100%;
+    min-width: 480px; /* keeps columns readable; scrolls instead of squeezing/overflowing at 375px */
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+[data-page="school-district-guide"] .comparison-table th,
+[data-page="school-district-guide"] .comparison-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #DCE4EE;
+}
+
+[data-page="school-district-guide"] .comparison-table thead th {
+    background: #EEF4FA;
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+[data-page="school-district-guide"] .comparison-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ==============================================================
+   JOURNEY - key-questions <li> overflow fix at 375px
+   One list item inside .key-questions (inside an accordion detail
+   panel) forced a 12px horizontal overflow. .key-questions itself
+   is already styled in jhl-redesign.css; these rules only add wrap
+   behavior so long unbreakable text can't force the page wider.
+   ============================================================== */
+
+[data-page="journey"] .key-questions {
+    min-width: 0;
+}
+
+[data-page="journey"] .key-questions ul {
+    min-width: 0;
+}
+
+[data-page="journey"] .key-questions li {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    min-width: 0;
+}
+
+/* Journey: resource lists now link to the real guides */
+[data-page="journey"] .resources-needed ul { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 4px; }
+[data-page="journey"] .resources-needed li { padding: 0; margin: 0; }
+[data-page="journey"] .resources-needed li::before { content: none; }
+[data-page="journey"] .resources-needed a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-weight: 700; color: #1565A0; text-decoration: none; }
+[data-page="journey"] .resources-needed a::after { content: "\2192"; transition: transform .2s; }
+[data-page="journey"] .resources-needed a:hover { text-decoration: underline; text-underline-offset: 3px; }
+[data-page="journey"] .resources-needed a:hover::after { transform: translateX(3px); }
+[data-page="journey"] .you-are-here { border-radius: 6px; }
